@@ -5,7 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6fec967e-84f6-4439-b668-e7e6b4516f15" name="Changes" comment="commit">
-      <change afterPath="$PROJECT_DIR$/lib/Appointments/PharmacyProfile.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/Appointments/CancelSuccess.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/Appointments/ScheduledAppointment.dart" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/lib/Appointments/SpecialistProfile.dart" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/lib/Main/MeasuringVitals.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.flutter-plugins-dependencies" beforeDir="false" afterPath="$PROJECT_DIR$/.flutter-plugins-dependencies" afterDir="false" />
@@ -24,25 +25,30 @@
       <change beforePath="$PROJECT_DIR$/lib/AppointmentPaymentSuccess.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/Appointments/AppointmentPaymentSuccess.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/AppointmentPaymentSummary.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/Appointments/AppointmentPaymentSummary.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/Appointments.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/Appointments.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/Appointments/HospitalProfile.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/Appointments/HospitalProfile.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/Appointments/MainAppointment.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/Appointments/MainAppointment.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/Appointments/PharmacyProfile.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/Appointments/PharmacyProfile.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/ArticlePost.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/ArticlePost.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/BlogAndAticles.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/BlogAndAticles.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/BookAppointment.dart" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/BookAppointmentSpecialistSearch.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/Appointments/BookAppointmentSpecialistSearch.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/CancelAppointment.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/Appointments/CancelAppointment.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/Chat.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/Appointments/Chat.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/ConfirmCalcellation.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/Appointments/ConfirmCalcellation.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/ConfirmName.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/ConfirmName.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/DeviceOrder.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/DeviceOrder.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/DrProfile.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/Appointments/HospitalProfile.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/EnableFingerprint.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/OnBoarding/EnableFingerprint.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/HowItWorkExplained.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/HowItWorkExplained.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/HowItWorks.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/HowItWorks.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/Main/MeasureVitalsManuallyMenu.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/Main/MeasureVitalsManuallyMenu.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/MainAppointment.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/Appointments/MainAppointment.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/MainManvigator.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/MainManvigator.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/MeasureVitalsManually.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/MeasureVitalsManually.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/Medication/DrugInformation.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/Medication/DrugInformation.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/Medication/OrderDeatils.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/Medication/OrderDeatils.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/Message.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/Appointments/Message.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/OnBoarding/SetNewPassword.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/OnBoarding/SetNewPassword.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/Otp.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/Otp.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/Referrals.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/Referrals.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/ScheduleAppointment1.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/Appointments/ScheduleAppointmentDateChooser.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/ScheduleAppointment2.dart" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/VitalAddedSuccess.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/Capture/VitalAddedSuccess.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/VitalsReading.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/Capture/VitalsReading.dart" afterDir="false" />
@@ -180,7 +186,7 @@
       <workItem from="1733081265301" duration="29000" />
       <workItem from="1733134145676" duration="24183000" />
       <workItem from="1733204766879" duration="2579000" />
-      <workItem from="1733212492239" duration="16546000" />
+      <workItem from="1733212492239" duration="23943000" />
     </task>
     <task id="LOCAL-00001" summary="commit">
       <option name="closed" value="true" />
@@ -264,12 +270,12 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="Dart">
           <url>file://$PROJECT_DIR$/lib/Appointments/MainAppointment.dart</url>
-          <line>91</line>
+          <line>99</line>
           <option name="timeStamp" value="10" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="Dart">
           <url>file://$PROJECT_DIR$/lib/Appointments/MainAppointment.dart</url>
-          <line>107</line>
+          <line>115</line>
           <option name="timeStamp" value="11" />
         </line-breakpoint>
       </breakpoints>

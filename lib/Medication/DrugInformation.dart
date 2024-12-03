@@ -110,11 +110,10 @@ class _DrugInformationScreen extends  State<DrugInformation> {
                     borderRadius: BorderRadius.circular(14)
                   ),
                   child: Text('The patient should ensure to use the medications as prescribed and also use the medication after eating. On no occasion should the patient use the medication on an empty stomach.', style: TextStyle(color: Color(0xff666666), fontSize: 16),),
-
                 ),
                 SizedBox(height: 25,),
-                SvgPicture.asset('assets/images/line.svg')
-                ,SizedBox(height: 20,),
+                SvgPicture.asset('assets/images/line.svg'),
+                SizedBox(height: 20,),
                 Row(
                   children: [
                     Container(

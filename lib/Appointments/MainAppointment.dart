@@ -2,8 +2,11 @@ import 'package:dotted_border/dotted_border.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_app/Appointments/AffiliatedNetwork.dart';
 import 'package:flutter_app/Appointments/BookAppointmentSpecialistSearch.dart';
+import 'package:flutter_app/Appointments/Message.dart';
 import 'package:flutter_app/Medication/TakeAQuickCheckup.dart';
 import 'package:flutter_svg/svg.dart';import 'dart:math';
+
+import 'ScheduledAppointment.dart';
 
 
 void main(){
@@ -34,7 +37,11 @@ class _MainAppointmentState extends State<MainAppointment> {
           ),
         ),
         actions: [
-          Stack(
+          GestureDetector(
+            onTap: (){
+              Navigator.of(context).push(MaterialPageRoute(builder: (builder)=> Message()));
+            },
+      child: Stack(
             children: [
               IconButton(
                 icon: Icon(
@@ -57,6 +64,7 @@ class _MainAppointmentState extends State<MainAppointment> {
                 ),
               ),
             ],
+          ),
           ),
         ],
       ),
@@ -105,7 +113,7 @@ class _MainAppointmentState extends State<MainAppointment> {
 
                   GestureDetector(
                     onTap: (){
-                      // Navigator.of(context).push(MaterialPageRoute(builder: (builder)=> TakeAQuickCheckup()));
+                      Navigator.of(context).push(MaterialPageRoute(builder: (builder)=> ScheduledAppointment()));
                     },
                     child:
                   appointmentOptions(
@@ -114,7 +122,7 @@ class _MainAppointmentState extends State<MainAppointment> {
                       color: Colors.blue,
                       size: 30,
                     ),
-                    text: "Schedule appointment"
+                    text: "Scheduled appointment"
                   ),
                   ),
 

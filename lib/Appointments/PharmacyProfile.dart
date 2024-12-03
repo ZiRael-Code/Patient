@@ -60,14 +60,14 @@ class DrProfileState extends StatelessWidget {
               SizedBox(height: 150),
               Align(
                     child: CircleAvatar(
-                        backgroundImage: AssetImage('assets/images/dr_profile.png'),
+                        backgroundImage: AssetImage('assets/images/pharm1.jpeg'),
                         radius: 50
                         ),
 
               ),
               SizedBox(height: 20),
               Text(
-                'Dr. Muiz Sanni',
+                'RX Pharmacy',
                 style: TextStyle(
                   fontSize: 25,
                   fontWeight: FontWeight.bold,
@@ -80,7 +80,7 @@ class DrProfileState extends StatelessWidget {
                   textAlign: TextAlign.center,
                   'No. 33 Adegoke Street, Surulere, Lagos State',
                   style: TextStyle(
-                    fontSize: 18,
+                    fontSize: 16,
                   ),
                 ),
               ),
@@ -100,6 +100,9 @@ class DrProfileState extends StatelessWidget {
               ),
 
                     SizedBox(height: 15,),
+                Padding(padding: EdgeInsets.all(12),
+                child: Column(
+                  children: [
                 Align(
                   alignment: Alignment.centerLeft,
                  child:
@@ -265,6 +268,9 @@ class DrProfileState extends StatelessWidget {
         ],
 
       ),
+                )
+                  ]
+                )
     ],
     ),
     );
