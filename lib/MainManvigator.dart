@@ -3,8 +3,10 @@ import 'dart:io';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_app/AccountProfile.dart';
+import 'package:flutter_app/Appointments.dart';
+import 'package:flutter_app/Appointments/MainAppointment.dart';
 import 'package:flutter_app/Notifications.dart';
-import 'package:flutter_app/VitalsReading.dart';
+import 'package:flutter_app/Capture/VitalsReading.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:flutter_app/Medication/NoMedication.dart';
 
@@ -44,7 +46,7 @@ class _MainNavigatorState extends State<MainNavigator> {
     Dashboard(onItemTapped: _onItemTapped),
     NoMedication(),
     Container(), //
-    Notifications(),
+    MainAppointment(),
     AccountProfile(),
   ];
 

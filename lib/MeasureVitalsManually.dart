@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_app/Capture/VitalAddedSuccess.dart';
 import 'package:flutter_svg/svg.dart';
 
 
@@ -21,8 +22,7 @@ class _MeasureVitalsManuallyScreen extends  State<MeasureVitalsManually> with Si
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      home: Scaffold(
+    return  Scaffold(
         appBar: AppBar(
           title: Row(
             children: [
@@ -75,6 +75,7 @@ class _MeasureVitalsManuallyScreen extends  State<MeasureVitalsManually> with Si
             ),
             child: SizedBox(
               child: TabBar(
+                dividerColor: Colors.transparent,
                 controller: _tabController,
                 indicatorSize: TabBarIndicatorSize.tab,
                 indicator: BoxDecoration(
@@ -104,7 +105,7 @@ class _MeasureVitalsManuallyScreen extends  State<MeasureVitalsManually> with Si
           ),
           ],
         ),
-    ))));
+    )));
   }
 
   singleEntry() {
@@ -134,7 +135,7 @@ class _MeasureVitalsManuallyScreen extends  State<MeasureVitalsManually> with Si
             suffixIcon: Icon(Icons.keyboard_arrow_down),
             hintText: 'e.g blood pressure',
             hintStyle: TextStyle(
-              color: Color(0xffF2F2F2),
+              color: Colors.grey.shade400,
             ),
             filled: true,
             fillColor: Colors.grey[300],
@@ -158,7 +159,28 @@ class _MeasureVitalsManuallyScreen extends  State<MeasureVitalsManually> with Si
         textType: TextInputType.number,
         textHeader: 'Vital to measure',
         textHint: "e.g blood pressure"
-    )
+    ),
+        Spacer(),
+        ElevatedButton(
+          onPressed: () {
+            Navigator.push(context, MaterialPageRoute(builder: (context) => VitalAddedSuccess()));
+
+          },
+          style: ElevatedButton.styleFrom(
+            backgroundColor: Colors.blue,
+            fixedSize: Size.fromWidth(MediaQuery.of(context).size.width),
+            shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(9),
+            ),
+          ),
+          child: Padding(
+            padding: const EdgeInsets.symmetric(vertical: 12.0, horizontal: 24.0),
+            child: Text(
+              'Save recording',
+              style: TextStyle(color: Colors.white, fontSize: 18),
+            ),
+          ),
+        ),
     ]
     );
 
@@ -185,7 +207,11 @@ class _MeasureVitalsManuallyScreen extends  State<MeasureVitalsManually> with Si
               color: Color(0xFFE2EDFF),
               borderRadius: BorderRadius.circular(14),
             ),
-            child: Row(
+            child: GestureDetector(
+              onTap: () {
+                add_entry_bottom_sheet(context);
+    },
+                child: Row(
               mainAxisSize: MainAxisSize.min,
               children: [
                 Icon(Icons.add_circle_outline, color: Colors.blue,),
@@ -193,10 +219,13 @@ class _MeasureVitalsManuallyScreen extends  State<MeasureVitalsManually> with Si
                 Text('Add Entry', style: TextStyle(color: Colors.blue, fontSize: 16),)
               ],
             )
+            )
         ),
         Spacer(),
         ElevatedButton(
-          onPressed: () {},
+          onPressed: () {
+            Navigator.push(context, MaterialPageRoute(builder: (context) => VitalAddedSuccess()));
+          },
           style: ElevatedButton.styleFrom(
             backgroundColor: Colors.blue,
             fixedSize: Size.fromWidth(MediaQuery.of(context).size.width),
@@ -256,7 +285,7 @@ class _MeasureVitalsManuallyScreen extends  State<MeasureVitalsManually> with Si
                 color: Color(0xffFF6161).withOpacity(0.15),
               shape: BoxShape.circle
             ),
-            child: Icon(Icons.delete, color: Colors.red,),
+            child: GestureDetector(child:  Icon(Icons.delete, color: Colors.red,), onTap: ()=> cancel_dialog(context),),
             ),
           ],
         ),
@@ -316,57 +345,168 @@ textField({
       ),
     ],);
 }
+cancel_dialog(BuildContext context){
+  showDialog(
+      context: context,
+      builder: (context)
+      {
+        return AlertDialog(
+            content: Column(
+              mainAxisSize: MainAxisSize.min,
+              children: [
+                Container(
+                  width: 201,
+                  child:
+                  Text(textAlign: TextAlign.center, 'Are you sure you want to delete this entry?', style: TextStyle(fontSize: 16),),
+                ),
+                SizedBox(height: 20),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.start,
+                  children: [
+                    ElevatedButton(
+                      onPressed: () {
+                      },
+                      style: ElevatedButton.styleFrom(
+                        backgroundColor: Colors.blue,
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(9),
+                        ),
+                      ),
+                      child: Padding(
+                        padding: const EdgeInsets.symmetric(vertical: 12.0, horizontal: 14.0),
+                        child: Text(
+                          'Yes',
+                          style: TextStyle(color: Colors.white, fontSize: 18),
+                        ),
+                      ),
+                    ),
+                    SizedBox(width: 10,),
+                    ElevatedButton(
+                      onPressed: () {
+                      },
+                      style: ElevatedButton.styleFrom(
+                        // backgroundColor: Colors.blue,
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(9),
+                          side: BorderSide(color: Colors.blue, width: 1),
+                        ),
+                      ),
+                      child: Padding(
+                        padding: const EdgeInsets.symmetric(vertical: 12.0, horizontal: 24.0),
+                        child: Text(
+                          'No',
+                          style: TextStyle(color: Colors.blue, fontSize: 18),
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
+                SizedBox(height: 12),
+              ],
+            )
+        );
+      }
+  );
+}
 
-delete_popuo(){
-  return Column(
-    children: [
-      Text('Are you sure you want to delete this entry?'),
-      Row(
-        children: [
-          SizedBox(
-          child: ElevatedButton(
-            onPressed: () {},
-            style: ElevatedButton.styleFrom(
-              backgroundColor: Colors.blue,
-              shape: RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(9),
-              ),
-            ),
-            child: Padding(
-              padding: const EdgeInsets.symmetric(vertical: 12.0, horizontal: 24.0),
-              child: Text(
-                'Yes',
-                style: TextStyle(color: Colors.white, fontSize: 18),
-              ),
-            ),
-          ),
-          ),
 
-          SizedBox(width: 15,),
+add_entry_bottom_sheet(BuildContext context) {
+  showModalBottomSheet(
+      context: context,
+      isScrollControlled: true,
+      backgroundColor: Colors.white,
+      builder: (BuildContext context) {
+        return Padding(
+            padding: EdgeInsets.only(
+              top: 16,
+              bottom: MediaQuery
+                  .of(context)
+                  .viewInsets
+                  .bottom + 16, // Avoid keyboard overlap
+              left: 16,
+              right: 16,
+            ),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.center,
+              mainAxisSize: MainAxisSize.min,
+              children: [
+                Column(
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  mainAxisAlignment: MainAxisAlignment.start,
+                  children: [
+                      Text(
+                        'Add entry',
+                        style: TextStyle(
+                          fontSize: 16.0,
+                        ),
+                    ),
+                    SizedBox(height: 15.0),
+                    Align(
+                      alignment: Alignment.centerLeft,
+                    child:
+                    Text(
+                      'Vital to measure',
+                      style: TextStyle(
+                        fontSize: 16.0,
+                      ),
+                    ),
+                    ),
+                    SizedBox(height: 10.0),
+                    // Account Number TextField
+                    TextField(
+                      decoration: InputDecoration(
+                        suffixIcon: Icon(Icons.keyboard_arrow_down),
+                        hintText: 'e.g blood pressure',
+                        hintStyle: TextStyle(
+                          color: Colors.grey.shade400,
+                        ),
+                        filled: true,
+                        fillColor: Colors.grey[300],
+                        contentPadding: EdgeInsets.symmetric(
+                          vertical: 15.0, // Height of 50 (including padding)
+                          horizontal: 10.0,
+                        ),
+                        border: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(8.0),
+                          borderSide: BorderSide.none,
+                        ),
+                      ),
+                      style: TextStyle(
+                        fontSize: 16.0,
+                      ),
+                    ),
+                  ],),
+                SizedBox(height: 15.0),
 
-          SizedBox(
-          child: ElevatedButton(
-            onPressed: () {},
-            style: ElevatedButton.styleFrom(
-              shape: RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(9),
-                side: BorderSide(
-                  width: 1,
-                  color: Colors.blue
-                )
-              ),
-            ),
-            child: Padding(
-              padding: const EdgeInsets.symmetric(vertical: 12.0, horizontal: 24.0),
-              child: Text(
-                'No',
-                style: TextStyle(color: Colors.blue, fontSize: 18),
-              ),
-            ),
-          ),
-          ),
-        ],
-      )
-    ],
+                textField(
+                    textType: TextInputType.number,
+                    textHeader: 'Vital to measure',
+                    textHint: "e.g blood pressure"
+                ),
+                SizedBox(height: 25.0),
+                ElevatedButton(
+                  onPressed: () {
+                    Navigator.push(context, MaterialPageRoute(builder: (context) => VitalAddedSuccess()));
+                  },
+                  style: ElevatedButton.styleFrom(
+                    backgroundColor: Colors.blue,
+                    fixedSize: Size.fromWidth(MediaQuery.of(context).size.width),
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(9),
+                    ),
+                  ),
+                  child: Padding(
+                    padding: const EdgeInsets.symmetric(vertical: 12.0, horizontal: 24.0),
+                    child: Text(
+                      'Save recording',
+                      style: TextStyle(color: Colors.white, fontSize: 18),
+                    ),
+                  ),
+                ),
+              ],
+            )
+
+        );
+      }
   );
 }

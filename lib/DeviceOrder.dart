@@ -2,7 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 
-import 'AppointmentPaymentSummary.dart';
+import 'Appointments/AppointmentPaymentSummary.dart';
 
 void main(){
   runApp(DeviceOrder());

@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_app/MeasureVitalsManually.dart';
 import 'package:flutter_svg/svg.dart';
 
 
@@ -62,6 +63,7 @@ class _MeasureVitalsManuallyMenuScreen extends  State<MeasureVitalsManuallyMenu>
       Column(
         mainAxisAlignment: MainAxisAlignment.center,
       children: [
+        SizedBox(height: 65,),
         SvgPicture.asset('assets/images/machine.svg'),
         SizedBox(height: 145,),
         Container(
@@ -76,9 +78,11 @@ class _MeasureVitalsManuallyMenuScreen extends  State<MeasureVitalsManuallyMenu>
           ),
         ),
 
-        SizedBox(height: 65,),
+        Spacer(),
         ElevatedButton(
-          onPressed: () {},
+          onPressed: () {
+            Navigator.push(context, MaterialPageRoute(builder: (context) => MeasureVitalsManually()));
+          },
           style: ElevatedButton.styleFrom(
             backgroundColor: Colors.blue,
             fixedSize: Size.fromWidth(MediaQuery.of(context).size.width),

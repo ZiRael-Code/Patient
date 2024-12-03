@@ -9,9 +9,7 @@ void main() {
 class Appointments extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      home: AppointmentsState(),
-    );
+    return AppointmentsState();
   }
 }
 

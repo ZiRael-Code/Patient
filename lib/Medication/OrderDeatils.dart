@@ -234,7 +234,6 @@ class _OrderDeatilsScreen extends  State<OrderDeatils> {
                 children: [
                   ElevatedButton(
                     onPressed: () {
-                      cancel_dialog();
                     },
                     style: ElevatedButton.styleFrom(
                       backgroundColor: Colors.blue,
@@ -253,7 +252,6 @@ class _OrderDeatilsScreen extends  State<OrderDeatils> {
                   SizedBox(width: 10,),
                   ElevatedButton(
                     onPressed: () {
-                      cancel_dialog();
                     },
                     style: ElevatedButton.styleFrom(
                       // backgroundColor: Colors.blue,
