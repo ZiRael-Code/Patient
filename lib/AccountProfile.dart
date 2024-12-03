@@ -13,7 +13,7 @@ import 'HealthStatistic.dart';
 import 'HowItWorks.dart';
 import 'PersonalHistoryRecords.dart';
 import 'PinSettings.dart';
-import 'Referrals.dart';
+import 'Account/Referral/Referrals.dart';
 
 class AccountProfile extends StatefulWidget {
   const AccountProfile({super.key});

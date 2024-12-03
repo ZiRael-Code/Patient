@@ -2,14 +2,13 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
 void main() {
-  runApp(MyApp());
+  runApp(SelectADeliveryMethod());
 }
 
-class MyApp extends StatelessWidget {
+class SelectADeliveryMethod extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      home: Scaffold(
+    return  Scaffold(
         backgroundColor: Colors.white,
         appBar: AppBar(
           title: Row(
@@ -55,7 +54,6 @@ class MyApp extends StatelessWidget {
                icon:  Icon(Icons.arrow_forward_ios_rounded, color: Colors.blue,)
            ),
           ],
-      ),
       ),
     );
   }

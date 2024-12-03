@@ -2,6 +2,8 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 
+import 'SelectADeliveryMethod.dart';
+
 
 void main(){
   runApp(Chat());
@@ -517,6 +519,29 @@ class _ChatScreen extends  State<Chat> {
                       ),
                     ),
 
+                    Row(
+                      children: [
+                        Text('No. of medications:', style: TextStyle(color: Color(0xff666666))),
+                        Spacer(),
+                        Text('3 drugs'),
+                      ],
+                    ),
+                    SizedBox(height: 20,),
+                    Row(
+                      children: [
+                        Text('price', style: TextStyle(color: Color(0xff666666))),
+                        Spacer(),
+                        Text('N5,350.00', style: TextStyle(color: Colors.blue),
+                        )],
+                    ),
+                    SizedBox(height: 20,),
+                    Row(
+                      children: [
+                        Text('TOTAL', style: TextStyle(fontWeight: FontWeight.bold)),
+                        Spacer(),
+                        Text('3 drugs', style: TextStyle(fontSize: 16,color: Colors.blue),
+                        )],
+                    ),
 
 
                     SizedBox(height: 25,),
@@ -631,7 +656,9 @@ class _ChatScreen extends  State<Chat> {
                     ),
                     SizedBox(height: 15),
                     ElevatedButton(
-                      onPressed: () {},
+                      onPressed: () {
+                        Navigator.of(context).push(MaterialPageRoute(builder: (builder)=> SelectADeliveryMethod()));
+                      },
                       style: ElevatedButton.styleFrom(
                         backgroundColor: Colors.blue,
                         fixedSize: Size.fromWidth(MediaQuery.of(context).size.width),

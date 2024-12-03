@@ -23,7 +23,7 @@ Future<List<String>> findFilesWithString(String searchString, String directoryPa
 }
 
 void main() async {
-  const searchString = "No. of medications:";
+  const searchString = "Send Invites";
   const directoryPath = "./lib";
 
   try {
