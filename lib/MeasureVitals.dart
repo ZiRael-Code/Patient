@@ -1,3 +1,5 @@
+import '../Main/Dashboard.dart';
+import 'Main/Dashboard.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
@@ -20,8 +22,8 @@ class _MeasureVitalsState  extends State<MeasureVitals>{
           title: Row(
             children: [
               Container(
-                width: 35,
-                height: 35,
+                width: getFontSize(35, context),
+                height: getFontSize(35, context),
                 padding: EdgeInsets.all(10),
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(50),
@@ -29,18 +31,18 @@ class _MeasureVitalsState  extends State<MeasureVitals>{
                 ),
                 child: SvgPicture.asset(
                   'assets/images/back.svg',
-                  width: 8.0,
-                  height: 15,
+                  width: getFontSize(8.0, context),
+                  height: getFontSize(15, context),
                 ),
               ),
               Container(
-                margin: EdgeInsets.only(left: 35),
+                margin: EdgeInsets.only(left: getFontSize(35, context)),
                 alignment: Alignment.center,
                 child: Center(
                   child: Text(
                     'Measure vital',
                     style: TextStyle(
-                      fontSize: 20,
+                      fontSize: getFontSize(20, context),
                       fontStyle: FontStyle.normal,
                     ),
                   ),
@@ -58,22 +60,22 @@ class _MeasureVitalsState  extends State<MeasureVitals>{
                 'Heart Rate',
                 style: TextStyle(
                   fontWeight: FontWeight.bold,
-                  fontSize: 20,
+                  fontSize: getFontSize(20, context),
                 ),
               ),
-              SizedBox(height: 20),
+              SizedBox(height: getFontSize(20, context)),
               SvgPicture.asset('assets/images/cuate.svg'),
-              SizedBox(height: 20),
+              SizedBox(height: getFontSize(20, context)),
               Text(
                 'You don’t have any device yet',
                 style: TextStyle(
-                  fontSize: 14,
+                  fontSize: getFontSize(14, context),
                 ),
               ),
-              SizedBox(height: 10),
+              SizedBox(height: getFontSize(10, context)),
               Container(
-                width: 215,
-                height: 54,
+                width: getFontSize(215, context),
+                height: getFontSize(54, context),
                 child: ElevatedButton(
                   onPressed: () {},
                   style: ElevatedButton.styleFrom(
@@ -86,42 +88,42 @@ class _MeasureVitalsState  extends State<MeasureVitals>{
                     'Order a device',
                     style: TextStyle(
                       color: Colors.white,
-                      fontSize: 14,
+                      fontSize: getFontSize(14, context),
                     ),
                   ),
                 ),
               ),
-              SizedBox(height: 25),
+              SizedBox(height: getFontSize(25, context)),
               Align(
                 alignment: Alignment.centerLeft,
                 child: Text(
                   'Recommended devices',
                   style: TextStyle(
                     fontWeight: FontWeight.bold,
-                    fontSize: 18,
+                    fontSize: getFontSize(18, context),
                   ),
                 ),
               ),
-              SizedBox(height: 10),
+              SizedBox(height: getFontSize(10, context)),
               Expanded(
                 child: SingleChildScrollView(
                   child: Column(
                     children: [
-                      SizedBox(height: 15),
+                      SizedBox(height: getFontSize(15, context)),
                       recomendDevice(
                         name: "Wellue BP2 Connect Device",
                         measures: "Measures 1 vital",
                         image: "assets/images/printer.svg",
                         prices: "N25,000",
                       ),
-                      SizedBox(height: 15),
+                      SizedBox(height: getFontSize(15, context)),
                       recomendDevice(
                         name: "Wellue BP2 Connect Device",
                         measures: "Measures 3 vitals",
                         image: "assets/images/printer.svg",
                         prices: "N25,000",
                       ),
-                      SizedBox(height: 15),
+                      SizedBox(height: getFontSize(15, context)),
                       recomendDevice(
                         name: "Wellue BP2 Connect Device",
                         measures: "Measures 1 vital",
@@ -151,7 +153,7 @@ class _MeasureVitalsState  extends State<MeasureVitals>{
       decoration: BoxDecoration(
         border: Border.all(
           color: Colors.black.withOpacity(0.1),
-          width: 1,
+          width: getFontSize(1, context),
         ),
         borderRadius: BorderRadius.circular(12),
       ),
@@ -165,12 +167,12 @@ class _MeasureVitalsState  extends State<MeasureVitals>{
                   name,
                   style: TextStyle(
                     fontWeight: FontWeight.bold,
-                    fontSize: 16,
+                    fontSize: getFontSize(16, context),
                   ),
                 ),
-                SizedBox(height: 8),
+                SizedBox(height: getFontSize(8, context)),
                 Container(
-                  margin: EdgeInsets.only(left: 10),
+                  margin: EdgeInsets.only(left: getFontSize(10, context)),
                   padding: EdgeInsets.all(8),
                   decoration: BoxDecoration(
                     color: Colors.grey.withOpacity(0.2),
@@ -178,18 +180,18 @@ class _MeasureVitalsState  extends State<MeasureVitals>{
                   ),
                   child: Text(measures),
                 ),
-                SizedBox(height: 8),
+                SizedBox(height: getFontSize(8, context)),
                 Text(
                   prices,
                   style: TextStyle(
                     fontWeight: FontWeight.bold,
                     color: Colors.blue,
-                    fontSize: 20,
+                    fontSize: getFontSize(20, context),
                   ),
                 ),
-                SizedBox(height: 16),
+                SizedBox(height: getFontSize(16, context)),
                 SizedBox(
-                  width: 134,
+                  width: getFontSize(134, context),
                   child: ElevatedButton(
                     onPressed: () {},
                     style: ElevatedButton.styleFrom(
@@ -204,11 +206,11 @@ class _MeasureVitalsState  extends State<MeasureVitals>{
               ],
             ),
           ),
-          SizedBox(height: 15),
+          SizedBox(height: getFontSize(15, context)),
           Container(
             padding: EdgeInsets.all(12),
-            height: 110,
-            width: 110,
+            height: getFontSize(110, context),
+            width: getFontSize(110, context),
             decoration: BoxDecoration(
               color: Colors.grey.withOpacity(0.34),
               borderRadius: BorderRadius.circular(50),

@@ -1,3 +1,4 @@
+import '../Main/Dashboard.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_app/Medication/DrugInformation.dart';
@@ -13,7 +14,7 @@ void main(){
 }
 
 class PrescriptionDetails extends StatefulWidget {
-  const PrescriptionDetails({super.key});
+  PrescriptionDetails({super.key});
   @override
   _PrescriptionDetailsScreen createState() => _PrescriptionDetailsScreen();
 }
@@ -34,16 +35,16 @@ class _PrescriptionDetailsScreen extends  State<PrescriptionDetails> {
           title: Row(
             children: [
               Container(
-                width: 35,
-                height: 35,
+                width: getFontSize(35, context),
+                height: getFontSize(35, context),
                 padding: EdgeInsets.all(10),
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(50),
                   color: Color(0xFFE5E5E5),
                 ),
                 child: SvgPicture.asset('assets/images/back.svg',
-                  width: 8.0,
-                  height: 15,),
+                  width: getFontSize(8.0, context),
+                  height: getFontSize(15, context),),
               ),
               Spacer(),
               Container(
@@ -52,7 +53,7 @@ class _PrescriptionDetailsScreen extends  State<PrescriptionDetails> {
                 Center(child: Text(
                   'Prescription details',
                   style: TextStyle(
-                      fontSize: 20,
+                      fontSize: getFontSize(20, context),
                       fontStyle: FontStyle.normal
                   ),
                 ),
@@ -67,27 +68,27 @@ class _PrescriptionDetailsScreen extends  State<PrescriptionDetails> {
         body: SingleChildScrollView(
           child:
         Container(
-            padding: EdgeInsets.only(bottom: 30, left: 15, right: 15),
+            padding: EdgeInsets.only(bottom: getFontSize(30, context), left: getFontSize(15, context), right: getFontSize(15, context)),
             child:
         Align(
           child:
       Column(
       children: [
-        SizedBox(height: 30),
+        SizedBox(height: getFontSize(30, context)),
         Align(
           alignment: Alignment.centerLeft,
           child:
-        Text('Current prescriptions', style: TextStyle(fontWeight: FontWeight.bold,fontSize: 18, color: Color(0xff2E2E42)),),
+        Text('Current prescriptions', style: TextStyle(fontWeight: FontWeight.bold,fontSize: getFontSize(18, context), color: Color(0xff2E2E42)),),
         ),
-          SizedBox(height: 20),
+          SizedBox(height: getFontSize(20, context)),
         Container(
-            margin: EdgeInsets.only(bottom: 20),
+            margin: EdgeInsets.only(bottom: getFontSize(20, context)),
           child: 
         Row(
           children: [
             Container(
-              padding: EdgeInsets.only(left: 16, right: 16, top: 12, bottom: 12),
-              margin: EdgeInsets.only(right: 10),
+              padding: EdgeInsets.only(left: getFontSize(16, context), right: getFontSize(16, context), top: getFontSize(12, context), bottom: getFontSize(12, context)),
+              margin: EdgeInsets.only(right: getFontSize(10, context)),
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(50),
                 color: Colors.blue,
@@ -95,13 +96,13 @@ class _PrescriptionDetailsScreen extends  State<PrescriptionDetails> {
               child: Text(style: TextStyle(color: Colors.white),'14th June; 2022'),
             ),
             Container(
-              padding: EdgeInsets.only(left: 16, right: 16, top: 12, bottom: 12),
-              margin: EdgeInsets.only(right: 10),
+              padding: EdgeInsets.only(left: getFontSize(16, context), right: getFontSize(16, context), top: getFontSize(12, context), bottom: getFontSize(12, context)),
+              margin: EdgeInsets.only(right: getFontSize(10, context)),
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(50),
                 color: Colors.transparent,
                 border: Border.all(
-                  width: 1,
+                  width: getFontSize(1, context),
                   color: Colors.blue,
                 )
               ),
@@ -119,16 +120,16 @@ class _PrescriptionDetailsScreen extends  State<PrescriptionDetails> {
           child:
         Row(
           children: [
-            Text('July 2022', style: TextStyle( fontSize: 16,color: Colors.blue),),
-            SizedBox(width: 5),
+            Text('July 2022', style: TextStyle( fontSize: getFontSize(16, context),color: Colors.blue),),
+            SizedBox(width: getFontSize(5, context)),
             Icon(Icons.keyboard_arrow_down_outlined, color: Colors.blue,)
           ],
         ),
         ),
-        SizedBox(height: 8),
+        SizedBox(height: getFontSize(8, context)),
 
         Container(
-          margin: EdgeInsets.only(bottom: 15),
+          margin: EdgeInsets.only(bottom: getFontSize(15, context)),
           child: SingleChildScrollView(
             scrollDirection: Axis.horizontal,
             child:
@@ -179,18 +180,18 @@ class _PrescriptionDetailsScreen extends  State<PrescriptionDetails> {
         )),),
         Align(
             alignment: Alignment.centerLeft,
-            child: Text('Prescriptions', style: TextStyle(fontWeight: FontWeight.bold, fontSize: 18),))
-          ,SizedBox(height: 15),
+            child: Text('Prescriptions', style: TextStyle(fontWeight: FontWeight.bold, fontSize: getFontSize(18, context)),))
+          ,SizedBox(height: getFontSize(15, context)),
         Row(
           children: [
             Container(
-              margin: EdgeInsets.only(left: 8, right: 5),
-              width: 105,
+              margin: EdgeInsets.only(left: getFontSize(8, context), right: getFontSize(5, context)),
+              width: getFontSize(105, context),
               decoration: BoxDecoration(
                 color: Color(0xFF000000).withOpacity(0.90),
                 borderRadius: BorderRadius.circular(50),
               ),
-              padding: EdgeInsets.only(left: 14, right: 10),
+              padding: EdgeInsets.only(left: getFontSize(14, context), right: getFontSize(10, context)),
               child: DropdownButton<String>(
                 value: _selectedValue,
                 hint: Text(
@@ -202,7 +203,7 @@ class _PrescriptionDetailsScreen extends  State<PrescriptionDetails> {
                 isExpanded: true,
                 underline: SizedBox(),
                 style: TextStyle(
-                  fontSize: 15,
+                  fontSize: getFontSize(15, context),
                   color: Colors.white,
                 ),
                 icon: Icon(Icons.keyboard_arrow_down, color: Colors.white),
@@ -226,7 +227,7 @@ class _PrescriptionDetailsScreen extends  State<PrescriptionDetails> {
             ),
 
             Container(
-                margin: EdgeInsets.only(left: 8, right: 5),
+                margin: EdgeInsets.only(left: getFontSize(8, context), right: getFontSize(5, context)),
                 padding: EdgeInsets.all(16),
                 decoration: BoxDecoration(
                   color: Color(0xff2E2E421A),
@@ -234,14 +235,14 @@ class _PrescriptionDetailsScreen extends  State<PrescriptionDetails> {
                 ),
                 child: Row(
                     children: [
-                      Text('Total amount of drugs left: ',  style: TextStyle(fontSize: 13,)),
-                      Text('80%', style: TextStyle(fontSize: 13, fontWeight: FontWeight.bold)),
+                      Text('Total amount of drugs left: ',  style: TextStyle(fontSize: getFontSize(13, context),)),
+                      Text('80%', style: TextStyle(fontSize: getFontSize(13, context), fontWeight: FontWeight.bold)),
                     ]
                 )
             )
           ],
         ),
-        SizedBox(height: 25,),
+        SizedBox(height: getFontSize(25, context),),
         drug(
             index: 0,
             icon: 'assets/images/drug1.svg',
@@ -267,9 +268,9 @@ class _PrescriptionDetailsScreen extends  State<PrescriptionDetails> {
             dosage: '1 pill(s) . 2x daily'
         ),
 
-       Align(alignment: Alignment.centerLeft, child:  Text('History', style: TextStyle(fontWeight: FontWeight.bold,fontSize: 18),),
+       Align(alignment: Alignment.centerLeft, child:  Text('History', style: TextStyle(fontWeight: FontWeight.bold,fontSize: getFontSize(18, context)),),
        ),
-        SizedBox(height: 15),
+        SizedBox(height: getFontSize(15, context)),
           history(
               des: "Prescription by Dr. Chima",
               date: '11th June - 11 July 2022'
@@ -296,16 +297,16 @@ class _PrescriptionDetailsScreen extends  State<PrescriptionDetails> {
     color
   }) {
     return Container(
-      margin: EdgeInsets.only(right: 5),
+      margin: EdgeInsets.only(right: getFontSize(5, context)),
         child: Container(
             child: Stack(
             children: [
 
               Container(
                 padding: EdgeInsets.all(5),
-                margin: EdgeInsets.only(top: 7),
-                width: 48,
-                height: 67,
+                margin: EdgeInsets.only(top: getFontSize(7, context)),
+                width: getFontSize(48, context),
+                height: getFontSize(67, context),
                 decoration: BoxDecoration(
                   color: isToday ? Colors.blue : Color(0xffE2EDFF).withOpacity(0.30),
                   borderRadius: BorderRadius.circular(8),
@@ -313,8 +314,8 @@ class _PrescriptionDetailsScreen extends  State<PrescriptionDetails> {
                 child: Column(
                   children: [
                     Text(day, style: TextStyle(color: isToday ? Colors.white : Colors.black,),),
-                    SizedBox(height: 4,),
-                    Text(date, style: TextStyle(color: isToday ? Colors.white : Colors.black, fontSize: 24, fontWeight: FontWeight.bold),)
+                    SizedBox(height: getFontSize(4, context),),
+                    Text(date, style: TextStyle(color: isToday ? Colors.white : Colors.black, fontSize: getFontSize(24, context), fontWeight: FontWeight.bold),)
                   ],
                 ),
               ),
@@ -323,9 +324,9 @@ class _PrescriptionDetailsScreen extends  State<PrescriptionDetails> {
                 alignment: Alignment.topCenter,
                 child:
                 Container(
-                margin: EdgeInsets.only(left: 20),
-                  width: 8,
-                  height: 8,
+                margin: EdgeInsets.only(left: getFontSize(20, context)),
+                  width: getFontSize(8, context),
+                  height: getFontSize(8, context),
                   decoration: BoxDecoration(
                     color: color,
                     borderRadius: BorderRadius.circular(50),
@@ -349,19 +350,19 @@ class _PrescriptionDetailsScreen extends  State<PrescriptionDetails> {
 
       child: Container(
         width: double.infinity,
-        margin: EdgeInsets.only(bottom: 15),
+        margin: EdgeInsets.only(bottom: getFontSize(15, context)),
         padding: EdgeInsets.all(15),
         decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(14),
-            border: Border.all(width: 0.05, color: Colors.black)
+            border: Border.all(width: getFontSize(0.05, context), color: Colors.black)
         ),
         child: Row(
           children: [
             Container(
-              margin: EdgeInsets.only(right: 15),
+              margin: EdgeInsets.only(right: getFontSize(15, context)),
               padding: EdgeInsets.all(10),
-              width: 39,
-              height: 56,
+              width: getFontSize(39, context),
+              height: getFontSize(56, context),
               decoration: BoxDecoration(
                 color: Color(0xff40FB5E).withOpacity(0.15),
                 borderRadius: BorderRadius.circular(14),
@@ -372,14 +373,14 @@ class _PrescriptionDetailsScreen extends  State<PrescriptionDetails> {
               mainAxisAlignment: MainAxisAlignment.start,
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Text(name, style: TextStyle(color: Color(0xff2E2E42), fontSize: 20),),
+                Text(name, style: TextStyle(color: Color(0xff2E2E42), fontSize: getFontSize(20, context)),),
                 Text(dosage, style: TextStyle(color: Color(0xff2E2E42))),
               ],
             ),
             Spacer(),
             Container(
-                width: 33,
-                height: 33,
+                width: getFontSize(33, context),
+                height: getFontSize(33, context),
                 decoration: BoxDecoration(
                   shape: BoxShape.circle,
                   color: isSelectedList[index] ? Colors.green : Color(0xffF2F2F2),
@@ -399,13 +400,13 @@ class _PrescriptionDetailsScreen extends  State<PrescriptionDetails> {
   history({required String des,
     required String date}) {
     return Container(
-      padding: EdgeInsets.only(left: 14,),
+      padding: EdgeInsets.only(left: getFontSize(14, context),),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Row(
             children: [
-              Text(des, style: TextStyle(fontSize: 18, color: Colors.black)),
+              Text(des, style: TextStyle(fontSize: getFontSize(18, context), color: Colors.black)),
               Spacer(),
       GestureDetector(
         onTap: () {
@@ -418,17 +419,17 @@ class _PrescriptionDetailsScreen extends  State<PrescriptionDetails> {
                   color: Color(0xffE2EDFF),
                   borderRadius: BorderRadius.circular(50),
                 ),
-                padding: EdgeInsets.only(right: 10, left: 10, top: 5, bottom: 5),
-                child: Text('View details', style: TextStyle(fontSize: 10, color: Colors.blue)),
+                padding: EdgeInsets.only(right: getFontSize(10, context), left: getFontSize(10, context), top: getFontSize(5, context), bottom: getFontSize(5, context)),
+                child: Text('View details', style: TextStyle(fontSize: getFontSize(10, context), color: Colors.blue)),
               ),
               ),
             ],
           ),
-          SizedBox(height: 5),
-          Text(date, style: TextStyle(fontSize: 12, color: Color(0xff000000).withOpacity(0.60)),),
-          SizedBox(height: 20),
+          SizedBox(height: getFontSize(5, context)),
+          Text(date, style: TextStyle(fontSize: getFontSize(12, context), color: Color(0xff000000).withOpacity(0.60)),),
+          SizedBox(height: getFontSize(20, context)),
           SvgPicture.asset('assets/images/line.svg'),
-          SizedBox(height: 20),
+          SizedBox(height: getFontSize(20, context)),
         ],
       ),
     );
@@ -452,9 +453,9 @@ class _PrescriptionDetailsScreen extends  State<PrescriptionDetails> {
               // Title
               Text(
                 'Drug Information',
-                style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+                style: TextStyle(fontSize: getFontSize(18, context), fontWeight: FontWeight.bold),
               ),
-              SizedBox(height: 15),
+              SizedBox(height: getFontSize(15, context)),
 
               // Drug Name
               Row(
@@ -463,18 +464,18 @@ class _PrescriptionDetailsScreen extends  State<PrescriptionDetails> {
                     'Drug name:',
                     style: TextStyle(color: Color(0xff2E2E42)),
                   ),
-                  SizedBox(width: 8),
+                  SizedBox(width: getFontSize(8, context)),
                   Expanded(
                     child: Text(
                       'Ibuprofen 500mg x 24',
-                      style: TextStyle(color: Colors.blue, fontSize: 20),
+                      style: TextStyle(color: Colors.blue, fontSize: getFontSize(20, context)),
                     ),
                   ),
                 ],
               ),
-              SizedBox(height: 15),
+              SizedBox(height: getFontSize(15, context)),
               SvgPicture.asset('assets/images/line.svg'),
-              SizedBox(height: 15),
+              SizedBox(height: getFontSize(15, context)),
 
               // Drug Type and Dosage
               Row(
@@ -483,8 +484,8 @@ class _PrescriptionDetailsScreen extends  State<PrescriptionDetails> {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Text('Drug type:', style: TextStyle(color: Color(0xff666666))),
-                      SizedBox(height: 4),
-                      Text('Capsules', style: TextStyle(color: Colors.black, fontSize: 18)),
+                      SizedBox(height: getFontSize(4, context)),
+                      Text('Capsules', style: TextStyle(color: Colors.black, fontSize: getFontSize(18, context))),
                     ],
                   ),
                   Spacer(),
@@ -492,13 +493,13 @@ class _PrescriptionDetailsScreen extends  State<PrescriptionDetails> {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Text('Dosage:', style: TextStyle(color: Color(0xff666666))),
-                      SizedBox(height: 4),
-                      Text('2 pills', style: TextStyle(color: Colors.black, fontSize: 18)),
+                      SizedBox(height: getFontSize(4, context)),
+                      Text('2 pills', style: TextStyle(color: Colors.black, fontSize: getFontSize(18, context))),
                     ],
                   ),
                 ],
               ),
-              SizedBox(height: 20),
+              SizedBox(height: getFontSize(20, context)),
 
               // Amount Used and Total Duration
               Row(
@@ -507,8 +508,8 @@ class _PrescriptionDetailsScreen extends  State<PrescriptionDetails> {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Text('Amount used:', style: TextStyle(color: Color(0xff666666))),
-                      SizedBox(height: 4),
-                      Text('5/20', style: TextStyle(color: Colors.black, fontSize: 18)),
+                      SizedBox(height: getFontSize(4, context)),
+                      Text('5/20', style: TextStyle(color: Colors.black, fontSize: getFontSize(18, context))),
                     ],
                   ),
                   Spacer(),
@@ -516,13 +517,13 @@ class _PrescriptionDetailsScreen extends  State<PrescriptionDetails> {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Text('Total duration:', style: TextStyle(color: Color(0xff666666))),
-                      SizedBox(height: 4),
-                      Text('2 weeks', style: TextStyle(color: Colors.black, fontSize: 18)),
+                      SizedBox(height: getFontSize(4, context)),
+                      Text('2 weeks', style: TextStyle(color: Colors.black, fontSize: getFontSize(18, context))),
                     ],
                   ),
                 ],
               ),
-              SizedBox(height: 20),
+              SizedBox(height: getFontSize(20, context)),
 
               // Frequency
               Align(
@@ -531,45 +532,45 @@ class _PrescriptionDetailsScreen extends  State<PrescriptionDetails> {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text('Frequency:', style: TextStyle(color: Color(0xff666666))),
-                    SizedBox(height: 4),
+                    SizedBox(height: getFontSize(4, context)),
                     Text(
                       '3X daily [ Morning, Afternoon, Night ]',
-                      style: TextStyle(color: Colors.black, fontSize: 18),
+                      style: TextStyle(color: Colors.black, fontSize: getFontSize(18, context)),
                     ),
                   ],
                 ),
               ),
-              SizedBox(height: 20),
+              SizedBox(height: getFontSize(20, context)),
 
               // Commentary
               Align(
                 alignment: Alignment.centerLeft,
                 child: Text('Commentary:', style: TextStyle(color: Color(0xff666666))),
               ),
-              SizedBox(height: 15),
+              SizedBox(height: getFontSize(15, context)),
               Container(
-                padding: const EdgeInsets.all(14),
+                padding: EdgeInsets.all(14),
                 decoration: BoxDecoration(
                   color: Color(0xffF9F9F9),
                   borderRadius: BorderRadius.circular(14),
                 ),
                 child: Text(
                   'The patient should ensure to use the medications as prescribed and also use the medication after eating. On no occasion should the patient use the medication on an empty stomach.',
-                  style: TextStyle(color: Color(0xff666666), fontSize: 16),
+                  style: TextStyle(color: Color(0xff666666), fontSize: getFontSize(16, context)),
                 ),
               ),
-              SizedBox(height: 25),
+              SizedBox(height: getFontSize(25, context)),
 
               SvgPicture.asset('assets/images/line.svg'),
-              SizedBox(height: 20),
+              SizedBox(height: getFontSize(20, context)),
 
               // Action Section
               Row(
                 children: [
                   // Circle Button
                   Container(
-                    width: 66,
-                    height: 66,
+                    width: getFontSize(66, context),
+                    height: getFontSize(66, context),
                     decoration: BoxDecoration(
                       color: isToday ? Colors.green : Color(0xffF2F2F2),
                       shape: BoxShape.circle,
@@ -583,7 +584,7 @@ class _PrescriptionDetailsScreen extends  State<PrescriptionDetails> {
                     )
                         : null,
                   ),
-                  SizedBox(width: 20),
+                  SizedBox(width: getFontSize(20, context)),
 
                   // Description
                   Expanded(
@@ -592,12 +593,12 @@ class _PrescriptionDetailsScreen extends  State<PrescriptionDetails> {
                       children: [
                         Text(
                           'Not used this morning',
-                          style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+                          style: TextStyle(fontSize: getFontSize(18, context), fontWeight: FontWeight.bold),
                         ),
-                        SizedBox(height: 4),
+                        SizedBox(height: getFontSize(4, context)),
                         Text(
                           'Click on this circle to indicate that you’ve used the medication.',
-                          style: TextStyle(fontSize: 14, color: Color(0xff2E2E42)),
+                          style: TextStyle(fontSize: getFontSize(14, context), color: Color(0xff2E2E42)),
                         ),
                       ],
                     ),
@@ -620,12 +621,12 @@ class _PrescriptionDetailsScreen extends  State<PrescriptionDetails> {
         backgroundColor: Colors.white,
         builder: (BuildContext context) {
           return Padding(
-            padding: const EdgeInsets.all(16.0),
+            padding: EdgeInsets.all(16.0),
             child: Column(
               children: [
                 // Top Section with arrows, month, and year
                 Padding(
-                  padding: const EdgeInsets.symmetric(vertical: 16.0),
+                  padding: EdgeInsets.symmetric(vertical: 16.0),
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
@@ -645,15 +646,15 @@ class _PrescriptionDetailsScreen extends  State<PrescriptionDetails> {
                           Text(
                             DateFormat('MMMM').format(_focusedDay),
                             style: TextStyle(
-                              fontSize: 20,
+                              fontSize: getFontSize(20, context),
                               fontWeight: FontWeight.bold,
                             ),
                           ),
-                          SizedBox(width: 5),
+                          SizedBox(width: getFontSize(5, context)),
                           Text(
                             _focusedDay.year.toString(),
                             style: TextStyle(
-                              fontSize: 20,
+                              fontSize: getFontSize(20, context),
                             ),
                           ),
                         ],
@@ -733,7 +734,7 @@ class _PrescriptionDetailsScreen extends  State<PrescriptionDetails> {
                   ),
                 ),
 
-                SizedBox(height: 16),
+                SizedBox(height: getFontSize(16, context)),
 
                 // Legend Section
                 Column(
@@ -773,17 +774,17 @@ class _PrescriptionDetailsScreen extends  State<PrescriptionDetails> {
       }
 
       return Container(
-        margin: EdgeInsets.only(right: 0),
+        margin: EdgeInsets.only(right: getFontSize(0, context)),
         padding: EdgeInsets.all(5),
-        width: 48,
-        height: 67,
+        width: getFontSize(48, context),
+        height: getFontSize(67, context),
         child: Stack(
           children: [
             Container(
               padding: EdgeInsets.all(5),
-              margin: EdgeInsets.only(top: 7),
-              width: 48,
-              height: 67,
+              margin: EdgeInsets.only(top: getFontSize(7, context)),
+              width: getFontSize(48, context),
+              height: getFontSize(67, context),
               decoration: BoxDecoration(
                 color: isToday ? Colors.blue : Color(0xffE2EDFF).withOpacity(0.30),
                 borderRadius: BorderRadius.circular(8),
@@ -797,12 +798,12 @@ class _PrescriptionDetailsScreen extends  State<PrescriptionDetails> {
                       color: isToday ? Colors.white : Colors.black,
                     ),
                   ),
-                  SizedBox(height: 4),
+                  SizedBox(height: getFontSize(4, context)),
                   Text(
                     date,
                     style: TextStyle(
                       color: isToday ? Colors.white : Colors.black,
-                      fontSize: 24,
+                      fontSize: getFontSize(24, context),
                       fontWeight: FontWeight.bold,
                     ),
                   ),
@@ -813,9 +814,9 @@ class _PrescriptionDetailsScreen extends  State<PrescriptionDetails> {
               Align(
                 alignment: Alignment.topCenter,
                 child: Container(
-                  margin: EdgeInsets.only(top: 4), // Adjust as needed for positioning
-                  width: 8,
-                  height: 8,
+                  margin: EdgeInsets.only(top: getFontSize(4, context)), // Adjust as needed for positioning
+                  width: getFontSize(8, context),
+                  height: getFontSize(8, context),
                   decoration: BoxDecoration(
                     color: dotColor,
                     borderRadius: BorderRadius.circular(50),
@@ -832,14 +833,14 @@ class _PrescriptionDetailsScreen extends  State<PrescriptionDetails> {
       return Row(
         children: [
           Container(
-            width: 8,
-            height: 8,
+            width: getFontSize(8, context),
+            height: getFontSize(8, context),
             decoration: BoxDecoration(
               color: color,
               borderRadius: BorderRadius.circular(50),
             ),
           ),
-          SizedBox(width: 8),
+          SizedBox(width: getFontSize(8, context)),
           RichText(
             text: TextSpan(
               style: TextStyle(color: Colors.black),
@@ -849,7 +850,7 @@ class _PrescriptionDetailsScreen extends  State<PrescriptionDetails> {
               ],
             ),
           ),
-          SizedBox(height: 8),
+          SizedBox(height: getFontSize(8, context)),
         ],
       );
     }

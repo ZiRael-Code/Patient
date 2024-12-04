@@ -1,3 +1,4 @@
+import '../Main/Dashboard.dart';
 import 'package:flutter/material.dart';
 
 class Monty extends StatefulWidget {
@@ -39,7 +40,7 @@ class _MontyState extends State<Monty> {
               ),
               Text(
                 '${_selectedYear.year}',
-                style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
+                style: TextStyle(fontSize: getFontSize(24, context), fontWeight: FontWeight.bold),
               ),
               IconButton(
                 icon: Icon(Icons.arrow_right),
@@ -51,7 +52,7 @@ class _MontyState extends State<Monty> {
               ),
             ],
           ),
-          SizedBox(height: 20),
+          SizedBox(height: getFontSize(20, context)),
 
           // Month Selector (Grid of months)
           Expanded(
@@ -85,7 +86,7 @@ class _MontyState extends State<Monty> {
                           color: _selectedMonth == _months[index]
                               ? Colors.white
                               : Colors.black,
-                          fontSize: 18,
+                          fontSize: getFontSize(18, context),
                         ),
                       ),
                     ),

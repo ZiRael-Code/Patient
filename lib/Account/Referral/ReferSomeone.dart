@@ -1,3 +1,4 @@
+import '../../Main/Dashboard.dart';
 
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -11,7 +12,7 @@ void main(){
 }
 
 class ReferSomeone extends StatefulWidget {
-  const ReferSomeone({super.key});
+  ReferSomeone({super.key});
   @override
   _ReferSomeoneScreen createState() => _ReferSomeoneScreen();
 }
@@ -41,16 +42,16 @@ class _ReferSomeoneScreen extends  State<ReferSomeone> {
               title: Row(
                 children: [
                   Container(
-                    width: 35,
-                    height: 35,
+                    width: getFontSize(35, context),
+                    height: getFontSize(35, context),
                     padding: EdgeInsets.all(10),
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(50),
                       color: Color(0xFFE5E5E5),
                     ),
                     child: SvgPicture.asset('assets/images/back.svg',
-                      width: 8.0,
-                      height: 15,),
+                      width: getFontSize(8.0, context),
+                      height: getFontSize(15, context),),
                   ),
                   Spacer(),
                   Container(
@@ -59,7 +60,7 @@ class _ReferSomeoneScreen extends  State<ReferSomeone> {
                     Center(child: Text(
                       'Refer someone',
                       style: TextStyle(
-                          fontSize: 20,
+                          fontSize: getFontSize(20, context),
                           fontStyle: FontStyle.normal
                       ),
                     ),
@@ -75,7 +76,7 @@ class _ReferSomeoneScreen extends  State<ReferSomeone> {
               padding: EdgeInsets.all(20),
               child:
               Column(children: [
-                SizedBox(height: 20,),
+                SizedBox(height: getFontSize(20, context),),
 
 
 
@@ -84,31 +85,31 @@ class _ReferSomeoneScreen extends  State<ReferSomeone> {
                   children: [
                     // Container with person icon
                     Container(
-                      width: 49,
-                      height: 49,
+                      width: getFontSize(49, context),
+                      height: getFontSize(49, context),
                       decoration: BoxDecoration(
                         color: Colors.blue,
                         shape: BoxShape.circle,
                       ),
                       child: Icon(Icons.person, color: Colors.white),
                     ),
-                    SizedBox(width: 10),
+                    SizedBox(width: getFontSize(10, context)),
 
                     Text(
                       'Referral link:',
-                      style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
+                      style: TextStyle(fontSize: getFontSize(16, context), fontWeight: FontWeight.bold),
                     ),
-                    SizedBox(width: 10), // Spacing
+                    SizedBox(width: getFontSize(10, context)), // Spacing
 
                     Expanded(
                       child: Text(
                         referralCode,
-                        style: TextStyle(fontSize: 16),
+                        style: TextStyle(fontSize: getFontSize(16, context)),
                         overflow: TextOverflow.ellipsis,
                       ),
                     ),
 
-                    SizedBox(width: 10),
+                    SizedBox(width: getFontSize(10, context)),
 
                     GestureDetector(
                       onTap: () {
@@ -118,8 +119,8 @@ class _ReferSomeoneScreen extends  State<ReferSomeone> {
                         );
                       },
                       child: Container(
-                        width: 79,
-                        height: 28,
+                        width: getFontSize(79, context),
+                        height: getFontSize(28, context),
                         decoration: BoxDecoration(
                           color: Color(0xFFE2EDFF),
                           borderRadius: BorderRadius.circular(5),
@@ -127,8 +128,8 @@ class _ReferSomeoneScreen extends  State<ReferSomeone> {
                         child: Row(
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
-                            Icon(Icons.copy, color: Colors.blue, size: 16),
-                            SizedBox(width: 5),
+                            Icon(Icons.copy, color: Colors.blue, size: getFontSize(16, context)),
+                            SizedBox(width: getFontSize(5, context)),
                             Text(
                               'Copy',
                               style: TextStyle(color: Colors.blue, fontWeight: FontWeight.bold),
@@ -139,9 +140,9 @@ class _ReferSomeoneScreen extends  State<ReferSomeone> {
                     ),
                   ],
                 ),
-                SizedBox(height: 20,),
+                SizedBox(height: getFontSize(20, context),),
                 SvgPicture.asset("assets/images/line.svg"),
-                SizedBox(height: 20,),
+                SizedBox(height: getFontSize(20, context),),
 
                 Container(
                   width: double.infinity,
@@ -160,14 +161,14 @@ class _ReferSomeoneScreen extends  State<ReferSomeone> {
                   ),
                 ),
 
-                SizedBox(height: 20,),
+                SizedBox(height: getFontSize(20, context),),
                 Text("[ ${size} selected ]", style: TextStyle(
                   color: Colors.blue,
-                  fontSize: 18,
+                  fontSize: getFontSize(18, context),
                   fontWeight: FontWeight.bold,
                 ),),
 
-                SizedBox(height: 15,),
+                SizedBox(height: getFontSize(15, context),),
 
                 contact(
                   alphaOrder: contacts[0].toString().characters.elementAt(0),
@@ -219,10 +220,10 @@ class _ReferSomeoneScreen extends  State<ReferSomeone> {
                     ),
                   ),
                   child: Padding(
-                    padding: const EdgeInsets.symmetric(vertical: 12.0, horizontal: 24.0),
+                    padding: EdgeInsets.symmetric(vertical: 12.0, horizontal: 24.0),
                     child: Text(
                       'Done',
-                      style: TextStyle(color: Colors.white, fontSize: 18),
+                      style: TextStyle(color: Colors.white, fontSize: getFontSize(18, context)),
                     ),
                   ),
                 ),
@@ -243,8 +244,8 @@ class _ReferSomeoneScreen extends  State<ReferSomeone> {
           Row(
             children: [
               Container(
-                width: 41,
-                height: 41,
+                width: getFontSize(41, context),
+                height: getFontSize(41, context),
                 decoration: BoxDecoration(
                   color: Color(0xff2e2e42),
                   shape: BoxShape.circle,
@@ -252,19 +253,19 @@ class _ReferSomeoneScreen extends  State<ReferSomeone> {
                 child: Center(
                   child: Text(
                     alphaOrder.toUpperCase(),
-                    style: TextStyle(fontSize: 16, color: Colors.white),
+                    style: TextStyle(fontSize: getFontSize(16, context), color: Colors.white),
                   ),
                 ),
               ),
-              SizedBox(width: 10),
+              SizedBox(width: getFontSize(10, context)),
               Text(
                 name,
-                style: TextStyle(fontSize: 16),
+                style: TextStyle(fontSize: getFontSize(16, context)),
               ),
               Spacer(),
               Container(
-                width: 33,
-                height: 33,
+                width: getFontSize(33, context),
+                height: getFontSize(33, context),
                 decoration: BoxDecoration(
                   shape: BoxShape.circle,
                   color: Color(0xffF2F2F2),
@@ -275,9 +276,9 @@ class _ReferSomeoneScreen extends  State<ReferSomeone> {
               ),
             ],
           ),
-          SizedBox(height: 8),
+          SizedBox(height: getFontSize(8, context)),
           SvgPicture.asset('assets/images/line.svg'),
-          SizedBox(height: 10),
+          SizedBox(height: getFontSize(10, context)),
 
         ],
       ),

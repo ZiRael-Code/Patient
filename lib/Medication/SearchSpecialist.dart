@@ -1,13 +1,16 @@
+import '../Main/Dashboard.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+
+import '../Appointments/SpecialistProfile.dart';
 
 void main(){
   runApp(SearchSpecialist());
 }
 
 class SearchSpecialist extends StatefulWidget {
-  const SearchSpecialist({super.key});
+  SearchSpecialist({super.key});
   @override
   _SearchSpecialistScreen createState() => _SearchSpecialistScreen();
 }
@@ -25,16 +28,16 @@ class _SearchSpecialistScreen extends  State<SearchSpecialist> {
           title: Row(
             children: [
               Container(
-                width: 35,
-                height: 35,
+                width: getFontSize(35, context),
+                height: getFontSize(35, context),
                 padding: EdgeInsets.all(10),
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(50),
                   color: Color(0xFFE5E5E5),
                 ),
                 child: SvgPicture.asset('assets/images/back.svg',
-                  width: 8.0,
-                  height: 15,),
+                  width: getFontSize(8.0, context),
+                  height: getFontSize(15, context),),
               ),
               Spacer(),
               Container(
@@ -43,7 +46,7 @@ class _SearchSpecialistScreen extends  State<SearchSpecialist> {
                 Center(child: Text(
                   'Search',
                   style: TextStyle(
-                      fontSize: 20,
+                      fontSize: getFontSize(20, context),
                       fontStyle: FontStyle.normal
                   ),
                 ),
@@ -56,15 +59,15 @@ class _SearchSpecialistScreen extends  State<SearchSpecialist> {
         ),
         body: SingleChildScrollView(
           child: Container(
-            padding: EdgeInsets.only(bottom: 30, left: 15, right: 15),
+            padding: EdgeInsets.only(bottom: getFontSize(30, context), left: getFontSize(15, context), right: getFontSize(15, context)),
             child: Column(
               children: [
-                SizedBox(height: 30),
+                SizedBox(height: getFontSize(30, context)),
                 Row(
                   children: [
                     // Search field
                     Container(
-                      padding: EdgeInsets.only(right: 10),
+                      padding: EdgeInsets.only(right: getFontSize(10, context)),
                       width: MediaQuery.of(context).size.width * 0.70,
                       decoration: BoxDecoration(
                         color: Colors.grey[300],
@@ -89,7 +92,7 @@ class _SearchSpecialistScreen extends  State<SearchSpecialist> {
                         });
                       },
                       child: Container(
-                        margin: EdgeInsets.only(left: 12),
+                        margin: EdgeInsets.only(left: getFontSize(12, context)),
                         padding: EdgeInsets.all(12),
                         decoration: BoxDecoration(
                           color: Colors.grey[300],
@@ -107,7 +110,7 @@ class _SearchSpecialistScreen extends  State<SearchSpecialist> {
 
                 if (isFilterOpen)
                   Container(
-                    margin: EdgeInsets.only(top: 16), // Spacing between row and dropdown
+                    margin: EdgeInsets.only(top: getFontSize(16, context)), // Spacing between row and dropdown
                     width: double.infinity, // Matches screen width
                     padding: EdgeInsets.all(16),
                     decoration: BoxDecoration(
@@ -119,10 +122,10 @@ class _SearchSpecialistScreen extends  State<SearchSpecialist> {
                           "Filters",
                           style: TextStyle(
                             color: Colors.black,
-                            fontSize: 18,
+                            fontSize: getFontSize(18, context),
                           ),
                         ),
-                        SizedBox(height: 20), // Space between the text and buttons
+                        SizedBox(height: getFontSize(20, context)), // Space between the text and buttons
                         Wrap(
                           spacing: 5, // Space between buttons horizontally
                           runSpacing: 8, // Space between buttons vertically
@@ -147,7 +150,7 @@ class _SearchSpecialistScreen extends  State<SearchSpecialist> {
                                   padding: EdgeInsets.all(0),
                                   child: Text(
                                     btnText[i],
-                                    style: TextStyle(color: Color(0xff3C8AFF), fontSize: 11.5), // Button text color
+                                    style: TextStyle(color: Color(0xff3C8AFF), fontSize: getFontSize(11.5, context)), // Button text color
                                   ),
                                 ),
                               ),
@@ -156,7 +159,7 @@ class _SearchSpecialistScreen extends  State<SearchSpecialist> {
                       ],
                     ),
                   ),
-                SizedBox(height: 40),
+                SizedBox(height: getFontSize(40, context)),
 
                 // List of specialists
                 specialist(
@@ -208,7 +211,11 @@ class _SearchSpecialistScreen extends  State<SearchSpecialist> {
     required String specialization,
     required String workingType,
   }) {
-    return Container(
+    return GestureDetector(
+        onTap: () {
+      Navigator.of(context).push(MaterialPageRoute(builder: (builder)=> SpecialistProfile()));
+    },
+    child:  Container(
       child: Column(
         children: [
           Row(
@@ -216,8 +223,8 @@ class _SearchSpecialistScreen extends  State<SearchSpecialist> {
               Align(
                 alignment: Alignment.topCenter,
                 child: Container(
-                  height: 44,
-                  width: 44,
+                  height: getFontSize(44, context),
+                  width: getFontSize(44, context),
                   child: CircleAvatar(
                     radius: 22,
                     backgroundImage: AssetImage(image),
@@ -225,7 +232,7 @@ class _SearchSpecialistScreen extends  State<SearchSpecialist> {
                   ),
                 ),
               ),
-              SizedBox(width: 12),
+              SizedBox(width: getFontSize(12, context)),
               Column(
                 mainAxisAlignment: MainAxisAlignment.start,
                 crossAxisAlignment: CrossAxisAlignment.start,
@@ -233,15 +240,15 @@ class _SearchSpecialistScreen extends  State<SearchSpecialist> {
                   Text(
                     name,
                     style: TextStyle(
-                      fontSize: 18,
+                      fontSize: getFontSize(18, context),
                       color: Colors.black,
                     ),
                   ),
-                  SizedBox(height: 5),
+                  SizedBox(height: getFontSize(5, context)),
                   Text(
                     "${specialization} . ${workingType}",
                     style: TextStyle(
-                      fontSize: 12,
+                      fontSize: getFontSize(12, context),
                       color: Colors.grey.withOpacity(0.90),
                     ),
                   ),
@@ -249,10 +256,11 @@ class _SearchSpecialistScreen extends  State<SearchSpecialist> {
               ),
             ],
           ),
-          SizedBox(height: 15),
+          SizedBox(height: getFontSize(15, context)),
           SvgPicture.asset('assets/images/line.svg'),
-          SizedBox(height: 15),
+          SizedBox(height: getFontSize(15, context)),
         ],
+      ),
       ),
     );
   }

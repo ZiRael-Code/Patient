@@ -1,3 +1,5 @@
+import '../Main/Dashboard.dart';
+import 'Main/Dashboard.dart';
 import 'package:dotted_border/dotted_border.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -10,7 +12,7 @@ void main(){
 }
 
 class PersonalHistoryRecords extends StatefulWidget {
-  const PersonalHistoryRecords({super.key});
+  PersonalHistoryRecords({super.key});
   @override
   _PersonalHistoryRecordsScreen createState() => _PersonalHistoryRecordsScreen();
 }
@@ -28,16 +30,16 @@ class _PersonalHistoryRecordsScreen extends  State<PersonalHistoryRecords> {
           title: Row(
             children: [
               Container(
-                width: 35,
-                height: 35,
+                width: getFontSize(35, context),
+                height: getFontSize(35, context),
                 padding: EdgeInsets.all(10),
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(50),
                   color: Color(0xFFE5E5E5),
                 ),
                 child: SvgPicture.asset('assets/images/back.svg',
-                  width: 8.0,
-                  height: 15,),
+                  width: getFontSize(8.0, context),
+                  height: getFontSize(15, context),),
               ),
               Spacer(),
               Container(
@@ -46,7 +48,7 @@ class _PersonalHistoryRecordsScreen extends  State<PersonalHistoryRecords> {
                 Center(child: Text(
                   'Personal History Records',
                   style: TextStyle(
-                      fontSize: 20,
+                      fontSize: getFontSize(20, context),
                       fontStyle: FontStyle.normal
                   ),
                 ),
@@ -60,17 +62,17 @@ class _PersonalHistoryRecordsScreen extends  State<PersonalHistoryRecords> {
         ),
         body:
         Container(
-            padding: EdgeInsets.only(bottom: 30, left: 15, right: 15),
+            padding: EdgeInsets.only(bottom: getFontSize(30, context), left: getFontSize(15, context), right: getFontSize(15, context)),
             child:
         Align(
           child:
       Column(
       children: [
-        SizedBox(height: 30),
+        SizedBox(height: getFontSize(30, context)),
 
 
         SvgPicture.asset('assets/images/girl.svg'),
-        SizedBox(height: 30),
+        SizedBox(height: getFontSize(30, context)),
 
         Container(
           alignment: Alignment.center,
@@ -78,15 +80,15 @@ class _PersonalHistoryRecordsScreen extends  State<PersonalHistoryRecords> {
           child:
         Align(child: Text("If you have any previous or current health condition, you can add them here.", textAlign: TextAlign.center,
         style: TextStyle(
-          fontSize: 14,
+          fontSize: getFontSize(14, context),
         ),
         ),
         ),
         ),
 
-        SizedBox(height: 15,),
+        SizedBox(height: getFontSize(15, context),),
         SizedBox(
-          width: 200,
+          width: getFontSize(200, context),
         child: ElevatedButton(
           onPressed: () {
             Navigator.push(
@@ -104,21 +106,21 @@ class _PersonalHistoryRecordsScreen extends  State<PersonalHistoryRecords> {
             ),
           ),
           child: Padding(
-            padding: const EdgeInsets.symmetric(vertical: 12.0, horizontal: 24.0),
+            padding: EdgeInsets.symmetric(vertical: 12.0, horizontal: 24.0),
             child: Text(
               'Add a condition',
-              style: TextStyle(color: Colors.white, fontSize: 16),
+              style: TextStyle(color: Colors.white, fontSize: getFontSize(16, context)),
             ),
           ),
         ),
         ),
 
-       SizedBox(height: 75,),
+       SizedBox(height: getFontSize(75, context),),
     conditions.isEmpty ? nothing() : ListView(
         children: List.generate(conditions.length, (index) {
           String text = conditions[index];
           return
-              Text(text, style: TextStyle(fontSize: 16),);
+              Text(text, style: TextStyle(fontSize: getFontSize(16, context)),);
 
         }),
       ),
@@ -137,8 +139,8 @@ class _PersonalHistoryRecordsScreen extends  State<PersonalHistoryRecords> {
       borderType: BorderType.RRect,
       strokeWidth: 2,
       child: Container(
-        width: 342,
-        height: 206,
+        width: getFontSize(342, context),
+        height: getFontSize(206, context),
         decoration: BoxDecoration(
             color: Colors.grey.withOpacity(0.10)
         ),
@@ -146,8 +148,8 @@ class _PersonalHistoryRecordsScreen extends  State<PersonalHistoryRecords> {
           children: [
             Spacer(),
             SvgPicture.asset('assets/images/box.svg'),
-            SizedBox(height: 20,),
-            Text('No medical conditions added.', style: TextStyle(fontSize: 16,
+            SizedBox(height: getFontSize(20, context),),
+            Text('No medical conditions added.', style: TextStyle(fontSize: getFontSize(16, context),
                 color: Colors.black.withOpacity(0.40)),),
             Spacer(),
 

@@ -1,3 +1,4 @@
+import '../Main/Dashboard.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_app/Appointments/AppointmentPaymentSuccess.dart';
@@ -17,25 +18,25 @@ class AppointmentPaymentSummary extends StatelessWidget {
         title: Row(
           children: [
             Container(
-              width: 35,
-              height: 35,
+              width: getFontSize(35, context),
+              height: getFontSize(35, context),
               padding: EdgeInsets.all(10),
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(50),
                 color: Color(0xFFE5E5E5),
               ),
               child: SvgPicture.asset('assets/images/back.svg',
-                width: 8.0,
-                height: 15,),
+                width: getFontSize(8.0, context),
+                height: getFontSize(15, context),),
             ),
             Container(
-              margin: EdgeInsets.only(left: 35),
+              margin: EdgeInsets.only(left: getFontSize(35, context)),
               alignment: Alignment.center,
               child:
               Center(child: Text(
                 'Summary',
                 style: TextStyle(
-                    fontSize: 20,
+                    fontSize: getFontSize(20, context),
                     fontStyle: FontStyle.normal
                 ),
               ),
@@ -54,26 +55,26 @@ class AppointmentPaymentAppointmentPaymentSummaryState extends StatelessWidget{
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: EdgeInsets.only(left: 15, right: 15, bottom: 40),
+      padding: EdgeInsets.only(left: getFontSize(15, context), right: getFontSize(15, context), bottom: getFontSize(40, context)),
       child: Column(
       children: [
-        SizedBox(height:30),
+        SizedBox(height: getFontSize(30, context)),
         Container(
-          padding: EdgeInsets.only(left: 20),
+          padding: EdgeInsets.only(left: getFontSize(20, context)),
           width: MediaQuery.of(context).size.width,
-          height: 103,
+          height: getFontSize(103, context),
           child: Row(
             children: [
               Image.asset('assets/images/dr_profile.png',
-              width: 56,
-              height: 56,
+              width: getFontSize(56, context),
+              height: getFontSize(56, context),
               ),
             Column(
             mainAxisAlignment: MainAxisAlignment.center,
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Center(child: Text("Dr. Muiz Sanni", style: TextStyle(color: Colors.black, fontWeight: FontWeight.bold),)),
-              SizedBox(height: 10,),
+              SizedBox(height: getFontSize(10, context),),
               Center(child: Text("Cardiovascular surgeon", style: TextStyle(color: Colors.grey),),),
             ],
           ),
@@ -84,11 +85,11 @@ class AppointmentPaymentAppointmentPaymentSummaryState extends StatelessWidget{
             border: Border.all(color:  Colors.black.withOpacity(0.1)),
           ),
         ),
-        SizedBox(height: 20,),
+        SizedBox(height: getFontSize(20, context),),
         Container(
 
-          height: 56,
-          width: 180,
+          height: getFontSize(56, context),
+          width: getFontSize(180, context),
           child: Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [Center( child: Text("FEE: ", style: TextStyle(color: Colors.black),),),Center( child: Text("N25,000", style: TextStyle(fontWeight: FontWeight.bold, color: Colors.blue),),),]),
@@ -98,7 +99,7 @@ class AppointmentPaymentAppointmentPaymentSummaryState extends StatelessWidget{
             border: Border.all(color:  Colors.black.withOpacity(0.1)),
           ),
         ),
-        SizedBox(height: 10,),
+        SizedBox(height: getFontSize(10, context),),
         Wrap(
           direction: Axis.horizontal,
           children: [
@@ -109,7 +110,7 @@ class AppointmentPaymentAppointmentPaymentSummaryState extends StatelessWidget{
                 Text("12:00pm"),
               ],
             ),
-            SizedBox(height: 30),
+            SizedBox(height: getFontSize(30, context)),
             Row(
               children: [
                 Text("Date:"),
@@ -117,7 +118,7 @@ class AppointmentPaymentAppointmentPaymentSummaryState extends StatelessWidget{
                 Text("12th July 2022"),
               ],
             ),
-            SizedBox(height: 30),
+            SizedBox(height: getFontSize(30, context)),
             Row(
               children: [
                 Text("Appointment type:"),
@@ -125,7 +126,7 @@ class AppointmentPaymentAppointmentPaymentSummaryState extends StatelessWidget{
                 Text("Online"),
               ],
             ),
-            SizedBox(height: 30),
+            SizedBox(height: getFontSize(30, context)),
             Row(
               children: [
                 Text("Consultation fee:"),
@@ -135,7 +136,7 @@ class AppointmentPaymentAppointmentPaymentSummaryState extends StatelessWidget{
             ),
           ],
         ),
-        SizedBox(height: 20,),
+        SizedBox(height: getFontSize(20, context),),
         Container(
           width: MediaQuery.of(context).size.width,
           padding: EdgeInsets.all(12),
@@ -144,7 +145,7 @@ class AppointmentPaymentAppointmentPaymentSummaryState extends StatelessWidget{
             children: [
               SvgPicture.asset("assets/images/notify.svg"),
               Container(
-                  width: 250,
+                  width: getFontSize(250, context),
                   child:
               Text("A request for an appointment will first be sent to a doctor to confirm his availability.", softWrap: true,)
               ),
@@ -157,7 +158,7 @@ class AppointmentPaymentAppointmentPaymentSummaryState extends StatelessWidget{
         ),
 
         Spacer(),
-        SizedBox(height: 50),
+        SizedBox(height: getFontSize(50, context)),
         ElevatedButton(
           onPressed: () {
             Navigator.push(context, MaterialPageRoute(builder: (context) => AppointmentPaymentSuccess()));
@@ -170,10 +171,10 @@ class AppointmentPaymentAppointmentPaymentSummaryState extends StatelessWidget{
             ),
           ),
           child: Padding(
-            padding: const EdgeInsets.symmetric(vertical: 12.0, horizontal: 24.0),
+            padding: EdgeInsets.symmetric(vertical: 12.0, horizontal: 24.0),
             child: Text(
               'Continue  to schedule appointment',
-              style: TextStyle(color: Colors.white, fontSize: 16),
+              style: TextStyle(color: Colors.white, fontSize: getFontSize(16, context)),
             ),
           ),
         ),

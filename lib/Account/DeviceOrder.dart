@@ -1,3 +1,4 @@
+import '../Main/Dashboard.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_app/Account/DeviceInformation.dart';
@@ -11,7 +12,7 @@ void main(){
 }
 
 class DeviceOrder extends StatefulWidget {
-  const DeviceOrder({super.key});
+  DeviceOrder({super.key});
   @override
   _DeviceOrderScreen createState() => _DeviceOrderScreen();
 }
@@ -27,16 +28,16 @@ class _DeviceOrderScreen extends  State<DeviceOrder> with SingleTickerProviderSt
               title: Row(
                 children: [
                   Container(
-                    width: 35,
-                    height: 35,
+                    width: getFontSize(35, context),
+                    height: getFontSize(35, context),
                     padding: EdgeInsets.all(10),
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(50),
                       color: Color(0xFFE5E5E5),
                     ),
                     child: SvgPicture.asset('assets/images/back.svg',
-                      width: 8.0,
-                      height: 15,),
+                      width: getFontSize(8.0, context),
+                      height: getFontSize(15, context),),
                   ),
                   Spacer(),
                   Container(
@@ -45,7 +46,7 @@ class _DeviceOrderScreen extends  State<DeviceOrder> with SingleTickerProviderSt
                     Text(
                       'Device Order',
                       style: TextStyle(
-                          fontSize: 20,
+                          fontSize: getFontSize(20, context),
                           fontStyle: FontStyle.normal
                       ),
                     ),
@@ -57,15 +58,15 @@ class _DeviceOrderScreen extends  State<DeviceOrder> with SingleTickerProviderSt
             ),
             body:
             Container(
-                padding: EdgeInsets.only(bottom: 30, left: 15, right: 15),
+                padding: EdgeInsets.only(bottom: getFontSize(30, context), left: getFontSize(15, context), right: getFontSize(15, context)),
                 child:
                 Align(
                   child:
                   Column(
                     children: [
-                      SizedBox(height: 35,),
+                      SizedBox(height: getFontSize(35, context),),
                       Container(
-                        height: 50,
+                        height: getFontSize(50, context),
                         padding: EdgeInsets.all(4),
                         width: double.infinity,
                         decoration: BoxDecoration(
@@ -90,7 +91,7 @@ class _DeviceOrderScreen extends  State<DeviceOrder> with SingleTickerProviderSt
                         ),
                         ),
                       ),
-                      SizedBox(height: 10,),
+                      SizedBox(height: getFontSize(10, context),),
                       Expanded(
                         child: TabBarView(
                           controller: _tabController,
@@ -120,17 +121,17 @@ class _DeviceOrderScreen extends  State<DeviceOrder> with SingleTickerProviderSt
 currentOrder(){
     return Column(
       children: [
-        SizedBox(height: 25,),
+        SizedBox(height: getFontSize(25, context),),
         order(
             deviceName: 'Wellue BP2 connect device ',
             isShipped: 'Arriving on',
             text: '25th June 2022'),
-        SizedBox(height: 20,),
+        SizedBox(height: getFontSize(20, context),),
         order(
             deviceName: 'Wellue BP2 connect device ',
             text: '25th June 2022'),
 
-        SizedBox(height: 20,),
+        SizedBox(height: getFontSize(20, context),),
         order(
             deviceName: 'Wellue BP2 connect device ',
             text: '25th June 2022'),
@@ -156,16 +157,16 @@ currentOrder(){
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           SvgPicture.asset('assets/images/dev.svg'),
-          SizedBox(width: 20,),
+          SizedBox(width: getFontSize(20, context),),
           Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             mainAxisAlignment: MainAxisAlignment.start,
             children: [
-              Text(deviceName,maxLines: 2, style: TextStyle(fontSize: 16)),
-              SizedBox(width: 26,),
-              isShipped == null ? Container(child: SizedBox(height: 10,),) :Column(children: [
-                SizedBox(height:  10,),
-                Text(isShipped, style: TextStyle(fontSize: 12, color: Colors.grey)),
+              Text(deviceName,maxLines: 2, style: TextStyle(fontSize: getFontSize(16, context))),
+              SizedBox(width: getFontSize(26, context),),
+              isShipped == null ? Container(child: SizedBox(height: getFontSize(10, context),),) :Column(children: [
+                SizedBox(height: getFontSize(10, context),),
+                Text(isShipped, style: TextStyle(fontSize: getFontSize(12, context), color: Colors.grey)),
               ],),
 
               Align(alignment: Alignment.centerLeft,
@@ -186,14 +187,14 @@ currentOrder(){
 orderADevice(){
     return  SingleChildScrollView( child: Column(
       children: [
-        SizedBox(height: 25,),
+        SizedBox(height: getFontSize(25, context),),
         recomendDevice(
           name: "Wellue BP2 Connect Device",
           measures: "Measures 1 vital",
           image: "assets/images/printer.svg",
           prices: "N25,000",
         ),
-        SizedBox(height: 15,),
+        SizedBox(height: getFontSize(15, context),),
         recomendDevice(
           name: "Wellue BP2 Connect Device",
           measures: "Measures 1 vital",
@@ -201,7 +202,7 @@ orderADevice(){
           prices: "N25,000",
         ),
 
-        SizedBox(height: 15,),
+        SizedBox(height: getFontSize(15, context),),
         recomendDevice(
           name: "Wellue BP2 Connect Device",
           measures: "Measures 1 vital",
@@ -226,7 +227,7 @@ orderADevice(){
       decoration: BoxDecoration(
         border: Border.all(
           color: Colors.black.withOpacity(0.1),
-          width: 1,
+          width: getFontSize(1, context),
         ),
         borderRadius: BorderRadius.circular(20),
       ),
@@ -240,12 +241,12 @@ orderADevice(){
                   name,
                   style: TextStyle(
                     fontWeight: FontWeight.bold,
-                    fontSize: 16,
+                    fontSize: getFontSize(16, context),
                   ),
                 ),
-                SizedBox(height: 8),
+                SizedBox(height: getFontSize(8, context)),
                 Container(
-                  margin: EdgeInsets.only(left: 10),
+                  margin: EdgeInsets.only(left: getFontSize(10, context)),
                   padding: EdgeInsets.all(8),
                   decoration: BoxDecoration(
                     color: Colors.grey.withOpacity(0.2),
@@ -253,19 +254,19 @@ orderADevice(){
                   ),
                   child: Text(measures),
                 ),
-                SizedBox(height: 8),
+                SizedBox(height: getFontSize(8, context)),
                 Text(
                   prices,
                   style: TextStyle(
                     fontWeight: FontWeight.bold,
                     color: Colors.blue,
-                    fontSize: 20,
+                    fontSize: getFontSize(20, context),
                   ),
                 ),
-                SizedBox(height: 16),
+                SizedBox(height: getFontSize(16, context)),
 
               SizedBox(
-                width: 134,
+                width: getFontSize(134, context),
                 child: ElevatedButton(
                   onPressed: () {
                       Navigator.push(
@@ -290,11 +291,11 @@ orderADevice(){
               ],
             ),
           ),
-          SizedBox(height: 15),
+          SizedBox(height: getFontSize(15, context)),
           Container(
             padding: EdgeInsets.all(12),
-            height: 110,
-            width: 110,
+            height: getFontSize(110, context),
+            width: getFontSize(110, context),
             decoration: BoxDecoration(
               color: Colors.grey.withOpacity(0.20),
               borderRadius: BorderRadius.circular(50),
@@ -331,21 +332,21 @@ orderADevice(){
                     mainAxisSize: MainAxisSize.min,
                     crossAxisAlignment: CrossAxisAlignment.center,
                     children: [
-                      Text("Device Information", style: TextStyle(fontSize: 18),),
-                      SizedBox(height: 35,),
+                      Text("Device Information", style: TextStyle(fontSize: getFontSize(18, context)),),
+                      SizedBox(height: getFontSize(35, context),),
                       Container(alignment: Alignment.center,child:
-                      SvgPicture.asset('assets/images/dev.svg', height: 117, width: 195,),
+                      SvgPicture.asset('assets/images/dev.svg', height: getFontSize(117, context), width: getFontSize(195, context),),
                       ),
-                      SizedBox(height: 50,),
+                      SizedBox(height: getFontSize(50, context),),
 
                       Center(child:
                       Text(
                         'Wellue Bp2 Connect device',
-                        style: TextStyle(color: Colors.black, fontSize: 16),
+                        style: TextStyle(color: Colors.black, fontSize: getFontSize(16, context)),
                       ),
                       ),
 
-                      SizedBox(height: 25,),
+                      SizedBox(height: getFontSize(25, context),),
 
                       Wrap(
                         direction: Axis.horizontal,
@@ -357,7 +358,7 @@ orderADevice(){
                               Text("9th August 2022"),
                             ],
                           ) ,
-                          SizedBox(height: 30),
+                          SizedBox(height: getFontSize(30, context)),
                           Row(
                             children: [
                               Text("Price:"),
@@ -365,7 +366,7 @@ orderADevice(){
                               Text("N25,000.00"),
                             ],
                           ),
-                          SizedBox(height: 30),
+                          SizedBox(height: getFontSize(30, context)),
                           Row(
                             children: [
                               Text("Delivery fee:"),
@@ -373,7 +374,7 @@ orderADevice(){
                               Text("N1,500.00"),
                             ],
                           ),
-                          SizedBox(height: 30),
+                          SizedBox(height: getFontSize(30, context)),
                           Row(
                             children: [
                               Text("TOTAL:", style: TextStyle(fontWeight: FontWeight.bold),),
@@ -384,14 +385,14 @@ orderADevice(){
                         ],
                       ),
 
-                      SizedBox(height: 25),
+                      SizedBox(height: getFontSize(25, context)),
                       // Place an Order button
                       SizedBox(
-                        height: 55,
+                        height: getFontSize(55, context),
                         width: double.infinity, // Match screen width
                         child: Container(
                           decoration: BoxDecoration(
-                            border: Border.all(color: Colors.red, width: 0.5),
+                            border: Border.all(color: Colors.red, width: getFontSize(0.5, context)),
                             borderRadius: BorderRadius.circular(12),
                           ),
                           child: ElevatedButton(

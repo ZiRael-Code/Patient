@@ -1,3 +1,5 @@
+import '../Main/Dashboard.dart';
+import 'Main/Dashboard.dart';
 import 'dart:convert';
 
 import 'package:flutter/material.dart';
@@ -9,12 +11,12 @@ import 'OnBoarding/SlideScreen1.dart';
 import 'main.dart';
 
 void main() {
-  runApp(const main_app());
+  runApp(main_app());
 }
 // this is israel on main.dart
 
 class main_app extends StatelessWidget {
-  const main_app({super.key});
+  main_app({super.key});
 
   // This widget is the root of your application.
   @override
@@ -26,13 +28,13 @@ class main_app extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home: const Loader(),
+      home: Loader(),
     );
   }
 }
 
 class Loader extends StatefulWidget {
-  const Loader({super.key});
+  Loader({super.key});
 
   @override
   State<Loader> createState() => LoaderState();
@@ -43,7 +45,7 @@ class LoaderState extends State<Loader> {
   void initState() {
     super.initState();
     // Adding a delay of 2 seconds
-  //   Future.delayed(const Duration(milliseconds: 2000), () {
+  //   Future.delayed(Duration(milliseconds: 2000), () {
   //     Navigator.pushReplacement(
   //       context,
   //       MaterialPageRoute(builder: (context) =>  SlideScreen1()),

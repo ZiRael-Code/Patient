@@ -1,3 +1,4 @@
+import '../Main/Dashboard.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
@@ -8,7 +9,7 @@ void main(){
 }
 
 class DeviceOrderSuccess extends StatefulWidget {
-  const DeviceOrderSuccess({super.key});
+  DeviceOrderSuccess({super.key});
   @override
   _SuccessScreen createState() => _SuccessScreen();
 }
@@ -23,16 +24,16 @@ class _SuccessScreen extends  State<DeviceOrderSuccess> {
           title: Row(
             children: [
               Container(
-                width: 35,
-                height: 35,
+                width: getFontSize(35, context),
+                height: getFontSize(35, context),
                 padding: EdgeInsets.all(10),
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(50),
                   color: Color(0xFFE5E5E5),
                 ),
                 child: SvgPicture.asset('assets/images/back.svg',
-                  width: 8.0,
-                  height: 15,),
+                  width: getFontSize(8.0, context),
+                  height: getFontSize(15, context),),
               ),
               Spacer(),
               Container(
@@ -41,7 +42,7 @@ class _SuccessScreen extends  State<DeviceOrderSuccess> {
                 Center(child: Text(
                   'Success!',
                   style: TextStyle(
-                      fontSize: 20,
+                      fontSize: getFontSize(20, context),
                       fontStyle: FontStyle.normal
                   ),
                 ),
@@ -55,20 +56,20 @@ class _SuccessScreen extends  State<DeviceOrderSuccess> {
         ),
         body:
         Container(
-            padding: EdgeInsets.only(bottom: 30, left: 15, right: 15),
+            padding: EdgeInsets.only(bottom: getFontSize(30, context), left: getFontSize(15, context), right: getFontSize(15, context)),
             child:
         Align(
           child:
       Column(
       children: [
-        SizedBox(height: 30),
+        SizedBox(height: getFontSize(30, context)),
         Container(
           alignment: Alignment.center,
           width: MediaQuery.of(context).size.width * 0.78,
           child:
         Align(child: Text("You have successfully ordered for a device. You will be notified when it’s ready for pickup or delivery.", textAlign: TextAlign.center,
         style: TextStyle(
-          fontSize: 14,
+          fontSize: getFontSize(14, context),
         ),
         ),
         ),
@@ -76,7 +77,7 @@ class _SuccessScreen extends  State<DeviceOrderSuccess> {
 
         Spacer(),
         Container(
-          height: 50,
+          height: getFontSize(50, context),
           width: MediaQuery.of(context).size.width * 0.40,
           decoration: BoxDecoration(
             color: Color(0xFFE2EDFF),
@@ -94,7 +95,7 @@ class _SuccessScreen extends  State<DeviceOrderSuccess> {
             isExpanded: true,
             underline: SizedBox(),
             style: TextStyle(
-              fontSize: 16,
+              fontSize: getFontSize(16, context),
               color: Color(0xFF3C8AFF),
             ),
             icon: Icon(Icons.keyboard_arrow_down),
@@ -112,7 +113,7 @@ class _SuccessScreen extends  State<DeviceOrderSuccess> {
             }).toList(),
           ),
         ),
-        SizedBox(height: 15,),
+        SizedBox(height: getFontSize(15, context),),
         ElevatedButton(
           onPressed: () {},
           style: ElevatedButton.styleFrom(
@@ -123,10 +124,10 @@ class _SuccessScreen extends  State<DeviceOrderSuccess> {
             ),
           ),
           child: Padding(
-            padding: const EdgeInsets.symmetric(vertical: 12.0, horizontal: 24.0),
+            padding: EdgeInsets.symmetric(vertical: 12.0, horizontal: 24.0),
             child: Text(
               'Done',
-              style: TextStyle(color: Colors.white, fontSize: 18),
+              style: TextStyle(color: Colors.white, fontSize: getFontSize(18, context)),
             ),
           ),
         ),

@@ -1,3 +1,5 @@
+import '../Main/Dashboard.dart';
+import 'Main/Dashboard.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
@@ -8,7 +10,7 @@ void main(){
 }
 
 class DeviceHistoryHearthRate extends StatefulWidget {
-  const DeviceHistoryHearthRate({super.key});
+  DeviceHistoryHearthRate({super.key});
   @override
   _DeviceHistoryHearthRateScreen createState() => _DeviceHistoryHearthRateScreen();
 }
@@ -36,29 +38,29 @@ class _DeviceHistoryHearthRateScreen extends  State<DeviceHistoryHearthRate> wit
                 children: [
                   SizedBox(height: MediaQuery.of(context).size.width * 0.15,),
                   Container(
-                    padding: EdgeInsets.only(left: 10, right: 10),
+                    padding: EdgeInsets.only(left: getFontSize(10, context), right: getFontSize(10, context)),
                     child:
                   Row(
                     children: [
                       Container(
-                        width: 35,
-                        height: 35,
+                        width: getFontSize(35, context),
+                        height: getFontSize(35, context),
                         padding: EdgeInsets.all(10),
                         decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(50),
                           color: Color(0xFFFFFFFF).withOpacity(0.45),
                         ),
                         child: SvgPicture.asset('assets/images/back.svg',
-                          width: 8.0,
-                          height: 15,
+                          width: getFontSize(8.0, context),
+                          height: getFontSize(15, context),
                         color: Colors.white,),
                       ),
                       Spacer(),
-                      Text('Heart rate', style: TextStyle(fontSize: 20, color: Colors.white),),
+                      Text('Heart rate', style: TextStyle(fontSize: getFontSize(20, context), color: Colors.white),),
                       Spacer(),
                       Container(
-                        width: 35,
-                        height: 35,
+                        width: getFontSize(35, context),
+                        height: getFontSize(35, context),
                         padding: EdgeInsets.all(1),
                         decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(50),
@@ -71,7 +73,7 @@ class _DeviceHistoryHearthRateScreen extends  State<DeviceHistoryHearthRate> wit
                   ),
                   ),
 
-                  SizedBox(height: 30,),
+                  SizedBox(height: getFontSize(30, context),),
                   Container(
                     margin: EdgeInsets.only(left: MediaQuery.of(context).size.width /2 -20),
                   alignment: Alignment.center,
@@ -126,21 +128,21 @@ class _DeviceHistoryHearthRateScreen extends  State<DeviceHistoryHearthRate> wit
                       mainAxisAlignment: MainAxisAlignment.center,
                       crossAxisAlignment: CrossAxisAlignment.center,
                       children: [
-                        Text('107/160', style: TextStyle(fontSize: 30,color: Colors.white, fontWeight: FontWeight.bold),),
-                        SizedBox(width: 16),
+                        Text('107/160', style: TextStyle(fontSize: getFontSize(30, context),color: Colors.white, fontWeight: FontWeight.bold),),
+                        SizedBox(width: getFontSize(16, context)),
                         Text('bpm', style: TextStyle( color: Colors.white ),),
 
                       ],
                     ),
                   ),
-                  SizedBox(height: 15,),
+                  SizedBox(height: getFontSize(15, context),),
                   Text('measured 10mins ago', style: TextStyle( color: Colors.white ),),
-                  SizedBox(height: 15,),
+                  SizedBox(height: getFontSize(15, context),),
                 ],
       )
       ),
 
-            SizedBox(height: 20,),
+            SizedBox(height: getFontSize(20, context),),
 
             //
             Container(
@@ -150,12 +152,12 @@ class _DeviceHistoryHearthRateScreen extends  State<DeviceHistoryHearthRate> wit
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
 
-              Text('History', style: TextStyle(fontSize: 18, color: Colors.black)),
-                  SizedBox(height: 20,),
+              Text('History', style: TextStyle(fontSize: getFontSize(18, context), color: Colors.black)),
+                  SizedBox(height: getFontSize(20, context),),
                  Column(
                    children: [
                  Container(
-                  height: 50,
+                  height: getFontSize(50, context),
                   padding: EdgeInsets.all(4),
                   width: double.infinity,
                   decoration: BoxDecoration(
@@ -177,7 +179,7 @@ class _DeviceHistoryHearthRateScreen extends  State<DeviceHistoryHearthRate> wit
                          ],
             )
             ),
-                  SizedBox(height: 10),
+                  SizedBox(height: getFontSize(10, context)),
                   // Expanded(
                   //   child:
                   //   TabBarView(
@@ -205,9 +207,9 @@ class _DeviceHistoryHearthRateScreen extends  State<DeviceHistoryHearthRate> wit
             //     children: [
             //       // Your existing app bar and other widgets
             //
-            //             SizedBox(height: 10),
+            //             SizedBox(height: getFontSize(10, context)),
             //             // Container(
-            //             //   height: 50,
+            //             //   height: getFontSize(50, context),
             //             //   padding: EdgeInsets.all(4),
             //             //   width: double.infinity,
             //             //   decoration: BoxDecoration(
@@ -229,7 +231,7 @@ class _DeviceHistoryHearthRateScreen extends  State<DeviceHistoryHearthRate> wit
             //             //     ],
             //             //   ),
             //             // ),
-            //             // SizedBox(height: 10),
+            //             // SizedBox(height: getFontSize(10, context)),
             //             // // Wrap with Expanded to handle the available space
             //             // Expanded(
             //             //   child: TabBarView(
@@ -263,7 +265,7 @@ class _DeviceHistoryHearthRateScreen extends  State<DeviceHistoryHearthRate> wit
 
       },
       child: Container(
-        margin: EdgeInsets.only(right: 10),
+        margin: EdgeInsets.only(right: getFontSize(10, context)),
         padding: EdgeInsets.all(12),
         decoration: BoxDecoration(
           color: isSelected ?Colors.white   : Colors.white.withOpacity(0.20),
@@ -300,7 +302,7 @@ class _DeviceHistoryHearthRateScreen extends  State<DeviceHistoryHearthRate> wit
                       text: "Abnormal ECG",
                       stackColor:  Color(0xFFFF6161)
                   ),
-                  SizedBox(height: 10,),
+                  SizedBox(height: getFontSize(10, context),),
                 ]),)
         ),
     ],
@@ -311,14 +313,14 @@ class _DeviceHistoryHearthRateScreen extends  State<DeviceHistoryHearthRate> wit
     required String text,
     required Color stackColor}) {
     return Container(
-      margin: EdgeInsets.only(bottom: 14),
-      height: 85,
+      margin: EdgeInsets.only(bottom: getFontSize(14, context)),
+      height: getFontSize(85, context),
       width: double.infinity,
       decoration: BoxDecoration(
         color: Colors.grey.withOpacity(0.2),
         borderRadius: BorderRadius.circular(12),
       ),
-      padding: EdgeInsets.only( right: 10),
+      padding: EdgeInsets.only( right: getFontSize(10, context)),
       child: Row(
         children: [
           Align(
@@ -326,7 +328,7 @@ class _DeviceHistoryHearthRateScreen extends  State<DeviceHistoryHearthRate> wit
               child:
               SvgPicture.asset("assets/images/irr.svg", fit: BoxFit.fitHeight, color: stackColor,)
           ),
-          SizedBox(width: 16),
+          SizedBox(width: getFontSize(16, context)),
           Expanded(
             child: Row(
               crossAxisAlignment: CrossAxisAlignment.start,
@@ -340,26 +342,26 @@ class _DeviceHistoryHearthRateScreen extends  State<DeviceHistoryHearthRate> wit
                         text,
                         style: TextStyle(
                           fontWeight: FontWeight.bold,
-                          fontSize: 18,
+                          fontSize: getFontSize(18, context),
                         ),
                       ),
-                      SizedBox(height: 5,),
+                      SizedBox(height: getFontSize(5, context),),
                       Text(
                         date,
                         style: TextStyle(
-                          fontSize: 10,
+                          fontSize: getFontSize(10, context),
                         ),
                       ),
                     ],
                   ),
                 ),
-                SizedBox(height: 4),
+                SizedBox(height: getFontSize(4, context)),
                 Spacer(),
                 Align(
                   alignment: Alignment.centerRight,
                   child: Icon(
                     Icons.arrow_forward_ios_outlined,
-                    size: 16,
+                    size: getFontSize(16, context),
                     color: Colors.black,
                   ),
                 ),

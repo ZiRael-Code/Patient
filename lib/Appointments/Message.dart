@@ -1,3 +1,4 @@
+import '../Main/Dashboard.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_app/Appointments/Chat.dart';
@@ -9,7 +10,7 @@ void main(){
 }
 
 class Message extends StatefulWidget {
-  const Message({super.key});
+  Message({super.key});
   @override
   _MessageScreen createState() => _MessageScreen();
 }
@@ -24,16 +25,16 @@ class _MessageScreen extends  State<Message> {
           title: Row(
             children: [
               Container(
-                width: 35,
-                height: 35,
+                width: getFontSize(35, context),
+                height: getFontSize(35, context),
                 padding: EdgeInsets.all(10),
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(50),
                   color: Color(0xFFE5E5E5),
                 ),
                 child: SvgPicture.asset('assets/images/back.svg',
-                  width: 8.0,
-                  height: 15,),
+                  width: getFontSize(8.0, context),
+                  height: getFontSize(15, context),),
               ),
               Spacer(),
               Container(
@@ -42,7 +43,7 @@ class _MessageScreen extends  State<Message> {
                 Center(child: Text(
                   'Message',
                   style: TextStyle(
-                      fontSize: 20,
+                      fontSize: getFontSize(20, context),
                       fontStyle: FontStyle.normal
                   ),
                 ),
@@ -57,15 +58,15 @@ class _MessageScreen extends  State<Message> {
         body: SingleChildScrollView(
     child:
         Container(
-            padding: EdgeInsets.only(bottom: 30, left: 15, right: 15),
+            padding: EdgeInsets.only(bottom: getFontSize(30, context), left: getFontSize(15, context), right: getFontSize(15, context)),
             child:
         Align(
           child:
       Column(
       children: [
-        SizedBox(height: 30),
+        SizedBox(height: getFontSize(30, context)),
         Container(
-          padding: EdgeInsets.only(right: 10),
+          padding: EdgeInsets.only(right: getFontSize(10, context)),
           width: double.infinity,
           decoration: BoxDecoration(
             color: Colors.grey[300],
@@ -81,7 +82,7 @@ class _MessageScreen extends  State<Message> {
             ),
           ),
         ),
-        SizedBox(height: 35),
+        SizedBox(height: getFontSize(35, context)),
 
        message(
          profile: 'assets/images/doc1.png',
@@ -144,25 +145,25 @@ class _MessageScreen extends  State<Message> {
                   child: Stack(
                     children: [
                       SizedBox(
-                        width: 49,
-                        height: 49,
+                        width: getFontSize(49, context),
+                        height: getFontSize(49, context),
                         child: CircleAvatar(
                           radius: 25,
                           backgroundImage: AssetImage(profile),
                         ),
                       ),
                       Positioned(
-                        bottom: 0, // Moves to the bottom
-                        right: 0,  // Moves to the right
+                        bottom: getFontSize(0, context), // Moves to the bottom
+                        right: getFontSize(0, context),  // Moves to the right
                         child: Container(
-                          width: 14,
-                          height: 14,
+                          width: getFontSize(14, context),
+                          height: getFontSize(14, context),
                           decoration: BoxDecoration(
                             borderRadius: BorderRadius.circular(50),
                             color: isActive ? Colors.green : Colors.transparent,
                             border: Border.all(
                               color: isActive ? Colors.white : Colors.transparent,
-                              width: 2,
+                              width: getFontSize(2, context),
                             ),
                           ),
                         ),
@@ -170,17 +171,17 @@ class _MessageScreen extends  State<Message> {
                     ],
                   ),
                 ),
-                SizedBox(width: 10),
+                SizedBox(width: getFontSize(10, context)),
                 Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Text(name, style: TextStyle(fontSize: 18)),
-                    SizedBox(height: 3),
+                    Text(name, style: TextStyle(fontSize: getFontSize(18, context))),
+                    SizedBox(height: getFontSize(3, context)),
                     Container(
-                      width: 214,
+                      width: getFontSize(214, context),
                       child: Text(
                         "After taking the prescribed medications I started noticing some changes",
-                        style: TextStyle(fontSize: 13),
+                        style: TextStyle(fontSize: getFontSize(13, context)),
                         maxLines: 1,
                         overflow: TextOverflow.ellipsis,
                       ),
@@ -197,8 +198,8 @@ class _MessageScreen extends  State<Message> {
                 Text(time, style: TextStyle(color: Color(0xff2E2E42)),))
             :
             Positioned(
-              top: 0,
-              right: 0,
+              top: getFontSize(0, context),
+              right: getFontSize(0, context),
               child: Container(
                 padding: EdgeInsets.all(10),
                 decoration: BoxDecoration(
@@ -213,9 +214,9 @@ class _MessageScreen extends  State<Message> {
             ),
           ],
         ),
-        SizedBox(height: 15),
+        SizedBox(height: getFontSize(15, context)),
         SvgPicture.asset('assets/images/line.svg'),
-        SizedBox(height: 20),
+        SizedBox(height: getFontSize(20, context)),
       ],
     )
     );

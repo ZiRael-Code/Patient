@@ -1,3 +1,4 @@
+import '../Main/Dashboard.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_app/Medication/RenewOrderTotalPrice.dart';
@@ -9,7 +10,7 @@ void main(){
 }
 
 class RenewOrderSummary extends StatefulWidget {
-  const RenewOrderSummary({super.key});
+  RenewOrderSummary({super.key});
   @override
   _RenewOrderSummaryScreen createState() => _RenewOrderSummaryScreen();
 }
@@ -24,16 +25,16 @@ class _RenewOrderSummaryScreen extends  State<RenewOrderSummary> {
           title: Row(
             children: [
               Container(
-                width: 35,
-                height: 35,
+                width: getFontSize(35, context),
+                height: getFontSize(35, context),
                 padding: EdgeInsets.all(10),
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(50),
                   color: Color(0xFFE5E5E5),
                 ),
                 child: SvgPicture.asset('assets/images/back.svg',
-                  width: 8.0,
-                  height: 15,),
+                  width: getFontSize(8.0, context),
+                  height: getFontSize(15, context),),
               ),
               Spacer(),
               Container(
@@ -42,7 +43,7 @@ class _RenewOrderSummaryScreen extends  State<RenewOrderSummary> {
                 Center(child: Text(
                   'Renew order',
                   style: TextStyle(
-                      fontSize: 20,
+                      fontSize: getFontSize(20, context),
                       fontStyle: FontStyle.normal
                   ),
                 ),
@@ -56,15 +57,15 @@ class _RenewOrderSummaryScreen extends  State<RenewOrderSummary> {
         ),
         body:
         Container(
-            padding: EdgeInsets.only(bottom: 30, left: 15, right: 15),
+            padding: EdgeInsets.only(bottom: getFontSize(30, context), left: getFontSize(15, context), right: getFontSize(15, context)),
             child:
         Align(
           child:
       Column(
       children: [
-        SizedBox(height: 30),
+        SizedBox(height: getFontSize(30, context)),
 
-SizedBox(height: 30,),
+SizedBox(height: getFontSize(30, context),),
         info(
             type: 'Name',
             des: '12/06/2022-Prescription'
@@ -77,7 +78,7 @@ SizedBox(height: 30,),
             type: 'Date',
             des: '12/06/2022-Prescription'
         ),
-          SizedBox(height: 35,),
+          SizedBox(height: getFontSize(35, context),),
           drug(
             price: 'N650',
               name: "Ibuprofen",
@@ -106,10 +107,10 @@ SizedBox(height: 30,),
             ),
           ),
           child: Padding(
-            padding: const EdgeInsets.symmetric(vertical: 12.0, horizontal: 24.0),
+            padding: EdgeInsets.symmetric(vertical: 12.0, horizontal: 24.0),
             child: Text(
               'Continue',
-              style: TextStyle(color: Colors.white, fontSize: 18),
+              style: TextStyle(color: Colors.white, fontSize: getFontSize(18, context)),
             ),
           ),
         ),
@@ -125,12 +126,12 @@ SizedBox(height: 30,),
         children: [
           Row(
             children: [
-              Text(type, style: TextStyle(fontSize: 14, color: Color(0xff666666))),
+              Text(type, style: TextStyle(fontSize: getFontSize(14, context), color: Color(0xff666666))),
               Spacer(),
-              Text(des, style: TextStyle(fontSize: 16)),
+              Text(des, style: TextStyle(fontSize: getFontSize(16, context))),
             ],
           ),
-          SizedBox(height: 12),
+          SizedBox(height: getFontSize(12, context)),
         ]
     );
   }
@@ -141,12 +142,12 @@ SizedBox(height: 30,),
     return Container(
       padding: EdgeInsets.all(14),
       width: double.infinity,
-      margin: EdgeInsets.only(bottom: 10),
+      margin: EdgeInsets.only(bottom: getFontSize(10, context)),
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(14),
         border: Border.all(
           color: Colors.grey,
-          width: 0.7,
+          width: getFontSize(0.7, context),
         ),
       ),
       child: Column(
@@ -154,13 +155,13 @@ SizedBox(height: 30,),
         children: [
           Row(
             children: [
-              Text(name, style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),),
+              Text(name, style: TextStyle(fontSize: getFontSize(16, context), fontWeight: FontWeight.bold),),
              Spacer(),
-              Text(price, style: TextStyle(fontSize: 16, color: Colors.blue, fontWeight: FontWeight.bold))
+              Text(price, style: TextStyle(fontSize: getFontSize(16, context), color: Colors.blue, fontWeight: FontWeight.bold))
             ],
           ),
           
-          SizedBox(height: 8,),
+          SizedBox(height: getFontSize(8, context),),
           Text(usage, style: TextStyle(color: Color(0xff666666)))
         ],
       ),
@@ -171,15 +172,15 @@ SizedBox(height: 30,),
     return Column(
       children: [
         Container(
-          width: 197,
+          width: getFontSize(197, context),
           child: Text('Have you gotten these drugs yet?', style: TextStyle(fontWeight: FontWeight.bold)),
         ),
-        SizedBox(height: 15,),
+        SizedBox(height: getFontSize(15, context),),
         Container(
-        width: 197,
+        width: getFontSize(197, context),
         child: Text('Once you click the ‘start using drugs’ button, a counter starts counting the number of drugs you’ve used. Click yes if you’ve gotten them.')
         ),
-        SizedBox(height: 15,),
+        SizedBox(height: getFontSize(15, context),),
         Row(
           children: [
 

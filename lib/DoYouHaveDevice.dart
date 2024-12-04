@@ -1,3 +1,4 @@
+import '../Main/Dashboard.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_app/Login.dart';
@@ -5,6 +6,8 @@ import 'package:flutter_app/WhatTypeDevice.dart';
 import 'package:flutter_svg/svg.dart';
 
 import 'OrderForADevice.dart';
+import 'Main/Dashboard.dart';
+
 
 void main(){
   runApp(DoYouHaveDevice());
@@ -28,22 +31,22 @@ class  _DoYouHaveDevice extends State<DoYouHaveDevice>{
   Widget build(BuildContext context) {
    return Scaffold(
        body: Padding(padding:
-       EdgeInsets.only(top: 45, bottom: 30),
+       EdgeInsets.only(top: getFontSize(45, context), bottom: getFontSize(30, context)),
        child: Column(
          crossAxisAlignment: CrossAxisAlignment.center,
          children: [
-           SizedBox(height: 65,),
+           SizedBox(height: getFontSize(65, context),),
 
            Container(
-             width: 234,
-             child: Text(textAlign: TextAlign.center,'Do you have a device? ',style: TextStyle(fontSize: 28, fontWeight: FontWeight.bold),),
+             width: getFontSize(234, context),
+             child: Text(textAlign: TextAlign.center,'Do you have a device? ',style: TextStyle(fontSize: getFontSize(28, context), fontWeight: FontWeight.bold),),
            ),
-           SizedBox(height: 15,),
+           SizedBox(height: getFontSize(15, context),),
            Container(
-             width: 284,
-             child: Text(textAlign: TextAlign.center,'From your condition(s), there are devices that are essential for measuring your vitals to ensure proper health monitoring.',style: TextStyle(fontSize: 14,),),
+             width: getFontSize(284, context),
+             child: Text(textAlign: TextAlign.center,'From your condition(s), there are devices that are essential for measuring your vitals to ensure proper health monitoring.',style: TextStyle(fontSize: getFontSize(14, context),),),
            ),
-           SizedBox(height: 45,),
+           SizedBox(height: getFontSize(45, context),),
            Container(
              alignment: Alignment.center,
              child: Stack(
@@ -54,11 +57,11 @@ class  _DoYouHaveDevice extends State<DoYouHaveDevice>{
                 ),
                ),
                 Container(
-                  margin: EdgeInsets.only(top: 40),
+                  margin: EdgeInsets.only(top: getFontSize(40, context)),
                   alignment: Alignment.center,
                   child: SvgPicture.asset('assets/images/dev.svg',
-                    width: 204,
-                    height: 132,
+                    width: getFontSize(204, context),
+                    height: getFontSize(132, context),
                   ),
                 )
                  ,
@@ -99,7 +102,7 @@ class  _DoYouHaveDevice extends State<DoYouHaveDevice>{
                ),
              ]
            ),
-           SizedBox(height: 25,)
+           SizedBox(height: getFontSize(25, context),)
          ],
        ),
        ),
@@ -112,23 +115,23 @@ class  _DoYouHaveDevice extends State<DoYouHaveDevice>{
   }) {
     return Container(
       alignment: Alignment.center,
-      margin: EdgeInsets.only(right: 20),
+      margin: EdgeInsets.only(right: getFontSize(20, context)),
       child: Column(
         children: [
           Container(
-            margin: EdgeInsets.only(bottom: 10),
-            width: 81,
-            height: 81,
+            margin: EdgeInsets.only(bottom: getFontSize(10, context)),
+            width: getFontSize(81, context),
+            height: getFontSize(81, context),
             decoration: BoxDecoration(
               color: Color(0xffE2EDFF),
               borderRadius: BorderRadius.circular(50),
             ),
-            child: Icon(icon, size: 55, weight: 4, color: Colors.blue,),
+            child: Icon(icon, size: getFontSize(55, context), weight: 4, color: Colors.blue,),
           ),
           Container(
-            margin: EdgeInsets.only(left: 10),
+            margin: EdgeInsets.only(left: getFontSize(10, context)),
             alignment: Alignment.center,
-            width: 71,
+            width: getFontSize(71, context),
             child: Text(text, textAlign: TextAlign.center,),
           )
           

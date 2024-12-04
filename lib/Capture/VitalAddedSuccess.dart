@@ -1,3 +1,4 @@
+import '../Main/Dashboard.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_app/Capture/VitalsReading.dart';
@@ -11,7 +12,7 @@ void main(){
 }
 
 class VitalAddedSuccess extends StatefulWidget {
-  const VitalAddedSuccess({super.key});
+  VitalAddedSuccess({super.key});
   @override
   _VitalAddedSuccessScreen createState() => _VitalAddedSuccessScreen();
 }
@@ -27,16 +28,16 @@ class _VitalAddedSuccessScreen extends  State<VitalAddedSuccess> {
           title: Row(
             children: [
               Container(
-                width: 35,
-                height: 35,
+                width: getFontSize(35, context),
+                height: getFontSize(35, context),
                 padding: EdgeInsets.all(10),
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(50),
                   color: Color(0xFFE5E5E5),
                 ),
                 child: SvgPicture.asset('assets/images/back.svg',
-                  width: 8.0,
-                  height: 15,),
+                  width: getFontSize(8.0, context),
+                  height: getFontSize(15, context),),
               ),
               Spacer(),
 
@@ -47,28 +48,28 @@ class _VitalAddedSuccessScreen extends  State<VitalAddedSuccess> {
         ),
         body:
         Container(
-            padding: EdgeInsets.only(bottom: 30, left: 15, right: 15),
+            padding: EdgeInsets.only(bottom: getFontSize(30, context), left: getFontSize(15, context), right: getFontSize(15, context)),
             child:
         Align(
           child:
       Column(
       children: [
-        SizedBox(height: 30),
+        SizedBox(height: getFontSize(30, context)),
         Align(child: Text("Success!.", textAlign: TextAlign.center,
           style: TextStyle(
-            fontSize: 18,
+            fontSize: getFontSize(18, context),
             fontWeight: FontWeight.bold,
           ),
         ),
         ),
-        SizedBox(height: 20,),
+        SizedBox(height: getFontSize(20, context),),
         Container(
           alignment: Alignment.center,
           width: MediaQuery.of(context).size.width * 0.78,
           child:
         Align(child: Text("You have successfully added vital readings manually. You can find them under the readings history of the capture section.", textAlign: TextAlign.center,
         style: TextStyle(
-          fontSize: 14,
+          fontSize: getFontSize(14, context),
         ),
         ),
         ),
@@ -86,14 +87,14 @@ class _VitalAddedSuccessScreen extends  State<VitalAddedSuccess> {
             ),
           ),
           child: Padding(
-            padding: const EdgeInsets.symmetric(vertical: 12.0, horizontal: 24.0),
+            padding: EdgeInsets.symmetric(vertical: 12.0, horizontal: 24.0),
             child: Text(
               'See all readings',
-              style: TextStyle(color: Colors.white, fontSize: 18),
+              style: TextStyle(color: Colors.white, fontSize: getFontSize(18, context)),
             ),
           ),
         ),
-        SizedBox(height: 15,),
+        SizedBox(height: getFontSize(15, context),),
         ElevatedButton(
           onPressed: () {
             Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => MeasuringVitals ()));// TODO fix
@@ -102,7 +103,7 @@ class _VitalAddedSuccessScreen extends  State<VitalAddedSuccess> {
             backgroundColor: Colors.white,
             side: BorderSide(
               color: Colors.blue,
-              width: 1
+              width: getFontSize(1, context)
             ),
             fixedSize: Size.fromWidth(MediaQuery.of(context).size.width),
             shape: RoundedRectangleBorder(
@@ -110,10 +111,10 @@ class _VitalAddedSuccessScreen extends  State<VitalAddedSuccess> {
             ),
           ),
           child: Padding(
-            padding: const EdgeInsets.symmetric(vertical: 12.0, horizontal: 24.0),
+            padding: EdgeInsets.symmetric(vertical: 12.0, horizontal: 24.0),
             child: Text(
               'Back to capture page',
-              style: TextStyle(color: Colors.blue, fontSize: 18),
+              style: TextStyle(color: Colors.blue, fontSize: getFontSize(18, context)),
             ),
           ),
         ),

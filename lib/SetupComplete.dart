@@ -1,3 +1,5 @@
+import '../Main/Dashboard.dart';
+import 'Main/Dashboard.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_app/Login.dart';
@@ -21,13 +23,13 @@ class SetupComplete extends StatelessWidget{
             mainAxisAlignment: MainAxisAlignment.center,
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
-              SizedBox(height: 25,),
-              Text('Success!', style: TextStyle(fontWeight: FontWeight.bold, fontSize: 28),)
+              SizedBox(height: getFontSize(25, context),),
+              Text('Success!', style: TextStyle(fontWeight: FontWeight.bold, fontSize: getFontSize(28, context)),)
               ,
-              SizedBox(height: 15,),
+              SizedBox(height: getFontSize(15, context),),
               Container(
-                width: 226,
-                child: Text(textAlign: TextAlign.center, 'You’ve setup the basics for your account. Click continue to tailor the app experience to you.', style: TextStyle(fontSize: 14),),
+                width: getFontSize(226, context),
+                child: Text(textAlign: TextAlign.center, 'You’ve setup the basics for your account. Click continue to tailor the app experience to you.', style: TextStyle(fontSize: getFontSize(14, context)),),
               ),
               Spacer(),
               SvgPicture.asset('assets/images/woman.svg'),
@@ -44,35 +46,35 @@ class SetupComplete extends StatelessWidget{
                   ),
                 ),
                 child: Padding(
-                  padding: const EdgeInsets.symmetric(vertical: 12.0, horizontal: 24.0),
+                  padding: EdgeInsets.symmetric(vertical: 12.0, horizontal: 24.0),
                   child: Text(
                     'Continue',
-                    style: TextStyle(color: Colors.white, fontSize: 18),
+                    style: TextStyle(color: Colors.white, fontSize: getFontSize(18, context)),
                   ),
                 ),
               ),
-              SizedBox(height: 15,),
+              SizedBox(height: getFontSize(15, context),),
               ElevatedButton(
                 onPressed: () {
                   Navigator.of(context).push(MaterialPageRoute(builder: (builder)=> Login()));
                 },
                 style: ElevatedButton.styleFrom(
                     fixedSize: Size.fromWidth(MediaQuery.of(context).size.width),
-                    side: BorderSide(width: 1, color: Colors.blue),
+                    side: BorderSide(width: getFontSize(1, context), color: Colors.blue),
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(9),
                     ),
                     textStyle: TextStyle(color: Colors.blue)
                 ),
                 child: Padding(
-                  padding: const EdgeInsets.symmetric(vertical: 12.0, horizontal: 24.0),
+                  padding: EdgeInsets.symmetric(vertical: 12.0, horizontal: 24.0),
                   child: Text(
                     'Login to app instead',
-                    style: TextStyle(color: Colors.blue, fontSize: 18),
+                    style: TextStyle(color: Colors.blue, fontSize: getFontSize(18, context)),
                   ),
                 ),
               ),
-              SizedBox(height: 25,)
+              SizedBox(height: getFontSize(25, context),)
 
             ]
         ),

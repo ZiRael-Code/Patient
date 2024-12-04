@@ -1,3 +1,4 @@
+import '../Main/Dashboard.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
@@ -6,19 +7,12 @@ import 'package:flutter_svg/svg.dart';
 void main(){
   runApp(PharmacyProfile());
 }
-class PharmacyProfile extends StatelessWidget {
+class PharmacyProfile extends StatefulWidget {
   @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-        backgroundColor: Colors.white,
-        body: DrProfileState(),
-
-    );
-  }
+  _PharmacyProfileState createState() => _PharmacyProfileState();
 }
 
-class DrProfileState extends StatelessWidget {
-  const DrProfileState({super.key});
+class _PharmacyProfileState extends State<PharmacyProfile> {
 
   @override
   Widget build(BuildContext context) {
@@ -26,7 +20,7 @@ class DrProfileState extends StatelessWidget {
       child: Stack(
         children: [
           Container(
-            height: 206,
+            height: getFontSize(206, context),
             width: MediaQuery.of(context).size.width,
             decoration: BoxDecoration(
               borderRadius: BorderRadius.only(
@@ -38,9 +32,9 @@ class DrProfileState extends StatelessWidget {
               alignment: Alignment.centerLeft,
               child:
               Container(
-                margin: EdgeInsets.only(left: 10),
-                width: 45,
-                height: 45,
+                margin: EdgeInsets.only(left: getFontSize(10, context)),
+                width: getFontSize(45, context),
+                height: getFontSize(45, context),
                 alignment: Alignment.center, // Centers the content inside the inner container
                 padding: EdgeInsets.all(10),
                 decoration: BoxDecoration(
@@ -50,14 +44,14 @@ class DrProfileState extends StatelessWidget {
                 child: SvgPicture.asset(
                   'assets/images/back.svg',
                   color: Colors.white,
-                  width: 8.0,
-                  height: 15,
+                  width: getFontSize(8.0, context),
+                  height: getFontSize(15, context),
                 ),
               ),
             ),
           Column(
             children: [
-              SizedBox(height: 150),
+              SizedBox(height: getFontSize(150, context)),
               Align(
                     child: CircleAvatar(
                         backgroundImage: AssetImage('assets/images/pharm1.jpeg'),
@@ -65,26 +59,26 @@ class DrProfileState extends StatelessWidget {
                         ),
 
               ),
-              SizedBox(height: 20),
+              SizedBox(height: getFontSize(20, context)),
               Text(
                 'RX Pharmacy',
                 style: TextStyle(
-                  fontSize: 25,
+                  fontSize: getFontSize(25, context),
                   fontWeight: FontWeight.bold,
                 ),
               ),
-              SizedBox(height: 5),
+              SizedBox(height: getFontSize(5, context)),
               SizedBox(
-                width: 209,
+                width: getFontSize(209, context),
                 child: Text(
                   textAlign: TextAlign.center,
                   'No. 33 Adegoke Street, Surulere, Lagos State',
                   style: TextStyle(
-                    fontSize: 16,
+                    fontSize: getFontSize(16, context),
                   ),
                 ),
               ),
-              SizedBox(height: 20),
+              SizedBox(height: getFontSize(20, context)),
               Align(
                 alignment: Alignment.center,
                 child:
@@ -99,7 +93,7 @@ class DrProfileState extends StatelessWidget {
           ),
               ),
 
-                    SizedBox(height: 15,),
+                    SizedBox(height: getFontSize(15, context),),
                 Padding(padding: EdgeInsets.all(12),
                 child: Column(
                   children: [
@@ -110,10 +104,10 @@ class DrProfileState extends StatelessWidget {
                    children: [
                    Text('Customer Reviews',
                       style: TextStyle(
-                      fontSize: 18,
+                      fontSize: getFontSize(18, context),
                       fontWeight: FontWeight.bold,
                     ),),
-                     SizedBox(height: 10,),
+                     SizedBox(height: getFontSize(10, context),),
                 ],
                 ),
 
@@ -133,7 +127,7 @@ class DrProfileState extends StatelessWidget {
                             reviewerName: 'Richard Okafor',
                             context: context
                         ),
-                        SizedBox(width: 20,),
+                        SizedBox(width: getFontSize(20, context),),
                         patientReview(
                             reviewedStar: 4,
                             dateReviewed: '23 July 2023',
@@ -146,25 +140,25 @@ class DrProfileState extends StatelessWidget {
                     ),
                     ),
                     ),
-                    SizedBox(height: 20,),
+                    SizedBox(height: getFontSize(20, context),),
                     Column(
                       children: [
                         Align(alignment: Alignment.topLeft,child:
                         Text('Write a Review', style: TextStyle(
-                          fontSize: 18,
+                          fontSize: getFontSize(18, context),
                           fontWeight: FontWeight.bold,
                         ),),),],),
-                    SizedBox(height: 20,),
+                    SizedBox(height: getFontSize(20, context),),
                   Container(
                     padding: EdgeInsets.all(12),
                     width: MediaQuery.of(context).size.width,
-                    height: 85,
+                    height: getFontSize(85, context),
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(9),
                       color: Color(0xFFF1F1F1),
                       border: Border.all(
                         color: Colors.black.withOpacity(0.1),
-                        width: 1.5,
+                        width: getFontSize(1.5, context),
                       ),
                     ),
                     child: Align(
@@ -186,7 +180,7 @@ class DrProfileState extends StatelessWidget {
                         ),
                         Text('Slide accross to leave a rating',
                           style: TextStyle(
-                            fontSize: 14,
+                            fontSize: getFontSize(14, context),
                             color: Colors.grey[600],
                           ),
                         )
@@ -194,10 +188,10 @@ class DrProfileState extends StatelessWidget {
                     ),
                     ),
                   ),
-                    SizedBox(height: 20,),
+                    SizedBox(height: getFontSize(20, context),),
 
                 Container(
-                  height: 49,
+                  height: getFontSize(49, context),
                   width: double.infinity,
                   decoration: BoxDecoration(
                     color: Color(0xFFF1F1F1),
@@ -213,13 +207,13 @@ class DrProfileState extends StatelessWidget {
                       ),
                     ),
                     style: TextStyle(
-                      fontSize: 16, // Font size of the input text
+                      fontSize: getFontSize(16, context), // Font size of the input text
                     ),
                   ),
                 ),
-              SizedBox(height: 20,),
+              SizedBox(height: getFontSize(20, context),),
                 Container(
-                  height: 138,
+                  height: getFontSize(138, context),
                   width: double.infinity,
                   decoration: BoxDecoration(
                     color: Color(0xFFF1F1F1),
@@ -235,11 +229,11 @@ class DrProfileState extends StatelessWidget {
                       ),
                     ),
                     style: TextStyle(
-                      fontSize: 16,
+                      fontSize: getFontSize(16, context),
                     ),
                   ),
                 ),
-                    SizedBox(height: 20,),
+                    SizedBox(height: getFontSize(20, context),),
 
 
 
@@ -256,15 +250,15 @@ class DrProfileState extends StatelessWidget {
                         ),
                       ),
                       child: Padding(
-                        padding: const EdgeInsets.symmetric(vertical: 12.0, horizontal: 24.0),
+                        padding: EdgeInsets.symmetric(vertical: 12.0, horizontal: 24.0),
                         child: Text(
                           'Request to be a patient',
-                          style: TextStyle(color: Colors.white, fontSize: 18),
+                          style: TextStyle(color: Colors.white, fontSize: getFontSize(18, context)),
                         ),
                       ),
                     ),
               ),
-                    SizedBox(height: 20,),
+                    SizedBox(height: getFontSize(20, context),),
         ],
 
       ),
@@ -286,13 +280,13 @@ class DrProfileState extends StatelessWidget {
 }){
 return Container(
   padding: EdgeInsets.all(12),
-  // height: 167,
+  // height: getFontSize(167, context),
 width: MediaQuery.of(context).size.width * 0.8,
 decoration: BoxDecoration(
 borderRadius: BorderRadius.circular(9),
 border: Border.all(
 color: Colors.black.withOpacity(0.1),
-width: 1.5,
+width: getFontSize(1.5, context),
 ),
 ),
   child: Column(
@@ -302,8 +296,8 @@ width: 1.5,
         child:
       Row(
         children: [
-          Image.asset('assets/images/dr_profile.png', width: 50, height: 50,),
-          SizedBox(width:10),
+          Image.asset('assets/images/dr_profile.png', width: getFontSize(50, context), height: getFontSize(50, context),),
+          SizedBox(width: getFontSize(10, context)),
           // CircleAvatar(
           //   backgroundImage: AssetImage(),
           //   radius: 50,
@@ -312,9 +306,9 @@ width: 1.5,
             children: [
               Text(reviewerName, style: TextStyle(
                 fontWeight: FontWeight.bold,
-                fontSize: 16,
+                fontSize: getFontSize(16, context),
               ),),
-              SizedBox(height: 3,),
+              SizedBox(height: getFontSize(3, context),),
           RatingBar(
             initialRating: 3,
             minRating: 1,
@@ -337,18 +331,18 @@ width: 1.5,
           textAlign: TextAlign.start,
           style: TextStyle(
             color: Colors.blue,
-            fontSize: 15
+            fontSize: getFontSize(15, context)
           ),),
           ),
         ],
       ),
       ),
-      SizedBox(height: 10,),
+      SizedBox(height: getFontSize(10, context),),
       Container(
         width: MediaQuery.of(context).size.width *  0.8,
-        // width: 265,
+        // width: getFontSize(265, context),
         child:
-      Text(review, style: TextStyle(fontSize: 14),),
+      Text(review, style: TextStyle(fontSize: getFontSize(14, context)),),
       ),
     ],
   ),
@@ -360,14 +354,14 @@ width: 1.5,
     required String text
 }){
     return Container(
-      margin: EdgeInsets.only(right: 7, top: 15),
-      padding: EdgeInsets.only(top: 12, left: 29, bottom: 12, right:29),
+      margin: EdgeInsets.only(right: getFontSize(7, context), top: getFontSize(15, context)),
+      padding: EdgeInsets.only(top: getFontSize(12, context), left: getFontSize(29, context), bottom: getFontSize(12, context), right: getFontSize(29, context)),
       decoration: BoxDecoration(
-        border: Border.all(color: Colors.black.withOpacity(0.1), width: 0.5),
+        border: Border.all(color: Colors.black.withOpacity(0.1), width: getFontSize(0.5, context)),
         color: Color(0xFFF1F1F1),
         borderRadius: BorderRadius.circular(50)
       ),
-      child: Text(text, style: TextStyle(fontSize: 12),),
+      child: Text(text, style: TextStyle(fontSize: getFontSize(12, context)),),
     );
   }
 
@@ -381,9 +375,9 @@ width: 1.5,
         color: Colors.blue.withOpacity(0.15),
       ),
       padding: EdgeInsets.all(10),
-      width: 50,
-      height: 50,
-      margin: EdgeInsets.only(right: 10),
+      width: getFontSize(50, context),
+      height: getFontSize(50, context),
+      margin: EdgeInsets.only(right: getFontSize(10, context)),
     );
 }
 
@@ -392,7 +386,7 @@ request_to_be_a_patient(){
       children: [
         SvgPicture.asset('assets/image/donearrow.svg'),
         Text('Request sent to Dr. Muiz. When they agrees to be your physician, you will be notified', textAlign: TextAlign.center,),
-        SizedBox(height: 15,),
+        SizedBox(height: getFontSize(15, context),),
         SizedBox(
           width: double.infinity,
           child:
@@ -405,10 +399,10 @@ request_to_be_a_patient(){
             ),
           ),
           child: Padding(
-            padding: const EdgeInsets.symmetric(vertical: 12.0, horizontal: 24.0),
+            padding: EdgeInsets.symmetric(vertical: 12.0, horizontal: 24.0),
             child: Text(
               'Ok, got it',
-              style: TextStyle(color: Colors.white, fontSize: 18),
+              style: TextStyle(color: Colors.white, fontSize: getFontSize(18, context)),
             ),
           ),
         ),

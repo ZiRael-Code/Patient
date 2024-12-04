@@ -1,3 +1,4 @@
+import '../Main/Dashboard.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_app/Appointments/AppointmentPaymentSummary.dart';
@@ -9,7 +10,7 @@ void main() {
 }
 
 class ScheduleAppointmentDateChooser extends StatefulWidget {
-  const ScheduleAppointmentDateChooser({super.key});
+  ScheduleAppointmentDateChooser({super.key});
   @override
   ScheduleAppointmentDateChooserState createState() => ScheduleAppointmentDateChooserState();
 }
@@ -28,9 +29,9 @@ class ScheduleAppointmentDateChooserState extends State<ScheduleAppointmentDateC
         Row(
           children: [
             Container(
-              margin: EdgeInsets.only(left: 10),
-              width: 32,
-              height: 32,
+              margin: EdgeInsets.only(left: getFontSize(10, context)),
+              width: getFontSize(32, context),
+              height: getFontSize(32, context),
               alignment: Alignment.center,
               padding: EdgeInsets.all(10),
               decoration: BoxDecoration(
@@ -40,8 +41,8 @@ class ScheduleAppointmentDateChooserState extends State<ScheduleAppointmentDateC
               child: SvgPicture.asset(
                 'assets/images/back.svg',
                 color: Colors.white,
-                width: 8.0,
-                height: 15,
+                width: getFontSize(8.0, context),
+                height: getFontSize(15, context),
               ),
             ),
             Spacer(),
@@ -49,7 +50,7 @@ class ScheduleAppointmentDateChooserState extends State<ScheduleAppointmentDateC
               'Book Appointment',
               style: TextStyle(
                 fontWeight: FontWeight.bold,
-                fontSize: 18,
+                fontSize: getFontSize(18, context),
               ),
             ),
             Spacer(),
@@ -58,7 +59,7 @@ class ScheduleAppointmentDateChooserState extends State<ScheduleAppointmentDateC
       ),
 
       body: Padding(
-        padding: const EdgeInsets.all(16.0),
+        padding: EdgeInsets.all(16.0),
         child: SingleChildScrollView(
           child: Column(
           children: [
@@ -81,18 +82,18 @@ class ScheduleAppointmentDateChooserState extends State<ScheduleAppointmentDateC
                 formatButtonVisible: false,
                 titleCentered: true,
                 leftChevronIcon: Container(
-                  height: 23,
-                  width: 23,
-                  child: Center(child: Icon(Icons.arrow_back_ios, color: Colors.blue, size: 15,),),
+                  height: getFontSize(23, context),
+                  width: getFontSize(23, context),
+                  child: Center(child: Icon(Icons.arrow_back_ios, color: Colors.blue, size: getFontSize(15, context),),),
                   decoration: BoxDecoration(
                     shape: BoxShape.circle,
                     color: Colors.blue.withOpacity(0.20),
                   ),
                 ),
                 rightChevronIcon: Container(
-                  height: 23,
-                  width: 23,
-                  child: Center(child:  Icon(Icons.arrow_forward_ios_rounded, color: Colors.blue, size: 15,),),
+                  height: getFontSize(23, context),
+                  width: getFontSize(23, context),
+                  child: Center(child:  Icon(Icons.arrow_forward_ios_rounded, color: Colors.blue, size: getFontSize(15, context),),),
                   decoration: BoxDecoration(
                     shape: BoxShape.circle,
                     color: Colors.blue.withOpacity(0.20),
@@ -100,8 +101,8 @@ class ScheduleAppointmentDateChooserState extends State<ScheduleAppointmentDateC
                 ),
               ),
               daysOfWeekStyle: DaysOfWeekStyle(
-                weekendStyle: TextStyle(color: Colors.black, fontSize: 14),
-                weekdayStyle: TextStyle(color: Colors.black, fontSize: 14),
+                weekendStyle: TextStyle(color: Colors.black, fontSize: getFontSize(14, context)),
+                weekdayStyle: TextStyle(color: Colors.black, fontSize: getFontSize(14, context)),
                 decoration: BoxDecoration()
               ),
               calendarStyle: CalendarStyle(
@@ -113,24 +114,24 @@ class ScheduleAppointmentDateChooserState extends State<ScheduleAppointmentDateC
                   color: Colors.blue,
                   shape: BoxShape.circle,
                 ),
-                weekendTextStyle: TextStyle(color: Colors.black,fontSize: 20),
-                weekNumberTextStyle: TextStyle(fontSize: 20),
-                defaultTextStyle: TextStyle(fontSize: 20),
-                todayTextStyle: TextStyle(fontSize: 20),
-                disabledTextStyle: TextStyle(fontSize: 20, color: Colors.grey),
+                weekendTextStyle: TextStyle(color: Colors.black,fontSize: getFontSize(20, context)),
+                weekNumberTextStyle: TextStyle(fontSize: getFontSize(20, context)),
+                defaultTextStyle: TextStyle(fontSize: getFontSize(20, context)),
+                todayTextStyle: TextStyle(fontSize: getFontSize(20, context)),
+                disabledTextStyle: TextStyle(fontSize: getFontSize(20, context), color: Colors.grey),
               ),
             ),
 
             Align(
               alignment: Alignment.centerLeft,
               child:Text('Select time', textAlign: TextAlign.left,style: TextStyle(
-                fontSize: 14,
+                fontSize: getFontSize(14, context),
                 fontWeight: FontWeight.bold,
               ),),
             ),
-        SizedBox(height: 10,),
+        SizedBox(height: getFontSize(10, context),),
         Container(
-          height: 50,
+          height: getFontSize(50, context),
           width: double.infinity,
           decoration: BoxDecoration(
             color: Color(0xFFF1F1F1),
@@ -146,12 +147,12 @@ class ScheduleAppointmentDateChooserState extends State<ScheduleAppointmentDateC
                 ),
               ),
               style: TextStyle(
-                fontSize: 16,
+                fontSize: getFontSize(16, context),
               ),
             ),
         ),
 
-            SizedBox(height: 7,),
+            SizedBox(height: getFontSize(7, context),),
             Align(
               alignment: Alignment.centerLeft,
               child: Wrap(
@@ -164,11 +165,11 @@ class ScheduleAppointmentDateChooserState extends State<ScheduleAppointmentDateC
                 ],
               ),
             ),
-        SizedBox(height: 20,),
+        SizedBox(height: getFontSize(20, context),),
             Align(
               alignment: Alignment.centerLeft,
               child:Text('Appointment type', textAlign: TextAlign.left,style: TextStyle(
-                fontSize: 14,
+                fontSize: getFontSize(14, context),
                 fontWeight: FontWeight.bold,
               ),),
             ),
@@ -176,7 +177,7 @@ class ScheduleAppointmentDateChooserState extends State<ScheduleAppointmentDateC
 
 
             Container(
-              height: 50,
+              height: getFontSize(50, context),
               width: double.infinity,
               decoration: BoxDecoration(
                 color: Color(0xFFF1F1F1),
@@ -194,7 +195,7 @@ class ScheduleAppointmentDateChooserState extends State<ScheduleAppointmentDateC
                 isExpanded: true, // Makes dropdown take full width
                 underline: SizedBox(), // Hides the default underline
                 style: TextStyle(
-                  fontSize: 16,
+                  fontSize: getFontSize(16, context),
                   color: Colors.black, // Dropdown item color
                 ),
                 icon: Icon(Icons.arrow_drop_down), // Dropdown icon
@@ -212,7 +213,7 @@ class ScheduleAppointmentDateChooserState extends State<ScheduleAppointmentDateC
                 }).toList(),
               ),
             ),
-            SizedBox(height: 20,),
+            SizedBox(height: getFontSize(20, context),),
 
             ElevatedButton(
               onPressed: () {
@@ -226,10 +227,10 @@ class ScheduleAppointmentDateChooserState extends State<ScheduleAppointmentDateC
                 ),
               ),
               child: Padding(
-                padding: const EdgeInsets.symmetric(vertical: 12.0, horizontal: 24.0),
+                padding: EdgeInsets.symmetric(vertical: 12.0, horizontal: 24.0),
                 child: Text(
                   'Continue',
-                  style: TextStyle(color: Colors.white, fontSize: 18),
+                  style: TextStyle(color: Colors.white, fontSize: getFontSize(18, context)),
                 ),
               ),
             ),
@@ -248,14 +249,14 @@ class ScheduleAppointmentDateChooserState extends State<ScheduleAppointmentDateC
     required String text
   }){
     return Container(
-      margin: EdgeInsets.only(right: 5, top: 15),
-      padding: EdgeInsets.only(top: 12, left: 25, bottom: 12, right:25),
+      margin: EdgeInsets.only(right: getFontSize(5, context), top: getFontSize(15, context)),
+      padding: EdgeInsets.only(top: getFontSize(12, context), left: getFontSize(25, context), bottom: getFontSize(12, context), right: getFontSize(25, context)),
       decoration: BoxDecoration(
-          border: Border.all(color: Colors.black.withOpacity(0.1), width: 0.5),
+          border: Border.all(color: Colors.black.withOpacity(0.1), width: getFontSize(0.5, context)),
           color: Color(0xFFE2EDFF),
           borderRadius: BorderRadius.circular(50)
       ),
-      child: Text(text, style: TextStyle(fontSize: 12),),
+      child: Text(text, style: TextStyle(fontSize: getFontSize(12, context)),),
     );
   }
 

@@ -1,3 +1,4 @@
+import '../Main/Dashboard.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_app/Main/AllCommunity.dart';
@@ -9,7 +10,7 @@ void main(){
 }
 
 class Community extends StatefulWidget {
-  const Community({super.key});
+  Community({super.key});
   @override
   _CommunityScreen createState() => _CommunityScreen();
 }
@@ -24,16 +25,16 @@ class _CommunityScreen extends  State<Community> {
           title: Row(
             children: [
               Container(
-                width: 35,
-                height: 35,
+                width: getFontSize(35, context),
+                height: getFontSize(35, context),
                 padding: EdgeInsets.all(10),
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(50),
                   color: Color(0xFFE5E5E5),
                 ),
                 child: SvgPicture.asset('assets/images/back.svg',
-                  width: 8.0,
-                  height: 15,),
+                  width: getFontSize(8.0, context),
+                  height: getFontSize(15, context),),
               ),
               Spacer(),
               Container(
@@ -42,7 +43,7 @@ class _CommunityScreen extends  State<Community> {
                 Center(child: Text(
                   'Community',
                   style: TextStyle(
-                      fontSize: 20,
+                      fontSize: getFontSize(20, context),
                       fontStyle: FontStyle.normal
                   ),
                 ),
@@ -56,38 +57,38 @@ class _CommunityScreen extends  State<Community> {
         ),
         body:
         Container(
-            padding: EdgeInsets.only(bottom: 30, left: 15, right: 15),
+            padding: EdgeInsets.only(bottom: getFontSize(30, context), left: getFontSize(15, context), right: getFontSize(15, context)),
             child:
         Align(
           child:
       Column(
       children: [
-        SizedBox(height: 30),
+        SizedBox(height: getFontSize(30, context)),
         Container(
           alignment: Alignment.center,
-          width: 258,
+          width: getFontSize(258, context),
           child:
         Align(child: Text("Welcome to the community page!", textAlign: TextAlign.center,
         style: TextStyle(
           fontWeight: FontWeight.bold,
-          fontSize: 32,
+          fontSize: getFontSize(32, context),
         ),
         ),
         ),
         ),
-        SizedBox(height: 10,),
+        SizedBox(height: getFontSize(10, context),),
         Container(
           alignment: Alignment.center,
-          width: 304,
+          width: getFontSize(304, context),
           child:
         Align(child: Text("This is where you can interact with doctors and other patients that have the same conditions as you do to ask questions and give your own observations.", textAlign: TextAlign.center,
         style: TextStyle(
-          fontSize: 14,
+          fontSize: getFontSize(14, context),
         ),
         ),
         ),
         ),
-        SizedBox(height: 50,),
+        SizedBox(height: getFontSize(50, context),),
         SvgPicture.asset('assets/images/community.svg'),
 
 
@@ -105,10 +106,10 @@ class _CommunityScreen extends  State<Community> {
             ),
           ),
           child: Padding(
-            padding: const EdgeInsets.symmetric(vertical: 12.0, horizontal: 24.0),
+            padding: EdgeInsets.symmetric(vertical: 12.0, horizontal: 24.0),
             child: Text(
               'Explore community',
-              style: TextStyle(color: Colors.white, fontSize: 18),
+              style: TextStyle(color: Colors.white, fontSize: getFontSize(18, context)),
             ),
           ),
         ),
@@ -127,12 +128,12 @@ class _CommunityScreen extends  State<Community> {
             mainAxisSize: MainAxisSize.min,
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
-              Text('Anonymity', style: TextStyle(fontSize: 18),),
-              SizedBox(height: 15,),
+              Text('Anonymity', style: TextStyle(fontSize: getFontSize(18, context)),),
+              SizedBox(height: getFontSize(15, context),),
               Text(textAlign: TextAlign.center ,'You can choose to not disclose your identity while asking questions on the community.', style: TextStyle(color: Color(0xff666666)),),
-              SizedBox(height: 25,),
+              SizedBox(height: getFontSize(25, context),),
               Text('Set display name'),
-              SizedBox(height: 10,),
+              SizedBox(height: getFontSize(10, context),),
               TextField(
                 decoration: InputDecoration(
                   hintText: 'e.g Lagbaja',
@@ -151,10 +152,10 @@ class _CommunityScreen extends  State<Community> {
                   ),
                 ),
                 style: TextStyle(
-                  fontSize: 16.0,
+                  fontSize: getFontSize(16.0, context),
                 ),
               ),
-              SizedBox(height: 10,),
+              SizedBox(height: getFontSize(10, context),),
               Row(
                 children: [
                   GestureDetector(
@@ -173,12 +174,12 @@ class _CommunityScreen extends  State<Community> {
                       child: Icon(Icons.check, color: isSelected ? Colors.white : Color(0xffC2C2C2))
                   ),
                   ),
-                  SizedBox(width: 7,),
+                  SizedBox(width: getFontSize(7, context),),
                   Text('Always use this display name'),
 
           ],
               ),
-              SizedBox(height: 20,),
+              SizedBox(height: getFontSize(20, context),),
               ElevatedButton(
                 onPressed: () {
                   Navigator.of(context).push(MaterialPageRoute(builder: (builder)=> AllCommunity()));
@@ -191,10 +192,10 @@ class _CommunityScreen extends  State<Community> {
                   ),
                 ),
                 child: Padding(
-                  padding: const EdgeInsets.symmetric(vertical: 12.0, horizontal: 24.0),
+                  padding: EdgeInsets.symmetric(vertical: 12.0, horizontal: 24.0),
                   child: Text(
                     'Okay',
-                    style: TextStyle(color: Colors.white, fontSize: 18),
+                    style: TextStyle(color: Colors.white, fontSize: getFontSize(18, context)),
                   ),
                 ),
               ),

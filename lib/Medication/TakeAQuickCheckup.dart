@@ -1,7 +1,10 @@
+import '../Main/Dashboard.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_app/Appointments/SpecialistProfile.dart';
 import 'package:flutter_app/Medication/SearchSpecialist.dart';
 import 'package:flutter_svg/svg.dart';
+
 
 
 void main(){
@@ -9,7 +12,7 @@ void main(){
 }
 
 class TakeAQuickCheckup extends StatefulWidget {
-  const TakeAQuickCheckup({super.key});
+  TakeAQuickCheckup({super.key});
   @override
   _TakeAQuickSessionScreen createState() => _TakeAQuickSessionScreen();
 }
@@ -24,16 +27,16 @@ class _TakeAQuickSessionScreen extends  State<TakeAQuickCheckup> {
           title: Row(
             children: [
               Container(
-                width: 35,
-                height: 35,
+                width: getFontSize(35, context),
+                height: getFontSize(35, context),
                 padding: EdgeInsets.all(10),
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(50),
                   color: Color(0xFFE5E5E5),
                 ),
                 child: SvgPicture.asset('assets/images/back.svg',
-                  width: 8.0,
-                  height: 15,),
+                  width: getFontSize(8.0, context),
+                  height: getFontSize(15, context),),
               ),
               Spacer(),
               Container(
@@ -42,7 +45,7 @@ class _TakeAQuickSessionScreen extends  State<TakeAQuickCheckup> {
                 Center(child: Text(
                   'Take a quick checkup',
                   style: TextStyle(
-                      fontSize: 20,
+                      fontSize: getFontSize(20, context),
                       fontStyle: FontStyle.normal
                   ),
                 ),
@@ -56,13 +59,13 @@ class _TakeAQuickSessionScreen extends  State<TakeAQuickCheckup> {
         ),
         body:
         Container(
-            padding: EdgeInsets.only(bottom: 30, left: 15, right: 15),
+            padding: EdgeInsets.only(bottom: getFontSize(30, context), left: getFontSize(15, context), right: getFontSize(15, context)),
             child:
         Align(
           child:
       Column(
       children: [
-        SizedBox(height: 30),
+        SizedBox(height: getFontSize(30, context)),
         Container(
           padding: EdgeInsets.all(15),
           alignment: Alignment.center,
@@ -73,7 +76,7 @@ class _TakeAQuickSessionScreen extends  State<TakeAQuickCheckup> {
             padding: EdgeInsets.all(10),
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(14),
-              border: Border.all(width: 1, 
+              border: Border.all(width: getFontSize(1, context), 
                   color: Colors.black.withOpacity(0.090))
             ),
               child: Row(
@@ -84,18 +87,18 @@ class _TakeAQuickSessionScreen extends  State<TakeAQuickCheckup> {
           },
                 child:
               Container(
-                width: 59,
-                height: 59,
+                width: getFontSize(59, context),
+                height: getFontSize(59, context),
                 decoration: BoxDecoration(
                   shape: BoxShape.circle,
                   color: Color(0xFFE2EDFF),
                 ),
-                child: Icon(Icons.search, weight: 6, size: 38,
+                child: Icon(Icons.search, weight: 6, size: getFontSize(38, context),
                   color: Colors.blue,),
               ),
               ),
 
-              SizedBox(width: 10,),
+              SizedBox(width: getFontSize(10, context),),
               Container(
                 width: MediaQuery.of(context).size.width * 0.58,
                 child: Text('Search for doctors/hospitals/pharmacies by their names.')
@@ -105,13 +108,13 @@ class _TakeAQuickSessionScreen extends  State<TakeAQuickCheckup> {
       )
       ),
         ),
-        SizedBox(height: 20,),
+        SizedBox(height: getFontSize(20, context),),
         Container(
           alignment: Alignment.centerLeft,
-          child: Text('Affiliated medical personnels', style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),),
+          child: Text('Affiliated medical personnels', style: TextStyle(fontSize: getFontSize(18, context), fontWeight: FontWeight.bold),),
 
         ),
-        SizedBox(height: 35,),
+        SizedBox(height: getFontSize(35, context),),
         specialist(
           image: "assets/images/doc.png",
           name: "Dr. Nelson Yang",
@@ -149,7 +152,11 @@ class _TakeAQuickSessionScreen extends  State<TakeAQuickCheckup> {
     required String specialization,
     required String workingType})
   {
-    return Container(
+    return GestureDetector(
+        onTap: () {
+      Navigator.of(context).push(MaterialPageRoute(builder: (builder)=> SpecialistProfile()));
+    },
+    child: Container(
       child: Column(
         children: [
           Row(
@@ -157,9 +164,9 @@ class _TakeAQuickSessionScreen extends  State<TakeAQuickCheckup> {
               Align(
                 alignment: Alignment.topCenter,
                 child: Container(
-                  // margin: EdgeInsets.only(bottom: 50),
-                  height: 44,
-                  width: 44,
+                  // margin: EdgeInsets.only(bottom: getFontSize(50, context)),
+                  height: getFontSize(44, context),
+                  width: getFontSize(44, context),
                   child: CircleAvatar(
                     radius: 22,
                     backgroundImage: AssetImage(image),
@@ -167,19 +174,19 @@ class _TakeAQuickSessionScreen extends  State<TakeAQuickCheckup> {
                   ),
                 ),
               ),
-              SizedBox(width: 12),
+              SizedBox(width: getFontSize(12, context)),
               Column(
                 mainAxisAlignment: MainAxisAlignment.start,
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(name, style: TextStyle(
-                      fontSize: 18,
+                      fontSize: getFontSize(18, context),
                       fontWeight: FontWeight.bold,
                       color: Colors.black
                   ),),
-                  SizedBox(height: 5,),
+                  SizedBox(height: getFontSize(5, context),),
                   Text("${specialization} . ${workingType}", style: TextStyle(
-                      fontSize: 12,
+                      fontSize: getFontSize(12, context),
                       color: Colors.grey.withOpacity(0.90)
                   ),),
                 ],
@@ -187,10 +194,11 @@ class _TakeAQuickSessionScreen extends  State<TakeAQuickCheckup> {
 
             ],
           ),
-          SizedBox(height: 15,),
+          SizedBox(height: getFontSize(15, context),),
           SvgPicture.asset('assets/images/line.svg'),
-          SizedBox(height: 15,),
+          SizedBox(height: getFontSize(15, context),),
         ],
+      ),
       ),
     );
   }

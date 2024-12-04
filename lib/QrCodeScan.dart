@@ -1,3 +1,5 @@
+import '../Main/Dashboard.dart';
+import 'Main/Dashboard.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
@@ -8,7 +10,7 @@ void main(){
 }
 
 class QrCodeScan extends StatefulWidget {
-  const QrCodeScan({super.key});
+  QrCodeScan({super.key});
   @override
   _QrCodeScanScreen createState() => _QrCodeScanScreen();
 }
@@ -24,16 +26,16 @@ class _QrCodeScanScreen extends  State<QrCodeScan> {
           title: Row(
             children: [
               Container(
-                width: 35,
-                height: 35,
+                width: getFontSize(35, context),
+                height: getFontSize(35, context),
                 padding: EdgeInsets.all(10),
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(50),
                   color: Color(0xFFE5E5E5),
                 ),
                 child: SvgPicture.asset('assets/images/back.svg',
-                  width: 8.0,
-                  height: 15,),
+                  width: getFontSize(8.0, context),
+                  height: getFontSize(15, context),),
               ),
               Spacer(),
 
@@ -43,28 +45,28 @@ class _QrCodeScanScreen extends  State<QrCodeScan> {
         ),
         body:
         Container(
-            padding: EdgeInsets.only(bottom: 30, left: 15, right: 15),
+            padding: EdgeInsets.only(bottom: getFontSize(30, context), left: getFontSize(15, context), right: getFontSize(15, context)),
             child:
         Align(
           child:
       Column(
       children: [
-        SizedBox(height: 30),
+        SizedBox(height: getFontSize(30, context)),
         Container(
-          width: 234,
-          child: Text(textAlign: TextAlign.center,'QR Code scan',style: TextStyle(fontSize: 28, fontWeight: FontWeight.bold),),
+          width: getFontSize(234, context),
+          child: Text(textAlign: TextAlign.center,'QR Code scan',style: TextStyle(fontSize: getFontSize(28, context), fontWeight: FontWeight.bold),),
         ),
-        SizedBox(height: 15,),
+        SizedBox(height: getFontSize(15, context),),
         Container(
-          width: 284,
-          child: Text(textAlign: TextAlign.center,'Scan the code on the device box to check it’s compatibility with the app',style: TextStyle(fontSize: 14,),),
+          width: getFontSize(284, context),
+          child: Text(textAlign: TextAlign.center,'Scan the code on the device box to check it’s compatibility with the app',style: TextStyle(fontSize: getFontSize(14, context),),),
         ),
 
         Spacer(),
         SvgPicture.asset('assets/images/qrcode.svg'),
         Spacer(),
 
-        SizedBox(height: 25,),
+        SizedBox(height: getFontSize(25, context),),
         ElevatedButton(
           onPressed: () {},
           style: ElevatedButton.styleFrom(
@@ -75,10 +77,10 @@ class _QrCodeScanScreen extends  State<QrCodeScan> {
             ),
           ),
           child: Padding(
-            padding: const EdgeInsets.symmetric(vertical: 12.0, horizontal: 24.0),
+            padding: EdgeInsets.symmetric(vertical: 12.0, horizontal: 24.0),
             child: Text(
               'Scan QR code',
-              style: TextStyle(color: Colors.white, fontSize: 18),
+              style: TextStyle(color: Colors.white, fontSize: getFontSize(18, context)),
             ),
           ),
         ),

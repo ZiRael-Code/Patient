@@ -1,3 +1,4 @@
+import '../Main/Dashboard.dart';
 import 'package:flutter/material.dart';
 import 'package:table_calendar/table_calendar.dart';
 import 'package:intl/intl.dart';
@@ -7,7 +8,7 @@ void main() {
 }
 
 class CalenderText extends StatefulWidget {
-  const CalenderText({super.key});
+  CalenderText({super.key});
 
   @override
   _CalenderTextState createState() => _CalenderTextState();
@@ -24,7 +25,7 @@ class _CalenderTextState extends State<CalenderText> {
         children: [
           // Top Section with arrows, month, and year
           Padding(
-            padding: const EdgeInsets.symmetric(vertical: 16.0),
+            padding: EdgeInsets.symmetric(vertical: 16.0),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
@@ -44,15 +45,15 @@ class _CalenderTextState extends State<CalenderText> {
                     Text(
                       DateFormat('MMMM').format(_focusedDay),
                       style: TextStyle(
-                        fontSize: 20,
+                        fontSize: getFontSize(20, context),
                         fontWeight: FontWeight.bold,
                       ),
                     ),
-                    SizedBox(width: 5),
+                    SizedBox(width: getFontSize(5, context)),
                     Text(
                       _focusedDay.year.toString(),
                       style: TextStyle(
-                        fontSize: 20,
+                        fontSize: getFontSize(20, context),
                       ),
                     ),
                   ],
@@ -130,7 +131,7 @@ class _CalenderTextState extends State<CalenderText> {
             ),
           ),
 
-          SizedBox(height: 16),
+          SizedBox(height: getFontSize(16, context)),
 
           // Legend Section
           Column(
@@ -164,17 +165,17 @@ class _CalenderTextState extends State<CalenderText> {
     }
 
     return Container(
-      margin: EdgeInsets.only(right: 0),
+      margin: EdgeInsets.only(right: getFontSize(0, context)),
       padding: EdgeInsets.all(5),
-      width: 48,
-      height: 67,
+      width: getFontSize(48, context),
+      height: getFontSize(67, context),
       child: Stack(
         children: [
           Container(
             padding: EdgeInsets.all(5),
-            margin: EdgeInsets.only(top: 7),
-            width: 48,
-            height: 67,
+            margin: EdgeInsets.only(top: getFontSize(7, context)),
+            width: getFontSize(48, context),
+            height: getFontSize(67, context),
             decoration: BoxDecoration(
               color: isToday ? Colors.blue : Color(0xffE2EDFF).withOpacity(0.30),
               borderRadius: BorderRadius.circular(8),
@@ -188,12 +189,12 @@ class _CalenderTextState extends State<CalenderText> {
                     color: isToday ? Colors.white : Colors.black,
                   ),
                 ),
-                SizedBox(height: 4),
+                SizedBox(height: getFontSize(4, context)),
                 Text(
                   date,
                   style: TextStyle(
                     color: isToday ? Colors.white : Colors.black,
-                    fontSize: 24,
+                    fontSize: getFontSize(24, context),
                     fontWeight: FontWeight.bold,
                   ),
                 ),
@@ -204,9 +205,9 @@ class _CalenderTextState extends State<CalenderText> {
             Align(
               alignment: Alignment.topCenter,
               child: Container(
-                margin: EdgeInsets.only(top: 4), // Adjust as needed for positioning
-                width: 8,
-                height: 8,
+                margin: EdgeInsets.only(top: getFontSize(4, context)), // Adjust as needed for positioning
+                width: getFontSize(8, context),
+                height: getFontSize(8, context),
                 decoration: BoxDecoration(
                   color: dotColor,
                   borderRadius: BorderRadius.circular(50),
@@ -223,14 +224,14 @@ class _CalenderTextState extends State<CalenderText> {
     return Row(
       children: [
         Container(
-          width: 8,
-          height: 8,
+          width: getFontSize(8, context),
+          height: getFontSize(8, context),
           decoration: BoxDecoration(
             color: color,
             borderRadius: BorderRadius.circular(50),
           ),
         ),
-        SizedBox(width: 8),
+        SizedBox(width: getFontSize(8, context)),
         RichText(
           text: TextSpan(
             style: TextStyle(color: Colors.black),
@@ -240,7 +241,7 @@ class _CalenderTextState extends State<CalenderText> {
             ],
           ),
         ),
-        SizedBox(height: 8),
+        SizedBox(height: getFontSize(8, context)),
       ],
     );
   }

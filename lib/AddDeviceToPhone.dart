@@ -1,7 +1,9 @@
+import '../Main/Dashboard.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_app/DeviceConnect.dart';
 import 'package:flutter_svg/svg.dart';
+import 'Main/Dashboard.dart';
 
 
 void main(){
@@ -9,7 +11,7 @@ void main(){
 }
 
 class AddDeviceToPhone extends StatefulWidget {
-  const AddDeviceToPhone({super.key});
+  AddDeviceToPhone({super.key});
   @override
   _AddDeviceToPhoneScreen createState() => _AddDeviceToPhoneScreen();
 }
@@ -21,7 +23,7 @@ class _AddDeviceToPhoneScreen extends  State<AddDeviceToPhone> {
   @override
   void initState() {
     // TODO: implement initState
-      Future.delayed(const Duration(milliseconds: 2000), () {
+      Future.delayed(Duration(milliseconds: 2000), () {
         setState(() {
           deviceFound = true;
         });
@@ -39,25 +41,25 @@ class _AddDeviceToPhoneScreen extends  State<AddDeviceToPhone> {
           title: Row(
             children: [
               Container(
-                width: 35,
-                height: 35,
+                width: getFontSize(35, context),
+                height: getFontSize(35, context),
                 padding: EdgeInsets.all(10),
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(50),
                   color: Color(0xFFE5E5E5).withOpacity(0.40),
                 ),
                 child: SvgPicture.asset('assets/images/back.svg',
-                  width: 8.0,
+                  width: getFontSize(8.0, context),
                   color: Colors.white,
-                  height: 15,),
+                  height: getFontSize(15, context),),
               ),
               Spacer(),
           
           GestureDetector(
             child: 
           Container(
-            width: 35,
-            height: 35,
+            width: getFontSize(35, context),
+            height: getFontSize(35, context),
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(50),
               color: Color(0xFFE5E5E5).withOpacity(0.40),
@@ -76,17 +78,17 @@ class _AddDeviceToPhoneScreen extends  State<AddDeviceToPhone> {
         ),
         body:
         Container(
-            padding: EdgeInsets.only(bottom: 30, left: 15, right: 15),
+            padding: EdgeInsets.only(bottom: getFontSize(30, context), left: getFontSize(15, context), right: getFontSize(15, context)),
             child:
         Align(
           child:
       Column(
       children: [
-        SizedBox(height: 30),
+        SizedBox(height: getFontSize(30, context)),
 
         Align(child: Text("Add your device", textAlign: TextAlign.center,
           style: TextStyle(
-            fontSize: 28,
+            fontSize: getFontSize(28, context),
             color: Colors.white,
             fontWeight: FontWeight.bold
           ),
@@ -99,21 +101,21 @@ class _AddDeviceToPhoneScreen extends  State<AddDeviceToPhone> {
         Align(child: Text("Please switch your device on and make sure your phone’s bluetooth is on.", textAlign: TextAlign.center,
         style: TextStyle(
           color: Colors.white,
-          fontSize: 14,
+          fontSize: getFontSize(14, context),
         ),
         ),
         ),
         ),
 
-        SizedBox(height: 60),
+        SizedBox(height: getFontSize(60, context)),
        deviceFound ? GestureDetector(
     onTap: () {
         Navigator.of(context).push(MaterialPageRoute(builder: (builder)=> DeviceConnect()));
          },
            child: Container(
              padding: EdgeInsets.all(15),
-         width: 183,
-         height: 183,
+         width: getFontSize(183, context),
+         height: getFontSize(183, context),
          decoration: BoxDecoration(
            color: Colors.white,
            shape: BoxShape.circle,
@@ -122,7 +124,7 @@ class _AddDeviceToPhoneScreen extends  State<AddDeviceToPhone> {
        )
        )
        : SvgPicture.asset('assets/images/search.svg'),
-        SizedBox(height: 40),
+        SizedBox(height: getFontSize(40, context)),
 
         
       ],
@@ -138,7 +140,7 @@ class _AddDeviceToPhoneScreen extends  State<AddDeviceToPhone> {
       backgroundColor: Colors.white,
       builder: (BuildContext context) {
         return Padding(
-          padding: const EdgeInsets.all(16.0),
+          padding: EdgeInsets.all(16.0),
           child: howToConnectPopup(),
         );
       },
@@ -152,9 +154,9 @@ class _AddDeviceToPhoneScreen extends  State<AddDeviceToPhone> {
       children: [
         Text(
           'How to connect?',
-          style: TextStyle(color: Colors.black, fontSize: 18),
+          style: TextStyle(color: Colors.black, fontSize: getFontSize(18, context)),
         ),
-        SizedBox(height: 25),
+        SizedBox(height: getFontSize(25, context)),
         numbering(
           number: "1",
           text: "Make sure the device is fully charged and turn on the device",
@@ -176,9 +178,9 @@ class _AddDeviceToPhoneScreen extends  State<AddDeviceToPhone> {
         child: Row(
       children: [
         Container(
-          width: 20,
-          height: 20,
-          margin: EdgeInsets.only(right: 7),
+          width: getFontSize(20, context),
+          height: getFontSize(20, context),
+          margin: EdgeInsets.only(right: getFontSize(7, context)),
           child: Center(
             child: Text(
               number,
@@ -198,7 +200,7 @@ class _AddDeviceToPhoneScreen extends  State<AddDeviceToPhone> {
         ),
       ],
     ),
-    margin: EdgeInsets.only(bottom: 10),
+    margin: EdgeInsets.only(bottom: getFontSize(10, context)),
     );
   }
 

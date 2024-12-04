@@ -1,3 +1,4 @@
+import '../../Main/Dashboard.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_app/Account/Referral/send_invites_success_page.dart';
@@ -9,7 +10,7 @@ void main(){
 }
 
 class SendInvites extends StatefulWidget {
-  const SendInvites({super.key});
+  SendInvites({super.key});
   @override
   _SendInvitesScreen createState() => _SendInvitesScreen();
 }
@@ -24,16 +25,16 @@ class _SendInvitesScreen extends  State<SendInvites> {
               title: Row(
                 children: [
                   Container(
-                    width: 35,
-                    height: 35,
+                    width: getFontSize(35, context),
+                    height: getFontSize(35, context),
                     padding: EdgeInsets.all(10),
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(50),
                       color: Color(0xFFE5E5E5),
                     ),
                     child: SvgPicture.asset('assets/images/back.svg',
-                      width: 8.0,
-                      height: 15,),
+                      width: getFontSize(8.0, context),
+                      height: getFontSize(15, context),),
                   ),
                   Spacer(),
                   Container(
@@ -42,7 +43,7 @@ class _SendInvitesScreen extends  State<SendInvites> {
                     Center(child: Text(
                       'Send Invites',
                       style: TextStyle(
-                          fontSize: 20,
+                          fontSize: getFontSize(20, context),
                           fontStyle: FontStyle.normal
                       ),
                     ),
@@ -61,15 +62,15 @@ class _SendInvitesScreen extends  State<SendInvites> {
               children: [
                 Text(
                   'Invite friends and loved ones to MyVitalz through your phonebook to help them avoid stroke, heart attack, kidney failure and sudden death.',
-                  style: TextStyle(fontSize: 14),
+                  style: TextStyle(fontSize: getFontSize(14, context)),
                 ),
-                SizedBox(height: 20),
+                SizedBox(height: getFontSize(20, context)),
                 Text(
                   'To download the MyVitalz app, click on this link to download from playstore or app store:',
-                  style: TextStyle(fontSize: 14),
+                  style: TextStyle(fontSize: getFontSize(14, context)),
                 ),
                 Row(children: [
-                  Text('Link: ', style: TextStyle(color: Colors.black, fontSize: 14)),
+                  Text('Link: ', style: TextStyle(color: Colors.black, fontSize: getFontSize(14, context))),
 
                   GestureDetector(
                     onTap: () {
@@ -78,25 +79,25 @@ class _SendInvitesScreen extends  State<SendInvites> {
                     child: Text(
                       '7f4j6n8qN6EDCP-9wd/8ac6g7ewo87',
                       style: TextStyle(
-                        fontSize: 14,
+                        fontSize: getFontSize(14, context),
                         color: Colors.blue,
                         decoration: TextDecoration.underline,              ),
                     ),
                   ),
                 ]
                 ),
-                SizedBox(height: 20,),
+                SizedBox(height: getFontSize(20, context),),
                 SvgPicture.asset("assets/images/line.svg"),
-                SizedBox(height: 15,),
+                SizedBox(height: getFontSize(15, context),),
                 Text(
                   '4 Contacts selected',
                   style: TextStyle(
-                    fontSize: 16,
+                    fontSize: getFontSize(16, context),
                     color: Colors.blue,
                     fontWeight: FontWeight.bold,
                   ),
                 ),
-                SizedBox(height: 15,),
+                SizedBox(height: getFontSize(15, context),),
 
                 SingleChildScrollView(
                   scrollDirection: Axis.horizontal,
@@ -128,7 +129,7 @@ class _SendInvitesScreen extends  State<SendInvites> {
           maxChildSize: 0.3, 
           builder: (context, scrollController) {
             return Container(
-              decoration: const BoxDecoration(
+              decoration: BoxDecoration(
                 color: Colors.white,
                 borderRadius: BorderRadius.only(
                   topLeft: Radius.circular(20),
@@ -144,16 +145,16 @@ class _SendInvitesScreen extends  State<SendInvites> {
               ),
               child: Column(
                 children: [
-                  const SizedBox(height: 10),
+                  SizedBox(height: getFontSize(10, context)),
                   Container(
-                    width: 50,
-                    height: 5,
+                    width: getFontSize(50, context),
+                    height: getFontSize(5, context),
                     decoration: BoxDecoration(
                       color: Colors.grey[300],
                       borderRadius: BorderRadius.circular(10),
                     ),
                   ),
-                  const SizedBox(height: 10),
+                  SizedBox(height: getFontSize(10, context)),
                   Expanded(
                     child: ListView(
                       controller: scrollController,
@@ -181,7 +182,7 @@ class _SendInvitesScreen extends  State<SendInvites> {
                             ),
                           ],
                         ),
-                        SizedBox(height: 20),
+                        SizedBox(height: getFontSize(20, context)),
                         Padding(padding: EdgeInsets.all(8),
                         child: 
                         ElevatedButton(
@@ -196,10 +197,10 @@ class _SendInvitesScreen extends  State<SendInvites> {
                             ),
                           ),
                           child: Padding(
-                            padding: const EdgeInsets.symmetric(vertical: 12.0, horizontal: 24.0),
+                            padding: EdgeInsets.symmetric(vertical: 12.0, horizontal: 24.0),
                             child: Text(
                               'Done',
-                              style: TextStyle(color: Colors.white, fontSize: 18),
+                              style: TextStyle(color: Colors.white, fontSize: getFontSize(18, context)),
                             ),
                           ),
                         ),
@@ -227,13 +228,13 @@ class _SendInvitesScreen extends  State<SendInvites> {
           child: Icon(
             icon,
             color: color,
-            size: 30,
+            size: getFontSize(30, context),
           ),
         ),
-        const SizedBox(height: 8),
+        SizedBox(height: getFontSize(8, context)),
         Text(
           label,
-          style: const TextStyle(fontSize: 12),
+          style: TextStyle(fontSize: getFontSize(12, context)),
         ),
       ],
     );
@@ -243,25 +244,25 @@ class _SendInvitesScreen extends  State<SendInvites> {
     required String name}) {
     return
       Container(
-          margin: EdgeInsets.only(right: 15),
-          width: 75,
-          height: 124,
+          margin: EdgeInsets.only(right: getFontSize(15, context)),
+          width: getFontSize(75, context),
+          height: getFontSize(124, context),
           child: Column(
             children: [
               Container(
-                width: 70,
-                height: 70,
+                width: getFontSize(70, context),
+                height: getFontSize(70, context),
                 child: Stack(
                   children: [
                     Container(
                       alignment: Alignment.center,
-                      width: 63,
-                      height: 63,
+                      width: getFontSize(63, context),
+                      height: getFontSize(63, context),
                       decoration: BoxDecoration(
                           color: Color(0xff2e2e42),
                           shape: BoxShape.circle
                       ),
-                      child: Text(alphaOrder, style: TextStyle(color: Colors.white, fontSize: 35, fontWeight: FontWeight.bold),),
+                      child: Text(alphaOrder, style: TextStyle(color: Colors.white, fontSize: getFontSize(35, context), fontWeight: FontWeight.bold),),
                     ),
 
                     Align(
@@ -273,12 +274,12 @@ class _SendInvitesScreen extends  State<SendInvites> {
                 ),
               ),
 
-              SizedBox(height: 10,),
+              SizedBox(height: getFontSize(10, context),),
               Text(
                 name,
-                style: TextStyle(fontSize: 16,),
+                style: TextStyle(fontSize: getFontSize(16, context),),
               ),
-              SizedBox(height: 5,),
+              SizedBox(height: getFontSize(5, context),),
 
             ],
           )
@@ -293,17 +294,17 @@ class _SendInvitesScreen extends  State<SendInvites> {
       children: [
         Container(
           padding: EdgeInsets.all(25),
-          width: 86,
-          height: 86,
+          width: getFontSize(86, context),
+          height: getFontSize(86, context),
           decoration: BoxDecoration(
               shape: BoxShape.circle,
               color: Color(0xffE2EDFF)
           ),
-          child: icon is Icon ? icon : SvgPicture.asset(icon, width: 26, height: 26,),
+          child: icon is Icon ? icon : SvgPicture.asset(icon, width: getFontSize(26, context), height: getFontSize(26, context),),
         ),
-        SizedBox(height: 15,),
+        SizedBox(height: getFontSize(15, context),),
         Text("Refer a regular person", style: TextStyle(
-            fontSize: 14
+            fontSize: getFontSize(14, context)
         ),)
       ],
     );

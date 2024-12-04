@@ -1,3 +1,5 @@
+import '../Main/Dashboard.dart';
+import 'Main/Dashboard.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_app/AddDeviceToPhone.dart';
@@ -9,7 +11,7 @@ void main(){
 }
 
 class SyncDeviceToPhone extends StatefulWidget {
-  const SyncDeviceToPhone({super.key});
+  SyncDeviceToPhone({super.key});
   @override
   _SyncDeviceToPhoneScreen createState() => _SyncDeviceToPhoneScreen();
 }
@@ -24,16 +26,16 @@ class _SyncDeviceToPhoneScreen extends  State<SyncDeviceToPhone> {
           title: Row(
             children: [
               Container(
-                width: 35,
-                height: 35,
+                width: getFontSize(35, context),
+                height: getFontSize(35, context),
                 padding: EdgeInsets.all(10),
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(50),
                   color: Color(0xFFE5E5E5),
                 ),
                 child: SvgPicture.asset('assets/images/back.svg',
-                  width: 8.0,
-                  height: 15,),
+                  width: getFontSize(8.0, context),
+                  height: getFontSize(15, context),),
               ),
               Spacer(),
 
@@ -43,17 +45,17 @@ class _SyncDeviceToPhoneScreen extends  State<SyncDeviceToPhone> {
         ),
         body:
         Container(
-            padding: EdgeInsets.only(bottom: 30, left: 15, right: 15),
+            padding: EdgeInsets.only(bottom: getFontSize(30, context), left: getFontSize(15, context), right: getFontSize(15, context)),
             child:
         Align(
           child:
       Column(
       children: [
-        SizedBox(height: 30),
+        SizedBox(height: getFontSize(30, context)),
 
         Align(child: Text("Sync device to phone", textAlign: TextAlign.center,
           style: TextStyle(
-            fontSize: 28,
+            fontSize: getFontSize(28, context),
             fontWeight: FontWeight.bold
           ),
         ),
@@ -64,15 +66,15 @@ class _SyncDeviceToPhoneScreen extends  State<SyncDeviceToPhone> {
           child:
         Align(child: Text("To do this, you need to turn on your bluetooth connection", textAlign: TextAlign.center,
         style: TextStyle(
-          fontSize: 14,
+          fontSize: getFontSize(14, context),
         ),
         ),
         ),
         ),
 
-        SizedBox(height: 60),
+        SizedBox(height: getFontSize(60, context)),
         SvgPicture.asset('assets/images/togglephone.svg'),
-        SizedBox(height: 40),
+        SizedBox(height: getFontSize(40, context)),
 
 
         Spacer(),
@@ -89,10 +91,10 @@ class _SyncDeviceToPhoneScreen extends  State<SyncDeviceToPhone> {
             ),
           ),
           child: Padding(
-            padding: const EdgeInsets.symmetric(vertical: 12.0, horizontal: 24.0),
+            padding: EdgeInsets.symmetric(vertical: 12.0, horizontal: 24.0),
             child: Text(
               'Turn on bluetooth',
-              style: TextStyle(color: Colors.white, fontSize: 18),
+              style: TextStyle(color: Colors.white, fontSize: getFontSize(18, context)),
             ),
           ),
         ),

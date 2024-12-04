@@ -1,3 +1,4 @@
+import '../../Main/Dashboard.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_app/Account/Referral/ReferDoctor.dart';
 import 'package:flutter_app/Account/Referral/ReferHospital.dart';
@@ -8,11 +9,11 @@ import 'ReferSomeone.dart';
 
 
 void main(){
-  runApp(const Referrals());
+  runApp(Referrals());
 }
 
 class Referrals extends StatefulWidget {
-  const Referrals({super.key});
+  Referrals({super.key});
   @override
   _ReferralsScreen createState() => _ReferralsScreen();
 }
@@ -27,31 +28,31 @@ class _ReferralsScreen extends  State<Referrals> {
               title: Row(
                 children: [
                   Container(
-                    width: 35,
-                    height: 35,
-                    padding: const EdgeInsets.all(10),
+                    width: getFontSize(35, context),
+                    height: getFontSize(35, context),
+                    padding: EdgeInsets.all(10),
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(50),
-                      color: const Color(0xFFE5E5E5),
+                      color: Color(0xFFE5E5E5),
                     ),
                     child: SvgPicture.asset('assets/images/back.svg',
-                      width: 8.0,
-                      height: 15,),
+                      width: getFontSize(8.0, context),
+                      height: getFontSize(15, context),),
                   ),
-                  const Spacer(),
+                  Spacer(),
                   Container(
                     alignment: Alignment.center,
                     child:
-                    const Center(child: Text(
+                    Center(child: Text(
                       'Referrals',
                       style: TextStyle(
-                          fontSize: 20,
+                          fontSize: getFontSize(20, context),
                           fontStyle: FontStyle.normal
                       ),
                     ),
                     ),
                   ),
-                  const Spacer(),
+                  Spacer(),
 
                 ],
               ),
@@ -59,26 +60,26 @@ class _ReferralsScreen extends  State<Referrals> {
             ),
             body:
             Container(
-                padding: const EdgeInsets.only(bottom: 30, left: 15, right: 15),
+                padding: EdgeInsets.only(bottom: getFontSize(30, context), left: getFontSize(15, context), right: getFontSize(15, context)),
                 child:
                 Align(
                     child:
                     Column(
                         children: [
-                          const SizedBox(height: 30),
+                          SizedBox(height: getFontSize(30, context)),
                           Container(
                             alignment: Alignment.center,
                             width: MediaQuery.of(context).size.width * 0.68,
                             child:
-                            const Align(child: Text("Invite your friends and earn commissions when they buy devices.", textAlign: TextAlign.center,
+                            Align(child: Text("Invite your friends and earn commissions when they buy devices.", textAlign: TextAlign.center,
                               style: TextStyle(
-                                fontSize: 14,
+                                fontSize: getFontSize(14, context),
                               ),
                             ),
                             ),),
-                          const SizedBox(height: 60,),
+                          SizedBox(height: getFontSize(60, context),),
                           SvgPicture.asset('assets/images/pana.svg'),
-                          const SizedBox(height: 40),
+                          SizedBox(height: getFontSize(40, context)),
                           Align(
                             alignment: Alignment.center,
                             child:
@@ -91,11 +92,11 @@ class _ReferralsScreen extends  State<Referrals> {
                             },
                                   child:
                                 referOption(
-                                    icon: const Icon(Icons.person, color: Colors.blue,size: 36,),
+                                    icon: Icon(Icons.person, color: Colors.blue,size: getFontSize(36, context),),
                                     referText: "Refer a regular person"
                                 ),
                                 ),
-                                const SizedBox(width: 25),
+                                SizedBox(width: getFontSize(25, context)),
                                 GestureDetector(
                                   onTap: () {
                                     Navigator.of(context).push(MaterialPageRoute(builder: (builder)=> ReferHospital()));
@@ -108,7 +109,7 @@ class _ReferralsScreen extends  State<Referrals> {
                                 ),
                               ],),
                           ),
-                          const SizedBox(height: 25),
+                          SizedBox(height: getFontSize(25, context)),
                           Row(
                             mainAxisAlignment: MainAxisAlignment.center,
 
@@ -124,7 +125,7 @@ class _ReferralsScreen extends  State<Referrals> {
                                   referText: "Refer a Doctor"
                               ),
                               ),
-                              const SizedBox(width: 25),
+                              SizedBox(width: getFontSize(25, context)),
                               GestureDetector(
                                 onTap: () {
                                   Navigator.of(context).push(MaterialPageRoute(builder: (builder)=> ReferPharmacy()));
@@ -149,18 +150,18 @@ class _ReferralsScreen extends  State<Referrals> {
     return Column(
       children: [
         Container(
-          padding: const EdgeInsets.all(25),
-          width: 86,
-          height: 86,
-          decoration: const BoxDecoration(
+          padding: EdgeInsets.all(25),
+          width: getFontSize(86, context),
+          height: getFontSize(86, context),
+          decoration: BoxDecoration(
               shape: BoxShape.circle,
               color: Color(0xffE2EDFF)
           ),
-          child: icon is Icon ? icon : SvgPicture.asset(icon, width: 26, height: 26,),
+          child: icon is Icon ? icon : SvgPicture.asset(icon, width: getFontSize(26, context), height: getFontSize(26, context),),
         ),
-        const SizedBox(height: 15,),
-        Text(referText, style: const TextStyle(
-            fontSize: 14
+        SizedBox(height: getFontSize(15, context),),
+        Text(referText, style: TextStyle(
+            fontSize: getFontSize(14, context)
         ),)
       ],
     );

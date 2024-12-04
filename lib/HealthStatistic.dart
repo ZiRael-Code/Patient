@@ -1,3 +1,5 @@
+import '../Main/Dashboard.dart';
+import 'Main/Dashboard.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
@@ -8,7 +10,7 @@ void main(){
 }
 
 class HealthStatistic extends StatefulWidget {
-  const HealthStatistic({super.key});
+  HealthStatistic({super.key});
   @override
   _HealthStatisticScreen createState() => _HealthStatisticScreen();
 }
@@ -27,16 +29,16 @@ class _HealthStatisticScreen extends  State<HealthStatistic> with SingleTickerPr
           title: Row(
             children: [
               Container(
-                width: 35,
-                height: 35,
+                width: getFontSize(35, context),
+                height: getFontSize(35, context),
                 padding: EdgeInsets.all(10),
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(50),
                   color: Color(0xFFE5E5E5),
                 ),
                 child: SvgPicture.asset('assets/images/back.svg',
-                  width: 8.0,
-                  height: 15,),
+                  width: getFontSize(8.0, context),
+                  height: getFontSize(15, context),),
               ),
               Spacer(),
               Container(
@@ -45,7 +47,7 @@ class _HealthStatisticScreen extends  State<HealthStatistic> with SingleTickerPr
                 Center(child: Text(
                   'Health statistics',
                   style: TextStyle(
-                      fontSize: 20,
+                      fontSize: getFontSize(20, context),
                       fontStyle: FontStyle.normal
                   ),
                 ),
@@ -59,52 +61,52 @@ class _HealthStatisticScreen extends  State<HealthStatistic> with SingleTickerPr
         ),
         body:
         Container(
-            padding: EdgeInsets.only(bottom: 30, left: 15, right: 15),
+            padding: EdgeInsets.only(bottom: getFontSize(30, context), left: getFontSize(15, context), right: getFontSize(15, context)),
             child:
         Align(
           child:
       Column(
       children: [
-        SizedBox(height: 20,),
+        SizedBox(height: getFontSize(20, context),),
         Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Container(
-              height: 23,
-              width: 23,
-              child: Center(child: Icon(Icons.arrow_back_ios, color: Colors.blue, size: 15,),),
+              height: getFontSize(23, context),
+              width: getFontSize(23, context),
+              child: Center(child: Icon(Icons.arrow_back_ios, color: Colors.blue, size: getFontSize(15, context),),),
               decoration: BoxDecoration(
                 shape: BoxShape.circle,
                 color: Colors.blue.withOpacity(0.20),
               ),
             ),
-            SizedBox(width: 8,),
+            SizedBox(width: getFontSize(8, context),),
             Text(
               'August',
               style: TextStyle(
-                fontSize: 20,
+                fontSize: getFontSize(20, context),
                 fontWeight: FontWeight.bold,
               ),
             ),
-            SizedBox(width: 8,),
+            SizedBox(width: getFontSize(8, context),),
             Container(
-              height: 23,
-              width: 23,
-              child: Center(child:  Icon(Icons.arrow_forward_ios_rounded, color: Colors.blue, size: 15,),),
+              height: getFontSize(23, context),
+              width: getFontSize(23, context),
+              child: Center(child:  Icon(Icons.arrow_forward_ios_rounded, color: Colors.blue, size: getFontSize(15, context),),),
               decoration: BoxDecoration(
                 shape: BoxShape.circle,
                 color: Colors.blue.withOpacity(0.20),
               ),
             ),
           ],),
-        SizedBox(height: 20,),
+        SizedBox(height: getFontSize(20, context),),
         SingleChildScrollView(
           scrollDirection: Axis.horizontal,
           child: Row(
             children: List.generate(tabLabels.length, (index) {
               bool isSelected = selectedIndex == index;
               return Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 8.0),
+                padding: EdgeInsets.symmetric(horizontal: 8.0),
                 child: GestureDetector(
                   onTap: () {
                     setState(() {
@@ -112,13 +114,13 @@ class _HealthStatisticScreen extends  State<HealthStatistic> with SingleTickerPr
                     });
                   },
                   child: Container(
-                    width: 161,
-                    height: 54,
+                    width: getFontSize(161, context),
+                    height: getFontSize(54, context),
                     decoration: BoxDecoration(
                       color: isSelected ? Colors.blue : Colors.transparent,
                       border: Border.all(
                         color: isSelected ? Colors.transparent : Colors.blue,
-                        width: 1,
+                        width: getFontSize(1, context),
                       ),
                       borderRadius: BorderRadius.circular(12),
                     ),
@@ -127,7 +129,7 @@ class _HealthStatisticScreen extends  State<HealthStatistic> with SingleTickerPr
                       tabLabels[index],
                       style: TextStyle(
                         color: isSelected ? Colors.white : Colors.blue,
-                        fontSize: 16,
+                        fontSize: getFontSize(16, context),
                       ),
                     ),
                   ),
@@ -137,7 +139,7 @@ class _HealthStatisticScreen extends  State<HealthStatistic> with SingleTickerPr
           ),
         ),
 
-        SizedBox(height: 20), // Add space between tabs and content
+        SizedBox(height: getFontSize(20, context)), // Add space between tabs and content
 
         // Content Body based on selected tab
         Expanded(
@@ -163,21 +165,21 @@ class _HealthStatisticScreen extends  State<HealthStatistic> with SingleTickerPr
       date: "Today, 12:00 am",
       bulletColor: Colors.lightGreenAccent,
     ),
-    SizedBox(height: 10,),
+    SizedBox(height: getFontSize(10, context),),
     reading_history(
     mmhg: "125/60",
     bpm: "88",
     date: "14 Jul 2022. 12:00 am",
     bulletColor: Color(0xFFFAB400),
     ),
-    SizedBox(height: 10,),
+    SizedBox(height: getFontSize(10, context),),
     reading_history(
     mmhg: "107/60",
     bpm: "67",
     date: "Today, 12:00 am",
     bulletColor: Colors.lightGreenAccent,
     ),
-    SizedBox(height: 10,),
+    SizedBox(height: getFontSize(10, context),),
     reading_history(
     mmhg: "125/60",
     bpm: "88",
@@ -186,7 +188,7 @@ class _HealthStatisticScreen extends  State<HealthStatistic> with SingleTickerPr
     ),
     SizedBox
     (
-    height:10
+    height: getFontSize(10, context)
     ,
     ),
     ],);
@@ -199,28 +201,28 @@ class _HealthStatisticScreen extends  State<HealthStatistic> with SingleTickerPr
     required bulletColor,
   }){
     return Container(
-      height: 85,
+      height: getFontSize(85, context),
       width: double.infinity,
       decoration: BoxDecoration(
         color: Colors.grey.withOpacity(0.2),
         borderRadius: BorderRadius.circular(12),
       ),
-      padding: EdgeInsets.only(left: 10, right: 10),
+      padding: EdgeInsets.only(left: getFontSize(10, context), right: getFontSize(10, context)),
       child: Row(
         children: [
           Align(
             alignment: Alignment.topLeft,
             child: Container(
-              margin: EdgeInsets.only(top: 28),
-              width: 11,
-              height: 11,
+              margin: EdgeInsets.only(top: getFontSize(28, context)),
+              width: getFontSize(11, context),
+              height: getFontSize(11, context),
               decoration: BoxDecoration(
                 color: bulletColor,
                 shape: BoxShape.circle,
               ),
             ),
           ),
-          SizedBox(width: 16),
+          SizedBox(width: getFontSize(16, context)),
           Expanded(
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
@@ -232,41 +234,41 @@ class _HealthStatisticScreen extends  State<HealthStatistic> with SingleTickerPr
                       mmhg,
                       style: TextStyle(
                         fontWeight: FontWeight.bold,
-                        fontSize: 18,
+                        fontSize: getFontSize(18, context),
                       ),
                     ),
-                    SizedBox(width: 4),
+                    SizedBox(width: getFontSize(4, context)),
                     Text(
                       'mmHg',
                       style: TextStyle(
-                        fontSize: 10,
+                        fontSize: getFontSize(10, context),
                       ),
                     ),
-                    SizedBox(width: 16),
+                    SizedBox(width: getFontSize(16, context)),
                     Text(
                       bpm,
                       style: TextStyle(
                         fontWeight: FontWeight.bold,
-                        fontSize: 18,
+                        fontSize: getFontSize(18, context),
                       ),
                     ),
-                    SizedBox(width: 4),
+                    SizedBox(width: getFontSize(4, context)),
                     Text(
                       'BPM',
                       style: TextStyle(
-                        fontSize: 10,
+                        fontSize: getFontSize(10, context),
                       ),
                     ),
                   ],
                 ),
-                SizedBox(height: 4),
+                SizedBox(height: getFontSize(4, context)),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     Text(
                       date,
                       style: TextStyle(
-                        fontSize: 10,
+                        fontSize: getFontSize(10, context),
                       ),
                     ),
                   ],
@@ -276,7 +278,7 @@ class _HealthStatisticScreen extends  State<HealthStatistic> with SingleTickerPr
           ),
           Icon(
             Icons.arrow_forward_ios_outlined,
-            size: 16,
+            size: getFontSize(16, context),
             color: Colors.black,
           ),
         ],
@@ -287,7 +289,6 @@ class _HealthStatisticScreen extends  State<HealthStatistic> with SingleTickerPr
   }
 
   hearthRate() {}
-
 
 
 

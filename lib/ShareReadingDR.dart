@@ -1,3 +1,5 @@
+import '../Main/Dashboard.dart';
+import 'Main/Dashboard.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
@@ -8,7 +10,7 @@ void main(){
 }
 
 class ShareReadingDR extends StatefulWidget {
-  const ShareReadingDR({super.key});
+  ShareReadingDR({super.key});
   @override
   _ShareReadingDRScreen createState() => _ShareReadingDRScreen();
 }
@@ -24,16 +26,16 @@ class _ShareReadingDRScreen extends  State<ShareReadingDR> {
           title: Row(
             children: [
               Container(
-                width: 35,
-                height: 35,
+                width: getFontSize(35, context),
+                height: getFontSize(35, context),
                 padding: EdgeInsets.all(10),
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(50),
                   color: Color(0xFFE5E5E5),
                 ),
                 child: SvgPicture.asset('assets/images/back.svg',
-                  width: 8.0,
-                  height: 15,),
+                  width: getFontSize(8.0, context),
+                  height: getFontSize(15, context),),
               ),
               Spacer(),
               Container(
@@ -42,7 +44,7 @@ class _ShareReadingDRScreen extends  State<ShareReadingDR> {
                 Center(child: Text(
                   'Share readings',
                   style: TextStyle(
-                      fontSize: 20,
+                      fontSize: getFontSize(20, context),
                       fontStyle: FontStyle.normal
                   ),
                 ),
@@ -56,44 +58,44 @@ class _ShareReadingDRScreen extends  State<ShareReadingDR> {
         ),
         body:
         Container(
-            padding: EdgeInsets.only(bottom: 30, left: 15, right: 15),
+            padding: EdgeInsets.only(bottom: getFontSize(30, context), left: getFontSize(15, context), right: getFontSize(15, context)),
             child:
         Align(
           child:
       Column(
       children: [
-        SizedBox(height: 30),
+        SizedBox(height: getFontSize(30, context)),
         Container(
           alignment: Alignment.center,
           width: MediaQuery.of(context).size.width * 0.78,
           child:
         Align(child: Text("You vital readings are being shared with your personal physician.", textAlign: TextAlign.center,
         style: TextStyle(
-          fontSize: 14,
+          fontSize: getFontSize(14, context),
         ),
         ),
         ),
         ),
 
-        SizedBox(height: 35),
+        SizedBox(height: getFontSize(35, context)),
 
         Container(
           padding: EdgeInsets.all(10),
           width: MediaQuery.of(context).size.width,
-          height: 80,
+          height: getFontSize(80, context),
           child: Row(
             children: [
               Image.asset('assets/images/dr_profile.png',
-                width: 56,
-                height: 56,
+                width: getFontSize(56, context),
+                height: getFontSize(56, context),
               ),
-              SizedBox(width: 15,),
+              SizedBox(width: getFontSize(15, context),),
               Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   Center(child: Text("Dr. Muiz Sanni", style: TextStyle(color: Colors.black, fontWeight: FontWeight.bold),)),
-                  SizedBox(height: 5,),
+                  SizedBox(height: getFontSize(5, context),),
                   Center(child: Text("Cardiovascular surgeon", style: TextStyle(color: Colors.grey),),),
                 ],
               ),

@@ -1,59 +1,17 @@
+import '../Main/Dashboard.dart';
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_app/Capture/VitalsReading.dart';
 import 'package:flutter_app/Main/Community.dart';
+import 'package:flutter_app/Medication/TakeAQuickCheckup.dart';
 import 'package:flutter_app/Notifications.dart';
+import 'package:flutter_app/QuickCheckup.dart';
+import 'package:flutter_app/RequestNewDevice.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-
-Widget quickAction({
-  required String iconPath,
-  required Color iconBackground,
-  required Color actionBackground,
-  required String actionText,
-}){
-    return Container(
-      width: 150,
-      height: 51,
-      padding: EdgeInsets.only(top: 12, left: 10.0, bottom: 12, right: 10),
-      decoration: BoxDecoration(
-        color: iconBackground.withOpacity(0.15),
-        borderRadius: BorderRadius.circular(12),
-      ),
-      child: Center(
-        child: Row(
-          children: [
-            Center(
-              child: Container(
-                width: 27,
-                height: 27,
-                decoration: BoxDecoration(
-                  color: iconBackground,
-                  borderRadius: BorderRadius.circular(50),
-                ),
-                child: Center(
-                  child: Image.asset(
-                    iconPath,
-                    width: 11,
-                    height: 14,
-                    fit: BoxFit.contain,
-                  ),
-                ),
-              ),
-            ),
-            SizedBox(width: 10.0),
-            Text(actionText,
-              style: TextStyle(
-                  fontSize: 10.0,
-                  color: iconBackground
-              ),),
-          ],
-        ),
-      ),
-    );
-}
 
 class Dashboard extends StatefulWidget{
   final void Function(int index) onItemTapped;
-  const Dashboard({super.key,
+  Dashboard({super.key,
     required this.onItemTapped});
 
   @override
@@ -66,21 +24,21 @@ class DashboardState extends State<Dashboard> {
   late int reverseIndex = show_notification.length -1;
   List<Map<String, dynamic>> show_notification = [
     {
-      'icon': const Icon(
+      'icon': Icon(
         Icons.message,
         color: Colors.blue,
       ),
       'text': "You have a new message from Alexander..."
     },
     {
-      'icon': const Icon(
+      'icon': Icon(
         Icons.local_pharmacy,
         color: Colors.blue,
       ),
       'text': 'Your malaria drugs have been exhausted',
     },
     {
-      'icon': const Icon(Icons.devices, color: Colors.blue),
+      'icon': Icon(Icons.devices, color: Colors.blue),
       'text': 'Your device is ready for pickup',
     },
   ];
@@ -98,15 +56,15 @@ class DashboardState extends State<Dashboard> {
         title: Row(
           children: [
             SizedBox(
-              width: 50.0,
-              height: 50.0,
+              width: getFontSize(50.0, ),
+              height: getFontSize(50.0,),
               child: GestureDetector(
                   onTap: () {
                     setState(() {
                       widget.onItemTapped(4);
                     });
                   },
-                  child: const CircleAvatar(
+                  child: CircleAvatar(
                     radius: 50,
                     backgroundImage: AssetImage('assets/images/dr.png'),
                   )),
@@ -124,21 +82,21 @@ class DashboardState extends State<Dashboard> {
                 Text(
                   "Sanni Muiz",
                   style: TextStyle(
-                    fontSize: 26.0,
+                    fontSize: getFontSize(26.0, ),
                     fontWeight: FontWeight.bold,
                   ),
                 ),
               ],
             ),
-            const Spacer(),
+            Spacer(),
             // GestureDetector(child: SvgPicture.asset('ass')
               // onTap: (){
               //   Navigator.push(context, MaterialPageRoute(builder:
               //       (context) => Community()));
               // },
             // ),
-            const SizedBox(
-              width: 10,
+            SizedBox(
+              width: getFontSize(10, ),
             ),
            InkWell(
              onTap: (){
@@ -146,7 +104,7 @@ class DashboardState extends State<Dashboard> {
              },
              child: Icon(Icons.supervisor_account, color: Colors.black, size: (29),
              )),
-            const SizedBox(width: 10,),
+            SizedBox(width: getFontSize(10, ),),
             GestureDetector(
               onTap: (){
                 Navigator.of(context).push(MaterialPageRoute(builder: (builder)=> Notifications()));
@@ -170,49 +128,62 @@ class DashboardState extends State<Dashboard> {
         ),
       ),
       body: SingleChildScrollView(
-      padding: const EdgeInsets.only(left: 16.0, right: 16.0, top: 22.0),
+      padding: EdgeInsets.only(left: getFontSize(16.0), right: getFontSize(16.0,), top: getFontSize(22.0, )),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.center,
         children: <Widget>[
           Row(
             children: [
+              GestureDetector(
+                onTap: () {
+                  Navigator.of(context).push(MaterialPageRoute(builder: (builder)=> TakeAQuickCheckup()));
+      },
+                child:
               quickAction(
                   iconPath: 'assets/images/icons/dashboard/electric.png',
-                  iconBackground: const Color(0xFFFF618F),
-                  actionBackground: const Color(0xFFF5CFDD),
+                  iconBackground: Color(0xFFFF618F),
+                  actionBackground: Color(0xFFF5CFDD),
                   actionText: 'Take a quick checkup'
               ),
+              ),
               Spacer(),
+      GestureDetector(
+        onTap: () {
+          Navigator.of(context).push(MaterialPageRoute(builder: (builder)=> RequestNewDevice()));
+        },
+        child:
               quickAction(
                   iconPath: 'assets/images/icons/dashboard/device.png',
-                  iconBackground: const Color(0xFFA64FFE),
-                  actionBackground: const Color(0xFFD3B6E8),
+                  iconBackground: Color(0xFFA64FFE),
+                  actionBackground: Color(0xFFD3B6E8),
                   actionText: 'Request a device'
               ),
-              SizedBox(height: 10)
+              ),
+              SizedBox(height: getFontSize(10))
             ],
           ),
-        SizedBox(height: 25,),
+        SizedBox(height: getFontSize(25),),
           Column(
             crossAxisAlignment: CrossAxisAlignment.center,
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Center(
                 child:
-                isCollaps ? buildNotificationList(const Stack(children: []))
-                    : buildNotificationList(const Column(children: [])),)
+                isCollaps ? buildNotificationList(Stack(children: []))
+                    : buildNotificationList(Column(children: [])),)
             ],
           ),
-          SizedBox(height: 20),
+          SizedBox(height: getFontSize(20)),
           Row(
             children: [
               Text("Vitals readings",
-          style: TextStyle(fontSize: 20,
+          style: TextStyle(fontSize: getFontSize(20),
               color: Colors.black,
               fontWeight: FontWeight.bold),),
               Spacer(),
               ElevatedButton(
                   onPressed: (){
+                      Navigator.of(context).push(MaterialPageRoute(builder: (builder)=> VitalsReading()));
                   },
                   style: ElevatedButton.styleFrom(
                     backgroundColor: Colors.transparent,
@@ -222,14 +193,14 @@ class DashboardState extends State<Dashboard> {
                 child: Text('See history',
                 style: TextStyle(
                   fontWeight: FontWeight.bold,
-                  fontSize: 14,
+                  fontSize: getFontSize(14),
                   color: Color(0xFF3C8AFF),
                 ),
                 ),
               ),
             ],
           ),
-          SizedBox(height: 20),
+          SizedBox(height: getFontSize(20)),
           SingleChildScrollView(
             scrollDirection: Axis.horizontal,
             child: Row(
@@ -250,7 +221,7 @@ class DashboardState extends State<Dashboard> {
           ),
           ),
 
-                SizedBox(width: 25,),
+                SizedBox(width: getFontSize(25),),
 
                 Align(
             alignment: Alignment.centerLeft,
@@ -269,9 +240,9 @@ class DashboardState extends State<Dashboard> {
           ),
             ],),
           ),
-          SizedBox(height: 15,),
+          SizedBox(height: getFontSize(15),),
           SvgPicture.asset('assets/images/scroller.svg')
-          ,SizedBox(height: 15,),
+          ,SizedBox(height: getFontSize(15),),
         ],
       ),
       ),
@@ -284,13 +255,13 @@ class DashboardState extends State<Dashboard> {
     required String text}) {
     return Container(
         width: MediaQuery.of(context).size.width,
-        height: 74,
-        padding: EdgeInsets.only(top: 12, left: 10.0, bottom: 12, right: 10),
+        height: getFontSize(74, context),
+        padding: EdgeInsets.only(top: getFontSize(12, context), left: getFontSize(10.0, context), bottom: getFontSize(12, context), right: getFontSize(10, context)),
       decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(12),
           border: Border.all(
         color: Colors.black.withOpacity(0.1),
-      width: 1.0,
+      width: getFontSize(1.0, context),
     ),
         ),
       child: Row(
@@ -300,24 +271,24 @@ class DashboardState extends State<Dashboard> {
             borderRadius: BorderRadius.circular(50),
             color: Color(0xFFE2EDFF),
             ),
-            width: 35,
-            height: 35,
+            width: getFontSize(35, context),
+            height: getFontSize(35, context),
             child: Center(
               child: SvgPicture.asset(imagePath),
             ),
 
           ),
-          SizedBox(width:10),
+          SizedBox(width: getFontSize(10, context)),
           Text(text,
           style: TextStyle(
-            fontSize: 14,
+            fontSize: getFontSize(14, context),
           ),
           ),
           Spacer(),
           SvgPicture.asset('assets/images/forwardIcon.svg'),
         ],
       ),
-      margin: EdgeInsets.only(bottom: 10),
+      margin: EdgeInsets.only(bottom: getFontSize(10, context)),
     );
   }
 
@@ -342,7 +313,7 @@ class DashboardState extends State<Dashboard> {
     } else if (layout is Column) {
       return Column(children: notificationWidgets);
     } else {
-      return const SizedBox();
+      return SizedBox();
     }
   }
 
@@ -369,7 +340,7 @@ class DashboardState extends State<Dashboard> {
           });
         },
         child: SizedBox(
-          // height: 150,
+          // height: getFontSize(150, context),
           child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               crossAxisAlignment: CrossAxisAlignment.center,
@@ -394,8 +365,8 @@ class DashboardState extends State<Dashboard> {
                       : double.infinity
 
                       : double.infinity,
-                  margin: const EdgeInsets.only(bottom: 10,),
-                  padding: const EdgeInsets.only(top: 19, bottom: 19, left: 12, right: 12),
+                  margin: EdgeInsets.only(bottom: getFontSize(10, context),),
+                  padding: EdgeInsets.only(top: getFontSize(19, context), bottom: getFontSize(19, context), left: getFontSize(12, context), right: getFontSize(12, context)),
                   decoration: BoxDecoration(
                     color: Colors.white,
                     borderRadius: BorderRadius.circular(12.0),
@@ -404,7 +375,7 @@ class DashboardState extends State<Dashboard> {
                         color: Colors.grey.withOpacity(0.2),
                         spreadRadius: 2,
                         blurRadius: 8,
-                        offset: const Offset(0, 4),
+                        offset: Offset(0, 4),
                       ),
                     ],
                   ),
@@ -413,10 +384,10 @@ class DashboardState extends State<Dashboard> {
                     mainAxisAlignment: MainAxisAlignment.start,
                     children: [
                       Container(
-                        width: 35,
-                        height: 35,
+                        width: getFontSize(35, context),
+                        height: getFontSize(35, context),
                         decoration:
-                        const BoxDecoration(shape: BoxShape.circle, color: Color(0xffE2EDFF)),
+                        BoxDecoration(shape: BoxShape.circle, color: Color(0xffE2EDFF)),
                         child: icon,
                       ),
                       SizedBox(width: w * 0.04,),
@@ -426,12 +397,12 @@ class DashboardState extends State<Dashboard> {
                           alignment: Alignment.centerLeft,
                           width: textContSize,
                           child: AutoSizeText(text,
-                              style: TextStyle(fontSize: 16.0* MediaQuery.of(context).textScaleFactor, color: Colors.black45),
+                              style: TextStyle(fontSize: getFontSize(16.0, context)* MediaQuery.of(context).textScaleFactor, color: Colors.black45),
                               overflow: TextOverflow.ellipsis),
                         ),
                       ),
-                      const Spacer(),
-                      const Align(
+                      Spacer(),
+                      Align(
                         alignment: Alignment.centerRight,
                         child: Icon(Icons.arrow_forward_ios_rounded, color: Colors.blue),
                       )
@@ -446,6 +417,53 @@ class DashboardState extends State<Dashboard> {
     );
   }
 
+  Widget quickAction({
+    required String iconPath,
+    required Color iconBackground,
+    required Color actionBackground,
+    required String actionText,
+  }){
+    return Container(
+      width: getFontSize(150, context),
+      height: getFontSize(51, context),
+      padding: EdgeInsets.only(top: getFontSize(12, context), left: getFontSize(10.0, context), bottom: getFontSize(12, context), right: getFontSize(10, context)),
+      decoration: BoxDecoration(
+        color: iconBackground.withOpacity(0.15),
+        borderRadius: BorderRadius.circular(12),
+      ),
+      child: Center(
+        child: Row(
+          children: [
+            Center(
+              child: Container(
+                width: getFontSize(27, context),
+                height: getFontSize(27, context),
+                decoration: BoxDecoration(
+                  color: iconBackground,
+                  borderRadius: BorderRadius.circular(50),
+                ),
+                child: Center(
+                  child: Image.asset(
+                    iconPath,
+                    width: getFontSize(11, context),
+                    height: getFontSize(14, context),
+                    fit: BoxFit.contain,
+                  ),
+                ),
+              ),
+            ),
+            SizedBox(width: getFontSize(10.0, context)),
+            Text(actionText,
+              style: TextStyle(
+                  fontSize: getFontSize(10.0, context),
+                  color: iconBackground
+              ),),
+          ],
+        ),
+      ),
+    );
+  }
+
   vital({
     required Color themeColor,
     required String vitalIcon,
@@ -457,19 +475,23 @@ class DashboardState extends State<Dashboard> {
     required vitalsReadMessage,
     required emoji,
   }) {
-    return Stack(
+    return GestureDetector(
+        onTap: () {
+      Navigator.of(context).push(MaterialPageRoute(builder: (builder)=> VitalsReading()));
+    },
+    child: Stack(
       children: [
       Container(
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(12),
         border: Border.all(
           color: themeColor.withOpacity(0.1),
-          width: 1.5,
+          width: getFontSize(1.5, context),
         ),
       ),
-      height: 275,
-      width: 208,
-      margin: EdgeInsets.only(bottom: 10),
+      height: getFontSize(275, context),
+      width: getFontSize(208, context),
+      margin: EdgeInsets.only(bottom: getFontSize(10, context)),
       child:
       Stack(
         children: [
@@ -483,14 +505,14 @@ class DashboardState extends State<Dashboard> {
           ],
       ),
       Container(
-        padding: EdgeInsets.only(left: 15,right: 15, top: 15),
+        padding: EdgeInsets.only(left: getFontSize(15, context),right: getFontSize(15, context), top: getFontSize(15, context)),
         child: Column(
             children: [
           Align(
             alignment: Alignment.centerRight,
             child: Container(
-              width: 60,
-              height: 60,
+              width: getFontSize(60, context),
+              height: getFontSize(60, context),
               decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(50),
                   color: themeColor
@@ -503,7 +525,7 @@ class DashboardState extends State<Dashboard> {
               children: [
                 Text(vitalRead,
                   style: TextStyle(
-                    fontSize: 50.0,
+                    fontSize: getFontSize(50.0, context),
                     fontWeight: FontWeight.bold,
                     color: themeColor,
                   ),),
@@ -511,7 +533,7 @@ class DashboardState extends State<Dashboard> {
                 if (isSubscript)
                   Text(subcriptOrnot,
                     style: TextStyle(
-                      fontSize: 11.0,
+                      fontSize: getFontSize(11.0, context),
                       color: themeColor,
                       fontWeight: FontWeight.bold,
                     ),
@@ -519,31 +541,31 @@ class DashboardState extends State<Dashboard> {
                 else
                   Text(subcriptOrnot,
                     style: TextStyle(
-                      fontSize: 16.0,
+                      fontSize: getFontSize(16.0, context),
                       color: themeColor,
                     ),
                   ),
               ],
             ),
-            SizedBox(height: 40,),
+            SizedBox(height: getFontSize(40, context),),
 
             Align(child: Text(vitalType,
-              style: const TextStyle(
-                fontSize: 19.0,
+              style: TextStyle(
+                fontSize: getFontSize(19.0, context),
                 color: Colors.white,
               ),
               ),
               alignment: Alignment.centerLeft,
                 ),
-              SizedBox(height: 5,),
+              SizedBox(height: getFontSize(5, context),),
             Align(child:
-            Text(dateAdded, style: const TextStyle(
-              fontSize: 12.0,
+            Text(dateAdded, style: TextStyle(
+              fontSize: getFontSize(12.0, context),
               color: Colors.white,
             )),
               alignment: Alignment.centerLeft,
             ),
-              SizedBox(height: 5,),
+              SizedBox(height: getFontSize(5, context),),
             Align(child:
             IntrinsicWidth(
               child: Container(
@@ -551,15 +573,15 @@ class DashboardState extends State<Dashboard> {
                     color: Colors.white.withOpacity(0.20),
                     borderRadius: BorderRadius.circular(18)
                 ),
-                padding: EdgeInsets.only(left: 10, top: 10, right: 5, bottom: 10),
+                padding: EdgeInsets.only(left: getFontSize(10, context), top: getFontSize(10, context), right: getFontSize(5, context), bottom: getFontSize(10, context)),
                 child: Row(
                   children: [
                     SvgPicture.asset(emoji, ),
-                    SizedBox(width: 5,),
+                    SizedBox(width: getFontSize(5, context),),
                     Text(vitalsReadMessage,
                       style: TextStyle(
                         color: Colors.white,
-                        fontSize: 12.0,
+                        fontSize: getFontSize(12.0, context),
                       ),
                     )
                   ],
@@ -578,7 +600,7 @@ class DashboardState extends State<Dashboard> {
 
           // Container(
           //   decoration: BoxDecoration(
-          //     image: const DecorationImage(
+          //     image: DecorationImage(
           //       image: AssetImage('assets/images/backgroundVitals.png')
           //     ),
           //     color: themeColor
@@ -598,9 +620,10 @@ class DashboardState extends State<Dashboard> {
 
 
 
-      // margin: EdgeInsets.only(bottom: 20),
+      // margin: EdgeInsets.only(bottom: getFontSize(20, context)),
     ),
     ],
+    )
     );
 
   }

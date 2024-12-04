@@ -1,3 +1,5 @@
+import '../Main/Dashboard.dart';
+import 'Main/Dashboard.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_app/ApplyForLoan.dart';
@@ -9,7 +11,7 @@ void main(){
 }
 
 class RequestNewDevice extends StatefulWidget {
-  const RequestNewDevice({super.key});
+  RequestNewDevice({super.key});
   @override
   _RequestNewDeviceScreen createState() => _RequestNewDeviceScreen();
 }
@@ -31,16 +33,16 @@ class _RequestNewDeviceScreen extends  State<RequestNewDevice> {
           title: Row(
             children: [
               Container(
-                width: 35,
-                height: 35,
+                width: getFontSize(35, context),
+                height: getFontSize(35, context),
                 padding: EdgeInsets.all(10),
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(50),
                   color: Color(0xFFE5E5E5),
                 ),
                 child: SvgPicture.asset('assets/images/back.svg',
-                  width: 8.0,
-                  height: 15,),
+                  width: getFontSize(8.0, context),
+                  height: getFontSize(15, context),),
               ),
               Spacer(),
 
@@ -51,23 +53,23 @@ class _RequestNewDeviceScreen extends  State<RequestNewDevice> {
         body: SingleChildScrollView(
           child:
         Container(
-            padding: EdgeInsets.only(bottom: 30, left: 15, right: 15),
+            padding: EdgeInsets.only(bottom: getFontSize(30, context), left: getFontSize(15, context), right: getFontSize(15, context)),
             child:
         Align(
           child:
       Column(
       children: [
         Container(
-          width: 180,
-          child: Text(textAlign: TextAlign.center,'Request for a new device',style: TextStyle(fontSize: 28, fontWeight: FontWeight.bold),),
+          width: getFontSize(180, context),
+          child: Text(textAlign: TextAlign.center,'Request for a new device',style: TextStyle(fontSize: getFontSize(28, context), fontWeight: FontWeight.bold),),
         ),
-        SizedBox(height: 25,),
+        SizedBox(height: getFontSize(25, context),),
         Container(
-          width: 284,
-          child: Text(textAlign: TextAlign.center,'Select which device(s) you want to order',style: TextStyle(fontSize: 14,),),
+          width: getFontSize(284, context),
+          child: Text(textAlign: TextAlign.center,'Select which device(s) you want to order',style: TextStyle(fontSize: getFontSize(14, context),),),
         ),
 
-        SizedBox(height: 45,),
+        SizedBox(height: getFontSize(45, context),),
 
         device(
           name: "Wellue BP2 connect device ",
@@ -82,7 +84,7 @@ class _RequestNewDeviceScreen extends  State<RequestNewDevice> {
           ,index: 1
         ),
 
-        SizedBox(height: 25,),
+        SizedBox(height: getFontSize(25, context),),
         ElevatedButton(
           onPressed: () {
             Navigator.of(context).push(MaterialPageRoute(builder: (builder)=> Checkout()));
@@ -95,14 +97,14 @@ class _RequestNewDeviceScreen extends  State<RequestNewDevice> {
             ),
           ),
           child: Padding(
-            padding: const EdgeInsets.symmetric(vertical: 12.0, horizontal: 24.0),
+            padding: EdgeInsets.symmetric(vertical: 12.0, horizontal: 24.0),
             child: Text(
               'Continue',
-              style: TextStyle(color: Colors.white, fontSize: 18),
+              style: TextStyle(color: Colors.white, fontSize: getFontSize(18, context)),
             ),
           ),
         ),
-        SizedBox(height: 10,),
+        SizedBox(height: getFontSize(10, context),),
         Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
@@ -131,18 +133,18 @@ class _RequestNewDeviceScreen extends  State<RequestNewDevice> {
   }) {
     return
       Container(
-      margin: EdgeInsets.only(bottom: 15),
+      margin: EdgeInsets.only(bottom: getFontSize(15, context)),
       padding: EdgeInsets.all(14),
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(16),
-        border: Border.all(width: 0.5, color: Colors.black54),
+        border: Border.all(width: getFontSize(0.5, context), color: Colors.black54),
       ),
       child:Stack(
         children: [
           _cartIncrease[index] > 0 ?
           Positioned(
-            top: 0,
-            right: 0,
+            top: getFontSize(0, context),
+            right: getFontSize(0, context),
             child:
             Container(
               decoration: BoxDecoration(
@@ -162,41 +164,41 @@ class _RequestNewDeviceScreen extends  State<RequestNewDevice> {
             mainAxisAlignment: MainAxisAlignment.start,
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Text(name, style: TextStyle(fontSize: 16, ),),
-              SizedBox(height: 10,),
-              Text(price, style: TextStyle(fontSize: 16, color: Colors.blue),),
-              SizedBox(height: 10,),
+              Text(name, style: TextStyle(fontSize: getFontSize(16, context), ),),
+              SizedBox(height: getFontSize(10, context),),
+              Text(price, style: TextStyle(fontSize: getFontSize(16, context), color: Colors.blue),),
+              SizedBox(height: getFontSize(10, context),),
               Row(
                 mainAxisAlignment: MainAxisAlignment.start,
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Container(
-                    width: 183,
+                    width: getFontSize(183, context),
                     child:
-                  Text(message, style: TextStyle(fontSize: 12, color: Colors.black54),)
+                  Text(message, style: TextStyle(fontSize: getFontSize(12, context), color: Colors.black54),)
     )
                 ],
               ),
-                  SizedBox(height: 14,),
+                  SizedBox(height: getFontSize(14, context),),
                   Container(
-                    width: 102,
-                    padding: EdgeInsets.only(left: 14, right: 14, top: 8, bottom: 8),
+                    width: getFontSize(102, context),
+                    padding: EdgeInsets.only(left: getFontSize(14, context), right: getFontSize(14, context), top: getFontSize(8, context), bottom: getFontSize(8, context)),
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(50),
-                      border: Border.all(width: 0.5, color: Colors.black54),
+                      border: Border.all(width: getFontSize(0.5, context), color: Colors.black54),
                     ),
                     child: Row(
                         children: [
                           GestureDetector(
                             child: Container(
                               // padding: EdgeInsets.all(4),
-                              width: 15,
-                              height: 15,
+                              width: getFontSize(15, context),
+                              height: getFontSize(15, context),
                               decoration: BoxDecoration(
                                   borderRadius: BorderRadius.circular(50),
                                   color: Color(0xffE2EDFF)
                               ),
-                              child: Icon(Icons.minimize,size: 11 ,color: Colors.blue),
+                              child: Icon(Icons.minimize,size: getFontSize(11, context) ,color: Colors.blue),
                             ),
                             onTap: () {
                               setState(() {
@@ -211,13 +213,13 @@ class _RequestNewDeviceScreen extends  State<RequestNewDevice> {
                           GestureDetector(
                             child:
                           Container(
-                            width: 15,
-                            height: 15,
+                            width: getFontSize(15, context),
+                            height: getFontSize(15, context),
                             decoration: BoxDecoration(
                                borderRadius: BorderRadius.circular(50),
                                 color: Color(0xffE2EDFF)
                             ),
-                            child: Icon(Icons.add, size: 11, color: Colors.blue,),
+                            child: Icon(Icons.add, size: getFontSize(11, context), color: Colors.blue,),
                           ),
                             onTap: () {
                               setState(() {
@@ -235,12 +237,12 @@ class _RequestNewDeviceScreen extends  State<RequestNewDevice> {
 
             ],
           ),
-          SizedBox(width: 15,),
+          SizedBox(width: getFontSize(15, context),),
 
                                Container(
                     padding: EdgeInsets.all(12),
-                    width: 100,
-                    height: 100,
+                    width: getFontSize(100, context),
+                    height: getFontSize(100, context),
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(50),
                       color: Color(0xffD9D9D9),

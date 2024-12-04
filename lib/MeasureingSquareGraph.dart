@@ -1,3 +1,5 @@
+import '../Main/Dashboard.dart';
+import 'Main/Dashboard.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
@@ -8,7 +10,7 @@ void main(){
 }
 
 class MeasureingSquareGraph extends StatefulWidget {
-  const MeasureingSquareGraph({super.key});
+  MeasureingSquareGraph({super.key});
   @override
   _MeasureingSquareGraphScreen createState() => _MeasureingSquareGraphScreen();
 }
@@ -24,16 +26,16 @@ class _MeasureingSquareGraphScreen extends  State<MeasureingSquareGraph> {
           title: Row(
             children: [
               Container(
-                width: 35,
-                height: 35,
+                width: getFontSize(35, context),
+                height: getFontSize(35, context),
                 padding: EdgeInsets.all(10),
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(50),
                   color: Color(0xFFE5E5E5),
                 ),
                 child: SvgPicture.asset('assets/images/back.svg',
-                  width: 8.0,
-                  height: 15,),
+                  width: getFontSize(8.0, context),
+                  height: getFontSize(15, context),),
               ),
               Spacer(),
 
@@ -43,74 +45,74 @@ class _MeasureingSquareGraphScreen extends  State<MeasureingSquareGraph> {
         ),
         body:
         Container(
-            padding: EdgeInsets.only(bottom: 30, left: 15, right: 15),
+            padding: EdgeInsets.only(bottom: getFontSize(30, context), left: getFontSize(15, context), right: getFontSize(15, context)),
             child:
         Align(
           child:
       Column(
       children: [
-        SizedBox(height: 30),
+        SizedBox(height: getFontSize(30, context)),
         Container(
-          padding: EdgeInsets.only(left: 15),
+          padding: EdgeInsets.only(left: getFontSize(15, context)),
           child: Column(
             children: [
         Row(
           children: [
             Column(
               children: [
-                Text('107/60', style: TextStyle(fontSize: 26),),
+                Text('107/60', style: TextStyle(fontSize: getFontSize(26, context)),),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.start,
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Text('SYS/DIA  ', style: TextStyle(fontSize: 10),),
-                    Text('mmHg', style: TextStyle(color: Colors.grey.withOpacity(0.85),fontSize: 10),)
+                    Text('SYS/DIA  ', style: TextStyle(fontSize: getFontSize(10, context)),),
+                    Text('mmHg', style: TextStyle(color: Colors.grey.withOpacity(0.85),fontSize: getFontSize(10, context)),)
                   ],
                 )
               ],
             ),
-            SizedBox(width: 35,),
+            SizedBox(width: getFontSize(35, context),),
             Column(
               mainAxisAlignment: MainAxisAlignment.start,
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Text('67', style: TextStyle(fontSize: 26),),
+                Text('67', style: TextStyle(fontSize: getFontSize(26, context)),),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.start,
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Text('Pulse rate  ', style: TextStyle(fontSize: 10),),
-                    Text('/min', style: TextStyle(color: Colors.grey.withOpacity(0.85),fontSize: 10),)
+                    Text('Pulse rate  ', style: TextStyle(fontSize: getFontSize(10, context)),),
+                    Text('/min', style: TextStyle(color: Colors.grey.withOpacity(0.85),fontSize: getFontSize(10, context)),)
                   ],
                 )
               ],
             )
           ],
         ),
-              SizedBox(height: 15,),
+              SizedBox(height: getFontSize(15, context),),
         Row(
           children: [
             Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Text('83', style: TextStyle(fontSize: 18),),
+                Text('83', style: TextStyle(fontSize: getFontSize(18, context)),),
                 Row(
                   children: [
-                    Text('MAP  ', style: TextStyle(fontSize: 10),),
-                    Text('mmHg', style: TextStyle(color: Colors.grey.withOpacity(0.85),fontSize: 10),)
+                    Text('MAP  ', style: TextStyle(fontSize: getFontSize(10, context)),),
+                    Text('mmHg', style: TextStyle(color: Colors.grey.withOpacity(0.85),fontSize: getFontSize(10, context)),)
                   ],
                 )
               ],
             ),
-            SizedBox(width: 55,),
+            SizedBox(width: getFontSize(55, context),),
             Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Text('64', style: TextStyle(fontSize: 26),),
+                Text('64', style: TextStyle(fontSize: getFontSize(26, context)),),
                 Row(
                   children: [
-                    Text('Pulse pressure  ', style: TextStyle(fontSize: 10),),
-                    Text('mmHg', style: TextStyle(color: Colors.grey.withOpacity(0.85),fontSize: 10),)
+                    Text('Pulse pressure  ', style: TextStyle(fontSize: getFontSize(10, context)),),
+                    Text('mmHg', style: TextStyle(color: Colors.grey.withOpacity(0.85),fontSize: getFontSize(10, context)),)
                   ],
                 )
               ],
@@ -138,10 +140,10 @@ class _MeasureingSquareGraphScreen extends  State<MeasureingSquareGraph> {
             ),
           ),
           child: Padding(
-            padding: const EdgeInsets.symmetric(vertical: 12.0, horizontal: 24.0),
+            padding: EdgeInsets.symmetric(vertical: 12.0, horizontal: 24.0),
             child: Text(
               'Back to readings',
-              style: TextStyle(color: Colors.white, fontSize: 18),
+              style: TextStyle(color: Colors.white, fontSize: getFontSize(18, context)),
             ),
           ),
         ),

@@ -1,6 +1,9 @@
+import '../Main/Dashboard.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+import 'Main/Dashboard.dart';
+
 
 void main(){
   runApp(FingerprintAdded());
@@ -23,7 +26,7 @@ class FingerprintAddedState extends State<FingerprintAdded>{
    return MaterialApp(
      home: Scaffold(
        body: Padding(
-           padding: EdgeInsets.only(top: 80, bottom: 40, left: 20, right: 20),
+           padding: EdgeInsets.only(top: getFontSize(80, context), bottom: getFontSize(40, context), left: getFontSize(20, context), right: getFontSize(20, context)),
        child: Column(
          mainAxisAlignment: MainAxisAlignment.center,
          crossAxisAlignment: CrossAxisAlignment.center,
@@ -32,10 +35,10 @@ class FingerprintAddedState extends State<FingerprintAdded>{
             alignment: Alignment.topCenter,
              child: SvgPicture.asset('assets/images/slider2.svg'),
            ),
-           SizedBox(height: 20,),
+           SizedBox(height: getFontSize(20, context),),
          Container(
-           width: 156,
-           child:  Text(textAlign: TextAlign.center, 'Fingerprint successfully added!', style: TextStyle(fontSize: 28, fontWeight: FontWeight.bold),),
+           width: getFontSize(156, context),
+           child:  Text(textAlign: TextAlign.center, 'Fingerprint successfully added!', style: TextStyle(fontSize: getFontSize(28, context), fontWeight: FontWeight.bold),),
          ),
            Spacer(),
             SvgPicture.asset('assets/images/fingerprint.svg'),
@@ -50,10 +53,10 @@ class FingerprintAddedState extends State<FingerprintAdded>{
                ),
              ),
              child: Padding(
-               padding: const EdgeInsets.symmetric(vertical: 12.0, horizontal: 24.0),
+               padding: EdgeInsets.symmetric(vertical: 12.0, horizontal: 24.0),
                child: Text(
                  'Continue',
-                 style: TextStyle(color: Colors.white, fontSize: 18),
+                 style: TextStyle(color: Colors.white, fontSize: getFontSize(18, context)),
                ),
              ),
            ),
@@ -69,7 +72,7 @@ class FingerprintAddedState extends State<FingerprintAdded>{
     required String label,
   }) {
     return Container(
-      margin: EdgeInsets.only(bottom: 20),
+      margin: EdgeInsets.only(bottom: getFontSize(20, context)),
       child: Column(
         children: [
           Align(
@@ -77,16 +80,16 @@ class FingerprintAddedState extends State<FingerprintAdded>{
             child: Text(
               label,
               style: TextStyle(
-                fontSize: 16,
+                fontSize: getFontSize(16, context),
               ),
             ),
           ),
-          const SizedBox(height: 8.0),
+          SizedBox(height: getFontSize(8.0, context)),
           TextField(
             obscureText: _obscurePassword,
             decoration: InputDecoration(
               hintText: '*********',
-              hintStyle: const TextStyle(color: Colors.grey),
+              hintStyle: TextStyle(color: Colors.grey),
               filled: true,
               fillColor: Color(0xFFf0f0f0),
               border: OutlineInputBorder(

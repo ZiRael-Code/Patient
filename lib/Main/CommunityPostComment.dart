@@ -1,3 +1,4 @@
+import '../Main/Dashboard.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
@@ -7,7 +8,7 @@ void main(){
 }
 
 class CommunityPostComment extends StatefulWidget {
-  const CommunityPostComment({super.key});
+  CommunityPostComment({super.key});
   @override
   _CommunityPostCommentScreen createState() => _CommunityPostCommentScreen();
 }
@@ -24,16 +25,16 @@ class _CommunityPostCommentScreen extends  State<CommunityPostComment> {
           title: Row(
             children: [
               Container(
-                width: 35,
-                height: 35,
+                width: getFontSize(35, context),
+                height: getFontSize(35, context),
                 padding: EdgeInsets.all(10),
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(50),
                   color: Color(0xFFE5E5E5),
                 ),
                 child: SvgPicture.asset('assets/images/back.svg',
-                  width: 8.0,
-                  height: 15,),
+                  width: getFontSize(8.0, context),
+                  height: getFontSize(15, context),),
               ),
               Spacer(),
               Container(
@@ -42,7 +43,7 @@ class _CommunityPostCommentScreen extends  State<CommunityPostComment> {
                 Center(child: Text(
                   'Community Post',
                   style: TextStyle(
-                      fontSize: 20,
+                      fontSize: getFontSize(20, context),
                       fontStyle: FontStyle.normal
                   ),
                 ),
@@ -57,15 +58,15 @@ class _CommunityPostCommentScreen extends  State<CommunityPostComment> {
         body:
         Container(
           color: Colors.white,
-            padding: EdgeInsets.only(bottom: 30, left: 15, right: 15),
+            padding: EdgeInsets.only(bottom: getFontSize(30, context), left: getFontSize(15, context), right: getFontSize(15, context)),
             child:
         Align(
           child:
       Column(
       children: [
-        SizedBox(height: 30),
+        SizedBox(height: getFontSize(30, context)),
           Container(
-            margin: EdgeInsets.only(bottom: 15),
+            margin: EdgeInsets.only(bottom: getFontSize(15, context)),
 
             padding: EdgeInsets.all(15),
             child: Column(
@@ -75,19 +76,19 @@ class _CommunityPostCommentScreen extends  State<CommunityPostComment> {
                 Row(
                   children: [
                     SizedBox(
-                      width: 42,
-                      height: 42,
+                      width: getFontSize(42, context),
+                      height: getFontSize(42, context),
                       child: CircleAvatar(
                         radius: 50,
                         backgroundImage: AssetImage('assets/images/doc1.png'),
                       ),
                     ),
-                    SizedBox(width: 10,),
+                    SizedBox(width: getFontSize(10, context),),
                     Column(
                       mainAxisAlignment: MainAxisAlignment.start,
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        Text("Rayoo Rayoo", style: TextStyle(fontSize: 14),),
+                        Text("Rayoo Rayoo", style: TextStyle(fontSize: getFontSize(14, context)),),
                         Text("11:20am"+" . "+"9th Sept 2022", style: TextStyle(color: Colors.black45))
                       ],
                     ),
@@ -95,20 +96,20 @@ class _CommunityPostCommentScreen extends  State<CommunityPostComment> {
                     Icon(Icons.more_vert, color: Colors.black,)
                   ],
                 ),
-                SizedBox(height: 20,),
+                SizedBox(height: getFontSize(20, context),),
                 Container(
-                  width: 285,
-                  child: Text('Is vomiting and stooling a symptom of diarrhea? Please an answer is needed as soon as possible.', style: TextStyle(fontSize: 16)),
+                  width: getFontSize(285, context),
+                  child: Text('Is vomiting and stooling a symptom of diarrhea? Please an answer is needed as soon as possible.', style: TextStyle(fontSize: getFontSize(16, context))),
                 ),
-                SizedBox(height: 20,),
+                SizedBox(height: getFontSize(20, context),),
                 SvgPicture.asset('assets/images/line.svg'),
-                SizedBox(height: 10,),
+                SizedBox(height: getFontSize(10, context),),
                 Row(
                   children: [
-                    Text('All comments', style: TextStyle(fontSize: 18)),
+                    Text('All comments', style: TextStyle(fontSize: getFontSize(18, context))),
                     Spacer(),
                     Icon(Icons.comment, color: Colors.black54,),
-                    SizedBox(width: 5,),
+                    SizedBox(width: getFontSize(5, context),),
                     Text('15'+" comments", style: TextStyle(color: Colors.black54)),
                   ],
                 ),
@@ -135,7 +136,7 @@ class _CommunityPostCommentScreen extends  State<CommunityPostComment> {
   }) {
     double screenWidth = MediaQuery.of(context).size.width;
     return Container(
-      margin: EdgeInsets.only(top: 25),
+      margin: EdgeInsets.only(top: getFontSize(25, context)),
         child: Row(
         mainAxisAlignment: MainAxisAlignment.start,
         crossAxisAlignment: CrossAxisAlignment.start,
@@ -143,8 +144,8 @@ class _CommunityPostCommentScreen extends  State<CommunityPostComment> {
           Container(
             child:
           SizedBox(
-            width: 42,
-            height: 42,
+            width: getFontSize(42, context),
+            height: getFontSize(42, context),
             child: CircleAvatar(
               radius: 50,
               backgroundImage: AssetImage('assets/images/doc1.png'),
@@ -157,7 +158,7 @@ class _CommunityPostCommentScreen extends  State<CommunityPostComment> {
                   child: SvgPicture.asset('assets/images/replyicon.svg'),
                 ),
                 Container(
-                  width: 238 ,
+                  width: getFontSize(238, context) ,
                   child: Column(
                     children: [
                   Container(
@@ -170,23 +171,23 @@ class _CommunityPostCommentScreen extends  State<CommunityPostComment> {
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      Text(name, style: TextStyle(fontWeight: FontWeight.bold, fontSize: 14),),
-                     SizedBox(height: 7,),
+                      Text(name, style: TextStyle(fontWeight: FontWeight.bold, fontSize: getFontSize(14, context)),),
+                     SizedBox(height: getFontSize(7, context),),
                      Container(
-                        width: 240,
+                        width: getFontSize(240, context),
                        child:
-                         Text(comment, style: TextStyle(fontSize: 12, color: Colors.black54),)
+                         Text(comment, style: TextStyle(fontSize: getFontSize(12, context), color: Colors.black54),)
 
                      )
                     ],
                   ),
                   ),
-                      SizedBox(height: 12),
+                      SizedBox(height: getFontSize(12, context)),
                       Row(
                         children: [
                           Icon(Icons.reply, color: Colors.blue,),
-                          SizedBox(width: 5,),
-                          Text('Reply', style: TextStyle(fontSize: 12, color: Colors.blue,))
+                          SizedBox(width: getFontSize(5, context),),
+                          Text('Reply', style: TextStyle(fontSize: getFontSize(12, context), color: Colors.blue,))
                         ],
                       )
                   ]

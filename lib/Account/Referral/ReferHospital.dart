@@ -1,3 +1,4 @@
+import '../../Main/Dashboard.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_svg/svg.dart';
@@ -7,7 +8,7 @@ import 'contacts_checked_tile.dart';
 
 
 class ReferHospital extends StatefulWidget {
-  const ReferHospital({super.key});
+  ReferHospital({super.key});
 
   @override
   State<ReferHospital> createState() => _ReferHospitalState();
@@ -79,31 +80,31 @@ class _ReferHospitalState extends State<ReferHospital>
     return SafeArea(
       child: Scaffold(
         body: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 25),
+          padding: EdgeInsets.symmetric(horizontal: 25),
           child: Column(
             children: [
-              const SizedBox(height: 40),
+              SizedBox(height: getFontSize(40, context)),
               Row(
                 children: [
                   GestureDetector(
                     onTap: () => Navigator.pop(context),
                     child: Container(
-                      height: 45,
-                      width: 45,
+                      height: getFontSize(45, context),
+                      width: getFontSize(45, context),
                       decoration: BoxDecoration(
                         color: Colors.grey.shade300,
                         shape: BoxShape.circle,
                       ),
-                      child: const Icon(Icons.arrow_back),
+                      child: Icon(Icons.arrow_back),
                     ),
                   ),
-                  const SizedBox(width: 50),
-                  const Center(
+                  SizedBox(width: getFontSize(50, context)),
+                  Center(
                     child: Text(
                       "Refer a hospital",
                       style: TextStyle(
                         fontWeight: FontWeight.bold,
-                        fontSize: 20,
+                        fontSize: getFontSize(20, context),
                       ),
                     ),
                   ),
@@ -112,9 +113,9 @@ class _ReferHospitalState extends State<ReferHospital>
               Container(
                 child: selectedContacts.isNotEmpty
                     ? Padding(
-                        padding: const EdgeInsets.only(top: 40),
+                        padding: EdgeInsets.only(top: getFontSize(40, context)),
                         child: SizedBox(
-                          height: 60,
+                          height: getFontSize(60, context),
                           child: Column(
                             children: [
                               Row(
@@ -124,58 +125,58 @@ class _ReferHospitalState extends State<ReferHospital>
                                   // Container with person icon
                                   Container(
                                     padding: EdgeInsets.all(12),
-                                    width: 49,
-                                    height: 49,
-                                    decoration: const BoxDecoration(
+                                    width: getFontSize(49, context),
+                                    height: getFontSize(49, context),
+                                    decoration: BoxDecoration(
                                       color: Colors.blue,
                                       shape: BoxShape.circle,
                                     ),
                                     child: SvgPicture.asset("assets/images/hospital.svg",
                                         color: Colors.white),
                                   ),
-                                  const SizedBox(width: 10),
+                                  SizedBox(width: getFontSize(10, context)),
 
-                                  const Text(
+                                  Text(
                                     'Referral link:',
                                     style: TextStyle(
-                                        fontSize: 16,
+                                        fontSize: getFontSize(16, context),
                                         fontWeight: FontWeight.bold),
                                   ),
-                                  const SizedBox(width: 10), // Spacing
+                                  SizedBox(width: getFontSize(10, context)), // Spacing
 
                                   Expanded(
                                     child: Text(
                                       referralCode,
-                                      style: const TextStyle(fontSize: 16),
+                                      style: TextStyle(fontSize: getFontSize(16, context)),
                                       overflow: TextOverflow.ellipsis,
                                     ),
                                   ),
 
-                                  const SizedBox(width: 10),
+                                  SizedBox(width: getFontSize(10, context)),
 
                                   GestureDetector(
                                     onTap: () {
                                       Clipboard.setData(
                                           ClipboardData(text: referralCode));
                                       ScaffoldMessenger.of(context)
-                                          .showSnackBar(const SnackBar(
+                                          .showSnackBar(SnackBar(
                                               content:
                                                   Text('Copied to clipboard')));
                                     },
                                     child: Container(
-                                      width: 79,
-                                      height: 28,
+                                      width: getFontSize(79, context),
+                                      height: getFontSize(28, context),
                                       decoration: BoxDecoration(
-                                        color: const Color(0xFFE2EDFF),
+                                        color: Color(0xFFE2EDFF),
                                         borderRadius: BorderRadius.circular(5),
                                       ),
-                                      child: const Row(
+                                      child: Row(
                                         mainAxisAlignment:
                                             MainAxisAlignment.center,
                                         children: [
                                           Icon(Icons.copy,
-                                              color: Colors.blue, size: 16),
-                                          SizedBox(width: 5),
+                                              color: Colors.blue, size: getFontSize(16, context)),
+                                          SizedBox(width: getFontSize(5, context)),
                                           Text(
                                             'Copy',
                                             style: TextStyle(
@@ -194,14 +195,14 @@ class _ReferHospitalState extends State<ReferHospital>
                       )
                     : null,
               ),
-              const SizedBox(height: 10),
+              SizedBox(height: getFontSize(10, context)),
               Expanded(
                 child: Column(
                   children: [
-                    const SizedBox(height: 35),
+                    SizedBox(height: getFontSize(35, context)),
                     Container(
-                      height: 50,
-                      padding: const EdgeInsets.all(4),
+                      height: getFontSize(50, context),
+                      padding: EdgeInsets.all(4),
                       width: double.infinity,
                       decoration: BoxDecoration(
                         color: Colors.grey[200],
@@ -212,30 +213,30 @@ class _ReferHospitalState extends State<ReferHospital>
                         decoration: InputDecoration(
                           hintText: "Patient name or Phone number",
                           hintStyle:
-                              TextStyle(fontSize: 14, color: Colors.grey[400]),
-                          prefixIcon: const Icon(Icons.search),
+                              TextStyle(fontSize: getFontSize(14, context), color: Colors.grey[400]),
+                          prefixIcon: Icon(Icons.search),
                           prefixIconColor: Colors.grey[400],
                           enabledBorder: InputBorder.none,
                           border: InputBorder.none,
                         ),
                       ),
                     ),
-                    const SizedBox(
-                      height: 20,
+                    SizedBox(
+                      height: getFontSize(20, context),
                     ),
                     // Increment selected
                     Center(
                       child: Text(
                         "[ ${selectedContacts.length} selected ]", // Show the count of selected contacts
-                        style: const TextStyle(
+                        style: TextStyle(
                           color: Colors.blue,
-                          fontSize: 16,
+                          fontSize: getFontSize(16, context),
                           fontWeight: FontWeight.bold,
                         ),
                       ),
                     ),
-                    const SizedBox(
-                      height: 20,
+                    SizedBox(
+                      height: getFontSize(20, context),
                     ),
                     Expanded(
                       child: ListView.builder(
@@ -256,8 +257,8 @@ class _ReferHospitalState extends State<ReferHospital>
                   ],
                 ),
               ),
-              const SizedBox(
-                height: 30,
+              SizedBox(
+                height: getFontSize(30, context),
               ),
               Container(
                 child: selectedContacts.isNotEmpty
@@ -267,27 +268,27 @@ class _ReferHospitalState extends State<ReferHospital>
                             MaterialPageRoute(
                                 builder: (context) => SendInvites())),
                         child: Container(
-                          width: 335,
-                          height: 54,
+                          width: getFontSize(335, context),
+                          height: getFontSize(54, context),
                           decoration: BoxDecoration(
                             color: Colors.blue,
                             borderRadius: BorderRadius.circular(12),
                           ),
-                          child: const Center(
+                          child: Center(
                             child: Text(
                               "Done",
                               style: TextStyle(
                                   color: Colors.white,
                                   fontWeight: FontWeight.bold,
-                                  fontSize: 16),
+                                  fontSize: getFontSize(16, context)),
                             ),
                           ),
                         ),
                       )
                     : null,
               ),
-              const SizedBox(
-                height: 20,
+              SizedBox(
+                height: getFontSize(20, context),
               )
             ],
           ),

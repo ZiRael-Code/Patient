@@ -1,3 +1,4 @@
+import '../Main/Dashboard.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_app/Main/CommunityPosts.dart';
@@ -9,7 +10,7 @@ void main(){
 }
 
 class AllCommunity extends StatefulWidget {
-  const AllCommunity({super.key});
+  AllCommunity({super.key});
   @override
   _AllCommunityScreen createState() => _AllCommunityScreen();
 }
@@ -24,16 +25,16 @@ class _AllCommunityScreen extends  State<AllCommunity> {
           title: Row(
             children: [
               Container(
-                width: 35,
-                height: 35,
+                width: getFontSize(35, context),
+                height: getFontSize(35, context),
                 padding: EdgeInsets.all(10),
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(50),
                   color: Color(0xFFE5E5E5),
                 ),
                 child: SvgPicture.asset('assets/images/back.svg',
-                  width: 8.0,
-                  height: 15,),
+                  width: getFontSize(8.0, context),
+                  height: getFontSize(15, context),),
               ),
               Spacer(),
               Container(
@@ -42,7 +43,7 @@ class _AllCommunityScreen extends  State<AllCommunity> {
                 Center(child: Text(
                   'All communities',
                   style: TextStyle(
-                      fontSize: 20,
+                      fontSize: getFontSize(20, context),
                       fontStyle: FontStyle.normal
                   ),
                 ),
@@ -56,8 +57,8 @@ class _AllCommunityScreen extends  State<AllCommunity> {
            },
             child:
           Container(
-            width: 35,
-            height: 35,
+            width: getFontSize(35, context),
+            height: getFontSize(35, context),
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(50),
               color: Color(0xFFE5E5E5),
@@ -72,15 +73,15 @@ class _AllCommunityScreen extends  State<AllCommunity> {
         body: SingleChildScrollView(
           child:
         Container(
-            padding: EdgeInsets.only(bottom: 30, left: 15, right: 15),
+            padding: EdgeInsets.only(bottom: getFontSize(30, context), left: getFontSize(15, context), right: getFontSize(15, context)),
             child:
         Align(
           child:
       Column(
       children: [
-        SizedBox(height: 30),
+        SizedBox(height: getFontSize(30, context)),
         Container(
-          padding: EdgeInsets.only(right: 10),
+          padding: EdgeInsets.only(right: getFontSize(10, context)),
           // width: double.infinity,
           width: MediaQuery.of(context).size.width * 0.90,
           decoration: BoxDecoration(
@@ -97,7 +98,7 @@ class _AllCommunityScreen extends  State<AllCommunity> {
             ),
           ),
         ),
-        SizedBox(height: 20),
+        SizedBox(height: getFontSize(20, context)),
         community(
             iconPath: 'assets/images/family.png',
           communityName: 'Diabetes patients community',
@@ -134,8 +135,8 @@ class _AllCommunityScreen extends  State<AllCommunity> {
     required String communityLocation,
   }) {
     return Container(
-      height: 229,
-      margin: EdgeInsets.only(bottom: 15),
+      height: getFontSize(229, context),
+      margin: EdgeInsets.only(bottom: getFontSize(15, context)),
       decoration: BoxDecoration(
         color: Colors.blue,
         borderRadius: BorderRadius.circular(14),
@@ -147,7 +148,7 @@ class _AllCommunityScreen extends  State<AllCommunity> {
         child: Stack(
           children: [
         // Container(
-        // height: 85,
+        // height: getFontSize(85, context),
         // // padding: EdgeInsets.all(15),
         //   decoration: BoxDecoration(
         //     borderRadius: BorderRadius.only(topRight: Radius.circular(14), topLeft: Radius.circular(14)),
@@ -160,7 +161,7 @@ class _AllCommunityScreen extends  State<AllCommunity> {
             child:
           Container(
             alignment: Alignment.bottomCenter,
-            height: 145,
+            height: getFontSize(145, context),
               padding: EdgeInsets.all(15),
               decoration: BoxDecoration(
                     borderRadius: BorderRadius.only(bottomRight: Radius.circular(14), bottomLeft: Radius.circular(14)),
@@ -171,46 +172,46 @@ class _AllCommunityScreen extends  State<AllCommunity> {
           crossAxisAlignment: CrossAxisAlignment.center,
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            SizedBox(height: 30,),
+            SizedBox(height: getFontSize(30, context),),
 
-            SizedBox(height: 10),
+            SizedBox(height: getFontSize(10, context)),
             Text(
               communityName,
-              style: TextStyle(fontSize: 18, color: Color(0xff2E2E42)),
+              style: TextStyle(fontSize: getFontSize(18, context), color: Color(0xff2E2E42)),
             ),
-            SizedBox(height: 10),
+            SizedBox(height: getFontSize(10, context)),
             Row(
               children: [
                 Container(
-                  width: 30,
-                  height: 30,
+                  width: getFontSize(30, context),
+                  height: getFontSize(30, context),
                   decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(50),
                       color: Color(0xffE2EDFF)
                   ),
                   child: Icon(Icons.person, color: Colors.blue),
                 ),
-                SizedBox(width: 7,),
+                SizedBox(width: getFontSize(7, context),),
                 Text(
                   communityMember,
-                  style: TextStyle(fontSize: 16, color: Color(0xff666666)),
+                  style: TextStyle(fontSize: getFontSize(16, context), color: Color(0xff666666)),
                 ),
                 Spacer(),
                 SvgPicture.asset('assets/images/linev.svg'),
                 Spacer(),
                 Container(
-                  width: 30,
-                  height: 30,
+                  width: getFontSize(30, context),
+                  height: getFontSize(30, context),
                   decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(50),
                       color: Color(0xffE2EDFF)
                   ),
                   child: Icon(Icons.location_pin, color: Colors.blue),
                 ),
-                SizedBox(width: 7,),
+                SizedBox(width: getFontSize(7, context),),
                 Text(
                   communityLocation,
-                  style: TextStyle(fontSize: 16, color: Color(0xff666666)),
+                  style: TextStyle(fontSize: getFontSize(16, context), color: Color(0xff666666)),
                 ),
               ],
             )
@@ -219,12 +220,12 @@ class _AllCommunityScreen extends  State<AllCommunity> {
         ),
         ),
             Column(children: [
-              SizedBox(height: 45,),
+              SizedBox(height: getFontSize(45, context),),
               Align(
                 alignment: Alignment.topCenter,
                 child:  SizedBox(
-                  width: 77,
-                  height: 77,
+                  width: getFontSize(77, context),
+                  height: getFontSize(77, context),
                   child:
                   CircleAvatar(
                     radius: 50,
@@ -249,15 +250,15 @@ class _AllCommunityScreen extends  State<AllCommunity> {
             crossAxisAlignment: CrossAxisAlignment.center,
             mainAxisSize: MainAxisSize.min,
       children: [
-        Text('Create Community', style: TextStyle(fontSize: 20),),
-        SizedBox(height: 25,),
+        Text('Create Community', style: TextStyle(fontSize: getFontSize(20, context)),),
+        SizedBox(height: getFontSize(25, context),),
         SvgPicture.asset('assets/images/wheel.svg',),
-        SizedBox(height: 15,),
+        SizedBox(height: getFontSize(15, context),),
         Container(alignment: Alignment.center,
-          width: 195,
+          width: getFontSize(195, context),
           child: Text(textAlign: TextAlign.center, 'Do you wish to create a community?'),
         ),
-        SizedBox(height: 10,),
+        SizedBox(height: getFontSize(10, context),),
         ElevatedButton(
           onPressed: () {
             Navigator.of(context).push(MaterialPageRoute(builder: (builder)=> CommunityFeed()));
@@ -270,28 +271,28 @@ class _AllCommunityScreen extends  State<AllCommunity> {
             ),
           ),
           child: Padding(
-            padding: const EdgeInsets.symmetric(vertical: 12.0, horizontal: 24.0),
+            padding: EdgeInsets.symmetric(vertical: 12.0, horizontal: 24.0),
             child: Text(
               'Yes, continue',
-              style: TextStyle(color: Colors.white, fontSize: 18),
+              style: TextStyle(color: Colors.white, fontSize: getFontSize(18, context)),
             ),
           ),
         ),
-        SizedBox(height: 8,),
+        SizedBox(height: getFontSize(8, context),),
         ElevatedButton(
           onPressed: () {},
           style: ElevatedButton.styleFrom(
             fixedSize: Size.fromWidth(MediaQuery.of(context).size.width),
-            side: BorderSide(color: Colors.blue, width: 1),
+            side: BorderSide(color: Colors.blue, width: getFontSize(1, context)),
             shape: RoundedRectangleBorder(
               borderRadius: BorderRadius.circular(9),
             ),
           ),
           child: Padding(
-            padding: const EdgeInsets.symmetric(vertical: 12.0, horizontal: 24.0),
+            padding: EdgeInsets.symmetric(vertical: 12.0, horizontal: 24.0),
             child: Text(
               'No',
-              style: TextStyle(color: Colors.blue, fontSize: 18),
+              style: TextStyle(color: Colors.blue, fontSize: getFontSize(18, context)),
             ),
           ),
         ),

@@ -1,3 +1,4 @@
+import '../Main/Dashboard.dart';
 import 'package:dotted_border/dotted_border.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_app/Appointments/AffiliatedNetwork.dart';
@@ -31,7 +32,7 @@ class _MainAppointmentState extends State<MainAppointment> {
         title: Text(
           'MainAppointment',
           style: TextStyle(
-            fontSize: 26,
+            fontSize: getFontSize(26, context),
             fontWeight: FontWeight.bold,
             color: Colors.black,
           ),
@@ -47,16 +48,16 @@ class _MainAppointmentState extends State<MainAppointment> {
                 icon: Icon(
                   Icons.message,
                   color: Colors.black,
-                  size: 28,
+                  size: getFontSize(28, context),
                 ),
                 onPressed: () {},
               ),
               Positioned(
-                top: 10,
-                right: 12,
+                top: getFontSize(10, context),
+                right: getFontSize(12, context),
                 child: Container(
-                  width: 10,
-                  height: 10,
+                  width: getFontSize(10, context),
+                  height: getFontSize(10, context),
                   decoration: BoxDecoration(
                     color: Colors.red,
                     shape: BoxShape.circle,
@@ -74,7 +75,7 @@ class _MainAppointmentState extends State<MainAppointment> {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            SizedBox(height: 20,),
+            SizedBox(height: getFontSize(20, context),),
             // Scrollable row with quick checkup options
             SingleChildScrollView(
               scrollDirection: Axis.horizontal,
@@ -89,7 +90,7 @@ class _MainAppointmentState extends State<MainAppointment> {
                     icon: Icon(
                       Icons.electric_bolt,
                       color: Colors.blue,
-                      size: 30,
+                      size: getFontSize(30, context),
                     ),
                     text: "Take a quick checkup"
                   ),
@@ -104,7 +105,7 @@ class _MainAppointmentState extends State<MainAppointment> {
                     icon: Icon(
                       Icons.local_hospital,
                       color: Colors.blue,
-                      size: 30,
+                      size: getFontSize(30, context),
                     ),
                     text: "Book appointment"
                   ),
@@ -120,7 +121,7 @@ class _MainAppointmentState extends State<MainAppointment> {
                     icon: Icon(
                       Icons.refresh,
                       color: Colors.blue,
-                      size: 30,
+                      size: getFontSize(30, context),
                     ),
                     text: "Scheduled appointment"
                   ),
@@ -135,7 +136,7 @@ class _MainAppointmentState extends State<MainAppointment> {
                     icon: Icon(
                       Icons.share,
                       color: Colors.blue,
-                      size: 30,
+                      size: getFontSize(30, context),
                     ),
                     text: 'View affiliated network',
                   ),
@@ -144,7 +145,7 @@ class _MainAppointmentState extends State<MainAppointment> {
                 ],
               ),
             ),
-            SizedBox(height: 20),
+            SizedBox(height: getFontSize(20, context)),
 
             // Available specialists with "See more" button
             Row(
@@ -153,7 +154,7 @@ class _MainAppointmentState extends State<MainAppointment> {
                 Text(
                   'Available specialists',
                   style: TextStyle(
-                    fontSize: 18,
+                    fontSize: getFontSize(18, context),
                     fontWeight: FontWeight.bold,
                     color: Colors.black,
                   ),
@@ -163,7 +164,7 @@ class _MainAppointmentState extends State<MainAppointment> {
                   child: Text(
                     'See more',
                     style: TextStyle(
-                      fontSize: 16,
+                      fontSize: getFontSize(16, context),
                       color: Colors.blue,
                     ),
                   ),
@@ -198,18 +199,18 @@ class _MainAppointmentState extends State<MainAppointment> {
                 ],
               ),
             ),
-            SizedBox(height: 25),
+            SizedBox(height: getFontSize(25, context)),
             // Pending MainAppointment
             Text(
               'Pending appointments',
               style: TextStyle(
-                fontSize: 18,
+                fontSize: getFontSize(18, context),
                 fontWeight: FontWeight.bold,
                 color: Colors.black,
               ),
             ),
 
-            SizedBox(height: 25),
+            SizedBox(height: getFontSize(25, context)),
 
             randomMedicationChooser()
       ],
@@ -227,17 +228,17 @@ class _MainAppointmentState extends State<MainAppointment> {
       strokeWidth: 2,
       child: Container(
         padding: EdgeInsets.all(10),
-        width: 342,
-        height: 206,
+        width: getFontSize(342, context),
+        height: getFontSize(206, context),
         decoration: BoxDecoration(
             color: Colors.grey.withOpacity(0.10)
         ),
         child: Column(
           children: [
             SvgPicture.asset('assets/images/box.svg'),
-            Text('No appointment yet.', style: TextStyle(fontSize: 16,
+            Text('No appointment yet.', style: TextStyle(fontSize: getFontSize(16, context),
                 color: Colors.black.withOpacity(0.40)),),
-            SizedBox(height: 12,),
+            SizedBox(height: getFontSize(12, context),),
             SizedBox(
               width: double.infinity,
               child: GestureDetector(
@@ -256,10 +257,10 @@ class _MainAppointmentState extends State<MainAppointment> {
                     ),
                   ),
                   child: Padding(
-                    padding: const EdgeInsets.symmetric(vertical: 12.0, horizontal: 24.0),
+                    padding: EdgeInsets.symmetric(vertical: 12.0, horizontal: 24.0),
                     child: Text(
                       'Book an appointment',
-                      style: TextStyle(color: Colors.white, fontSize: 16),
+                      style: TextStyle(color: Colors.white, fontSize: getFontSize(16, context)),
                     ),
                   ),
                 ),
@@ -297,7 +298,7 @@ class _MainAppointmentState extends State<MainAppointment> {
         appointment_information_bottom_sheet();
       },
         child: Container(
-      margin: EdgeInsets.only(bottom: 10),
+      margin: EdgeInsets.only(bottom: getFontSize(10, context)),
       padding: EdgeInsets.all(25),
       width: double.infinity,
       decoration: BoxDecoration(
@@ -309,32 +310,32 @@ class _MainAppointmentState extends State<MainAppointment> {
        crossAxisAlignment: CrossAxisAlignment.start,
        children: [
          Text(name, style: TextStyle(
-           fontSize: 16,
+           fontSize: getFontSize(16, context),
            color: Colors.black,
          ),),
-         SizedBox(height: 5,),
+         SizedBox(height: getFontSize(5, context),),
          Row(
            children: [
              Text(time, style: TextStyle(
-               fontSize: 14,
+               fontSize: getFontSize(14, context),
                color: Colors.black,
              ),),
-             SizedBox(width: 8,),
+             SizedBox(width: getFontSize(8, context),),
              Text(date, style: TextStyle(
-               fontSize: 14,
+               fontSize: getFontSize(14, context),
                color: Colors.black,
              ),),
            ],
          ),
-         SizedBox(height: 10,),
+         SizedBox(height: getFontSize(10, context),),
          Container(
-           padding: EdgeInsets.only(left: 10, right: 10, top: 5, bottom: 5),
+           padding: EdgeInsets.only(left: getFontSize(10, context), right: getFontSize(10, context), top: getFontSize(5, context), bottom: getFontSize(5, context)),
            decoration: BoxDecoration(
              borderRadius: BorderRadius.circular(50),
              color:  textColor.withOpacity(0.15)
            ),
            child:   Text(appointmentType, style: TextStyle(
-             fontSize: 16,
+             fontSize: getFontSize(16, context),
              color: textColor,
            ),),
          ),
@@ -351,26 +352,26 @@ class _MainAppointmentState extends State<MainAppointment> {
     required Icon icon,
     required String text}) {
     return Container(
-      margin: EdgeInsets.only(right: 3),
+      margin: EdgeInsets.only(right: getFontSize(3, context)),
       child: Column(
       children: [
         Container(
-          width: 60,
-          height: 60,
+          width: getFontSize(60, context),
+          height: getFontSize(60, context),
           decoration: BoxDecoration(
             color: Color(0xFFE2EDFF),
             shape: BoxShape.circle,
           ),
           child: icon
         ),
-        SizedBox(height: 8),
+        SizedBox(height: getFontSize(8, context)),
         Container(
-          width: 78,
+          width: getFontSize(78, context),
           child: Text(
             text,
             textAlign: TextAlign.center,
             style: TextStyle(
-              fontSize: 12,
+              fontSize: getFontSize(12, context),
             ),
           ),
         ),
@@ -386,16 +387,16 @@ class _MainAppointmentState extends State<MainAppointment> {
     required String workingHours
   }) {
     return Container(
-      padding: EdgeInsets.only(left: 11, right: 11),
+      padding: EdgeInsets.only(left: getFontSize(11, context), right: getFontSize(11, context)),
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(12),
         border: Border.all(
             color: Colors.black.withOpacity(0.09),
         ),
       ),
-      width: 237,
-      height: 286,
-      margin: EdgeInsets.only(right: 25),
+      width: getFontSize(237, context),
+      height: getFontSize(286, context),
+      margin: EdgeInsets.only(right: getFontSize(25, context)),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
@@ -403,19 +404,19 @@ class _MainAppointmentState extends State<MainAppointment> {
             children: [
               Container(
                 width: double.infinity,
-                height: 160,
+                height: getFontSize(160, context),
                 child: Image.asset(imagePath),
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(12),
                 ),
               ),
               Positioned(
-                top: 8,
-                right: 8,
+                top: getFontSize(8, context),
+                right: getFontSize(8, context),
                 child: Container(
-                  margin: EdgeInsets.only(top: 10),
-                  width: 51,
-                  height: 24,
+                  margin: EdgeInsets.only(top: getFontSize(10, context)),
+                  width: getFontSize(51, context),
+                  height: getFontSize(24, context),
                   decoration: BoxDecoration(
                     color: Colors.black.withOpacity(0.45),
                     borderRadius: BorderRadius.circular(8),
@@ -426,14 +427,14 @@ class _MainAppointmentState extends State<MainAppointment> {
                       Icon(
                         Icons.star,
                         color: Colors.yellow,
-                        size: 16,
+                        size: getFontSize(16, context),
                       ),
-                      SizedBox(width: 4),
+                      SizedBox(width: getFontSize(4, context)),
                       Text(
                         ratings,
                         style: TextStyle(
                           color: Colors.white,
-                          fontSize: 12,
+                          fontSize: getFontSize(12, context),
                         ),
                       ),
                     ],
@@ -442,29 +443,29 @@ class _MainAppointmentState extends State<MainAppointment> {
               ),
             ],
           ),
-          SizedBox(height: 8),
+          SizedBox(height: getFontSize(8, context)),
           Text(
             name,
             style: TextStyle(
-              fontSize: 18,
+              fontSize: getFontSize(18, context),
               fontWeight: FontWeight.bold,
               color: Colors.black,
             ),
           ),
-          SizedBox(height: 4),
+          SizedBox(height: getFontSize(4, context)),
           Text(
             specialization,
             style: TextStyle(
-              fontSize: 14,
+              fontSize: getFontSize(14, context),
               color: Colors.grey,
             ),
           ),
-          SizedBox(height:10),
+          SizedBox(height: getFontSize(10, context)),
           Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 Container(
-                    padding: EdgeInsets.only(left: 12, right: 12, top: 6, bottom: 6),
+                    padding: EdgeInsets.only(left: getFontSize(12, context), right: getFontSize(12, context), top: getFontSize(6, context), bottom: getFontSize(6, context)),
                     decoration: BoxDecoration(
                         color: Colors.blue,
                         borderRadius: BorderRadius.circular(50)
@@ -478,7 +479,7 @@ class _MainAppointmentState extends State<MainAppointment> {
                 ),
 
                 Container(
-                    padding: EdgeInsets.only(left: 12, right: 12, top: 6, bottom: 6),
+                    padding: EdgeInsets.only(left: getFontSize(12, context), right: getFontSize(12, context), top: getFontSize(6, context), bottom: getFontSize(6, context)),
                     decoration: BoxDecoration(
                       color: Color(0xffE2EDFF),
                       borderRadius: BorderRadius.circular(50),
@@ -532,20 +533,20 @@ class _MainAppointmentState extends State<MainAppointment> {
                     children: [
                       Container(
                         width: MediaQuery.of(context).size.width,
-                        height: 103,
+                        height: getFontSize(103, context),
                         child: Row(
                           children: [
                             Image.asset('assets/images/dr_profile.png',
-                              width: 56,
-                              height: 56,
+                              width: getFontSize(56, context),
+                              height: getFontSize(56, context),
                             ),
-                            SizedBox(width: 10),
+                            SizedBox(width: getFontSize(10, context)),
                             Column(
                               crossAxisAlignment: CrossAxisAlignment.start,
                               mainAxisAlignment: MainAxisAlignment.center,
                               children: [
                                 Center(child: Text("Dr. Muiz Sanni", style: TextStyle(color: Colors.black, fontWeight: FontWeight.bold),)),
-                                SizedBox(height: 10,),
+                                SizedBox(height: getFontSize(10, context),),
                                 Center(child: Text("Cardiovascular surgeon", style: TextStyle(color: Colors.grey),),),
                               ],
                             ),
@@ -557,7 +558,7 @@ class _MainAppointmentState extends State<MainAppointment> {
                           border: Border.all(color:  Colors.black.withOpacity(0.1)),
                         ),
                       ),
-                      SizedBox(height: 20,),
+                      SizedBox(height: getFontSize(20, context),),
                       Row(
                         children: [
                           Container(
@@ -582,7 +583,7 @@ class _MainAppointmentState extends State<MainAppointment> {
                           )
                         ],
                       ),
-                      SizedBox(height: 25,),
+                      SizedBox(height: getFontSize(25, context),),
                       Row(
                         children: [
                           Container(
@@ -601,13 +602,13 @@ class _MainAppointmentState extends State<MainAppointment> {
                                 crossAxisAlignment: CrossAxisAlignment.start,
                                 children: [
                                   Text("Consultation fee:",  style: TextStyle(color: Color(0xFF2E2E42)),),
-                                  Text("N20,000",  style: TextStyle(fontSize: 28,color: Colors.blue, fontWeight: FontWeight.bold))
+                                  Text("N20,000",  style: TextStyle(fontSize: getFontSize(28, context),color: Colors.blue, fontWeight: FontWeight.bold))
                                 ]
                             ),
                           )
                         ],
                       ),
-                      SizedBox(height: 25,),
+                      SizedBox(height: getFontSize(25, context),),
                       ElevatedButton(
                         onPressed: () {},
                         style: ElevatedButton.styleFrom(
@@ -617,17 +618,17 @@ class _MainAppointmentState extends State<MainAppointment> {
                             borderRadius: BorderRadius.circular(9),
                             side: BorderSide(
                               color: Color(0xFFFF6161),
-                              width: 0.5,
+                              width: getFontSize(0.5, context),
                             ),
                           ),
                         ),
                         child: Padding(
-                          padding: const EdgeInsets.symmetric(vertical: 12.0, horizontal: 24.0),
+                          padding: EdgeInsets.symmetric(vertical: 12.0, horizontal: 24.0),
                           child: Text(
                             'Cancel appointment',
                             style: TextStyle(
                               color: Color(0xFFFF6161), // Text color
-                              fontSize: 16,
+                              fontSize: getFontSize(16, context),
                             ),
                           ),
                         ),

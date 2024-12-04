@@ -1,3 +1,4 @@
+import '../Main/Dashboard.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_app/Appointments/AppointmentDoctor.dart';
@@ -9,7 +10,7 @@ void main(){
 }
 
 class BookAppointmentSpecialistSearch extends StatefulWidget {
-  const BookAppointmentSpecialistSearch({super.key});
+  BookAppointmentSpecialistSearch({super.key});
   @override
   _BookAppointmentSpecialistSearchScreen createState() => _BookAppointmentSpecialistSearchScreen();
 }
@@ -24,16 +25,16 @@ class _BookAppointmentSpecialistSearchScreen extends  State<BookAppointmentSpeci
           title: Row(
             children: [
               Container(
-                width: 35,
-                height: 35,
+                width: getFontSize(35, context),
+                height: getFontSize(35, context),
                 padding: EdgeInsets.all(10),
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(50),
                   color: Color(0xFFE5E5E5),
                 ),
                 child: SvgPicture.asset('assets/images/back.svg',
-                  width: 8.0,
-                  height: 15,),
+                  width: getFontSize(8.0, context),
+                  height: getFontSize(15, context),),
               ),
               Spacer(),
               Container(
@@ -42,7 +43,7 @@ class _BookAppointmentSpecialistSearchScreen extends  State<BookAppointmentSpeci
                 Center(child: Text(
                   'Appointment Specialist',
                   style: TextStyle(
-                      fontSize: 20,
+                      fontSize: getFontSize(20, context),
                       fontStyle: FontStyle.normal
                   ),
                 ),
@@ -57,17 +58,17 @@ class _BookAppointmentSpecialistSearchScreen extends  State<BookAppointmentSpeci
         body: SingleChildScrollView(
     child:
         Container(
-            padding: EdgeInsets.only(bottom: 30, left: 15, right: 15),
+            padding: EdgeInsets.only(bottom: getFontSize(30, context), left: getFontSize(15, context), right: getFontSize(15, context)),
             child:
         Align(
           child:
       Column(
       children: [
-        SizedBox(height: 30),
+        SizedBox(height: getFontSize(30, context)),
         Row(
           children:[
         Container(
-          padding: EdgeInsets.only(right: 10),
+          padding: EdgeInsets.only(right: getFontSize(10, context)),
           width: MediaQuery.of(context).size.width * 0.70,
           decoration: BoxDecoration(
              color: Colors.grey[300],
@@ -85,7 +86,7 @@ class _BookAppointmentSpecialistSearchScreen extends  State<BookAppointmentSpeci
         ),
 
           Container(
-            margin: EdgeInsets.only(left: 12),
+            margin: EdgeInsets.only(left: getFontSize(12, context)),
             padding: EdgeInsets.all(12),
             decoration: BoxDecoration(
               color: Colors.grey[300],
@@ -95,15 +96,15 @@ class _BookAppointmentSpecialistSearchScreen extends  State<BookAppointmentSpeci
           )
         ]
       ),
-        SizedBox(height: 40),
+        SizedBox(height: getFontSize(40, context)),
         Text(
           'Click on any of the profiles to book an appointment or search for a particular specialist.',
           style: TextStyle(
-            fontSize: 14,
+            fontSize: getFontSize(14, context),
             color: Colors.black
           ),
         ),
-        SizedBox(height: 45),
+        SizedBox(height: getFontSize(45, context)),
         //
         specialist(
           image: "assets/images/doc.png",
@@ -166,9 +167,9 @@ class _BookAppointmentSpecialistSearchScreen extends  State<BookAppointmentSpeci
               Align(
                 alignment: Alignment.topCenter,
                 child: Container(
-                  margin: EdgeInsets.only(bottom: 50),
-                  height: 44,
-                  width: 44,
+                  margin: EdgeInsets.only(bottom: getFontSize(50, context)),
+                  height: getFontSize(44, context),
+                  width: getFontSize(44, context),
                   child: CircleAvatar(
                     radius: 22,
                     backgroundImage: AssetImage(image),
@@ -176,27 +177,27 @@ class _BookAppointmentSpecialistSearchScreen extends  State<BookAppointmentSpeci
                   ),
                 ),
               ),
-              SizedBox(width: 12),
+              SizedBox(width: getFontSize(12, context)),
               Column(
                 mainAxisAlignment: MainAxisAlignment.start,
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(name, style: TextStyle(
-                    fontSize: 18,
+                    fontSize: getFontSize(18, context),
                     fontWeight: FontWeight.bold,
                     color: Colors.black
                   ),),
-                  SizedBox(height: 5,),
+                  SizedBox(height: getFontSize(5, context),),
                   Text(specialization, style: TextStyle(
-                    fontSize: 16,
+                    fontSize: getFontSize(16, context),
                     color: Colors.grey.withOpacity(0.90)
                   ),),
-                  SizedBox(height: 20),
+                  SizedBox(height: getFontSize(20, context)),
                   Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
                         Container(
-                            padding: EdgeInsets.only(left: 12, right: 12, top: 6, bottom: 6),
+                            padding: EdgeInsets.only(left: getFontSize(12, context), right: getFontSize(12, context), top: getFontSize(6, context), bottom: getFontSize(6, context)),
                             decoration: BoxDecoration(
                                 color: Colors.blue,
                                 borderRadius: BorderRadius.circular(50)
@@ -208,10 +209,10 @@ class _BookAppointmentSpecialistSearchScreen extends  State<BookAppointmentSpeci
                               ),
                             )
                         ),
-                        SizedBox(width: 10,),
+                        SizedBox(width: getFontSize(10, context),),
 
                         Container(
-                            padding: EdgeInsets.only(left: 12, right: 12, top: 6, bottom: 6),
+                            padding: EdgeInsets.only(left: getFontSize(12, context), right: getFontSize(12, context), top: getFontSize(6, context), bottom: getFontSize(6, context)),
                             decoration: BoxDecoration(
                               color: Color(0xffE2EDFF),
                               borderRadius: BorderRadius.circular(50),
@@ -232,9 +233,9 @@ class _BookAppointmentSpecialistSearchScreen extends  State<BookAppointmentSpeci
 
             ],
           ),
-          SizedBox(height: 15,),
+          SizedBox(height: getFontSize(15, context),),
           SvgPicture.asset('assets/images/line.svg'),
-          SizedBox(height: 15,),
+          SizedBox(height: getFontSize(15, context),),
         ],
       ),
       ),

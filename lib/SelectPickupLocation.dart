@@ -1,3 +1,5 @@
+import '../Main/Dashboard.dart';
+import 'Main/Dashboard.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
@@ -5,7 +7,7 @@ import 'package:flutter_svg/svg.dart';
 import 'ChangeLocation.dart';
 
 class Selectpickuplocation extends StatefulWidget {
-  const Selectpickuplocation({super.key});
+  Selectpickuplocation({super.key});
 
   @override
   State<Selectpickuplocation> createState() => _SelectpickuplocationState();
@@ -20,16 +22,16 @@ class _SelectpickuplocationState extends State<Selectpickuplocation> {
           title: Row(
             children: [
               Container(
-                width: 35,
-                height: 35,
+                width: getFontSize(35, context),
+                height: getFontSize(35, context),
                 padding: EdgeInsets.all(10),
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(50),
                   color: Color(0xFFE5E5E5),
                 ),
                 child: SvgPicture.asset('assets/images/back.svg',
-                  width: 8.0,
-                  height: 15,),
+                  width: getFontSize(8.0, context),
+                  height: getFontSize(15, context),),
               ),
               Spacer(),
               Container(
@@ -38,7 +40,7 @@ class _SelectpickuplocationState extends State<Selectpickuplocation> {
                 Center(child: Text(
                   'Select pickup location',
                   style: TextStyle(
-                      fontSize: 20,
+                      fontSize: getFontSize(20, context),
                       fontStyle: FontStyle.normal
                   ),
                 ),
@@ -52,14 +54,14 @@ class _SelectpickuplocationState extends State<Selectpickuplocation> {
         ),
         body:
         Container(
-        padding: EdgeInsets.only(bottom: 30, left: 15, right: 15),
+        padding: EdgeInsets.only(bottom: getFontSize(30, context), left: getFontSize(15, context), right: getFontSize(15, context)),
     child: Column(
       mainAxisAlignment: MainAxisAlignment.start,
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        SizedBox(height: 25,),
-        Text("Your Location", style: TextStyle(fontSize: 18),),
-        SizedBox(height: 20,),
+        SizedBox(height: getFontSize(25, context),),
+        Text("Your Location", style: TextStyle(fontSize: getFontSize(18, context)),),
+        SizedBox(height: getFontSize(20, context),),
         Row(
           children: [
             Row(
@@ -67,8 +69,8 @@ class _SelectpickuplocationState extends State<Selectpickuplocation> {
             Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Text("Region",style: TextStyle(fontSize: 16,color: Colors.black38) ),
-                Text("Lagos", style: TextStyle(fontSize: 16))
+                Text("Region",style: TextStyle(fontSize: getFontSize(16, context),color: Colors.black38) ),
+                Text("Lagos", style: TextStyle(fontSize: getFontSize(16, context)))
               ],
             )
           ],
@@ -82,15 +84,15 @@ class _SelectpickuplocationState extends State<Selectpickuplocation> {
               mainAxisAlignment: MainAxisAlignment.start,
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Text("LGA",style: TextStyle(fontSize: 16,color: Colors.black38) ),
-                Text("Agege, Lagos", style: TextStyle(fontSize: 16))
+                Text("LGA",style: TextStyle(fontSize: getFontSize(16, context),color: Colors.black38) ),
+                Text("Agege, Lagos", style: TextStyle(fontSize: getFontSize(16, context)))
               ],
             )
           ],
         ),
           ],
         ),
-        SizedBox(height: 15,),
+        SizedBox(height: getFontSize(15, context),),
         ElevatedButton(
           onPressed: () {
             // TODO the popup nd select location no dey so redo it
@@ -104,22 +106,22 @@ class _SelectpickuplocationState extends State<Selectpickuplocation> {
             ),
             side: BorderSide(
               color: Colors.blue,
-              width: 2.0,
+              width: getFontSize(2.0, context),
             )
           ),
           child: Padding(
-            padding: const EdgeInsets.symmetric(vertical: 12.0, horizontal: 24.0),
+            padding: EdgeInsets.symmetric(vertical: 12.0, horizontal: 24.0),
             child: Text(
               'Change Location',
-              style: TextStyle(color: Colors.blue, fontSize: 18),
+              style: TextStyle(color: Colors.blue, fontSize: getFontSize(18, context)),
             ),
           ),
         ),
-        SizedBox(height: 25,),
-        Text("Pickup venues near you", style: TextStyle(fontSize: 16)),
-        SizedBox(height: 25,),
+        SizedBox(height: getFontSize(25, context),),
+        Text("Pickup venues near you", style: TextStyle(fontSize: getFontSize(16, context))),
+        SizedBox(height: getFontSize(25, context),),
         Container(
-          padding: const EdgeInsets.all(14),
+          padding: EdgeInsets.all(14),
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(10.0),
             color: Color(0xffF9F9F9),
@@ -127,10 +129,10 @@ class _SelectpickuplocationState extends State<Selectpickuplocation> {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Text("Landmark hospitals", style: TextStyle(fontSize: 16)),
-              SizedBox(height: 9,),
+              Text("Landmark hospitals", style: TextStyle(fontSize: getFontSize(16, context))),
+              SizedBox(height: getFontSize(9, context),),
               Text("50, Saint Mark Avenue, off Raymond estate, Surulere, Lagos", style: TextStyle(color: Colors.black45)),
-              SizedBox(height: 20,),
+              SizedBox(height: getFontSize(20, context),),
               ElevatedButton(
                 onPressed: () {
                   // TODO the popup nd select location no dey so redo it
@@ -144,15 +146,15 @@ class _SelectpickuplocationState extends State<Selectpickuplocation> {
                     ),
                 ),
                 child: Align(alignment: Alignment.center, child:  Padding(
-                  padding: const EdgeInsets.symmetric(vertical: 12.0, horizontal: 24.0),
+                  padding: EdgeInsets.symmetric(vertical: 12.0, horizontal: 24.0),
                   child: Row(
                     children: [
                       Spacer(),
                       Text(
                     'Change Location',
-                    style: TextStyle(color: Colors.white, fontSize: 18),
+                    style: TextStyle(color: Colors.white, fontSize: getFontSize(18, context)),
                   ),
-                   SizedBox(width: 10,),
+                   SizedBox(width: getFontSize(10, context),),
                    Icon(Icons.check_circle, color: Colors.white,),
                       Spacer(),
                     ]
@@ -178,10 +180,10 @@ class _SelectpickuplocationState extends State<Selectpickuplocation> {
 
           ),
           child: Padding(
-            padding: const EdgeInsets.symmetric(vertical: 12.0, horizontal: 24.0),
+            padding: EdgeInsets.symmetric(vertical: 12.0, horizontal: 24.0),
             child: Text(
               'Checkout',
-              style: TextStyle(color: Colors.white, fontSize: 18),
+              style: TextStyle(color: Colors.white, fontSize: getFontSize(18, context)),
             ),
           ),
         ),

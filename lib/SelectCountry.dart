@@ -1,3 +1,5 @@
+import '../Main/Dashboard.dart';
+import 'Main/Dashboard.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
@@ -8,7 +10,7 @@ void main(){
 }
 
 class SelectCountry extends StatefulWidget {
-  const SelectCountry({super.key});
+  SelectCountry({super.key});
   @override
   _SelectCountryScreen createState() => _SelectCountryScreen();
 }
@@ -30,7 +32,7 @@ class _SelectCountryScreen extends  State<SelectCountry> {
                 Center(child: Text(
                   'Select country',
                   style: TextStyle(
-                      fontSize: 20,
+                      fontSize: getFontSize(20, context),
                       fontStyle: FontStyle.normal
                   ),
                 ),
@@ -44,28 +46,28 @@ class _SelectCountryScreen extends  State<SelectCountry> {
         ),
         body:
         Container(
-            padding: EdgeInsets.only(bottom: 30, left: 15, right: 15),
+            padding: EdgeInsets.only(bottom: getFontSize(30, context), left: getFontSize(15, context), right: getFontSize(15, context)),
             child:
         Align(
           child:
       Column(
       children: [
-        SizedBox(height: 30),
+        SizedBox(height: getFontSize(30, context)),
         Container(
           alignment: Alignment.center,
           width: MediaQuery.of(context).size.width * 0.78,
           child:
         Align(child: Text("You can change which country you can see specialistists from",textAlign: TextAlign.center,
         style: TextStyle(
-          fontSize: 14,
+          fontSize: getFontSize(14, context),
         ),
         ),
         ),
         ),
-        SizedBox(height: 25),
+        SizedBox(height: getFontSize(25, context)),
 
         Container(
-          padding: EdgeInsets.only(right: 10),
+          padding: EdgeInsets.only(right: getFontSize(10, context)),
           width: double.infinity,
           decoration: BoxDecoration(
             color: Colors.grey[300],
@@ -81,14 +83,14 @@ class _SelectCountryScreen extends  State<SelectCountry> {
             ),
           ),
         ),
-        SizedBox(height: 20),
+        SizedBox(height: getFontSize(20, context)),
         Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Text('Afghanistan'),
-            SizedBox(height: 5),
+            SizedBox(height: getFontSize(5, context)),
             SvgPicture.asset('assets/images/line.svg'),
-            SizedBox(height: 5),
+            SizedBox(height: getFontSize(5, context)),
           ],
         )
 

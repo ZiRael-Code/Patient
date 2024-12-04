@@ -1,3 +1,4 @@
+import '../Main/Dashboard.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
@@ -9,7 +10,7 @@ void main(){
 }
 
 class Device extends StatefulWidget {
-  const Device({super.key});
+  Device({super.key});
   @override
   _DeviceScreen createState() => _DeviceScreen();
 }
@@ -25,16 +26,16 @@ class _DeviceScreen extends  State<Device> {
           title: Row(
             children: [
               Container(
-                width: 35,
-                height: 35,
+                width: getFontSize(35, context),
+                height: getFontSize(35, context),
                 padding: EdgeInsets.all(10),
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(50),
                   color: Color(0xFFE5E5E5),
                 ),
                 child: SvgPicture.asset('assets/images/back.svg',
-                  width: 8.0,
-                  height: 15,),
+                  width: getFontSize(8.0, context),
+                  height: getFontSize(15, context),),
               ),
               Spacer(),
               Container(
@@ -43,7 +44,7 @@ class _DeviceScreen extends  State<Device> {
                 Center(child: Text(
                   'Device',
                   style: TextStyle(
-                      fontSize: 20,
+                      fontSize: getFontSize(20, context),
                       fontStyle: FontStyle.normal
                   ),
                 ),
@@ -57,13 +58,13 @@ class _DeviceScreen extends  State<Device> {
         ),
         body:
         Container(
-            padding: EdgeInsets.only(bottom: 30, left: 15, right: 15),
+            padding: EdgeInsets.only(bottom: getFontSize(30, context), left: getFontSize(15, context), right: getFontSize(15, context)),
             child:
         Align(
           child:
       Column(
       children: [
-        SizedBox(height: 25,),
+        SizedBox(height: getFontSize(25, context),),
         Container(
           padding: EdgeInsets.all(20),
           width: double.infinity,
@@ -72,13 +73,13 @@ class _DeviceScreen extends  State<Device> {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               SvgPicture.asset('assets/images/dev.svg'),
-               SizedBox(width: 20,),
+               SizedBox(width: getFontSize(20, context),),
               Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 mainAxisAlignment: MainAxisAlignment.start,
                 children: [
-                  Text('BP2 Connect 1368',style: TextStyle(fontSize: 18)),
-                  SizedBox(width: 26,),
+                  Text('BP2 Connect 1368',style: TextStyle(fontSize: getFontSize(18, context))),
+                  SizedBox(width: getFontSize(26, context),),
                  Align(alignment: Alignment.centerLeft,
                      child: Text('Connected', style: TextStyle(color: Colors.blue),))
                 ],
@@ -90,12 +91,12 @@ class _DeviceScreen extends  State<Device> {
             border: Border.all( color: Colors.black.withOpacity(0.09))
           ),
         ),
-        SizedBox(height: 20,),
+        SizedBox(height: getFontSize(20, context),),
 
       Align(alignment: Alignment.centerLeft,
           child:
-        Text('Device Reading', style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold))),
-        SizedBox(height: 20,),
+        Text('Device Reading', style: TextStyle(fontSize: getFontSize(16, context), fontWeight: FontWeight.bold))),
+        SizedBox(height: getFontSize(20, context),),
 
         reading_history(
           mmhg: "107/60",
@@ -103,35 +104,35 @@ class _DeviceScreen extends  State<Device> {
           date: "Today, 12:00 am",
           bulletColor: Colors.lightGreenAccent,
         ),
-        SizedBox(height: 10,),
+        SizedBox(height: getFontSize(10, context),),
         reading_history(
           mmhg: "125/60",
           bpm: "88",
           date: "14 Jul 2022. 12:00 am",
           bulletColor: Color(0xFFFAB400),
         ),
-        SizedBox(height: 10,),
+        SizedBox(height: getFontSize(10, context),),
         reading_history(
           mmhg: "107/60",
           bpm: "67",
           date: "Today, 12:00 am",
           bulletColor: Colors.lightGreenAccent,
         ),
-        SizedBox(height: 10,),
+        SizedBox(height: getFontSize(10, context),),
         reading_history(
           mmhg: "125/60",
           bpm: "88",
           date: "14 Jul 2022. 12:00 am",
           bulletColor: Color(0xFFFAB400),
         ),
-        SizedBox(height: 10,),
+        SizedBox(height: getFontSize(10, context),),
 
         // irregular_reading_history(
         //     date: "14 Jul 2022 . 12:00 am",
         //     text: "Irregular ECG",
         //     stackColor:  Color(0xFFFAB400)
         // ),
-        // SizedBox(height: 10,),
+        // SizedBox(height: getFontSize(10, context),),
 
     ])))));
   }
@@ -144,28 +145,28 @@ class _DeviceScreen extends  State<Device> {
     required bulletColor,
   }){
     return Container(
-      height: 85,
+      height: getFontSize(85, context),
       width: double.infinity,
       decoration: BoxDecoration(
         color: Colors.grey.withOpacity(0.2),
         borderRadius: BorderRadius.circular(12),
       ),
-      padding: EdgeInsets.only(left: 10, right: 10),
+      padding: EdgeInsets.only(left: getFontSize(10, context), right: getFontSize(10, context)),
       child: Row(
         children: [
           Align(
             alignment: Alignment.topLeft,
             child: Container(
-              margin: EdgeInsets.only(top: 28),
-              width: 11,
-              height: 11,
+              margin: EdgeInsets.only(top: getFontSize(28, context)),
+              width: getFontSize(11, context),
+              height: getFontSize(11, context),
               decoration: BoxDecoration(
                 color: bulletColor,
                 shape: BoxShape.circle,
               ),
             ),
           ),
-          SizedBox(width: 16),
+          SizedBox(width: getFontSize(16, context)),
           Expanded(
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
@@ -177,41 +178,41 @@ class _DeviceScreen extends  State<Device> {
                       mmhg,
                       style: TextStyle(
                         fontWeight: FontWeight.bold,
-                        fontSize: 18,
+                        fontSize: getFontSize(18, context),
                       ),
                     ),
-                    SizedBox(width: 4),
+                    SizedBox(width: getFontSize(4, context)),
                     Text(
                       'mmHg',
                       style: TextStyle(
-                        fontSize: 10,
+                        fontSize: getFontSize(10, context),
                       ),
                     ),
-                    SizedBox(width: 16),
+                    SizedBox(width: getFontSize(16, context)),
                     Text(
                       bpm,
                       style: TextStyle(
                         fontWeight: FontWeight.bold,
-                        fontSize: 18,
+                        fontSize: getFontSize(18, context),
                       ),
                     ),
-                    SizedBox(width: 4),
+                    SizedBox(width: getFontSize(4, context)),
                     Text(
                       'BPM',
                       style: TextStyle(
-                        fontSize: 10,
+                        fontSize: getFontSize(10, context),
                       ),
                     ),
                   ],
                 ),
-                SizedBox(height: 4),
+                SizedBox(height: getFontSize(4, context)),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     Text(
                       date,
                       style: TextStyle(
-                        fontSize: 10,
+                        fontSize: getFontSize(10, context),
                       ),
                     ),
                   ],
@@ -221,7 +222,7 @@ class _DeviceScreen extends  State<Device> {
           ),
           Icon(
             Icons.arrow_forward_ios_outlined,
-            size: 16,
+            size: getFontSize(16, context),
             color: Colors.black,
           ),
         ],
@@ -234,13 +235,13 @@ class _DeviceScreen extends  State<Device> {
     required stackColor,
   }) {
     return Container(
-      height: 85,
+      height: getFontSize(85, context),
       width: double.infinity,
       decoration: BoxDecoration(
         color: Colors.grey.withOpacity(0.2),
         borderRadius: BorderRadius.circular(12),
       ),
-      padding: EdgeInsets.only( right: 10),
+      padding: EdgeInsets.only( right: getFontSize(10, context)),
       child: Row(
         children: [
           Align(
@@ -248,7 +249,7 @@ class _DeviceScreen extends  State<Device> {
               child:
               SvgPicture.asset("assets/images/irr.svg", fit: BoxFit.fitHeight,)
           ),
-          SizedBox(width: 16),
+          SizedBox(width: getFontSize(16, context)),
           Expanded(
             child: Row(
               crossAxisAlignment: CrossAxisAlignment.start,
@@ -262,26 +263,26 @@ class _DeviceScreen extends  State<Device> {
                         text,
                         style: TextStyle(
                           fontWeight: FontWeight.bold,
-                          fontSize: 18,
+                          fontSize: getFontSize(18, context),
                         ),
                       ),
-                      SizedBox(height: 5,),
+                      SizedBox(height: getFontSize(5, context),),
                       Text(
                         date,
                         style: TextStyle(
-                          fontSize: 10,
+                          fontSize: getFontSize(10, context),
                         ),
                       ),
                     ],
                   ),
                 ),
-                SizedBox(height: 4),
+                SizedBox(height: getFontSize(4, context)),
                 Spacer(),
                 Align(
                   alignment: Alignment.centerRight,
                   child: Icon(
                     Icons.arrow_forward_ios_outlined,
-                    size: 16,
+                    size: getFontSize(16, context),
                     color: Colors.black,
                   ),
                 ),

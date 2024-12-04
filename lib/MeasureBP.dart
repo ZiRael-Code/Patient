@@ -1,3 +1,5 @@
+import '../Main/Dashboard.dart';
+import 'Main/Dashboard.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
@@ -8,7 +10,7 @@ void main(){
 }
 
 class MeasureBP extends StatefulWidget {
-  const MeasureBP({super.key});
+  MeasureBP({super.key});
   @override
   _MeasureBPScreen createState() => _MeasureBPScreen();
 }
@@ -24,22 +26,22 @@ class _MeasureBPScreen extends  State<MeasureBP> {
           title: Row(
             children: [
               Container(
-                width: 35,
-                height: 35,
+                width: getFontSize(35, context),
+                height: getFontSize(35, context),
                 padding: EdgeInsets.all(10),
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(50),
                   color: Color(0xFFE5E5E5),
                 ),
                 child: SvgPicture.asset('assets/images/back.svg',
-                  width: 8.0,
-                  height: 15,),
+                  width: getFontSize(8.0, context),
+                  height: getFontSize(15, context),),
               ),
               Spacer(),
               Container(
                 alignment: Alignment.center,
-                width: 35,
-                height: 35,
+                width: getFontSize(35, context),
+                height: getFontSize(35, context),
                 padding: EdgeInsets.all(5),
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(50),
@@ -54,19 +56,19 @@ class _MeasureBPScreen extends  State<MeasureBP> {
         ),
         body:
         Container(
-            padding: EdgeInsets.only(bottom: 30, left: 15, right: 15),
+            padding: EdgeInsets.only(bottom: getFontSize(30, context), left: getFontSize(15, context), right: getFontSize(15, context)),
             child:
         Align(
           child:
       Column(
       children: [
-        SizedBox(height: 30),
+        SizedBox(height: getFontSize(30, context)),
 
         Container(
           padding: EdgeInsets.all(15),
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(10),
-            border: Border.all(width: 0.1)
+            border: Border.all(width: getFontSize(0.1, context))
           ),
            child:  Column(
               crossAxisAlignment: CrossAxisAlignment.start,
@@ -83,7 +85,7 @@ class _MeasureBPScreen extends  State<MeasureBP> {
                       Text(
                         '107/60',
                         style: TextStyle(
-                          fontSize: 38,
+                          fontSize: getFontSize(38, context),
                           fontWeight: FontWeight.bold,
                           color: Colors.black,
                         ),
@@ -91,8 +93,8 @@ class _MeasureBPScreen extends  State<MeasureBP> {
 
                       // Container with background and icon
                       Container(
-                        width: 46,
-                        height: 46,
+                        width: getFontSize(46, context),
+                        height: getFontSize(46, context),
                         decoration: BoxDecoration(
                           color: Color(0xFFA64FFE),
                           shape: BoxShape.circle,
@@ -109,24 +111,24 @@ class _MeasureBPScreen extends  State<MeasureBP> {
                     Text(
                       'SYS/DA',
                       style: TextStyle(
-                        fontSize: 14,
+                        fontSize: getFontSize(14, context),
                         fontWeight: FontWeight.normal,
                       ),
                     ),
-                    SizedBox(width: 9,),
+                    SizedBox(width: getFontSize(9, context),),
                     Text(
                       'mmHg',
                       style: TextStyle(
-                        fontSize: 14,
+                        fontSize: getFontSize(14, context),
                         fontWeight: FontWeight.normal,
                       ),
                     ),
                   ],),
                 ],),
 
-                SizedBox(height: 20),
+                SizedBox(height: getFontSize(20, context)),
                 SvgPicture.asset('assets/images/line.svg'),
-                SizedBox(height: 20),
+                SizedBox(height: getFontSize(20, context)),
 
                 Row(
                   children: [
@@ -135,7 +137,7 @@ class _MeasureBPScreen extends  State<MeasureBP> {
                     value: "83",
                     script: "/min"
                 ),
-                    SizedBox(width: 15), // Spacer between the columns
+                    SizedBox(width: getFontSize(15, context)), // Spacer between the columns
 
                     // Column 2: Additional value with subscript
                     reading(
@@ -145,7 +147,7 @@ class _MeasureBPScreen extends  State<MeasureBP> {
                     ),
 
 
-                SizedBox(width: 60), // Space before the next element
+                SizedBox(width: getFontSize(60, context)), // Space before the next element
 
                     reading(
                       header: 'Blood Pressure',
@@ -159,11 +161,11 @@ class _MeasureBPScreen extends  State<MeasureBP> {
            ),
 
         ),
-        SizedBox(height: 20,),
+        SizedBox(height: getFontSize(20, context),),
         SvgPicture.asset('assets/images/readingchat.svg'),
-        SizedBox(height: 20),
+        SizedBox(height: getFontSize(20, context)),
         Container(
-          margin: EdgeInsets.only(top: 20),
+          margin: EdgeInsets.only(top: getFontSize(20, context)),
           child: TextField(
             maxLines: 3,
             decoration: InputDecoration(
@@ -173,15 +175,15 @@ class _MeasureBPScreen extends  State<MeasureBP> {
               fillColor: Colors.grey.withOpacity(0.2),
               border: OutlineInputBorder(
                 borderRadius: BorderRadius.circular(10),
-                borderSide: BorderSide(color: Colors.grey, width: 1), // Border properties
+                borderSide: BorderSide(color: Colors.grey, width: getFontSize(1, context)), // Border properties
               ),
               focusedBorder: OutlineInputBorder(
                 borderRadius: BorderRadius.circular(10),
-                borderSide: BorderSide(color: Colors.blue, width: 2), // Focused border color
+                borderSide: BorderSide(color: Colors.blue, width: getFontSize(2, context)), // Focused border color
               ),
               enabledBorder: OutlineInputBorder(
                 borderRadius: BorderRadius.circular(10),
-                borderSide: BorderSide(color: Colors.transparent, width: 1), // Enabled border color
+                borderSide: BorderSide(color: Colors.transparent, width: getFontSize(1, context)), // Enabled border color
               ),
             ),
           ),
@@ -203,26 +205,26 @@ class _MeasureBPScreen extends  State<MeasureBP> {
           children: [
             Text(
               header, // Label
-              style: TextStyle(fontSize: 14),
+              style: TextStyle(fontSize: getFontSize(14, context)),
             ),
-            SizedBox(height: 10,),
+            SizedBox(height: getFontSize(10, context),),
             RichText(
               text: TextSpan(
                 children: [
                   TextSpan(
                     text: value, // Main value (e.g., 48)
                     style: TextStyle(
-                      fontSize: 18,
+                      fontSize: getFontSize(18, context),
                       color: Colors.black,
                     ),
                   ),
                   WidgetSpan(
                     child: Transform.translate(
-                      offset: const Offset(1, 4),
+                      offset: Offset(1, 4),
                       child: Text(
                         script, // Subscript text
                         style: TextStyle(
-                          fontSize: 12,
+                          fontSize: getFontSize(12, context),
                           color: Colors.black,
                         ),
                       ),

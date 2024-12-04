@@ -1,6 +1,9 @@
+import '../Main/Dashboard.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+import 'Main/Dashboard.dart';
+import 'Main/Dashboard.dart';
 
 
 void main(){
@@ -8,7 +11,7 @@ void main(){
 }
 
 class AddEntry extends StatefulWidget {
-  const AddEntry({super.key});
+  AddEntry({super.key});
   @override
   _AddEntryScreen createState() => _AddEntryScreen();
 }
@@ -24,16 +27,16 @@ class _AddEntryScreen extends  State<AddEntry> {
           title: Row(
             children: [
               Container(
-                width: 35,
-                height: 35,
+                width: getFontSize(35, context),
+                height: getFontSize(35, context),
                 padding: EdgeInsets.all(10),
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(50),
                   color: Color(0xFFE5E5E5),
                 ),
                 child: SvgPicture.asset('assets/images/back.svg',
-                  width: 8.0,
-                  height: 15,),
+                  width: getFontSize(8.0, context),
+                  height: getFontSize(15, context),),
               ),
               Spacer(),
               Container(
@@ -42,7 +45,7 @@ class _AddEntryScreen extends  State<AddEntry> {
                 Center(child: Text(
                   'Add Entry',
                   style: TextStyle(
-                      fontSize: 20,
+                      fontSize: getFontSize(20, context),
                       fontStyle: FontStyle.normal
                   ),
                 ),
@@ -56,13 +59,13 @@ class _AddEntryScreen extends  State<AddEntry> {
         ),
         body:
         Container(
-            padding: EdgeInsets.only(bottom: 30, left: 15, right: 15),
+            padding: EdgeInsets.only(bottom: getFontSize(30, context), left: getFontSize(15, context), right: getFontSize(15, context)),
             child:
         Align(
           child:
       Column(
       children: [
-        SizedBox(height: 30),
+        SizedBox(height: getFontSize(30, context)),
 
         Column(
           mainAxisAlignment: MainAxisAlignment.start,
@@ -74,12 +77,12 @@ class _AddEntryScreen extends  State<AddEntry> {
 
                 'Vital to measure',
                 style: TextStyle(
-                  fontSize: 16.0,
+                  fontSize: getFontSize(16.0, context),
                 ),
               ),
             ),
 
-            SizedBox(height: 15.0),
+            SizedBox(height: getFontSize(15.0, context)),
 
             // Account Number TextField
             TextField(
@@ -101,11 +104,11 @@ class _AddEntryScreen extends  State<AddEntry> {
                 ),
               ),
               style: TextStyle(
-                fontSize: 16.0,
+                fontSize: getFontSize(16.0, context),
               ),
             ),
           ],),
-        SizedBox(height: 25.0),
+        SizedBox(height: getFontSize(25.0, context)),
 
         textField(
             textType: TextInputType.number,
@@ -123,10 +126,10 @@ class _AddEntryScreen extends  State<AddEntry> {
             ),
           ),
           child: Padding(
-            padding: const EdgeInsets.symmetric(vertical: 12.0, horizontal: 24.0),
+            padding: EdgeInsets.symmetric(vertical: 12.0, horizontal: 24.0),
             child: Text(
               'Save entry',
-              style: TextStyle(color: Colors.white, fontSize: 18),
+              style: TextStyle(color: Colors.white, fontSize: getFontSize(18, context)),
             ),
           ),
         ),
@@ -150,12 +153,12 @@ class _AddEntryScreen extends  State<AddEntry> {
 
             textHeader,
             style: TextStyle(
-              fontSize: 16.0,
+              fontSize: getFontSize(16.0, context),
             ),
           ),
         ),
 
-        SizedBox(height: 15.0),
+        SizedBox(height: getFontSize(15.0, context)),
 
         // Account Number TextField
         TextField(
@@ -177,7 +180,7 @@ class _AddEntryScreen extends  State<AddEntry> {
           ),
           keyboardType: textType,
           style: TextStyle(
-            fontSize: 16.0,
+            fontSize: getFontSize(16.0, context),
           ),
         ),
       ],);

@@ -1,3 +1,4 @@
+import '../Main/Dashboard.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_app/MainManvigator.dart';
@@ -10,7 +11,7 @@ void main(){
 }
 
 class ConfirmCalcellation extends StatefulWidget {
-  const ConfirmCalcellation({super.key});
+  ConfirmCalcellation({super.key});
   @override
   _ConfirmCalcellationScreen createState() => _ConfirmCalcellationScreen();
 }
@@ -25,16 +26,16 @@ class _ConfirmCalcellationScreen extends  State<ConfirmCalcellation> {
           title: Row(
             children: [
               Container(
-                width: 35,
-                height: 35,
+                width: getFontSize(35, context),
+                height: getFontSize(35, context),
                 padding: EdgeInsets.all(10),
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(50),
                   color: Color(0xFFE5E5E5),
                 ),
                 child: SvgPicture.asset('assets/images/back.svg',
-                  width: 8.0,
-                  height: 15,),
+                  width: getFontSize(8.0, context),
+                  height: getFontSize(15, context),),
               ),
               Spacer(),
               Container(
@@ -43,7 +44,7 @@ class _ConfirmCalcellationScreen extends  State<ConfirmCalcellation> {
                 Center(child: Text(
                   'Cancel Appointment',
                   style: TextStyle(
-                      fontSize: 20,
+                      fontSize: getFontSize(20, context),
                       fontStyle: FontStyle.normal
                   ),
                 ),
@@ -62,19 +63,19 @@ class _ConfirmCalcellationScreen extends  State<ConfirmCalcellation> {
           child:
       Column(
       children: [
-        SizedBox(height: 70),
+        SizedBox(height: getFontSize(70, context)),
         Container(
           alignment: Alignment.center,
           width: MediaQuery.of(context).size.width * 0.48,
           child:
         Align(child: Text("Your money will be refunded to within 24hours", textAlign: TextAlign.center,
         style: TextStyle(
-          fontSize: 14,
+          fontSize: getFontSize(14, context),
         ),
         ),
         ),
         ),
-          SizedBox(height: 40),
+          SizedBox(height: getFontSize(40, context)),
 
           Container(
             alignment: Alignment.bottomCenter,
@@ -82,47 +83,47 @@ class _ConfirmCalcellationScreen extends  State<ConfirmCalcellation> {
             padding: EdgeInsets.all(20),
             decoration: BoxDecoration(
               borderRadius: BorderRadius.only(topRight: Radius.circular(10), topLeft: Radius.circular(10)),
-              border: Border.all(width: 1, color: Colors.black.withOpacity(0.05))
+              border: Border.all(width: getFontSize(1, context), color: Colors.black.withOpacity(0.05))
             ),
 
             child: Column(
               mainAxisSize: MainAxisSize.min,
             children: [
               Container(
-                width: 56,
-                height: 5,
+                width: getFontSize(56, context),
+                height: getFontSize(5, context),
                 decoration: BoxDecoration(
                   color: Color(0xffE5E5E5),
                   borderRadius: BorderRadius.circular(50)
                 ),
               ),
-          SizedBox(height: 25,),
+          SizedBox(height: getFontSize(25, context),),
           Align(child: Text("Appointment information", textAlign: TextAlign.center,
             style: TextStyle(
               fontWeight: FontWeight.bold,
-              fontSize: 20,
+              fontSize: getFontSize(20, context),
             ),
           ),
           ),
-      SizedBox(height: 45,),
+      SizedBox(height: getFontSize(45, context),),
       //
               Container(
                 padding: EdgeInsets.all(10),
                 width: MediaQuery.of(context).size.width,
-                height: 80,
+                height: getFontSize(80, context),
                 child: Row(
                   children: [
                     Image.asset('assets/images/dr_profile.png',
-                      width: 56,
-                      height: 56,
+                      width: getFontSize(56, context),
+                      height: getFontSize(56, context),
                     ),
-                    SizedBox(width: 15,),
+                    SizedBox(width: getFontSize(15, context),),
                     Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         Center(child: Text("Dr. Muiz Sanni", style: TextStyle(color: Colors.black, fontWeight: FontWeight.bold),)),
-                        SizedBox(height: 5,),
+                        SizedBox(height: getFontSize(5, context),),
                         Center(child: Text("Cardiovascular surgeon", style: TextStyle(color: Colors.grey),),),
                       ],
                     ),
@@ -133,20 +134,20 @@ class _ConfirmCalcellationScreen extends  State<ConfirmCalcellation> {
                   border: Border.all(color:  Colors.black.withOpacity(0.1)),
                 ),
               ),
-              SizedBox(height: 40,),
+              SizedBox(height: getFontSize(40, context),),
               Container(
-                width: 150,
-                height: 56,
+                width: getFontSize(150, context),
+                height: getFontSize(56, context),
                 child: Row(
                     mainAxisAlignment: MainAxisAlignment.center,
-                    children: [Center( child: Text("FEE: ", style: TextStyle(fontSize: 16,color: Colors.black),),),Center( child: Text("N25,000", style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold, color: Colors.blue),),),]),
+                    children: [Center( child: Text("FEE: ", style: TextStyle(fontSize: getFontSize(16, context),color: Colors.black),),),Center( child: Text("N25,000", style: TextStyle(fontSize: getFontSize(16, context), fontWeight: FontWeight.bold, color: Colors.blue),),),]),
 
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(13),
                   border: Border.all(color:  Colors.black.withOpacity(0.1)),
                 ),
               ),
-              SizedBox(height: 20,),
+              SizedBox(height: getFontSize(20, context),),
               Wrap(
                 direction: Axis.horizontal,
                 children: [
@@ -157,7 +158,7 @@ class _ConfirmCalcellationScreen extends  State<ConfirmCalcellation> {
                       Text("12:00pm"),
                     ],
                   ),
-                  SizedBox(height: 30),
+                  SizedBox(height: getFontSize(30, context)),
                   Row(
                     children: [
                       Text("Date:"),
@@ -165,7 +166,7 @@ class _ConfirmCalcellationScreen extends  State<ConfirmCalcellation> {
                       Text("12th July 2022"),
                     ],
                   ),
-                  SizedBox(height: 30),
+                  SizedBox(height: getFontSize(30, context)),
                   Row(
                     children: [
                       Text("Appointment type:"),
@@ -173,7 +174,7 @@ class _ConfirmCalcellationScreen extends  State<ConfirmCalcellation> {
                       Text("Online"),
                     ],
                   ),
-                  SizedBox(height: 30),
+                  SizedBox(height: getFontSize(30, context)),
                   Row(
                     children: [
                       Text("Consultation fee:"),
@@ -184,7 +185,7 @@ class _ConfirmCalcellationScreen extends  State<ConfirmCalcellation> {
                 ],
               ),
       //             //
-              SizedBox(height: 50),
+              SizedBox(height: getFontSize(50, context)),
               ElevatedButton(
                 onPressed: () {
                   Navigator.of(context).pushReplacement(MaterialPageRoute(builder: (builder)=> CancelSuccess()));
@@ -197,10 +198,10 @@ class _ConfirmCalcellationScreen extends  State<ConfirmCalcellation> {
                   ),
                 ),
                 child: Padding(
-                  padding: const EdgeInsets.symmetric(vertical: 12.0, horizontal: 24.0),
+                  padding: EdgeInsets.symmetric(vertical: 12.0, horizontal: 24.0),
                   child: Text(
                     'Confirm cancellation',
-                    style: TextStyle(color: Colors.white, fontSize: 16),
+                    style: TextStyle(color: Colors.white, fontSize: getFontSize(16, context)),
                   ),
                 ),
               ),

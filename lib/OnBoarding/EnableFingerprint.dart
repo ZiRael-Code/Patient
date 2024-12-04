@@ -1,3 +1,4 @@
+import '../Main/Dashboard.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_app/OnBoarding/SetNewPin.dart';
@@ -22,7 +23,7 @@ class EnableFingerprintState extends State<EnableFingerprint>{
   @override
   void initState() {
     // TODO: implement initState
-      Future.delayed(const Duration(milliseconds: 2000), () {
+      Future.delayed(Duration(milliseconds: 2000), () {
         setState(() {
           showButton = true;
         });
@@ -35,7 +36,7 @@ class EnableFingerprintState extends State<EnableFingerprint>{
   Widget build(BuildContext context) {
    return Scaffold(
        body: Padding(
-           padding: EdgeInsets.only(top: 80, bottom: 40, left: 20, right: 20),
+           padding: EdgeInsets.only(top: getFontSize(80, context), bottom: getFontSize(40, context), left: getFontSize(20, context), right: getFontSize(20, context)),
        child: Column(
          mainAxisAlignment: MainAxisAlignment.center,
          crossAxisAlignment: CrossAxisAlignment.center,
@@ -44,11 +45,11 @@ class EnableFingerprintState extends State<EnableFingerprint>{
             alignment: Alignment.topCenter,
              child: SvgPicture.asset('assets/images/slide.svg'),
            ),
-           SizedBox(height: 20,),
-           Text('Enable fingerprint', style: TextStyle(fontSize: 28, fontWeight: FontWeight.bold),),
-           SizedBox(height: 15,),
+           SizedBox(height: getFontSize(20, context),),
+           Text('Enable fingerprint', style: TextStyle(fontSize: getFontSize(28, context), fontWeight: FontWeight.bold),),
+           SizedBox(height: getFontSize(15, context),),
           Container(
-            width: 176,
+            width: getFontSize(176, context),
             child: Text(textAlign: TextAlign.center,'Tap on the icon to enable your fingerprint.'),
 
           ),
@@ -70,10 +71,10 @@ class EnableFingerprintState extends State<EnableFingerprint>{
                ),
              ),
              child: Padding(
-               padding: const EdgeInsets.symmetric(vertical: 12.0, horizontal: 24.0),
+               padding: EdgeInsets.symmetric(vertical: 12.0, horizontal: 24.0),
                child: Text(
                  'Continue',
-                 style: TextStyle(color: Colors.white, fontSize: 18),
+                 style: TextStyle(color: Colors.white, fontSize: getFontSize(18, context)),
                ),
              ),
            ): SizedBox()
@@ -87,7 +88,7 @@ class EnableFingerprintState extends State<EnableFingerprint>{
     required String label,
   }) {
     return Container(
-      margin: EdgeInsets.only(bottom: 20),
+      margin: EdgeInsets.only(bottom: getFontSize(20, context)),
       child: Column(
         children: [
           Align(
@@ -95,16 +96,16 @@ class EnableFingerprintState extends State<EnableFingerprint>{
             child: Text(
               label,
               style: TextStyle(
-                fontSize: 16,
+                fontSize: getFontSize(16, context),
               ),
             ),
           ),
-          const SizedBox(height: 8.0),
+          SizedBox(height: getFontSize(8.0, context)),
           TextField(
             obscureText: _obscurePassword,
             decoration: InputDecoration(
               hintText: '*********',
-              hintStyle: const TextStyle(color: Colors.grey),
+              hintStyle: TextStyle(color: Colors.grey),
               filled: true,
               fillColor: Color(0xFFf0f0f0),
               border: OutlineInputBorder(

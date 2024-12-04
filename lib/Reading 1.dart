@@ -1,3 +1,5 @@
+import '../Main/Dashboard.dart';
+import 'Main/Dashboard.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
@@ -8,7 +10,7 @@ void main(){
 }
 
 class Reading extends StatefulWidget {
-  const Reading({super.key});
+  Reading({super.key});
   @override
   _ReadingScreen createState() => _ReadingScreen();
 }
@@ -24,23 +26,23 @@ class _ReadingScreen extends  State<Reading> {
           title: Row(
             children: [
               Container(
-                width: 35,
-                height: 35,
+                width: getFontSize(35, context),
+                height: getFontSize(35, context),
                 padding: EdgeInsets.all(10),
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(50),
                   color: Color(0xFFE5E5E5),
                 ),
                 child: SvgPicture.asset('assets/images/back.svg',
-                  width: 8.0,
-                  height: 15,),
+                  width: getFontSize(8.0, context),
+                  height: getFontSize(15, context),),
               ),
               Spacer(),
-              Text('Reading 1', style: TextStyle(fontSize: 20)),
+              Text('Reading 1', style: TextStyle(fontSize: getFontSize(20, context))),
               Spacer(),
           Container(
-            width: 35,
-            height: 35,
+            width: getFontSize(35, context),
+            height: getFontSize(35, context),
             padding: EdgeInsets.all(10),
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(50),
@@ -55,7 +57,7 @@ class _ReadingScreen extends  State<Reading> {
         ),
         body:
         Container(
-            padding: EdgeInsets.only(bottom: 30, left: 15, right: 15),
+            padding: EdgeInsets.only(bottom: getFontSize(30, context), left: getFontSize(15, context), right: getFontSize(15, context)),
             child:
             Align(
               child:
@@ -63,10 +65,10 @@ class _ReadingScreen extends  State<Reading> {
                 children: [
                   Container(
                       decoration: BoxDecoration(
-                        border: Border.all(width: 1, color: Colors.black.withOpacity(0.15)),
+                        border: Border.all(width: getFontSize(1, context), color: Colors.black.withOpacity(0.15)),
                         borderRadius: BorderRadius.circular(12),
                       ),
-                      margin: EdgeInsets.only(left: 15),
+                      margin: EdgeInsets.only(left: getFontSize(15, context)),
                       padding: EdgeInsets.all(15),
                       child: Column(
                           children: [
@@ -77,13 +79,13 @@ class _ReadingScreen extends  State<Reading> {
                                     // Spacer(),
                                     Column(
                                       children: [
-                                        Text('107/60', style: TextStyle(fontWeight: FontWeight.bold,fontSize: 26),),
+                                        Text('107/60', style: TextStyle(fontWeight: FontWeight.bold,fontSize: getFontSize(26, context)),),
                                         Row(
                                           mainAxisAlignment: MainAxisAlignment.start,
                                           crossAxisAlignment: CrossAxisAlignment.start,
                                           children: [
-                                            Text('SYS/DIA  ', style: TextStyle(fontSize: 10),),
-                                            Text('mmHg', style: TextStyle(color: Colors.grey.withOpacity(0.85),fontSize: 10),)
+                                            Text('SYS/DIA  ', style: TextStyle(fontSize: getFontSize(10, context)),),
+                                            Text('mmHg', style: TextStyle(color: Colors.grey.withOpacity(0.85),fontSize: getFontSize(10, context)),)
                                           ],
                                         )
                                       ],
@@ -96,17 +98,17 @@ class _ReadingScreen extends  State<Reading> {
                                     shape: BoxShape.circle,
                                     color: Color(0xffFF618F),
                                   ),
-                                  width: 46,
-                                  height: 46,
+                                  width: getFontSize(46, context),
+                                  height: getFontSize(46, context),
                                   padding: EdgeInsets.all(8),
                                   child: SvgPicture.asset('assets/images/hearth.svg'),
                                 ),
 
                               ],
                             ),
-                            SizedBox(height: 15,),
+                            SizedBox(height: getFontSize(15, context),),
                             SvgPicture.asset('assets/images/line.svg'),
-                            SizedBox(height: 15,),
+                            SizedBox(height: getFontSize(15, context),),
                             Row(
                               children: [
                                 Text('Irregular ECG'),
@@ -122,7 +124,7 @@ class _ReadingScreen extends  State<Reading> {
                       )
                   ),
 
-                  SizedBox(height: 25),
+                  SizedBox(height: getFontSize(25, context)),
                   Container(
                     padding: EdgeInsets.all(14),
                     decoration: BoxDecoration(
@@ -132,8 +134,8 @@ class _ReadingScreen extends  State<Reading> {
                     child: Row(
                       children: [
                         Icon(Icons.add_circle_outline, color: Colors.blue,),
-                        SizedBox(width: 7),
-                        Text('Edit entry', style: TextStyle(fontSize: 16, color: Colors.blue),),
+                        SizedBox(width: getFontSize(7, context)),
+                        Text('Edit entry', style: TextStyle(fontSize: getFontSize(16, context), color: Colors.blue),),
                       ],
                     ),
                   )
@@ -145,13 +147,13 @@ class _ReadingScreen extends  State<Reading> {
   edit_entry(){
     return Column(
       children: [
-        Text('Edit Entry', style: TextStyle(fontSize: 18)),
-        SizedBox(height: 20,),
+        Text('Edit Entry', style: TextStyle(fontSize: getFontSize(18, context))),
+        SizedBox(height: getFontSize(20, context),),
         Text(
 
           'Vital to measure',
           style: TextStyle(
-            fontSize: 16.0,
+            fontSize: getFontSize(16.0, context),
           ),
     ),
 
@@ -176,10 +178,10 @@ class _ReadingScreen extends  State<Reading> {
               ),
             ),
             style: TextStyle(
-              fontSize: 16.0,
+              fontSize: getFontSize(16.0, context),
             ),
           ),
-    SizedBox(height: 25.0),
+    SizedBox(height: getFontSize(25.0, context)),
 
     textField(
     textType: TextInputType.number,
@@ -196,10 +198,10 @@ class _ReadingScreen extends  State<Reading> {
             ),
           ),
           child: Padding(
-            padding: const EdgeInsets.symmetric(vertical: 12.0, horizontal: 24.0),
+            padding: EdgeInsets.symmetric(vertical: 12.0, horizontal: 24.0),
             child: Text(
               'Save entry',
-              style: TextStyle(color: Colors.white, fontSize: 18),
+              style: TextStyle(color: Colors.white, fontSize: getFontSize(18, context)),
             ),
           ),
         ),
@@ -222,12 +224,12 @@ class _ReadingScreen extends  State<Reading> {
 
             textHeader,
             style: TextStyle(
-              fontSize: 16.0,
+              fontSize: getFontSize(16.0, context),
             ),
           ),
         ),
 
-        SizedBox(height: 15.0),
+        SizedBox(height: getFontSize(15.0, context)),
 
         // Account Number TextField
         TextField(
@@ -249,7 +251,7 @@ class _ReadingScreen extends  State<Reading> {
           ),
           keyboardType: textType,
           style: TextStyle(
-            fontSize: 16.0,
+            fontSize: getFontSize(16.0, context),
           ),
         ),
       ],);

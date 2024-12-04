@@ -1,10 +1,12 @@
+import '../Main/Dashboard.dart';
+import 'Main/Dashboard.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_app/DeviceConnectedSuccess.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
 class Deviceorderedmessage extends StatelessWidget {
-  const Deviceorderedmessage({super.key});
+  Deviceorderedmessage({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -17,13 +19,13 @@ class Deviceorderedmessage extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            SizedBox(height: 50,),
-            Text("Device Ordered", style: TextStyle(fontSize: 36, fontWeight: FontWeight.bold),),
-        SizedBox(height: 10,),
+            SizedBox(height: getFontSize(50, context),),
+            Text("Device Ordered", style: TextStyle(fontSize: getFontSize(36, context), fontWeight: FontWeight.bold),),
+        SizedBox(height: getFontSize(10, context),),
         Container(
-          width: 258,
+          width: getFontSize(258, context),
           child:
-            Text(style: TextStyle(fontSize: 18)
+            Text(style: TextStyle(fontSize: getFontSize(18, context))
                 ,textAlign: TextAlign.center,"Your device has been ordered and will soon get to you. You will be notified once it is available.")
         ),
             Spacer(),
@@ -42,10 +44,10 @@ class Deviceorderedmessage extends StatelessWidget {
                 ),
               ),
               child: Padding(
-                padding: const EdgeInsets.symmetric(vertical: 12.0, horizontal: 24.0),
+                padding: EdgeInsets.symmetric(vertical: 12.0, horizontal: 24.0),
                 child: Text(
                   'Finish',
-                  style: TextStyle(color: Colors.white, fontSize: 18),
+                  style: TextStyle(color: Colors.white, fontSize: getFontSize(18, context)),
                 ),
               ),
             ),

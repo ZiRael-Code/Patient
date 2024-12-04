@@ -1,3 +1,4 @@
+import '../Main/Dashboard.dart';
 import 'dart:math';
 
 import 'package:dotted_border/dotted_border.dart';
@@ -17,7 +18,7 @@ void main(){
 }
 
 class NoMedication extends StatefulWidget {
-  const NoMedication({super.key});
+  NoMedication({super.key});
   @override
   _NoMedicationScreen createState() => _NoMedicationScreen();
 }
@@ -37,7 +38,7 @@ class _NoMedicationScreen extends  State<NoMedication> {
                       'Medication',
                       style: TextStyle(
                         color: Color(0xFF2E2E42),
-                        fontSize: 26, // Font size
+                        fontSize: getFontSize(26, context), // Font size
                         fontWeight: FontWeight.bold, // Bold text
                       ),
                     ),
@@ -45,24 +46,24 @@ class _NoMedicationScreen extends  State<NoMedication> {
                   Row(
                     children: [
                        SvgPicture.asset('assets/images/eletric.svg'),
-                      SizedBox(width: 11,),
+                      SizedBox(width: getFontSize(11, context),),
                       Stack(
                         children: [
                           SvgPicture.asset('assets/images/nots.svg'),
                           Positioned(
-                            top: 0,
-                            right: 0,
+                            top: getFontSize(0, context),
+                            right: getFontSize(0, context),
                             child: GestureDetector(
                               onTap: (){
                                 Navigator.of(context).push(MaterialPageRoute(builder: (builder)=> Notifications()));
                               },
                               child: Container(
-                              width: 10,
-                              height: 10,
+                              width: getFontSize(10, context),
+                              height: getFontSize(10, context),
                               decoration: BoxDecoration(
                                 color: Color(0xffE40404),
                                 borderRadius: BorderRadius.circular(50),
-                                border: Border.all(width: 2, color: Colors.white),
+                                border: Border.all(width: getFontSize(2, context), color: Colors.white),
                               ),
                             ),
                             ),
@@ -82,13 +83,13 @@ class _NoMedicationScreen extends  State<NoMedication> {
             child: Column(
               children: [
                 randomMedicationChooser(),
-                SizedBox(height: 40,),
+                SizedBox(height: getFontSize(40, context),),
 
                 Row(
                   children: [
                   Text('History', style: TextStyle(
                   color: Color(0xFF2E2E42),
-                  fontSize: 18, // Font size
+                  fontSize: getFontSize(18, context), // Font size
                   fontWeight: FontWeight.bold, // Bold text
                 ),
                   ),
@@ -96,11 +97,11 @@ class _NoMedicationScreen extends  State<NoMedication> {
 
                     Text('See all', style: TextStyle(
                       color: Color(0xFF2E2E42),
-                      fontSize: 12,
+                      fontSize: getFontSize(12, context),
                     ),),
                   ],
                 ),
-                SizedBox(height: 20,),
+                SizedBox(height: getFontSize(20, context),),
 
                 // noHistory(),
                 Expanded(child: SingleChildScrollView(
@@ -148,16 +149,16 @@ class _NoMedicationScreen extends  State<NoMedication> {
   viewOrderSection(){
     return  Column(
         children: [
-          SizedBox(height: 40,),
+          SizedBox(height: getFontSize(40, context),),
           SvgPicture.asset('assets/images/bikeman.svg'),
-          SizedBox(height: 20,),
+          SizedBox(height: getFontSize(20, context),),
           Container(
-            width: 292,
+            width: getFontSize(292, context),
             child: Text('Your order for new medications is processing. You will be notified when it’s ready.'),
           ),
-          SizedBox(height: 20,),
+          SizedBox(height: getFontSize(20, context),),
           SizedBox(
-            width: 242,
+            width: getFontSize(242, context),
             child:  ElevatedButton(
               onPressed: () {
                 Navigator.of(context).push(MaterialPageRoute(builder: (context) => OrderDeatils()));
@@ -170,10 +171,10 @@ class _NoMedicationScreen extends  State<NoMedication> {
                 ),
               ),
               child: Padding(
-                padding: const EdgeInsets.symmetric(vertical: 12.0, horizontal: 24.0),
+                padding: EdgeInsets.symmetric(vertical: 12.0, horizontal: 24.0),
                 child: Text(
                   'Order new medications',
-                  style: TextStyle(color: Colors.white, fontSize: 18),
+                  style: TextStyle(color: Colors.white, fontSize: getFontSize(16, context)),
                 ),
               ),
             ),
@@ -185,13 +186,13 @@ class _NoMedicationScreen extends  State<NoMedication> {
   orderNewDrugSection(){
     return Column(
         children: [
-          SizedBox(height: 40,),
+          SizedBox(height: getFontSize(40, context),),
           SvgPicture.asset('assets/images/drugs.svg'),
-          SizedBox(height: 20,),
+          SizedBox(height: getFontSize(20, context),),
           Text('You prescriptions have been exhausted'),
-          SizedBox(height: 20,),
+          SizedBox(height: getFontSize(20, context),),
           SizedBox(
-            // width: 242,
+            // width: getFontSize(242, context),
             child:  ElevatedButton(
               onPressed: () {
                 Navigator.of(context).push(MaterialPageRoute(builder: (context) => RenewOrderSummary()));
@@ -203,10 +204,10 @@ class _NoMedicationScreen extends  State<NoMedication> {
                 ),
               ),
               child: Padding(
-                padding: const EdgeInsets.symmetric(vertical: 12.0, horizontal: 4.0),
+                padding: EdgeInsets.symmetric(vertical: 12.0, horizontal: 4.0),
                 child: Text(
                   'Order new medications',
-                  style: TextStyle(color: Colors.white, fontSize: 16),
+                  style: TextStyle(color: Colors.white, fontSize: getFontSize(15, context)),
                 ),
               ),
             ),
@@ -224,8 +225,8 @@ class _NoMedicationScreen extends  State<NoMedication> {
       strokeWidth: 2,
       child: Container(
         padding: EdgeInsets.all(10),
-        width: 342,
-        height: 298,
+        width: getFontSize(342, context),
+        height: getFontSize(298, context),
         decoration: BoxDecoration(
             color: Colors.grey.withOpacity(0.10)
         ),
@@ -235,13 +236,13 @@ class _NoMedicationScreen extends  State<NoMedication> {
           children: [
             Spacer(),
             SvgPicture.asset('assets/images/box.svg'),
-            SizedBox(height: 20,),
+            SizedBox(height: getFontSize(20, context),),
             Container(
-              width: 241,
+              width: getFontSize(241, context),
               child:
-            Text(textAlign: TextAlign.center,'You don’t have any medications as of now. Tap the button below for a quick session with a doctor/hospital/pharmacy.', style: TextStyle(fontSize: 14.5,
+            Text(textAlign: TextAlign.center,'You don’t have any medications as of now. Tap the button below for a quick session with a doctor/hospital/pharmacy.', style: TextStyle(fontSize: getFontSize(14.5, context),
                 color: Colors.black.withOpacity(0.40)),),),
-            SizedBox(height: 12,),
+            SizedBox(height: getFontSize(12, context),),
             SizedBox(
               width: double.infinity,
               child: ElevatedButton(
@@ -257,10 +258,10 @@ class _NoMedicationScreen extends  State<NoMedication> {
                   ),
                 ),
                 child: Padding(
-                  padding: const EdgeInsets.symmetric(vertical: 12.0, horizontal: 24.0),
+                  padding: EdgeInsets.symmetric(vertical: 12.0, horizontal: 24.0),
                   child: Text(
                     'Take a quick checkup  ',
-                    style: TextStyle(color: Colors.white, fontSize: 16),
+                    style: TextStyle(color: Colors.white, fontSize: getFontSize(16, context)),
                   ),
                 ),
               ),
@@ -278,7 +279,7 @@ class _NoMedicationScreen extends  State<NoMedication> {
 
   noHistory() {
     return Column(children: [
-      SizedBox(height: 30,),
+      SizedBox(height: getFontSize(30, context),),
       // Spacer(),
       DottedBorder(
       color:  Colors.grey.withOpacity(0.70),
@@ -288,8 +289,8 @@ class _NoMedicationScreen extends  State<NoMedication> {
       strokeWidth: 2,
       child: Container(
         padding: EdgeInsets.all(10),
-        width: 342,
-        height: 146,
+        width: getFontSize(342, context),
+        height: getFontSize(146, context),
         decoration: BoxDecoration(
             color: Colors.grey.withOpacity(0.10)
         ),
@@ -297,7 +298,7 @@ class _NoMedicationScreen extends  State<NoMedication> {
           crossAxisAlignment: CrossAxisAlignment.center,
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Text('No medication history yet.', style: TextStyle(fontSize: 16,
+            Text('No medication history yet.', style: TextStyle(fontSize: getFontSize(16, context),
                 color: Colors.black.withOpacity(0.40)),),
             ],
         ),
@@ -317,29 +318,29 @@ class _NoMedicationScreen extends  State<NoMedication> {
         Navigator.of(context).push(MaterialPageRoute(builder: (builder)=> MedicationUsageConfirmation()));
       },
         child: Container(
-      padding: EdgeInsets.only(left: 14,),
+      padding: EdgeInsets.only(left: getFontSize(14, context),),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Row(
             children: [
-              Text(des, style: TextStyle(fontSize: 18, color: Colors.black)),
+              Text(des, style: TextStyle(fontSize: getFontSize(18, context), color: Colors.black)),
               Spacer(),
               Container(
                 decoration: BoxDecoration(
                   color: Color(0xffE2EDFF),
                   borderRadius: BorderRadius.circular(50),
                 ),
-                padding: EdgeInsets.only(right: 10, left: 10, top: 5, bottom: 5),
-                child: Text('View details', style: TextStyle(fontSize: 10, color: Colors.blue)),
+                padding: EdgeInsets.only(right: getFontSize(10, context), left: getFontSize(10, context), top: getFontSize(5, context), bottom: getFontSize(5, context)),
+                child: Text('View details', style: TextStyle(fontSize: getFontSize(10, context), color: Colors.blue)),
               ),
             ],
           ),
-          SizedBox(height: 5),
+          SizedBox(height: getFontSize(5, context)),
           Text(date),
-          SizedBox(height: 20),
+          SizedBox(height: getFontSize(20, context)),
           SvgPicture.asset('assets/images/line.svg'),
-          SizedBox(height: 20),
+          SizedBox(height: getFontSize(20, context)),
         ],
       ),
       ),

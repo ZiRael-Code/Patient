@@ -1,14 +1,17 @@
+import '../Main/Dashboard.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_app/DeviceConnectedSuccess.dart';
 import 'package:flutter_svg/svg.dart';
+import 'Main/Dashboard.dart';
+
 
 void main(){
   runApp(DeviceConnected());
 }
 
 class DeviceConnected extends StatefulWidget {
-  const DeviceConnected({super.key});
+  DeviceConnected({super.key});
   @override
   _DeviceConnectedScreen createState() => _DeviceConnectedScreen();
 }
@@ -23,16 +26,16 @@ class _DeviceConnectedScreen extends  State<DeviceConnected> {
           title: Row(
             children: [
               Container(
-                width: 35,
-                height: 35,
+                width: getFontSize(35, context),
+                height: getFontSize(35, context),
                 padding: EdgeInsets.all(10),
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(50),
                   color: Color(0xFFE5E5E5),
                 ),
                 child: SvgPicture.asset('assets/images/back.svg',
-                  width: 8.0,
-                  height: 15,),
+                  width: getFontSize(8.0, context),
+                  height: getFontSize(15, context),),
               ),
               Spacer(),
 
@@ -42,35 +45,35 @@ class _DeviceConnectedScreen extends  State<DeviceConnected> {
         ),
         body:
         Container(
-            padding: EdgeInsets.only(bottom: 30, left: 15, right: 15),
+            padding: EdgeInsets.only(bottom: getFontSize(30, context), left: getFontSize(15, context), right: getFontSize(15, context)),
             child:
         Align(
           child:
       Column(
       children: [
-        SizedBox(height: 30),
+        SizedBox(height: getFontSize(30, context)),
 
         Align(child: Text("Device connected", textAlign: TextAlign.center,
           style: TextStyle(
-            fontSize: 28,
+            fontSize: getFontSize(28, context),
             fontWeight: FontWeight.bold
           ),
         ),
         ),
-        SizedBox(height: 30),
+        SizedBox(height: getFontSize(30, context)),
         Container(
           alignment: Alignment.center,
           width: MediaQuery.of(context).size.width * 0.78,
           child:
         Align(child: Text("The device was connected  to your phone successfully.", textAlign: TextAlign.center,
         style: TextStyle(
-          fontSize: 14,
+          fontSize: getFontSize(14, context),
         ),
         ),
         ),
         ),
 
-        SizedBox(height: 60),
+        SizedBox(height: getFontSize(60, context)),
 
         Spacer(),
 
@@ -87,10 +90,10 @@ class _DeviceConnectedScreen extends  State<DeviceConnected> {
             ),
           ),
           child: Padding(
-            padding: const EdgeInsets.symmetric(vertical: 12.0, horizontal: 24.0),
+            padding: EdgeInsets.symmetric(vertical: 12.0, horizontal: 24.0),
             child: Text(
               'Finish',
-              style: TextStyle(color: Colors.white, fontSize: 18),
+              style: TextStyle(color: Colors.white, fontSize: getFontSize(18, context)),
             ),
           ),
         ),

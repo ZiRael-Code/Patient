@@ -1,10 +1,11 @@
+import '../Main/Dashboard.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_app/Account/PaymentHistory.dart';
-import 'package:flutter_app/FundWallet.dart';
-import 'package:flutter_app/WithdrawFunds.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
 import '../TransactionDetails.dart';
+import 'FundWallet.dart';
+import 'WithdrawFunds.dart';
 
 void main() {
   runApp(CreditDebitCard());
@@ -23,8 +24,8 @@ class _CreditDebitCardState extends State<CreditDebitCard>{
             title: Row(
               children: [
                 Container(
-                  width: 35,
-                  height: 35,
+                  width: getFontSize(35, context),
+                  height: getFontSize(35, context),
                   padding: EdgeInsets.all(10),
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(50),
@@ -32,8 +33,8 @@ class _CreditDebitCardState extends State<CreditDebitCard>{
                   ),
                   child: SvgPicture.asset(
                     'assets/images/back.svg',
-                    width: 8.0,
-                    height: 15,
+                    width: getFontSize(8.0, context),
+                    height: getFontSize(15, context),
                   ),
                 ),
                 Spacer(),
@@ -42,7 +43,7 @@ class _CreditDebitCardState extends State<CreditDebitCard>{
                   child: Text(
                       'Wallet',
                       style: TextStyle(
-                        fontSize: 20,
+                        fontSize: getFontSize(20, context),
                         fontStyle: FontStyle.normal,
                       ),
                   ),
@@ -56,20 +57,20 @@ class _CreditDebitCardState extends State<CreditDebitCard>{
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
-                SizedBox(height: 15,),
+                SizedBox(height: getFontSize(15, context),),
                 Stack(children: [
                 Container(
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(15)
                   ),
                   width: MediaQuery.of(context).size.width,
-                  height: 90,
+                  height: getFontSize(90, context),
                   child: SvgPicture.asset('assets/images/card.svg', fit: BoxFit.fill,),
                 ),
               Container(
-                padding: EdgeInsets.only(left: 20),
+                padding: EdgeInsets.only(left: getFontSize(20, context)),
                 width: double.infinity,
-                  height: 90,
+                  height: getFontSize(90, context),
                   alignment: Alignment.centerLeft,
                   child:
               Column(
@@ -78,14 +79,14 @@ class _CreditDebitCardState extends State<CreditDebitCard>{
                 Text(
                   'Wallet Balance',
                   style: TextStyle(
-                    fontSize: 10,
+                    fontSize: getFontSize(10, context),
                     color: Colors.white
                   ),
                 ),
                 Text(
                   'N35,500',
                   style: TextStyle(
-                    fontSize: 20,
+                    fontSize: getFontSize(20, context),
                     fontWeight: FontWeight.bold,
                       color: Colors.white
                   ),
@@ -94,7 +95,7 @@ class _CreditDebitCardState extends State<CreditDebitCard>{
               ],))
 
                 ],),
-                SizedBox(height: 20,),
+                SizedBox(height: getFontSize(20, context),),
 
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
@@ -114,7 +115,7 @@ class _CreditDebitCardState extends State<CreditDebitCard>{
                 );
               }
                   ),
-                  SizedBox(width: 15,),
+                  SizedBox(width: getFontSize(15, context),),
                   GestureDetector(
                     child:
                   quickAction(
@@ -131,13 +132,13 @@ class _CreditDebitCardState extends State<CreditDebitCard>{
                     },
                   ),
                 ],),
-                SizedBox(height: 30,),
+                SizedBox(height: getFontSize(30, context),),
                 Container(child: 
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     Text("Recent transactions",
-                      style: TextStyle(fontSize: 20,
+                      style: TextStyle(fontSize: getFontSize(20, context),
                           color: Colors.black,
                           fontWeight: FontWeight.bold),),
                     Spacer(),
@@ -158,7 +159,7 @@ class _CreditDebitCardState extends State<CreditDebitCard>{
                         child: Text('See all',
                         style: TextStyle(
                           fontWeight: FontWeight.bold,
-                          fontSize: 14,
+                          fontSize: getFontSize(14, context),
                           color: Color(0xFF3C8AFF),
                         ),
                         ),
@@ -167,7 +168,7 @@ class _CreditDebitCardState extends State<CreditDebitCard>{
                   ],
                 ),
                 ),
-                SizedBox(height: 20,),
+                SizedBox(height: getFontSize(20, context),),
             Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
@@ -217,9 +218,9 @@ class _CreditDebitCardState extends State<CreditDebitCard>{
     required String actionText,
   }){
     return Container(
-      width: 150,
-      height: 51,
-      padding: EdgeInsets.only(top: 12, left: 10.0, bottom: 12, right: 10),
+      width: getFontSize(150, context),
+      height: getFontSize(51, context),
+      padding: EdgeInsets.only(top: getFontSize(12, context), left: getFontSize(10.0, context), bottom: getFontSize(12, context), right: getFontSize(10, context)),
       decoration: BoxDecoration(
         color: Color(0xFFC4DCFF),
         borderRadius: BorderRadius.circular(12),
@@ -229,8 +230,8 @@ class _CreditDebitCardState extends State<CreditDebitCard>{
           children: [
             Center(
               child: Container(
-                width: 27,
-                height: 27,
+                width: getFontSize(27, context),
+                height: getFontSize(27, context),
                 decoration: BoxDecoration(
                   color: Color(0xFF3C8AFF),
                   borderRadius: BorderRadius.circular(50),
@@ -238,17 +239,17 @@ class _CreditDebitCardState extends State<CreditDebitCard>{
                 child: Center(
                   child: Image.asset(
                     iconPath,
-                    width: 11,
-                    height: 14,
+                    width: getFontSize(11, context),
+                    height: getFontSize(14, context),
                     fit: BoxFit.contain,
                   ),
                 ),
               ),
             ),
-            SizedBox(width: 10.0),
+            SizedBox(width: getFontSize(10.0, context)),
             Text(actionText,
               style: TextStyle(
-                  fontSize: 10.0,
+                  fontSize: getFontSize(10.0, context),
                   color: Color(0xFF3C8AFF),
               ),),
           ],
@@ -286,16 +287,16 @@ class _CreditDebitCardState extends State<CreditDebitCard>{
                   Text(
                     name,
                     style: TextStyle(
-                      fontSize: 12,
+                      fontSize: getFontSize(12, context),
                       fontWeight: FontWeight.bold,
                       color: Colors.black,
                     ),
                   ),
-                  SizedBox(height: 10,),
+                  SizedBox(height: getFontSize(10, context),),
                   Text(
                     type,
                     style: TextStyle(
-                      fontSize: 12,
+                      fontSize: getFontSize(12, context),
                     ),
                   ),
                 ],
@@ -306,30 +307,30 @@ class _CreditDebitCardState extends State<CreditDebitCard>{
               Text(
                 price,
                 style: TextStyle(
-                  fontSize: 16,
+                  fontSize: getFontSize(16, context),
                   color: Colors.blue,
                   fontWeight: FontWeight.bold,
                 ),
               ),
-              SizedBox(height: 10,),
+              SizedBox(height: getFontSize(10, context),),
               Text(
                 date,
                 style: TextStyle(
-                  fontSize: 12,
+                  fontSize: getFontSize(12, context),
                 ),
               ),
 
             ],),
           ],),
-          SizedBox(height: 10,),
+          SizedBox(height: getFontSize(10, context),),
           Container(
-            width: 313,
-            height: 2,
+            width: getFontSize(313, context),
+            height: getFontSize(2, context),
             decoration: BoxDecoration(
               color: Color(0x1A2E2E42),
             ),
           ),
-          SizedBox(height: 15,)
+          SizedBox(height: getFontSize(15, context),)
         ],
       ),
     )

@@ -1,18 +1,22 @@
+import '../Main/Dashboard.dart';
 import 'dart:io';
 
 import 'package:flutter/material.dart';
-import 'package:flutter_app/Signup.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 import 'MainManvigator.dart';
+import 'Main/Dashboard.dart';
+import 'Signup.dart';
+
+
 
 void main() {
-  runApp(const Login());
+  runApp(Login());
 }
 
 class Login extends StatelessWidget {
-  const Login({super.key});
+  Login({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -64,35 +68,35 @@ class _LoginStateState extends State<LoginState> {
         crossAxisAlignment: CrossAxisAlignment.center,
         children: <Widget>[
           Container(
-            margin: const EdgeInsets.only(top: 50.0),
+            margin: EdgeInsets.only(top: getFontSize(50.0, context)),
             child: SvgPicture.asset(
               'assets/images/illustration.svg',
 
               fit: BoxFit.contain,
             ),
           ),
-          SizedBox(height: 20.0),
-          const Align(
+          SizedBox(height: getFontSize(20.0, context)),
+          Align(
             alignment: Alignment.centerLeft,
             child: Text(
               'Welcome',
               style: TextStyle(
-                fontSize: 32,
+                fontSize: getFontSize(32, context),
                 fontWeight: FontWeight.bold,
               ),
             ),
           ),
-          SizedBox(height: 20.0),
-          const Align(
+          SizedBox(height: getFontSize(20.0, context)),
+           Align(
     alignment: Alignment.centerLeft,
             child: Text(
               'Username',
               style: TextStyle(
-                fontSize: 16,
+                fontSize: getFontSize(16, context),
               ),
             ),
           ),
-          SizedBox(height: 8.0),
+          SizedBox(height: getFontSize(8.0, context)),
           TextField(
             decoration: InputDecoration(
               hintText: 'Username',
@@ -105,22 +109,22 @@ class _LoginStateState extends State<LoginState> {
               ),
             ),
           ),
-          SizedBox(height: 20.0),
-          const Align(
+          SizedBox(height: getFontSize(20.0, context)),
+           Align(
             alignment: Alignment.centerLeft,
             child: Text(
               'Password',
               style: TextStyle(
-                fontSize: 16,
+                fontSize: getFontSize(16, context),
               ),
             ),
           ),
-          const SizedBox(height: 8.0),
+           SizedBox(height: getFontSize(8.0, context)),
           TextField(
             obscureText: _obscurePassword,
             decoration: InputDecoration(
               hintText: 'Password',
-              hintStyle: const TextStyle(color: Colors.grey),
+              hintStyle: TextStyle(color: Colors.grey),
               filled: true,
               fillColor: Color(0xFFf0f0f0),
               border: OutlineInputBorder(
@@ -136,14 +140,14 @@ class _LoginStateState extends State<LoginState> {
               ),
             ),
           ),
-          const SizedBox(height: 10.0),
+          SizedBox(height: getFontSize(10.0, context)),
           Align(
             alignment: Alignment.centerRight,
             child: TextButton(
               onPressed: () {
 
               },
-              child: const Text(
+              child: Text(
                 'Forgot Password',
                 style: TextStyle(
                   color: Color(0xFF3C8AFF),
@@ -151,7 +155,7 @@ class _LoginStateState extends State<LoginState> {
               ),
             ),
           ),
-          const SizedBox(height: 20.0),
+           SizedBox(height: getFontSize(20.0, context)),
           SizedBox(
             width: double.infinity,
             child: ElevatedButton(
@@ -162,30 +166,30 @@ class _LoginStateState extends State<LoginState> {
                 // Handle login
               },
               style: ElevatedButton.styleFrom(
-                backgroundColor: const Color(0xFF3C8AFF),
+                backgroundColor: Color(0xFF3C8AFF),
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(15.0),
                 ),
-                padding: const EdgeInsets.symmetric(vertical: 15.0),
+                padding: EdgeInsets.symmetric(vertical: 15.0),
               ),
-              child: const Text(
+              child: Text(
                 'Login',
                 style: TextStyle(
                   color: Colors.white,
-                  fontSize: 16,
+                  fontSize: getFontSize(16, context),
                 ),
               ),
             ),
           ),
-          const SizedBox(height: 20.0),
-         const Text(
+           SizedBox(height: getFontSize(20.0, context)),
+          Text(
             'Or login with',
             style: TextStyle(
-              fontSize: 16,
+              fontSize: getFontSize(16, context),
               color: Colors.black,
             ),
           ),
-          const SizedBox(height: 10.0),
+           SizedBox(height: getFontSize(10.0, context)),
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: <Widget>[
@@ -198,7 +202,7 @@ class _LoginStateState extends State<LoginState> {
                 // },
               ),
     ),
-              const SizedBox(width: 20.0),
+               SizedBox(width: getFontSize(20.0, context)),
               GestureDetector(
                 onDoubleTap: _handleFacebookLogin,
               child: SvgPicture.asset(
@@ -207,14 +211,14 @@ class _LoginStateState extends State<LoginState> {
               ),
             ],
           ),
-          const SizedBox(height: 20.0),
+          SizedBox(height: getFontSize(20.0, context)),
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: <Widget>[
-              const Text(
+               Text(
                 'Don\'t have an account yet?',
                 style: TextStyle(
-                  fontSize: 16,
+                  fontSize: getFontSize(16, context),
                   color: Colors.black,
                 ),
               ),
@@ -225,10 +229,10 @@ class _LoginStateState extends State<LoginState> {
                     MaterialPageRoute(builder: (context) => Signup()),
                   );
                 },
-                child: const Text(
+                child:  Text(
                   'Register now',
                   style: TextStyle(
-                    fontSize: 16,
+                    fontSize: getFontSize(16, context),
                     fontWeight: FontWeight.bold,
                     color: Color(0xFF3C8AFF),
                   ),

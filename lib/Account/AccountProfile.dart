@@ -2,29 +2,26 @@ import 'dart:math';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_app/Account/ResetPin.dart';
-import 'package:flutter_app/CreditDebitCardAddCard.dart';
-import 'package:flutter_app/CreditDebitCardAvailableCard.dart';
-import 'package:flutter_app/CreditDebitCardViewCard.dart';
-import 'package:flutter_app/CreditDebitNoCard.dart';
-import 'package:flutter_app/EditProfile.dart';
-import 'package:flutter_app/FAQ.dart';
+import 'package:flutter_app/Account/CreditDebitCardViewCard.dart';
 import 'package:flutter_svg/svg.dart';
 
-import '../BlogAndAticles.dart';
+import 'BlogAndAticles.dart';
 import 'CreditDebitCard.dart';
-import '../CustomerCareOption.dart';
+import 'CreditDebitCardAvailableCard.dart';
+import 'CreditDebitNoCard.dart';
+import 'CustomerCareOption.dart';
 import '../Main/Dashboard.dart';
 import 'DeviceOrder.dart';
 import 'DeviceOwned.dart';
-import '../FundWallet.dart';
 import '../HealthStatistic.dart';
-import '../HowItWorks.dart';
 import '../PersonalHistoryRecords.dart';
-import '../PinSettings.dart';
+import 'EditProfile.dart';
+import 'FAQ.dart';
+import 'HowItWorks.dart';
 import 'Referral/Referrals.dart';
 
 class AccountProfile extends StatefulWidget {
-  const AccountProfile({super.key});
+  AccountProfile({super.key});
 
   @override
   State<AccountProfile> createState() => _AccountProfileState();
@@ -36,15 +33,15 @@ class _AccountProfileState extends State<AccountProfile> {
   Widget build(BuildContext context) {
     return MaterialApp(
       home: Scaffold(
-            backgroundColor: const Color(0xffF2F2F2),
+            backgroundColor: Color(0xffF2F2F2),
         body: SingleChildScrollView(
           child: Column(
             children: [
               Container(
-                  padding: const EdgeInsets.only(left: 20, right: 20),
+                  padding: EdgeInsets.only(left: getFontSize(20, context), right: getFontSize(20, context)),
                   height: getFontSize(250, context),
                   width: double.infinity,
-                      decoration: const BoxDecoration(
+                      decoration: BoxDecoration(
                       color: Colors.white,
                       borderRadius: BorderRadius.only(
                           bottomLeft: Radius.circular(20),
@@ -65,11 +62,11 @@ class _AccountProfileState extends State<AccountProfile> {
                       Container(
                             height: getFontSize(117, context),
                         width: double.infinity,
-                            padding: const EdgeInsets.all(16),
+                            padding: EdgeInsets.all(16),
                         decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(12),
                           border: Border.all(
-                                color: const Color(0x0D000000),
+                                color: Color(0x0D000000),
                           ),
                         ),
                         child: Row(
@@ -83,7 +80,7 @@ class _AccountProfileState extends State<AccountProfile> {
                                 fit: BoxFit.cover,
                               ),
                             ),
-                                const SizedBox(width: 16),
+                                 SizedBox(width: getFontSize(16, context)),
                                 Column(
                               crossAxisAlignment: CrossAxisAlignment.start,
                               mainAxisAlignment: MainAxisAlignment.center,
@@ -106,7 +103,7 @@ class _AccountProfileState extends State<AccountProfile> {
                                   ],
                                 ),
 
-                                SizedBox(height: 8),
+                                SizedBox(height: getFontSize(8, context)),
                                 // Spacing between the two texts
                                 Text(
                                   'johndoe@gmail.com', // Email text
@@ -118,14 +115,14 @@ class _AccountProfileState extends State<AccountProfile> {
                                 ),
                               ],
                             ),
-                                const Spacer(),
+                                Spacer(),
                             Align(
                               alignment: Alignment.topRight,
                               child: Container(
                                 alignment: Alignment.topRight,
-                                width: 27,
-                                height: 27,
-                                decoration: const BoxDecoration(
+                                width: getFontSize(27, context),
+                                height: getFontSize(27, context),
+                                decoration: BoxDecoration(
                                   shape: BoxShape.circle,
                                   color: Colors.blue, // Blue background
                                 ),
@@ -151,27 +148,27 @@ class _AccountProfileState extends State<AccountProfile> {
                           ],
                         ),
                       ),
-                          const SizedBox(
-                        height: 30,
+                           SizedBox(
+                        height: getFontSize(30, context),
                       ),
                     ],
                   )),
               Container(
-                    padding: const EdgeInsets.only(left: 20),
+                    padding: EdgeInsets.only(left: getFontSize(20, context)),
                 alignment: Alignment.centerLeft,
-                    margin: const EdgeInsets.only(bottom: 20, top: 20),
-                child: const Text(
+                    margin:  EdgeInsets.only(bottom: getFontSize(20, context), top: getFontSize(20, context)),
+                child:  Text(
                   'Personal Details',
                   style: TextStyle(
-                    fontSize: 18,
+                    fontSize: getFontSize(18, context),
                     fontWeight: FontWeight.bold,
                     color: Colors.black,
                   ),
                 ),
               ),
               Container(
-                      padding: const EdgeInsets.only(top: 20, left: 20, right: 20),
-                  height: 345,
+                      padding:  EdgeInsets.only(top: getFontSize(20, context), left: getFontSize(20, context), right: getFontSize(20, context)),
+                  height: getFontSize(345, context),
                   width: double.infinity,
                   decoration: BoxDecoration(
                     color: Colors.white,
@@ -200,21 +197,21 @@ class _AccountProfileState extends State<AccountProfile> {
                         shouldLine: true),
                   ])),
               Container(
-                    padding: const EdgeInsets.only(left: 20),
+                    padding:  EdgeInsets.only(left: getFontSize(20, context)),
                 alignment: Alignment.centerLeft,
-                    margin: const EdgeInsets.only(bottom: 20, top: 20),
-                    child: const Text(
+                    margin:  EdgeInsets.only(bottom: getFontSize(20, context), top: getFontSize(20, context)),
+                    child:  Text(
                   'Referrals',
                   style: TextStyle(
-                    fontSize: 18,
+                    fontSize: getFontSize(18, context),
                     fontWeight: FontWeight.bold,
                     color: Colors.black,
                   ),
                 ),
               ),
               Container(
-                    padding: const EdgeInsets.only(
-                    top: 20, left: 20, right: 20, bottom: 10),
+                    padding: EdgeInsets.only(
+                    top: getFontSize(20, context), left: getFontSize(20, context), right: getFontSize(20, context), bottom: getFontSize(10, context)),
                 width: double.infinity,
                 decoration: BoxDecoration(
                   color: Colors.white,
@@ -225,7 +222,7 @@ class _AccountProfileState extends State<AccountProfile> {
                     Navigator.push(
                       context,
                       MaterialPageRoute(
-                        builder: (context) => const Referrals(),
+                        builder: (context) => Referrals(),
                       ),
                     );
                   },
@@ -236,21 +233,21 @@ class _AccountProfileState extends State<AccountProfile> {
                 ),
               ),
               Container(
-                    padding: const EdgeInsets.only(left: 20),
+                    padding: EdgeInsets.only(left: getFontSize(20, context)),
                 alignment: Alignment.centerLeft,
-                    margin: const EdgeInsets.only(bottom: 20, top: 20),
-                    child: const Text(
+                    margin: EdgeInsets.only(bottom: getFontSize(20, context), top: getFontSize(20, context)),
+                    child: Text(
                   'Payments',
                   style: TextStyle(
-                    fontSize: 18,
+                    fontSize: getFontSize(18, context),
                     fontWeight: FontWeight.bold,
                     color: Colors.black,
                   ),
                 ),
               ),
               Container(
-                    padding: const EdgeInsets.only(
-                    top: 20, left: 20, right: 20, bottom: 10),
+                    padding: EdgeInsets.only(
+                    top: getFontSize(20, context), left: getFontSize(20, context), right: getFontSize(20, context), bottom: getFontSize(10, context)),
                 width: double.infinity,
                 decoration: BoxDecoration(
                   color: Colors.white,
@@ -268,8 +265,8 @@ class _AccountProfileState extends State<AccountProfile> {
                           detailInfo: "Wallet",
                           shouldLine: true),
                     ),
-                        const SizedBox(
-                      height: 25,
+                        SizedBox(
+                      height: getFontSize(25, context),
                     ),
                     GestureDetector(
                       onTap: () => Navigator.push(
@@ -281,8 +278,8 @@ class _AccountProfileState extends State<AccountProfile> {
                           detailInfo: "Credit/Debit Cards ",
                           shouldLine: true),
                     ),
-                        const SizedBox(
-                      height: 25,
+                        SizedBox(
+                      height: getFontSize(25, context),
                     ),
                     GestureDetector(
                       onTap: () => Navigator.push(
@@ -298,22 +295,22 @@ class _AccountProfileState extends State<AccountProfile> {
                 ),
               ),
               Container(
-                    padding: const EdgeInsets.only(left: 20),
+                    padding: EdgeInsets.only(left: getFontSize(20, context)),
                 alignment: Alignment.centerLeft,
-                margin: const EdgeInsets.only(bottom: 20, top: 20),
+                margin: EdgeInsets.only(bottom: getFontSize(20, context), top: getFontSize(20, context)),
                     child:
-                    const Text(
+                    Text(
                   'Health history',
                   style: TextStyle(
-                    fontSize: 18,
+                    fontSize: getFontSize(18, context),
                     fontWeight: FontWeight.bold,
                     color: Colors.black,
                   ),
                 ),
               ),
               Container(
-                      padding: const EdgeInsets.only(
-                      top: 20, left: 20, right: 20, bottom: 10),
+                      padding: EdgeInsets.only(
+                      top: getFontSize(20, context), left: getFontSize(20, context), right: getFontSize(20, context), bottom: getFontSize(10, context)),
                   width: double.infinity,
                   decoration: BoxDecoration(
                     color: Colors.white,
@@ -331,8 +328,8 @@ class _AccountProfileState extends State<AccountProfile> {
                           detailInfo: "Personal history records",
                           shouldLine: true),
                     ),
-                            const SizedBox(
-                      height: 25,
+                            SizedBox(
+                      height: getFontSize(25, context),
                     ),
                     GestureDetector(
                       onTap: () => Navigator.push(
@@ -346,22 +343,22 @@ class _AccountProfileState extends State<AccountProfile> {
                     )
                   ])),
               Container(
-                    padding: const EdgeInsets.only(left: 20),
+                    padding: EdgeInsets.only(left: getFontSize(20, context)),
                 alignment: Alignment.centerLeft,
-                margin: const EdgeInsets.only(bottom: 20, top: 20),
+                margin: EdgeInsets.only(bottom: getFontSize(20, context), top: getFontSize(20, context)),
                     child:
-                    const Text(
+                    Text(
                   'Device',
                   style: TextStyle(
-                    fontSize: 18,
+                    fontSize: getFontSize(18, context),
                     fontWeight: FontWeight.bold,
                     color: Colors.black,
                   ),
                 ),
               ),
               Container(
-                      padding: const EdgeInsets.only(
-                      top: 20, left: 20, right: 20, bottom: 10),
+                      padding: EdgeInsets.only(
+                      top: getFontSize(20, context), left: getFontSize(20, context), right: getFontSize(20, context), bottom: getFontSize(10, context)),
                   width: double.infinity,
                   decoration: BoxDecoration(
                     color: Colors.white,
@@ -378,8 +375,8 @@ class _AccountProfileState extends State<AccountProfile> {
                           detailInfo: "Devices owned",
                           shouldLine: true),
                     ),
-                            const SizedBox(
-                      height: 25,
+                            SizedBox(
+                      height: getFontSize(25, context),
                     ),
                     GestureDetector(
                       onTap: () => Navigator.push(
@@ -393,22 +390,22 @@ class _AccountProfileState extends State<AccountProfile> {
                     )
                   ])),
               Container(
-                    padding: const EdgeInsets.only(left: 20),
+                    padding: EdgeInsets.only(left: getFontSize(20, context)),
                 alignment: Alignment.centerLeft,
-                margin: const EdgeInsets.only(bottom: 20, top: 20),
+                margin: EdgeInsets.only(bottom: getFontSize(20, context), top: getFontSize(20, context)),
                     child:
-                    const Text(
+                    Text(
                   'Help and support',
                   style: TextStyle(
-                    fontSize: 18,
+                    fontSize: getFontSize(18, context),
                     fontWeight: FontWeight.bold,
                     color: Colors.black,
                   ),
                 ),
               ),
               Container(
-                      padding: const EdgeInsets.only(
-                      top: 20, left: 20, right: 20, bottom: 10),
+                      padding: EdgeInsets.only(
+                      top: getFontSize(20, context), left: getFontSize(20, context), right: getFontSize(20, context), bottom: getFontSize(10, context)),
                   width: double.infinity,
                   decoration: BoxDecoration(
                     color: Colors.white,
@@ -426,8 +423,8 @@ class _AccountProfileState extends State<AccountProfile> {
                           detailInfo: "Customer care",
                           shouldLine: true),
                     ),
-                            const SizedBox(
-                      height: 25,
+                            SizedBox(
+                      height: getFontSize(25, context),
                     ),
                     GestureDetector(
                       onTap: () => Navigator.push(
@@ -439,8 +436,8 @@ class _AccountProfileState extends State<AccountProfile> {
                           detailInfo: "FAQs",
                           shouldLine: true),
                     ),
-                            const SizedBox(
-                      height: 25,
+                            SizedBox(
+                      height: getFontSize(25, context),
                     ),
                     GestureDetector(
                       onTap: () => Navigator.push(
@@ -452,8 +449,8 @@ class _AccountProfileState extends State<AccountProfile> {
                           detailInfo: "Blogs & articles",
                           shouldLine: true),
                     ),
-                            const SizedBox(
-                      height: 25,
+                            SizedBox(
+                      height: getFontSize(25, context),
                     ),
                     GestureDetector(
                       onTap: () => Navigator.push(
@@ -466,17 +463,17 @@ class _AccountProfileState extends State<AccountProfile> {
                           shouldLine: false),
                     ),
                   ])),
-              const SizedBox(
-                height: 20,
+              SizedBox(
+                height: getFontSize(20, context),
               ),
 
-                  const SizedBox(height: 20,),
+                  SizedBox(height: getFontSize(20, context),),
 
               Container(
-                    padding: const EdgeInsets.only(left: 20, right: 20, top: 20),
-                height: 90,
+                    padding: EdgeInsets.only(left: getFontSize(20, context), right: getFontSize(20, context), top: getFontSize(20, context)),
+                height: getFontSize(90, context),
                 width: double.infinity,
-                    decoration: const BoxDecoration(
+                    decoration: BoxDecoration(
                     color: Colors.white,
                     borderRadius: BorderRadius.only(
                         topLeft: Radius.circular(20),
@@ -487,8 +484,8 @@ class _AccountProfileState extends State<AccountProfile> {
                     shouldLine: false,
                     lol: "true"),
               ),
-              const SizedBox(
-                height: 20,
+              SizedBox(
+                height: getFontSize(20, context),
               )
             ],
           ),
@@ -504,35 +501,35 @@ class _AccountProfileState extends State<AccountProfile> {
       Row(
         children: [
           Container(
-              width: 41,
-              height: 41,
-              decoration: const BoxDecoration(
+              width: getFontSize(41, context),
+              height: getFontSize(41, context),
+              decoration: BoxDecoration(
                 color: Color(0xffE2EDFF),
                 shape: BoxShape.circle,
               ),
               child: Center(
-                child: Icon(icon, size: 28, color: Colors.blue),
+                child: Icon(icon, size: getFontSize(28, context), color: Colors.blue),
               )),
-          const SizedBox(
-            width: 10,
+          SizedBox(
+            width: getFontSize(10, context),
           ),
-          const SizedBox(width: 10,),
+          SizedBox(width: getFontSize(10, context),),
           Column(
             mainAxisAlignment: MainAxisAlignment.start,
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Text(detailType,
-                style: const TextStyle(color: Colors.grey, fontSize: 14),),
-              const SizedBox(height: 10,),
+                style: TextStyle(color: Colors.grey, fontSize: getFontSize(14, context)),),
+              SizedBox(height: getFontSize(10, context),),
               Text(detailInfo,
-                  style: const TextStyle(color: Colors.black, fontSize: 18))
+                  style: TextStyle(color: Colors.black, fontSize: getFontSize(18, context)))
             ],
           )
         ],
       ),
-      const SizedBox(height: 10),
+      SizedBox(height: getFontSize(10, context)),
       SvgPicture.asset(shouldLine == true ? "assets/images/line.svg" : ""),
-      const SizedBox(height: 15),
+      SizedBox(height: getFontSize(15, context)),
     ]);
   }
 
@@ -545,22 +542,22 @@ class _AccountProfileState extends State<AccountProfile> {
       Row(
         children: [
           Container(
-              width: 41,
-              height: 41,
+              width: getFontSize(41, context),
+              height: getFontSize(41, context),
               decoration: BoxDecoration(
                 color: lol == null
-                    ? const Color(0xffE2EDFF)
+                    ? Color(0xffE2EDFF)
                     : Colors.red.withOpacity(0.05),
                 shape: BoxShape.circle,
               ),
               child: Center(
                 child: Icon(icon,
-                    size: 28, color: lol == null ? Colors.blue : Colors.red),
+                    size: getFontSize(28, context), color: lol == null ? Colors.blue : Colors.red),
               )),
-          const SizedBox(
-            width: 10,
+          SizedBox(
+            width: getFontSize(10, context),
           ),
-          const SizedBox(width: 10,),
+          SizedBox(width: getFontSize(10, context),),
           Column(
             mainAxisAlignment: MainAxisAlignment.start,
             crossAxisAlignment: CrossAxisAlignment.start,
@@ -568,14 +565,14 @@ class _AccountProfileState extends State<AccountProfile> {
               Text(detailInfo,
                   style: TextStyle(
                       color: lol == null ? Colors.black : Colors.red,
-                      fontSize: 18,
+                      fontSize: getFontSize(18, context),
                       fontWeight:
                           lol == null ? FontWeight.normal : FontWeight.bold))
             ],
           )
         ],
       ),
-      const SizedBox(height: 10),
+      SizedBox(height: getFontSize(10, context)),
       SvgPicture.asset(shouldLine == true ? "assets/images/line.svg" : ""),
     ]);
   }

@@ -1,3 +1,5 @@
+import '../Main/Dashboard.dart';
+import 'Main/Dashboard.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
@@ -8,7 +10,7 @@ void main(){
 }
 
 class MeasureingHearthGraph extends StatefulWidget {
-  const MeasureingHearthGraph({super.key});
+  MeasureingHearthGraph({super.key});
   @override
   _MeasureingHearthGraphScreen createState() => _MeasureingHearthGraphScreen();
 }
@@ -24,21 +26,21 @@ class _MeasureingHearthGraphScreen extends  State<MeasureingHearthGraph> {
           title: Row(
             children: [
               Container(
-                width: 35,
-                height: 35,
+                width: getFontSize(35, context),
+                height: getFontSize(35, context),
                 padding: EdgeInsets.all(10),
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(50),
                   color: Color(0xFFE5E5E5),
                 ),
                 child: SvgPicture.asset('assets/images/back.svg',
-                  width: 8.0,
-                  height: 15,),
+                  width: getFontSize(8.0, context),
+                  height: getFontSize(15, context),),
               ),
               Spacer(),
           Container(
-            width: 35,
-            height: 35,
+            width: getFontSize(35, context),
+            height: getFontSize(35, context),
             padding: EdgeInsets.all(10),
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(50),
@@ -53,19 +55,19 @@ class _MeasureingHearthGraphScreen extends  State<MeasureingHearthGraph> {
         ),
         body:
         Container(
-            padding: EdgeInsets.only(bottom: 30, left: 15, right: 15),
+            padding: EdgeInsets.only(bottom: getFontSize(30, context), left: getFontSize(15, context), right: getFontSize(15, context)),
             child:
             Align(
               child:
               Column(
                 children: [
-                  SizedBox(height: 30),
+                  SizedBox(height: getFontSize(30, context)),
                   Container(
                     decoration: BoxDecoration(
-                      border: Border.all(width: 1, color: Colors.black.withOpacity(0.15)),
+                      border: Border.all(width: getFontSize(1, context), color: Colors.black.withOpacity(0.15)),
                       borderRadius: BorderRadius.circular(12),
                     ),
-                      margin: EdgeInsets.only(left: 15),
+                      margin: EdgeInsets.only(left: getFontSize(15, context)),
                       padding: EdgeInsets.all(15),
                       child: Column(
                           children: [
@@ -76,13 +78,13 @@ class _MeasureingHearthGraphScreen extends  State<MeasureingHearthGraph> {
                                   // Spacer(),
                                 Column(
                                   children: [
-                                    Text('107/60', style: TextStyle(fontWeight: FontWeight.bold,fontSize: 26),),
+                                    Text('107/60', style: TextStyle(fontWeight: FontWeight.bold,fontSize: getFontSize(26, context)),),
                                     Row(
                                       mainAxisAlignment: MainAxisAlignment.start,
                                       crossAxisAlignment: CrossAxisAlignment.start,
                                       children: [
-                                        Text('SYS/DIA  ', style: TextStyle(fontSize: 10),),
-                                        Text('mmHg', style: TextStyle(color: Colors.grey.withOpacity(0.85),fontSize: 10),)
+                                        Text('SYS/DIA  ', style: TextStyle(fontSize: getFontSize(10, context)),),
+                                        Text('mmHg', style: TextStyle(color: Colors.grey.withOpacity(0.85),fontSize: getFontSize(10, context)),)
                                       ],
                                     )
                                   ],
@@ -95,21 +97,21 @@ class _MeasureingHearthGraphScreen extends  State<MeasureingHearthGraph> {
                                     shape: BoxShape.circle,
                                     color: Color(0xffFF618F),
                                   ),
-                                  width: 46,
-                                  height: 46,
+                                  width: getFontSize(46, context),
+                                  height: getFontSize(46, context),
                                   padding: EdgeInsets.all(8),
                                   child: SvgPicture.asset('assets/images/hearth.svg'),
                                 ),
 
                               ],
                             ),
-                            SizedBox(height: 15,),
+                            SizedBox(height: getFontSize(15, context),),
                             SvgPicture.asset('assets/images/line.svg'),
-                            SizedBox(height: 15,),
+                            SizedBox(height: getFontSize(15, context),),
                            Row(
                              children: [
                                Icon(Icons.info),
-                               SizedBox(width: 10,),
+                               SizedBox(width: getFontSize(10, context),),
                                Text('Irregular ECG'),
                              ],
                            )
@@ -130,10 +132,10 @@ class _MeasureingHearthGraphScreen extends  State<MeasureingHearthGraph> {
                       ),
                     ),
                     child: Padding(
-                      padding: const EdgeInsets.symmetric(vertical: 12.0, horizontal: 24.0),
+                      padding: EdgeInsets.symmetric(vertical: 12.0, horizontal: 24.0),
                       child: Text(
                         'Back to readings',
-                        style: TextStyle(color: Colors.white, fontSize: 18),
+                        style: TextStyle(color: Colors.white, fontSize: getFontSize(18, context)),
                       ),
                     ),
                   ),

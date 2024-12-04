@@ -1,3 +1,4 @@
+import '../Main/Dashboard.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_app/Account/DeviceSummary.dart';
@@ -9,7 +10,7 @@ void main(){
 }
 
 class DeviceInformation extends StatefulWidget {
-  const DeviceInformation({super.key});
+  DeviceInformation({super.key});
   @override
   _DeviceInformationScreen createState() => _DeviceInformationScreen();
 }
@@ -24,16 +25,16 @@ class _DeviceInformationScreen extends  State<DeviceInformation> {
           title: Row(
             children: [
               Container(
-                width: 35,
-                height: 35,
+                width: getFontSize(35, context),
+                height: getFontSize(35, context),
                 padding: EdgeInsets.all(10),
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(50),
                   color: Color(0xFFE5E5E5),
                 ),
                 child: SvgPicture.asset('assets/images/back.svg',
-                  width: 8.0,
-                  height: 15,),
+                  width: getFontSize(8.0, context),
+                  height: getFontSize(15, context),),
               ),
               Spacer(),
               Container(
@@ -42,7 +43,7 @@ class _DeviceInformationScreen extends  State<DeviceInformation> {
                 Center(child: Text(
                   'Device Information',
                   style: TextStyle(
-                      fontSize: 20,
+                      fontSize: getFontSize(20, context),
                       fontStyle: FontStyle.normal
                   ),
                 ),
@@ -62,65 +63,65 @@ class _DeviceInformationScreen extends  State<DeviceInformation> {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Container(alignment: Alignment.center,child:
-            SvgPicture.asset('assets/images/dev.svg', height: 117, width: 195,),
+            SvgPicture.asset('assets/images/dev.svg', height: getFontSize(117, context), width: getFontSize(195, context),),
             ),
-            SizedBox(height: 30,),
+            SizedBox(height: getFontSize(30, context),),
             Text(
               'Name:',
-              style: TextStyle(color: Colors.grey, fontSize: 14),
+              style: TextStyle(color: Colors.grey, fontSize: getFontSize(14, context)),
             ),
-            SizedBox(height: 5),
+            SizedBox(height: getFontSize(5, context)),
             Text(
               'Wellue Bp2 Connect device',
-              style: TextStyle(color: Colors.black, fontSize: 16),
+              style: TextStyle(color: Colors.black, fontSize: getFontSize(16, context)),
             ),
 
 
-            SizedBox(height: 15),
+            SizedBox(height: getFontSize(15, context)),
             SvgPicture.asset('assets/images/line.svg'),
 
-            SizedBox(height: 20),
+            SizedBox(height: getFontSize(20, context)),
 
             // Price
             Text(
               'Price:',
-              style: TextStyle(color: Colors.grey, fontSize: 14),
+              style: TextStyle(color: Colors.grey, fontSize: getFontSize(14, context)),
             ),
-            SizedBox(height: 5),
+            SizedBox(height: getFontSize(5, context)),
             Text(
               'N25,000.00',
-              style: TextStyle(fontWeight: FontWeight.bold, color: Colors.blue, fontSize: 16),
+              style: TextStyle(fontWeight: FontWeight.bold, color: Colors.blue, fontSize: getFontSize(16, context)),
             ),
 
-            SizedBox(height: 15),
+            SizedBox(height: getFontSize(15, context)),
             SvgPicture.asset('assets/images/line.svg'),
 
-            SizedBox(height: 20),
+            SizedBox(height: getFontSize(20, context)),
 
             // Vitals measured
             Text(
               'Vitals measured:',
-              style: TextStyle(color: Colors.grey, fontSize: 14),
+              style: TextStyle(color: Colors.grey, fontSize: getFontSize(14, context)),
             ),
-            SizedBox(height: 5),
+            SizedBox(height: getFontSize(5, context)),
             Text(
               'Oxygen saturation, blood pressure, stress level, body temperature.',
-              style: TextStyle(color: Colors.black, fontSize: 16),
+              style: TextStyle(color: Colors.black, fontSize: getFontSize(16, context)),
             ),
-            SizedBox(height: 15),
+            SizedBox(height: getFontSize(15, context)),
             SvgPicture.asset('assets/images/line.svg'),
 
 
-            SizedBox(height: 30),
+            SizedBox(height: getFontSize(30, context)),
 
             // How many devices do you need?
            Center(child: Text(
               'How many devices do you need?',
-              style: TextStyle(color: Colors.black, fontSize: 18),
+              style: TextStyle(color: Colors.black, fontSize: getFontSize(18, context)),
             ),
             ),
 
-            SizedBox(height: 25),
+            SizedBox(height: getFontSize(25, context)),
 
             // Row for quantity control
             Row(
@@ -128,39 +129,39 @@ class _DeviceInformationScreen extends  State<DeviceInformation> {
               children: [
                 // Decrease button
                 Container(
-                  width: 35,
-                  height: 35,
+                  width: getFontSize(35, context),
+                  height: getFontSize(35, context),
                   decoration: BoxDecoration(
                     color: Color(0xffE2EDFF),
                     shape: BoxShape.circle,
                   ),
                   child: IconButton(
-                    icon: Icon(Icons.remove, size: 16,color: Colors.blue),
+                    icon: Icon(Icons.remove, size: getFontSize(16, context),color: Colors.blue),
                     onPressed: () {
                       // Logic to decrease the number
                     },
                   ),
                 ),
 
-                SizedBox(width: 25),
+                SizedBox(width: getFontSize(25, context)),
 
                 // Display quantity
                 Text(
                   '1',
-                  style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold, color: Colors.black),
+                  style: TextStyle(fontSize: getFontSize(16, context), fontWeight: FontWeight.bold, color: Colors.black),
                 ),
 
-                SizedBox(width: 25),
+                SizedBox(width: getFontSize(25, context)),
                 // Increase button
                 Container(
-                  width: 35,
-                  height: 35,
+                  width: getFontSize(35, context),
+                  height: getFontSize(35, context),
                   decoration: BoxDecoration(
                     color: Color(0xffE2EDFF),
                     shape: BoxShape.circle,
                   ),
                   child: IconButton(
-                    icon: Icon(Icons.add, size: 16, color: Colors.blue),
+                    icon: Icon(Icons.add, size: getFontSize(16, context), color: Colors.blue),
                     onPressed: () {
                       // Logic to increase the number
                     },
@@ -173,7 +174,7 @@ class _DeviceInformationScreen extends  State<DeviceInformation> {
 
             // Place an Order button
             SizedBox(
-              height: 55,
+              height: getFontSize(55, context),
               width: double.infinity, // Match screen width
               child: ElevatedButton(
                 onPressed: () {
@@ -197,7 +198,7 @@ class _DeviceInformationScreen extends  State<DeviceInformation> {
                 ),
               ),
             ),
-            SizedBox(height: 45,),
+            SizedBox(height: getFontSize(45, context),),
           ],
         )
         )

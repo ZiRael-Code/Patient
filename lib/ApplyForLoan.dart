@@ -1,3 +1,5 @@
+import '../Main/Dashboard.dart';
+import 'Main/Dashboard.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
@@ -5,7 +7,7 @@ import 'package:flutter_svg/svg.dart';
 import 'LoanDetails.dart';
 
 class Applyforloan extends StatelessWidget {
-  const Applyforloan({super.key});
+  Applyforloan({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -14,16 +16,16 @@ class Applyforloan extends StatelessWidget {
           title: Row(
             children: [
               Container(
-                width: 35,
-                height: 35,
+                width: getFontSize(35, context),
+                height: getFontSize(35, context),
                 padding: EdgeInsets.all(10),
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(50),
                   color: Color(0xFFE5E5E5),
                 ),
                 child: SvgPicture.asset('assets/images/back.svg',
-                  width: 8.0,
-                  height: 15,),
+                  width: getFontSize(8.0, context),
+                  height: getFontSize(15, context),),
               ),
             ],
           ),
@@ -31,19 +33,19 @@ class Applyforloan extends StatelessWidget {
         ),
         body:
         Container(
-        padding: EdgeInsets.only(bottom: 30, left: 15, right: 15),
+        padding: EdgeInsets.only(bottom: getFontSize(30, context), left: getFontSize(15, context), right: getFontSize(15, context)),
     child:
     Align(
     child:
     Column(
     children: [
-      SizedBox(height: 50,),
-      Text("Apply for a loan", style: TextStyle(fontSize: 36, fontWeight: FontWeight.bold),),
-      SizedBox(height: 10,),
+      SizedBox(height: getFontSize(50, context),),
+      Text("Apply for a loan", style: TextStyle(fontSize: getFontSize(36, context), fontWeight: FontWeight.bold),),
+      SizedBox(height: getFontSize(10, context),),
       Container(
-          width: 256,
+          width: getFontSize(256, context),
           child:
-          Text(style: TextStyle(fontSize: 18)
+          Text(style: TextStyle(fontSize: getFontSize(18, context))
               ,textAlign: TextAlign.center,"You can easily apply for a short loan if you currently don’t have enough money to buy a device.")
       ),
       Spacer(),
@@ -62,10 +64,10 @@ class Applyforloan extends StatelessWidget {
           ),
         ),
         child: Padding(
-          padding: const EdgeInsets.symmetric(vertical: 12.0, horizontal: 24.0),
+          padding: EdgeInsets.symmetric(vertical: 12.0, horizontal: 24.0),
           child: Text(
             'Apply for loan',
-            style: TextStyle(color: Colors.white, fontSize: 18),
+            style: TextStyle(color: Colors.white, fontSize: getFontSize(18, context)),
           ),
         ),
       ),

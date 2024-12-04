@@ -1,3 +1,5 @@
+import '../Main/Dashboard.dart';
+import 'Main/Dashboard.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
@@ -8,7 +10,7 @@ void main(){
 }
 
 class OngoingMeasuringHearthRateGraph extends StatefulWidget {
-  const OngoingMeasuringHearthRateGraph({super.key});
+  OngoingMeasuringHearthRateGraph({super.key});
   @override
   _OngoingMeasuringHearthRateGraphScreen createState() => _OngoingMeasuringHearthRateGraphScreen();
 }
@@ -22,13 +24,13 @@ class _OngoingMeasuringHearthRateGraphScreen extends  State<OngoingMeasuringHear
       home: Scaffold(
         body:
         Container(
-            padding: EdgeInsets.only(bottom: 30, left: 15, right: 15),
+            padding: EdgeInsets.only(bottom: getFontSize(30, context), left: getFontSize(15, context), right: getFontSize(15, context)),
             child:
         Align(
           child:
       Column(
       children: [
-        SizedBox(height: 90),
+        SizedBox(height: getFontSize(90, context)),
 
         Align(
           alignment: Alignment.centerRight,
@@ -42,36 +44,36 @@ class _OngoingMeasuringHearthRateGraphScreen extends  State<OngoingMeasuringHear
                       shape: BoxShape.circle,
                       color: Color(0xffFF618F),
                     ),
-                    width: 46,
-                    height: 46,
+                    width: getFontSize(46, context),
+                    height: getFontSize(46, context),
                     padding: EdgeInsets.all(8),
                     child: SvgPicture.asset('assets/images/hearth.svg'),
                   ),
                 ],
               )
         ),
-        SizedBox(height: 16),
+        SizedBox(height: getFontSize(16, context)),
         Image.asset('assets/images/graph1.png'),
-        SizedBox(height: 15,),
+        SizedBox(height: getFontSize(15, context),),
         Row(
           crossAxisAlignment: CrossAxisAlignment.center,
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
         Stack(
           children: [
-            Align(alignment: Alignment.center, child: Icon(Icons.fiber_manual_record_outlined, size: 39, color: Color(0xffFF6161),)),
+            Align(alignment: Alignment.center, child: Icon(Icons.fiber_manual_record_outlined, size: getFontSize(39, context), color: Color(0xffFF6161),)),
            
 
-           Container(margin: EdgeInsets.only(top: 7, left: 7),alignment: Alignment.center, child: Icon(Icons.fiber_manual_record, color: Color(0xffFF6161),)),
+           Container(margin: EdgeInsets.only(top: getFontSize(7, context), left: getFontSize(7, context)),alignment: Alignment.center, child: Icon(Icons.fiber_manual_record, color: Color(0xffFF6161),)),
 
           ],
         )   ,
-          SizedBox(width: 5,),
-            Text('00:03', style: TextStyle(fontWeight: FontWeight.bold, fontSize: 16),)
+          SizedBox(width: getFontSize(5, context),),
+            Text('00:03', style: TextStyle(fontWeight: FontWeight.bold, fontSize: getFontSize(16, context)),)
           ],
         ),
-        SizedBox(height: 10,),
-        Text('Hold the device for 30s', style: TextStyle(fontSize: 16))
+        SizedBox(height: getFontSize(10, context),),
+        Text('Hold the device for 30s', style: TextStyle(fontSize: getFontSize(16, context)))
 
       ],
     ),

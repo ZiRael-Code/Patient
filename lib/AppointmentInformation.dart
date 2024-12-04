@@ -1,8 +1,10 @@
+import '../Main/Dashboard.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 
 import 'Appointments/AppointmentPaymentSummary.dart';
+import 'Main/Dashboard.dart';
 
 void main(){
   runApp(AppointmentInformation());
@@ -31,19 +33,19 @@ class AppointmentInformationState extends  State<AppointmentInformation> {
           children: [
         Container(
         width: MediaQuery.of(context).size.width,
-        height: 103,
+        height: getFontSize(103, context),
         child: Row(
           children: [
             Image.asset('assets/images/dr_profile.png',
-              width: 56,
-              height: 56,
+              width: getFontSize(56, context),
+              height: getFontSize(56, context),
             ),
-            SizedBox(width: 10),
+            SizedBox(width: getFontSize(10, context)),
             Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Center(child: Text("Dr. Muiz Sanni", style: TextStyle(color: Colors.black, fontWeight: FontWeight.bold),)),
-                SizedBox(height: 10,),
+                SizedBox(height: getFontSize(10, context),),
                 Center(child: Text("Cardiovascular surgeon", style: TextStyle(color: Colors.grey),),),
               ],
             ),
@@ -78,7 +80,7 @@ class AppointmentInformationState extends  State<AppointmentInformation> {
           )
               ],
             ),
-          SizedBox(height: 25,),
+          SizedBox(height: getFontSize(25, context),),
                 Row(
               children: [
                 Container(
@@ -95,7 +97,7 @@ class AppointmentInformationState extends  State<AppointmentInformation> {
             child: Column(
               children: [
                 Text("Consultation fee:",  style: TextStyle(color: Color(0xFF2E2E42)),),
-                Text("N20,000",  style: TextStyle(fontSize: 28,color: Colors.blue, fontWeight: FontWeight.bold))
+                Text("N20,000",  style: TextStyle(fontSize: getFontSize(28, context),color: Colors.blue, fontWeight: FontWeight.bold))
                 ]
             ),
           )
@@ -111,17 +113,17 @@ class AppointmentInformationState extends  State<AppointmentInformation> {
                   borderRadius: BorderRadius.circular(9),
                   side: BorderSide(
                     color: Color(0xFFFF6161),
-                    width: 0.5,
+                    width: getFontSize(0.5, context),
                   ),
                 ),
               ),
               child: Padding(
-                padding: const EdgeInsets.symmetric(vertical: 12.0, horizontal: 24.0),
+                padding: EdgeInsets.symmetric(vertical: 12.0, horizontal: 24.0),
                 child: Text(
                   'Cancel appointment',
                   style: TextStyle(
                     color: Color(0xFFFF6161), // Text color
-                    fontSize: 16,
+                    fontSize: getFontSize(16, context),
                   ),
                 ),
               ),

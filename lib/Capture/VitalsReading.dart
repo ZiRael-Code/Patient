@@ -1,3 +1,4 @@
+import '../Main/Dashboard.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_app/Main/MeasureVitalsManuallyMenu.dart';
 import 'package:flutter_app/MeasureBloodPresure.dart';
@@ -40,8 +41,8 @@ class _VitalsReadingState extends State<VitalsReading>
         ),
         title: Row(children: [
           Container(
-          width: 35,
-          height: 35,
+          width: getFontSize(35, context),
+          height: getFontSize(35, context),
           decoration: BoxDecoration(
             color: Colors.blue[200],
             shape: BoxShape.circle,
@@ -52,8 +53,8 @@ class _VitalsReadingState extends State<VitalsReading>
         Text('Vital Readings', style: TextStyle(color: Colors.white)),
           Spacer(),
           Container(
-            width: 35,
-            height: 35,
+            width: getFontSize(35, context),
+            height: getFontSize(35, context),
             decoration: BoxDecoration(
               color: Colors.blue[200],
               shape: BoxShape.circle,
@@ -97,7 +98,7 @@ class _VitalsReadingState extends State<VitalsReading>
   Widget _buildTakeReadingsContent() {
     return SingleChildScrollView(
       child: Padding(
-        padding: const EdgeInsets.all(20.0),
+        padding: EdgeInsets.all(20.0),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
@@ -154,12 +155,12 @@ class _VitalsReadingState extends State<VitalsReading>
                 ],
               ),
             ),
-            SizedBox(height: 20),
+            SizedBox(height: getFontSize(20, context)),
             Text(
               "If you don't have the device, you can still measure by clicking the button below",
-              style: TextStyle(fontSize: 18),
+              style: TextStyle(fontSize: getFontSize(18, context)),
             ),
-            SizedBox(height: 20),
+            SizedBox(height: getFontSize(20, context)),
             GestureDetector(
               onTap: (){
                 // Navigate to the details page
@@ -167,9 +168,9 @@ class _VitalsReadingState extends State<VitalsReading>
               },
               child: _buildActionButton('Capture Manually', Colors.blue, Colors.white)
             ),
-            SizedBox(height: 10),
+            SizedBox(height: getFontSize(10, context)),
             _buildActionButton('Request for the Device', Colors.transparent, Colors.blue, hasBorder: true),
-            SizedBox(height: 20),
+            SizedBox(height: getFontSize(20, context)),
           ],
         ),
       ),
@@ -184,7 +185,7 @@ class _VitalsReadingState extends State<VitalsReading>
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            SizedBox(height: 30,),
+            SizedBox(height: getFontSize(30, context),),
 
             // Text Format Section
             textFormat(
@@ -192,7 +193,7 @@ class _VitalsReadingState extends State<VitalsReading>
               text2: 'Select what vitals you want to measure',
             ),
 
-            SizedBox(height: 20,),
+            SizedBox(height: getFontSize(20, context),),
 
             // Wrap for icons and readings
             Wrap(
@@ -245,7 +246,7 @@ class _VitalsReadingState extends State<VitalsReading>
               ],
             ),
 
-            SizedBox(height: 15,),
+            SizedBox(height: getFontSize(15, context),),
 
             // Readings History Header
             Container(
@@ -253,13 +254,13 @@ class _VitalsReadingState extends State<VitalsReading>
               child: Text(
                 'Readings History',
                 style: TextStyle(
-                  fontSize: 18,        // Font size 18
+                  fontSize: getFontSize(18, context),        // Font size 18
                   fontWeight: FontWeight.bold,  // Bold text
                 ),
               ),
             ),
 
-            SizedBox(height: 10,),
+            SizedBox(height: getFontSize(10, context),),
 
             // Reading History List
             reading_history(
@@ -268,21 +269,21 @@ class _VitalsReadingState extends State<VitalsReading>
               date: "Today, 12:00 am",
               bulletColor: Colors.lightGreenAccent,
             ),
-            SizedBox(height: 10,),
+            SizedBox(height: getFontSize(10, context),),
             reading_history(
               mmhg: "125/60",
               bpm: "88",
               date: "14 Jul 2022. 12:00 am",
               bulletColor: Color(0xFFFAB400),
             ),
-            SizedBox(height: 10,),
+            SizedBox(height: getFontSize(10, context),),
 
             irregular_reading_history(
                 date: "14 Jul 2022 . 12:00 am",
                 text: "Irregular ECG",
                 stackColor:  Color(0xFFFAB400)
             ),
-            SizedBox(height: 10,),
+            SizedBox(height: getFontSize(10, context),),
             reading_history(
               mmhg: "125/68",
               bpm: "88",
@@ -304,13 +305,13 @@ class _VitalsReadingState extends State<VitalsReading>
             text1: "Devices",
             text2: 'View history of any vitals by directly tapping on their icons.',
           ),
-          SizedBox(height: 20,),
+          SizedBox(height: getFontSize(20, context),),
         Wrap(children: [
           devices(
             name: "BP2 Connect",
             imagePath: "assets/images/dev.svg"
           ),
-          SizedBox(width: 20,),
+          SizedBox(width: getFontSize(20, context),),
           devices(
             name: "Device 2",
             imagePath: "assets/images/dev.svg"
@@ -319,17 +320,17 @@ class _VitalsReadingState extends State<VitalsReading>
             name: "Device 3",
             imagePath: "assets/images/dev.svg"
           ),
-          SizedBox(width: 20,),
+          SizedBox(width: getFontSize(20, context),),
           Column(
               children: [
                 Container(
-                  width: 73,
-                  height: 73,
+                  width: getFontSize(73, context),
+                  height: getFontSize(73, context),
                   decoration: BoxDecoration(
                     color: Color(0xffE2EDFF),
                     borderRadius: BorderRadius.circular(50),
                   ),
-                  child: Icon(Icons.add, color: Colors.blue, size: 32,),
+                  child: Icon(Icons.add, color: Colors.blue, size: getFontSize(32, context),),
                 ),
                 Text('Order for a new device')
               ]
@@ -356,7 +357,7 @@ class _VitalsReadingState extends State<VitalsReading>
           text,
           style: TextStyle(
             color: textColor,
-            fontSize: 16,
+            fontSize: getFontSize(16, context),
             fontWeight: FontWeight.bold,
           ),
         ),
@@ -377,7 +378,7 @@ class _VitalsReadingState extends State<VitalsReading>
     required vitalsReadMessage,
   }) {
     return Container(
-      margin: EdgeInsets.only(right: 3),
+      margin: EdgeInsets.only(right: getFontSize(3, context)),
       child: Stack(
       children: [
         Container(
@@ -385,12 +386,12 @@ class _VitalsReadingState extends State<VitalsReading>
               borderRadius: BorderRadius.circular(12),
               border: Border.all(
                 color: themeColor.withOpacity(0.1),
-                width: 1.5,
+                width: getFontSize(1.5, context),
               ),
             ),
-            height: 186,
-            width: 156,
-            margin: EdgeInsets.only(bottom: 10),
+            height: getFontSize(186, context),
+            width: getFontSize(156, context),
+            margin: EdgeInsets.only(bottom: getFontSize(10, context)),
             child:
             Stack(
               children: [
@@ -404,14 +405,14 @@ class _VitalsReadingState extends State<VitalsReading>
                   ],
                 ),
                 Container(
-                  padding: EdgeInsets.only(left: 15,right: 15, top: 15),
+                  padding: EdgeInsets.only(left: getFontSize(15, context),right: getFontSize(15, context), top: getFontSize(15, context)),
                   child: Column(
                     children: [
                       Align(
                         alignment: Alignment.centerRight,
                         child: Container(
-                          width: 45,
-                          height: 45,
+                          width: getFontSize(45, context),
+                          height: getFontSize(45, context),
                           decoration: BoxDecoration(
                               borderRadius: BorderRadius.circular(50),
                               color: themeColor
@@ -424,7 +425,7 @@ class _VitalsReadingState extends State<VitalsReading>
                         children: [
                           Text(vitalRead,
                             style: TextStyle(
-                              fontSize: 37.0,
+                              fontSize: getFontSize(37.0, context),
                               fontWeight: FontWeight.bold,
                               color: themeColor,
                             ),),
@@ -432,7 +433,7 @@ class _VitalsReadingState extends State<VitalsReading>
                           if (isSubscript)
                             Text(subcriptOrnot,
                               style: TextStyle(
-                                fontSize: 10.0,
+                                fontSize: getFontSize(10.0, context),
                                 color: themeColor,
                                 fontWeight: FontWeight.bold,
                               ),
@@ -440,31 +441,31 @@ class _VitalsReadingState extends State<VitalsReading>
                           else
                             Text(subcriptOrnot,
                               style: TextStyle(
-                                fontSize: 10.0,
+                                fontSize: getFontSize(10.0, context),
                                 color: themeColor,
                               ),
                             ),
                         ],
                       ),
-                      SizedBox(height: 30,),
+                      SizedBox(height: getFontSize(30, context),),
 
                       Align(child: Text(vitalType,
-                        style: const TextStyle(
-                          fontSize: 14.0,
+                        style: TextStyle(
+                          fontSize: getFontSize(14.0, context),
                           color: Colors.white,
                         ),
                       ),
                         alignment: Alignment.centerLeft,
                       ),
-                      SizedBox(height: 2,),
+                      SizedBox(height: getFontSize(2, context),),
                       Align(child:
-                      Text(dateAdded, style: const TextStyle(
-                        fontSize: 9.0,
+                      Text(dateAdded, style: TextStyle(
+                        fontSize: getFontSize(9.0, context),
                         color: Colors.white,
                       )),
                         alignment: Alignment.centerLeft,
                       ),
-                      SizedBox(height: 2,),
+                      SizedBox(height: getFontSize(2, context),),
 
 
 
@@ -476,7 +477,7 @@ class _VitalsReadingState extends State<VitalsReading>
 
                 // Container(
                 //   decoration: BoxDecoration(
-                //     image: const DecorationImage(
+                //     image: DecorationImage(
                 //       image: AssetImage('assets/images/backgroundVitals.png')
                 //     ),
                 //     color: themeColor
@@ -496,7 +497,7 @@ class _VitalsReadingState extends State<VitalsReading>
 
 
 
-          // margin: EdgeInsets.only(bottom: 20),
+          // margin: EdgeInsets.only(bottom: getFontSize(20, context)),
         ),
       ],
     ),
@@ -512,19 +513,19 @@ class _VitalsReadingState extends State<VitalsReading>
       children: [
         Text(
      text1,
-      style: TextStyle(fontWeight: FontWeight.bold, fontSize: 18),
+      style: TextStyle(fontWeight: FontWeight.bold, fontSize: getFontSize(18, context)),
     ),
-    SizedBox(height: 10),
+    SizedBox(height: getFontSize(10, context)),
     Container(
-      width: 263,
+      width: getFontSize(263, context),
       child:
     Text(
     text2, textAlign: TextAlign.center,
-    style: TextStyle(fontSize: 16),
+    style: TextStyle(fontSize: getFontSize(16, context)),
     ),
         ),
 
-    SizedBox(height: 25,),
+    SizedBox(height: getFontSize(25, context),),
 
     ],
     );
@@ -537,22 +538,22 @@ class _VitalsReadingState extends State<VitalsReading>
   }) {
     return Column(children: [
       Container(
-    width: 86,
-    height: 86,
+    width: getFontSize(86, context),
+    height: getFontSize(86, context),
     decoration: BoxDecoration(
     borderRadius: BorderRadius.circular(50),
     color: themeColor
     ),
     child: Center(child: SvgPicture.asset(icon)),
-    margin: EdgeInsets.only(right: 20),
+    margin: EdgeInsets.only(right: getFontSize(20, context)),
     ),
-      SizedBox(height: 2,),
+      SizedBox(height: getFontSize(2, context),),
       Container(
-        width: 86,
-        margin: EdgeInsets.only(right: 20),
-      child: Text(name, textAlign: TextAlign.center, style: TextStyle(fontSize: 14),),
+        width: getFontSize(86, context),
+        margin: EdgeInsets.only(right: getFontSize(20, context)),
+      child: Text(name, textAlign: TextAlign.center, style: TextStyle(fontSize: getFontSize(14, context)),),
       ),
-      SizedBox(height: 20,),
+      SizedBox(height: getFontSize(20, context),),
     ]
     );
   }
@@ -564,28 +565,28 @@ class _VitalsReadingState extends State<VitalsReading>
     required bulletColor,
   }){
     return Container(
-      height: 85,
+      height: getFontSize(85, context),
       width: double.infinity,
       decoration: BoxDecoration(
         color: Colors.grey.withOpacity(0.2),
         borderRadius: BorderRadius.circular(12),
       ),
-      padding: EdgeInsets.only(left: 10, right: 10),
+      padding: EdgeInsets.only(left: getFontSize(10, context), right: getFontSize(10, context)),
       child: Row(
         children: [
           Align(
             alignment: Alignment.topLeft,
             child: Container(
-              margin: EdgeInsets.only(top: 28),
-              width: 11,
-              height: 11,
+              margin: EdgeInsets.only(top: getFontSize(28, context)),
+              width: getFontSize(11, context),
+              height: getFontSize(11, context),
               decoration: BoxDecoration(
                 color: bulletColor, // Lemon green color
                 shape: BoxShape.circle,
               ),
             ),
           ),
-          SizedBox(width: 16), // Space between the circle and the texts
+          SizedBox(width: getFontSize(16, context)), // Space between the circle and the texts
           Expanded(
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
@@ -597,41 +598,41 @@ class _VitalsReadingState extends State<VitalsReading>
                       mmhg,
                       style: TextStyle(
                         fontWeight: FontWeight.bold,
-                        fontSize: 18,
+                        fontSize: getFontSize(18, context),
                       ),
                     ),
-                    SizedBox(width: 4),
+                    SizedBox(width: getFontSize(4, context)),
                     Text(
                       'mmHg',
                       style: TextStyle(
-                        fontSize: 10,
+                        fontSize: getFontSize(10, context),
                       ),
                     ),
-                    SizedBox(width: 16),
+                    SizedBox(width: getFontSize(16, context)),
                     Text(
                       bpm,
                       style: TextStyle(
                         fontWeight: FontWeight.bold,
-                        fontSize: 18,
+                        fontSize: getFontSize(18, context),
                       ),
                     ),
-                    SizedBox(width: 4),
+                    SizedBox(width: getFontSize(4, context)),
                     Text(
                       'BPM',
                       style: TextStyle(
-                        fontSize: 10,
+                        fontSize: getFontSize(10, context),
                       ),
                     ),
                   ],
                 ),
-                SizedBox(height: 4),
+                SizedBox(height: getFontSize(4, context)),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     Text(
                       date,
                       style: TextStyle(
-                        fontSize: 10,
+                        fontSize: getFontSize(10, context),
                       ),
                     ),
                   ],
@@ -641,7 +642,7 @@ class _VitalsReadingState extends State<VitalsReading>
           ),
           Icon(
             Icons.arrow_forward_ios_outlined,
-            size: 16,
+            size: getFontSize(16, context),
             color: Colors.black,
           ),
         ],
@@ -655,13 +656,13 @@ class _VitalsReadingState extends State<VitalsReading>
     required stackColor,
   }) {
     return Container(
-      height: 85,
+      height: getFontSize(85, context),
       width: double.infinity,
       decoration: BoxDecoration(
         color: Colors.grey.withOpacity(0.2),
         borderRadius: BorderRadius.circular(12),
       ),
-      padding: EdgeInsets.only( right: 10),
+      padding: EdgeInsets.only( right: getFontSize(10, context)),
       child: Row(
         children: [
           Align(
@@ -669,7 +670,7 @@ class _VitalsReadingState extends State<VitalsReading>
             child: 
               SvgPicture.asset("assets/images/irr.svg", fit: BoxFit.fitHeight,)
           ),
-          SizedBox(width: 16),
+          SizedBox(width: getFontSize(16, context)),
           Expanded(
             child: Row(
               crossAxisAlignment: CrossAxisAlignment.start,
@@ -683,26 +684,26 @@ class _VitalsReadingState extends State<VitalsReading>
                         text,
                         style: TextStyle(
                           fontWeight: FontWeight.bold,
-                          fontSize: 18,
+                          fontSize: getFontSize(18, context),
                         ),
                       ),
-                      SizedBox(height: 5,),
+                      SizedBox(height: getFontSize(5, context),),
                       Text(
                         date,
                         style: TextStyle(
-                          fontSize: 10,
+                          fontSize: getFontSize(10, context),
                         ),
                       ),
                     ],
                   ),
                 ),
-                SizedBox(height: 4),
+                SizedBox(height: getFontSize(4, context)),
                 Spacer(),
                 Align(
                   alignment: Alignment.centerRight,
                   child: Icon(
                   Icons.arrow_forward_ios_outlined,
-                  size: 16,
+                  size: getFontSize(16, context),
                   color: Colors.black,
                 ),
                 ),
@@ -724,18 +725,18 @@ class _VitalsReadingState extends State<VitalsReading>
     return Container(
       child: Column(children: [
       Container(
-      width: 143,
-      height: 143,
+      width: getFontSize(143, context),
+      height: getFontSize(143, context),
       decoration: BoxDecoration(
           shape: BoxShape.circle,
-          border: Border.all(width: 1, color: Colors.black.withOpacity(0.2))
+          border: Border.all(width: getFontSize(1, context), color: Colors.black.withOpacity(0.2))
       ),
       child:
       Center(child: SvgPicture.asset(imagePath),),
     ),
-      SizedBox(height: 10,),
-      Text(name, style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold)),
-        SizedBox(height: 20, ),
+      SizedBox(height: getFontSize(10, context),),
+      Text(name, style: TextStyle(fontSize: getFontSize(16, context), fontWeight: FontWeight.bold)),
+        SizedBox(height: getFontSize(20, context), ),
     ],),
     );
   }

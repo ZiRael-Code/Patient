@@ -1,3 +1,4 @@
+import '../Main/Dashboard.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
@@ -10,7 +11,7 @@ void main(){
 }
 
 class Chat extends StatefulWidget {
-  const Chat({super.key});
+  Chat({super.key});
   @override
   _ChatScreen createState() => _ChatScreen();
 }
@@ -27,23 +28,23 @@ class _ChatScreen extends  State<Chat> {
           title: Row(
             children: [
               Container(
-                width: 35,
-                height: 35,
+                width: getFontSize(35, context),
+                height: getFontSize(35, context),
                 padding: EdgeInsets.all(10),
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(50),
                   color: Color(0xFFE5E5E5),
                 ),
                 child: SvgPicture.asset('assets/images/back.svg',
-                  width: 8.0,
-                  height: 15,),
+                  width: getFontSize(8.0, context),
+                  height: getFontSize(15, context),),
               ),
-                SizedBox(width: 25,),
+                SizedBox(width: getFontSize(25, context),),
                 Align(
                     alignment: Alignment.centerLeft,
                   child:
                 Column(children: [
-                Text('Dr. Nelson Yang', style: TextStyle(fontSize: 18),),
+                Text('Dr. Nelson Yang', style: TextStyle(fontSize: getFontSize(18, context)),),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.start,
                   crossAxisAlignment: CrossAxisAlignment.center,
@@ -56,17 +57,17 @@ class _ChatScreen extends  State<Chat> {
                             shape: BoxShape.circle,
                             color: Color(0xFF218130)
                         ),
-                        width: 11,
-                        height: 11,
+                        width: getFontSize(11, context),
+                        height: getFontSize(11, context),
                       ),
                     ),
 
-                    SizedBox(width: 7,),
+                    SizedBox(width: getFontSize(7, context),),
                     Text(
                         'Active now',
                         style: TextStyle(
                           color: Color(0xff2E2E42),
-                          fontSize: 16,
+                          fontSize: getFontSize(16, context),
                         ))],
                 ),
                 ],),),
@@ -79,7 +80,7 @@ class _ChatScreen extends  State<Chat> {
               ),
               child: Icon(Icons.call, color: Colors.blue,),
             ),
-              SizedBox(width: 12,),
+              SizedBox(width: getFontSize(12, context),),
               Container(
               padding: EdgeInsets.all(14),
               decoration: BoxDecoration(
@@ -95,7 +96,7 @@ class _ChatScreen extends  State<Chat> {
         body:
 
     Container(
-          padding: EdgeInsets.only(left: 15, right: 15, top: 25, bottom: 25),
+          padding: EdgeInsets.only(left: getFontSize(15, context), right: getFontSize(15, context), top: getFontSize(25, context), bottom: getFontSize(25, context)),
           child:
           Column(
           children: [
@@ -105,9 +106,9 @@ class _ChatScreen extends  State<Chat> {
                   child:
             Column(
             children: [
-              SizedBox(height: 20),
+              SizedBox(height: getFontSize(20, context)),
               Text("Wed 8:21 AM"),
-              SizedBox(height: 70),
+              SizedBox(height: getFontSize(70, context)),
 
            incomingMessage(
                text: 'Hello, I’m Dr. Nelson! 👋How can I help you?'),
@@ -134,14 +135,14 @@ class _ChatScreen extends  State<Chat> {
                 borderRadius: BorderRadius.circular(20),
                 border: Border.all(
                   color: Color(0x4D218130).withOpacity(0.070),
-                  width: 2, // Border width
+                  width: getFontSize(2, context), // Border width
                 ),
               ),
               child: Row(
                 mainAxisSize: MainAxisSize.min,
                 children: [
                  SvgPicture.asset('assets/images/pill1.svg'),
-                  SizedBox(width: 8),
+                  SizedBox(width: getFontSize(8, context)),
                   // Text content
                       Text(
                         '12/06/2022 - ',
@@ -183,18 +184,18 @@ class _ChatScreen extends  State<Chat> {
                           borderRadius: BorderRadius.circular(40),
                           borderSide: BorderSide(
                             color: Color(0x66BFBFBF),
-                            width: 0.5,
+                            width: getFontSize(0.5, context),
                           ),
                         ),
                         enabledBorder: OutlineInputBorder(
                           borderRadius: BorderRadius.circular(40),
                           borderSide: BorderSide(
                             color: Color(0x66BFBFBF),
-                            width: 0.5,
+                            width: getFontSize(0.5, context),
                           ),
                         ),
                         suffixIcon: Container(
-                          width: 96,
+                          width: getFontSize(96, context),
                           child: Row(
                             mainAxisAlignment: MainAxisAlignment.end,
                             children: [
@@ -215,11 +216,11 @@ class _ChatScreen extends  State<Chat> {
                     ),
                   ),
 
-                  SizedBox(width: 10),
+                  SizedBox(width: getFontSize(10, context)),
 
                   Container(
-                    width: 51,
-                    height: 51,
+                    width: getFontSize(51, context),
+                    height: getFontSize(51, context),
                     decoration: BoxDecoration(
                       color: Colors.blue,
                       shape: BoxShape.circle,
@@ -265,7 +266,7 @@ class _ChatScreen extends  State<Chat> {
                     child: Text(
                       text,
                       style: TextStyle(
-                        fontSize: 14,
+                        fontSize: getFontSize(14, context),
                       ),
                       softWrap: true, // Ensure the text wraps when needed
                     ),
@@ -274,7 +275,7 @@ class _ChatScreen extends  State<Chat> {
               ],
             ),
           ),
-          SizedBox(height: 20),
+          SizedBox(height: getFontSize(20, context)),
         ],
       ),
     );
@@ -308,7 +309,7 @@ class _ChatScreen extends  State<Chat> {
           child: Text(
             text,
             style: TextStyle(
-              fontSize: 14,
+              fontSize: getFontSize(14, context),
               color: Colors.white,
             ),
           ),
@@ -317,7 +318,7 @@ class _ChatScreen extends  State<Chat> {
       ],
     ),
   ),
-    SizedBox(height: 20,),
+    SizedBox(height: getFontSize(20, context),),
   ]
   );
 }
@@ -353,9 +354,9 @@ class _ChatScreen extends  State<Chat> {
                   children: [
                     Text(
                       "Prescription Information",
-                      style: TextStyle(fontSize: 17),
+                      style: TextStyle(fontSize: getFontSize(17, context)),
                     ),
-                    SizedBox(height: 30),
+                    SizedBox(height: getFontSize(30, context)),
                     Text("Prescription information"),
                     drug(
                       name: 'Ibuprofen',
@@ -372,7 +373,7 @@ class _ChatScreen extends  State<Chat> {
                       price: "650",
                       pills: "35 pills",
                     ),
-                    SizedBox(height: 20),
+                    SizedBox(height: getFontSize(20, context)),
                     ElevatedButton(
                       onPressed: () {
                         order_information_sheet();
@@ -385,15 +386,15 @@ class _ChatScreen extends  State<Chat> {
                         ),
                       ),
                       child: Padding(
-                        padding: const EdgeInsets.symmetric(
+                        padding: EdgeInsets.symmetric(
                             vertical: 12.0, horizontal: 24.0),
                         child: Text(
                           'Continue',
-                          style: TextStyle(color: Colors.white, fontSize: 18),
+                          style: TextStyle(color: Colors.white, fontSize: getFontSize(18, context)),
                         ),
                       ),
                     ),
-                    SizedBox(height: 10),
+                    SizedBox(height: getFontSize(10, context)),
                     ElevatedButton(
                       onPressed: () {
                         Navigator.pop(context);
@@ -406,11 +407,11 @@ class _ChatScreen extends  State<Chat> {
                         ),
                       ),
                       child: Padding(
-                        padding: const EdgeInsets.symmetric(
+                        padding: EdgeInsets.symmetric(
                             vertical: 12.0, horizontal: 24.0),
                         child: Text(
                           'Close',
-                          style: TextStyle(color: Colors.blue, fontSize: 18),
+                          style: TextStyle(color: Colors.blue, fontSize: getFontSize(18, context)),
                         ),
                       ),
                     ),
@@ -428,11 +429,11 @@ class _ChatScreen extends  State<Chat> {
     required String price,
     required String pills}) {
     return Container(
-      margin: EdgeInsets.only(bottom: 20),
+      margin: EdgeInsets.only(bottom: getFontSize(20, context)),
       padding: EdgeInsets.all(16),
       decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(14),
-          border: Border.all(width: 1,
+          border: Border.all(width: getFontSize(1, context),
               color: Colors.black.withOpacity(0.070))
       ),
       child: Row(
@@ -444,12 +445,12 @@ class _ChatScreen extends  State<Chat> {
             mainAxisAlignment: MainAxisAlignment.start,
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Text(name, style: TextStyle(fontSize: 14),),
-              SizedBox(height: 10,),
-              Text(pills, style: TextStyle(fontSize: 12, color: Color(0xff000000).withOpacity(0.60)),),
+              Text(name, style: TextStyle(fontSize: getFontSize(14, context)),),
+              SizedBox(height: getFontSize(10, context),),
+              Text(pills, style: TextStyle(fontSize: getFontSize(12, context), color: Color(0xff000000).withOpacity(0.60)),),
             ],),
           Spacer(),
-          Text("N"+price,  style: TextStyle(fontSize: 16,fontWeight: FontWeight.bold, color: Colors.blue))
+          Text("N"+price,  style: TextStyle(fontSize: getFontSize(16, context),fontWeight: FontWeight.bold, color: Colors.blue))
         ],
       ),
     );
@@ -484,16 +485,16 @@ class _ChatScreen extends  State<Chat> {
                   children: [
                     Text(
                       "Prescription Information",
-                      style: TextStyle(fontSize: 17),
+                      style: TextStyle(fontSize: getFontSize(17, context)),
                     ),
-                    SizedBox(height: 30),
+                    SizedBox(height: getFontSize(30, context)),
                     Container(
-                      margin: EdgeInsets.only(bottom: 20),
+                      margin: EdgeInsets.only(bottom: getFontSize(20, context)),
                       padding: EdgeInsets.all(16),
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(14),
                         border: Border.all(
-                          width: 1,
+                          width: getFontSize(1, context),
                           color: Colors.black.withOpacity(0.070),
                         ),
                       ),
@@ -501,7 +502,7 @@ class _ChatScreen extends  State<Chat> {
                         mainAxisSize: MainAxisSize.min,
                         children: [
                           SvgPicture.asset('assets/images/pill1.svg'),
-                          SizedBox(width: 8),
+                          SizedBox(width: getFontSize(8, context)),
                           Text(
                             '12/06/2022 - ',
                             style: TextStyle(
@@ -526,7 +527,7 @@ class _ChatScreen extends  State<Chat> {
                         Text('3 drugs'),
                       ],
                     ),
-                    SizedBox(height: 20,),
+                    SizedBox(height: getFontSize(20, context),),
                     Row(
                       children: [
                         Text('price', style: TextStyle(color: Color(0xff666666))),
@@ -534,17 +535,17 @@ class _ChatScreen extends  State<Chat> {
                         Text('N5,350.00', style: TextStyle(color: Colors.blue),
                         )],
                     ),
-                    SizedBox(height: 20,),
+                    SizedBox(height: getFontSize(20, context),),
                     Row(
                       children: [
                         Text('TOTAL', style: TextStyle(fontWeight: FontWeight.bold)),
                         Spacer(),
-                        Text('3 drugs', style: TextStyle(fontSize: 16,color: Colors.blue),
+                        Text('3 drugs', style: TextStyle(fontSize: getFontSize(16, context),color: Colors.blue),
                         )],
                     ),
 
 
-                    SizedBox(height: 25,),
+                    SizedBox(height: getFontSize(25, context),),
 
                     GestureDetector(
                       onTap: () {
@@ -555,7 +556,7 @@ class _ChatScreen extends  State<Chat> {
                       child: Column(
                         children: [
                           Container(
-                            height: 50,
+                            height: getFontSize(50, context),
                             width: MediaQuery.of(context).size.width * 0.40,
                             decoration: BoxDecoration(
                               color: Color(0xFFE2EDFF),
@@ -567,24 +568,24 @@ class _ChatScreen extends  State<Chat> {
                                 Text(
                                   'See details',
                                   style: TextStyle(
-                                    fontSize: 16,
+                                    fontSize: getFontSize(16, context),
                                     color: Color(0xFF3C8AFF),
                                   ),
                                 ),
-                                SizedBox(width: 15),
+                                SizedBox(width: getFontSize(15, context)),
                                 Icon(
                                   isFilterOpen
                                       ? Icons.keyboard_arrow_up
                                       : Icons.keyboard_arrow_down,
                                   color: Colors.blue,
-                                  size: 26,
+                                  size: getFontSize(26, context),
                                 ),
                               ],
                             ),
                           ),
                           if (isFilterOpen)
                             Container(
-                              margin: EdgeInsets.only(top: 16), // Spacing between row and dropdown
+                              margin: EdgeInsets.only(top: getFontSize(16, context)), // Spacing between row and dropdown
                               width: double.infinity, // Matches screen width
                               padding: EdgeInsets.all(16),
                               decoration: BoxDecoration(
@@ -598,50 +599,50 @@ class _ChatScreen extends  State<Chat> {
                                     children: [
                                       Text('No. of medications:',
                                           style: TextStyle(
-                                            fontSize: 14,
+                                            fontSize: getFontSize(14, context),
                                             color: Colors.black.withOpacity(0.55),
                                           )
                                       ),
                                       Spacer(),
                                       Text('3 drugs',
                                           style: TextStyle(
-                                            fontSize: 14,
+                                            fontSize: getFontSize(14, context),
                                             color: Colors.black,
                                           )
                                       )
                                     ],
                                   ),
-                                  SizedBox(height: 25,),
+                                  SizedBox(height: getFontSize(25, context),),
                                   Row(
                                     children: [
                                       Text('Price:',
                                           style: TextStyle(
-                                            fontSize: 14,
+                                            fontSize: getFontSize(14, context),
                                             color: Colors.black.withOpacity(0.55),
                                           )
                                       ),
                                       Spacer(),
                                       Text('N25,000.00',
                                           style: TextStyle(
-                                            fontSize: 14,
+                                            fontSize: getFontSize(14, context),
                                             color: Colors.blue,
                                           )
                                       )
                                     ],
                                   ),
-                                  SizedBox(height: 25,),
+                                  SizedBox(height: getFontSize(25, context),),
                                   Row(
                                     children: [
                                       Text('TOTAL:',
                                           style: TextStyle(
-                                            fontSize: 14,
+                                            fontSize: getFontSize(14, context),
                                             color: Colors.black.withOpacity(0.55),
                                           )
                                       ),
                                       Spacer(),
                                       Text('N5,500.00',
                                           style: TextStyle(
-                                            fontSize: 16,
+                                            fontSize: getFontSize(16, context),
                                             fontWeight: FontWeight.bold,
                                             color: Colors.blue,
                                           )
@@ -654,7 +655,7 @@ class _ChatScreen extends  State<Chat> {
                         ],
                       ),
                     ),
-                    SizedBox(height: 15),
+                    SizedBox(height: getFontSize(15, context)),
                     ElevatedButton(
                       onPressed: () {
                         Navigator.of(context).push(MaterialPageRoute(builder: (builder)=> SelectADeliveryMethod()));
@@ -667,11 +668,11 @@ class _ChatScreen extends  State<Chat> {
                         ),
                       ),
                       child: Padding(
-                        padding: const EdgeInsets.symmetric(
+                        padding: EdgeInsets.symmetric(
                             vertical: 12.0, horizontal: 24.0),
                         child: Text(
                           'Proceed to checkout',
-                          style: TextStyle(color: Colors.white, fontSize: 18),
+                          style: TextStyle(color: Colors.white, fontSize: getFontSize(18, context)),
                         ),
                       ),
                     ),

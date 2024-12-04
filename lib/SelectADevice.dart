@@ -1,3 +1,5 @@
+import '../Main/Dashboard.dart';
+import 'Main/Dashboard.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
@@ -8,7 +10,7 @@ void main(){
 }
 
 class SelectADevice extends StatefulWidget {
-  const SelectADevice({super.key});
+  SelectADevice({super.key});
   @override
   _SelectADeviceScreen createState() => _SelectADeviceScreen();
 }
@@ -24,16 +26,16 @@ class _SelectADeviceScreen extends  State<SelectADevice> {
           title: Row(
             children: [
               Container(
-                width: 35,
-                height: 35,
+                width: getFontSize(35, context),
+                height: getFontSize(35, context),
                 padding: EdgeInsets.all(10),
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(50),
                   color: Color(0xFFE5E5E5),
                 ),
                 child: SvgPicture.asset('assets/images/back.svg',
-                  width: 8.0,
-                  height: 15,),
+                  width: getFontSize(8.0, context),
+                  height: getFontSize(15, context),),
               ),
               Spacer(),
               Container(
@@ -42,7 +44,7 @@ class _SelectADeviceScreen extends  State<SelectADevice> {
                 Center(child: Text(
                   'Select device',
                   style: TextStyle(
-                      fontSize: 20,
+                      fontSize: getFontSize(20, context),
                       fontStyle: FontStyle.normal
                   ),
                 ),
@@ -56,13 +58,13 @@ class _SelectADeviceScreen extends  State<SelectADevice> {
         ),
         body:
         Container(
-            padding: EdgeInsets.only(bottom: 30, left: 15, right: 15),
+            padding: EdgeInsets.only(bottom: getFontSize(30, context), left: getFontSize(15, context), right: getFontSize(15, context)),
             child:
         Align(
           child:
       Column(
       children: [
-          SizedBox(height: 20,),
+          SizedBox(height: getFontSize(20, context),),
         connect(
           text: "BP2 connect "
           ) ,
@@ -82,20 +84,20 @@ class _SelectADeviceScreen extends  State<SelectADevice> {
             ),
           ),
           child: Padding(
-            padding: const EdgeInsets.symmetric(vertical: 12.0, horizontal: 24.0),
+            padding: EdgeInsets.symmetric(vertical: 12.0, horizontal: 24.0),
             child: Text(
               'Proceed',
-              style: TextStyle(color: Colors.white, fontSize: 18),
+              style: TextStyle(color: Colors.white, fontSize: getFontSize(18, context)),
             ),
           ),
         ),
-        SizedBox(height: 20,),
+        SizedBox(height: getFontSize(20, context),),
         Row(
           crossAxisAlignment: CrossAxisAlignment.center,
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Text("Don’t have a device? ", style: TextStyle(fontSize:14)),
-            Text("Order now ", style: TextStyle(color: Colors.blue, fontSize:14)),
+            Text("Don’t have a device? ", style: TextStyle(fontSize: getFontSize(14, context))),
+            Text("Order now ", style: TextStyle(color: Colors.blue, fontSize: getFontSize(14, context))),
           ],
         )
 
@@ -110,7 +112,7 @@ class _SelectADeviceScreen extends  State<SelectADevice> {
     mainAxisAlignment: MainAxisAlignment.start,
     crossAxisAlignment: CrossAxisAlignment.start,
     children: [
-      Text(text, style: TextStyle(fontSize:14)),
+      Text(text, style: TextStyle(fontSize: getFontSize(14, context))),
       SvgPicture.asset('assets/images/line.svg')
     ],
   );

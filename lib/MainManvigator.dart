@@ -1,3 +1,4 @@
+import '../Main/Dashboard.dart';
 import 'dart:convert';
 import 'dart:io';
 
@@ -69,8 +70,8 @@ class _MainNavigatorState extends State<MainNavigator> {
                       _selectedIndex == 0
                           ? 'assets/images/s_home.svg'
                           : 'assets/images/un_home.svg',
-                      width: 32,
-                      height: 32,
+                      width: getFontSize(32, context),
+                      height: getFontSize(32, context),
                     ),
                     label: 'Home',
                   ),
@@ -79,16 +80,16 @@ class _MainNavigatorState extends State<MainNavigator> {
                       _selectedIndex == 1
                           ? 'assets/images/s_medication.svg'
                           : 'assets/images/un_medication.svg',
-                      width: 32,
-                      height: 32,
+                      width: getFontSize(32, context),
+                      height: getFontSize(32, context),
                     ),
                     label: 'Medication',
                   ),
                   BottomNavigationBarItem(
                     icon: SvgPicture.asset(
                       'assets/images/main.svg',
-                      width: 52,
-                      height: 52,
+                      width: getFontSize(52, context),
+                      height: getFontSize(52, context),
                     ),
                     label: '',
                   ),
@@ -97,8 +98,8 @@ class _MainNavigatorState extends State<MainNavigator> {
                       _selectedIndex == 3
                           ? 'assets/images/s_appointment.svg'
                           : 'assets/images/un_appointment.svg',
-                      width: 32,
-                      height: 32,
+                      width: getFontSize(32, context),
+                      height: getFontSize(32, context),
                     ),
                     label: 'Appointment',
                   ),
@@ -107,8 +108,8 @@ class _MainNavigatorState extends State<MainNavigator> {
                       _selectedIndex == 4
                           ? 'assets/images/s_account.svg'
                           : 'assets/images/un_account.svg',
-                      width: 39,
-                      height: 39,
+                      width: getFontSize(39, context),
+                      height: getFontSize(39, context),
                     ),
                     label: 'Account',
                   ),

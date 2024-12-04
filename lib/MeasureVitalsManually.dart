@@ -1,3 +1,5 @@
+import '../Main/Dashboard.dart';
+import 'Main/Dashboard.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_app/Capture/VitalAddedSuccess.dart';
@@ -10,7 +12,7 @@ void main(){
 
 class MeasureVitalsManually extends StatefulWidget {
 
-  const MeasureVitalsManually({super.key});
+  MeasureVitalsManually({super.key});
   @override
   _MeasureVitalsManuallyScreen createState() => _MeasureVitalsManuallyScreen();
 }
@@ -27,16 +29,16 @@ class _MeasureVitalsManuallyScreen extends  State<MeasureVitalsManually> with Si
           title: Row(
             children: [
               Container(
-                width: 35,
-                height: 35,
+                width: getFontSize(35, context),
+                height: getFontSize(35, context),
                 padding: EdgeInsets.all(10),
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(50),
                   color: Color(0xFFE5E5E5),
                 ),
                 child: SvgPicture.asset('assets/images/back.svg',
-                  width: 8.0,
-                  height: 15,),
+                  width: getFontSize(8.0, context),
+                  height: getFontSize(15, context),),
               ),
               Spacer(),
               Container(
@@ -45,7 +47,7 @@ class _MeasureVitalsManuallyScreen extends  State<MeasureVitalsManually> with Si
                 Center(child: Text(
                   'Measure vitals manually',
                   style: TextStyle(
-                      fontSize: 20,
+                      fontSize: getFontSize(20, context),
                       fontStyle: FontStyle.normal
                   ),
                 ),
@@ -59,14 +61,14 @@ class _MeasureVitalsManuallyScreen extends  State<MeasureVitalsManually> with Si
         ),
         body:
         Container(
-            padding: EdgeInsets.only(bottom: 30, left: 15, right: 15),
+            padding: EdgeInsets.only(bottom: getFontSize(30, context), left: getFontSize(15, context), right: getFontSize(15, context)),
             child:
         Align(
           child: Column(
         children: [
-        SizedBox(height: 40),
+        SizedBox(height: getFontSize(40, context)),
           Container(
-            height: 50,
+            height: getFontSize(50, context),
             padding: EdgeInsets.all(4),
             width: double.infinity,
             decoration: BoxDecoration(
@@ -93,7 +95,7 @@ class _MeasureVitalsManuallyScreen extends  State<MeasureVitalsManually> with Si
               ),
             ),
           ),
-          SizedBox(height: 10),
+          SizedBox(height: getFontSize(10, context)),
           Expanded(
             child: TabBarView(
               controller: _tabController,
@@ -111,7 +113,7 @@ class _MeasureVitalsManuallyScreen extends  State<MeasureVitalsManually> with Si
   singleEntry() {
     return Column(
       children: [
-        SizedBox(height: 25.0),
+        SizedBox(height: getFontSize(25.0, context)),
       Column(
       mainAxisAlignment: MainAxisAlignment.start,
       children: [
@@ -122,12 +124,12 @@ class _MeasureVitalsManuallyScreen extends  State<MeasureVitalsManually> with Si
 
             'Vital to measure',
             style: TextStyle(
-              fontSize: 16.0,
+              fontSize: getFontSize(16.0, context),
             ),
           ),
         ),
 
-        SizedBox(height: 15.0),
+        SizedBox(height: getFontSize(15.0, context)),
 
         // Account Number TextField
         TextField(
@@ -149,11 +151,11 @@ class _MeasureVitalsManuallyScreen extends  State<MeasureVitalsManually> with Si
             ),
           ),
           style: TextStyle(
-            fontSize: 16.0,
+            fontSize: getFontSize(16.0, context),
           ),
         ),
       ],),
-        SizedBox(height: 25.0),
+        SizedBox(height: getFontSize(25.0, context)),
 
     textField(
         textType: TextInputType.number,
@@ -174,10 +176,10 @@ class _MeasureVitalsManuallyScreen extends  State<MeasureVitalsManually> with Si
             ),
           ),
           child: Padding(
-            padding: const EdgeInsets.symmetric(vertical: 12.0, horizontal: 24.0),
+            padding: EdgeInsets.symmetric(vertical: 12.0, horizontal: 24.0),
             child: Text(
               'Save recording',
-              style: TextStyle(color: Colors.white, fontSize: 18),
+              style: TextStyle(color: Colors.white, fontSize: getFontSize(18, context)),
             ),
           ),
         ),
@@ -198,9 +200,9 @@ class _MeasureVitalsManuallyScreen extends  State<MeasureVitalsManually> with Si
           num: 'Reading 2',
           textType: 'Hearth rate',
         ),
-        SizedBox(height: 70,),
+        SizedBox(height: getFontSize(70, context),),
         Container(
-          width: 160,
+          width: getFontSize(160, context),
           padding: EdgeInsets.all(16),
           alignment: Alignment.center,
             decoration: BoxDecoration(
@@ -215,8 +217,8 @@ class _MeasureVitalsManuallyScreen extends  State<MeasureVitalsManually> with Si
               mainAxisSize: MainAxisSize.min,
               children: [
                 Icon(Icons.add_circle_outline, color: Colors.blue,),
-                SizedBox(width: 10,),
-                Text('Add Entry', style: TextStyle(color: Colors.blue, fontSize: 16),)
+                SizedBox(width: getFontSize(10, context),),
+                Text('Add Entry', style: TextStyle(color: Colors.blue, fontSize: getFontSize(16, context)),)
               ],
             )
             )
@@ -234,10 +236,10 @@ class _MeasureVitalsManuallyScreen extends  State<MeasureVitalsManually> with Si
             ),
           ),
           child: Padding(
-            padding: const EdgeInsets.symmetric(vertical: 12.0, horizontal: 24.0),
+            padding: EdgeInsets.symmetric(vertical: 12.0, horizontal: 24.0),
             child: Text(
               'Save records',
-              style: TextStyle(color: Colors.white, fontSize: 18),
+              style: TextStyle(color: Colors.white, fontSize: getFontSize(18, context)),
             ),
           ),
         ),
@@ -249,7 +251,7 @@ class _MeasureVitalsManuallyScreen extends  State<MeasureVitalsManually> with Si
     required String textType}) {
     return Column(
       children: [
-        SizedBox(height: 25.0),
+        SizedBox(height: getFontSize(25.0, context)),
     Row(
     children: [
 
@@ -260,7 +262,7 @@ class _MeasureVitalsManuallyScreen extends  State<MeasureVitalsManually> with Si
         Text(
           num,
           style: TextStyle(
-            fontSize: 20.0,
+            fontSize: getFontSize(20.0, context),
             color: Colors.black
           ),
         ),
@@ -271,16 +273,16 @@ class _MeasureVitalsManuallyScreen extends  State<MeasureVitalsManually> with Si
         Spacer(),
 
             Container(
-              width: 33, height: 33,
+              width: getFontSize(33, context), height: getFontSize(33, context),
               decoration: BoxDecoration(
                 color: Color(0xffE2EDFF),
               shape: BoxShape.circle
             ),
             child: Icon(Icons.edit, color: Colors.blue,),
             ),
-            SizedBox(width: 10,),
+            SizedBox(width: getFontSize(10, context),),
             Container(
-              width: 33, height: 33,
+              width: getFontSize(33, context), height: getFontSize(33, context),
               decoration: BoxDecoration(
                 color: Color(0xffFF6161).withOpacity(0.15),
               shape: BoxShape.circle
@@ -289,14 +291,13 @@ class _MeasureVitalsManuallyScreen extends  State<MeasureVitalsManually> with Si
             ),
           ],
         ),
-        SizedBox(height: 15,),
+        SizedBox(height: getFontSize(15, context),),
         SvgPicture.asset('assets/images/line.svg'),
-        SizedBox(width: 20,),
+        SizedBox(width: getFontSize(20, context),),
 
     ]
         );
   }
-}
 
 textField({
   required TextInputType textType,
@@ -313,12 +314,12 @@ textField({
 
           textHeader,
           style: TextStyle(
-            fontSize: 16.0,
+            fontSize: getFontSize(16.0, context),
           ),
         ),
       ),
 
-      SizedBox(height: 15.0),
+      SizedBox(height: getFontSize(15.0, context)),
 
       // Account Number TextField
       TextField(
@@ -340,7 +341,7 @@ textField({
         ),
         keyboardType: textType,
         style: TextStyle(
-          fontSize: 16.0,
+          fontSize: getFontSize(16.0, context),
         ),
       ),
     ],);
@@ -355,11 +356,11 @@ cancel_dialog(BuildContext context){
               mainAxisSize: MainAxisSize.min,
               children: [
                 Container(
-                  width: 201,
+                  width: getFontSize(201, context),
                   child:
-                  Text(textAlign: TextAlign.center, 'Are you sure you want to delete this entry?', style: TextStyle(fontSize: 16),),
+                  Text(textAlign: TextAlign.center, 'Are you sure you want to delete this entry?', style: TextStyle(fontSize: getFontSize(16, context)),),
                 ),
-                SizedBox(height: 20),
+                SizedBox(height: getFontSize(20, context)),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.start,
                   children: [
@@ -373,14 +374,14 @@ cancel_dialog(BuildContext context){
                         ),
                       ),
                       child: Padding(
-                        padding: const EdgeInsets.symmetric(vertical: 12.0, horizontal: 14.0),
+                        padding: EdgeInsets.symmetric(vertical: 12.0, horizontal: 14.0),
                         child: Text(
                           'Yes',
-                          style: TextStyle(color: Colors.white, fontSize: 18),
+                          style: TextStyle(color: Colors.white, fontSize: getFontSize(18, context)),
                         ),
                       ),
                     ),
-                    SizedBox(width: 10,),
+                    SizedBox(width: getFontSize(10, context),),
                     ElevatedButton(
                       onPressed: () {
                       },
@@ -388,20 +389,20 @@ cancel_dialog(BuildContext context){
                         // backgroundColor: Colors.blue,
                         shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(9),
-                          side: BorderSide(color: Colors.blue, width: 1),
+                          side: BorderSide(color: Colors.blue, width: getFontSize(1, context)),
                         ),
                       ),
                       child: Padding(
-                        padding: const EdgeInsets.symmetric(vertical: 12.0, horizontal: 24.0),
+                        padding: EdgeInsets.symmetric(vertical: 12.0, horizontal: 24.0),
                         child: Text(
                           'No',
-                          style: TextStyle(color: Colors.blue, fontSize: 18),
+                          style: TextStyle(color: Colors.blue, fontSize: getFontSize(18, context)),
                         ),
                       ),
                     ),
                   ],
                 ),
-                SizedBox(height: 12),
+                SizedBox(height: getFontSize(12, context)),
               ],
             )
         );
@@ -418,13 +419,13 @@ add_entry_bottom_sheet(BuildContext context) {
       builder: (BuildContext context) {
         return Padding(
             padding: EdgeInsets.only(
-              top: 16,
+              top: getFontSize(16, context),
               bottom: MediaQuery
                   .of(context)
                   .viewInsets
                   .bottom + 16, // Avoid keyboard overlap
-              left: 16,
-              right: 16,
+              left: getFontSize(16, context),
+              right: getFontSize(16, context),
             ),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.center,
@@ -437,21 +438,21 @@ add_entry_bottom_sheet(BuildContext context) {
                       Text(
                         'Add entry',
                         style: TextStyle(
-                          fontSize: 16.0,
+                          fontSize: getFontSize(16.0, context),
                         ),
                     ),
-                    SizedBox(height: 15.0),
+                    SizedBox(height: getFontSize(15.0, context)),
                     Align(
                       alignment: Alignment.centerLeft,
                     child:
                     Text(
                       'Vital to measure',
                       style: TextStyle(
-                        fontSize: 16.0,
+                        fontSize: getFontSize(16.0, context),
                       ),
                     ),
                     ),
-                    SizedBox(height: 10.0),
+                    SizedBox(height: getFontSize(10.0, context)),
                     // Account Number TextField
                     TextField(
                       decoration: InputDecoration(
@@ -472,18 +473,18 @@ add_entry_bottom_sheet(BuildContext context) {
                         ),
                       ),
                       style: TextStyle(
-                        fontSize: 16.0,
+                        fontSize: getFontSize(16.0, context),
                       ),
                     ),
                   ],),
-                SizedBox(height: 15.0),
+                SizedBox(height: getFontSize(15.0, context)),
 
                 textField(
                     textType: TextInputType.number,
                     textHeader: 'Vital to measure',
                     textHint: "e.g blood pressure"
                 ),
-                SizedBox(height: 25.0),
+                SizedBox(height: getFontSize(25.0, context)),
                 ElevatedButton(
                   onPressed: () {
                     Navigator.push(context, MaterialPageRoute(builder: (context) => VitalAddedSuccess()));
@@ -496,10 +497,10 @@ add_entry_bottom_sheet(BuildContext context) {
                     ),
                   ),
                   child: Padding(
-                    padding: const EdgeInsets.symmetric(vertical: 12.0, horizontal: 24.0),
+                    padding: EdgeInsets.symmetric(vertical: 12.0, horizontal: 24.0),
                     child: Text(
                       'Save recording',
-                      style: TextStyle(color: Colors.white, fontSize: 18),
+                      style: TextStyle(color: Colors.white, fontSize: getFontSize(18, context)),
                     ),
                   ),
                 ),
@@ -509,4 +510,5 @@ add_entry_bottom_sheet(BuildContext context) {
         );
       }
   );
+}
 }

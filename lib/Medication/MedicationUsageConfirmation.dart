@@ -1,3 +1,4 @@
+import '../Main/Dashboard.dart';
 import 'package:dotted_border/dotted_border.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -11,7 +12,7 @@ void main(){
 }
 
 class MedicationUsageConfirmation extends StatefulWidget {
-  const MedicationUsageConfirmation({super.key});
+  MedicationUsageConfirmation({super.key});
   @override
   MedicationUsageConfirmationState createState() => MedicationUsageConfirmationState();
 }
@@ -37,7 +38,7 @@ class MedicationUsageConfirmationState extends  State<MedicationUsageConfirmatio
                       'Medication',
                       style: TextStyle(
                         color: Color(0xFF2E2E42),
-                        fontSize: 26, // Font size
+                        fontSize: getFontSize(26, context), // Font size
                         fontWeight: FontWeight.bold, // Bold text
                       ),
                     ),
@@ -45,7 +46,7 @@ class MedicationUsageConfirmationState extends  State<MedicationUsageConfirmatio
                   Row(
                     children: [
                        SvgPicture.asset('assets/images/eletric.svg'),
-                      SizedBox(width: 11,),
+                      SizedBox(width: getFontSize(11, context),),
                       GestureDetector(
                         onTap: ()=>{
                           Navigator.of(context).push(MaterialPageRoute(builder: (builder)=> Notifications()))
@@ -53,15 +54,15 @@ class MedicationUsageConfirmationState extends  State<MedicationUsageConfirmatio
                         children: [
                           SvgPicture.asset('assets/images/nots.svg'),
                           Positioned(
-                            top: 0,
-                            right: 0, 
+                            top: getFontSize(0, context),
+                            right: getFontSize(0, context), 
                             child:  Container(
-                              width: 10,
-                              height: 10,
+                              width: getFontSize(10, context),
+                              height: getFontSize(10, context),
                               decoration: BoxDecoration(
                                 color: Color(0xffE40404),
                                 borderRadius: BorderRadius.circular(50),
-                                border: Border.all(width: 2, color: Colors.white),
+                                border: Border.all(width: getFontSize(2, context), color: Colors.white),
                               ),
                             ),
                           ),
@@ -80,24 +81,24 @@ class MedicationUsageConfirmationState extends  State<MedicationUsageConfirmatio
             body: Container(child:
                 SingleChildScrollView(
               child:
-            Padding(padding: EdgeInsets.only(left: 15, right: 15, top: 10, bottom: 20),
+            Padding(padding: EdgeInsets.only(left: getFontSize(15, context), right: getFontSize(15, context), top: getFontSize(10, context), bottom: getFontSize(20, context)),
             child:
             Column(
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
                 Container(
-                  margin: EdgeInsets.only(bottom: 20),
+                  margin: EdgeInsets.only(bottom: getFontSize(20, context)),
             child:
                 Row(
                   children: [
                     Container(
-                      margin: EdgeInsets.only(left: 8, right: 5),
-                      width: 105,
+                      margin: EdgeInsets.only(left: getFontSize(8, context), right: getFontSize(5, context)),
+                      width: getFontSize(105, context),
                       decoration: BoxDecoration(
                         color: Color(0xFF000000).withOpacity(0.90),
                         borderRadius: BorderRadius.circular(50),
                       ),
-                      padding: EdgeInsets.only(left: 14, right: 10),
+                      padding: EdgeInsets.only(left: getFontSize(14, context), right: getFontSize(10, context)),
                       child: DropdownButton<String>(
                         value: _selectedValue,
                         hint: Text(
@@ -109,7 +110,7 @@ class MedicationUsageConfirmationState extends  State<MedicationUsageConfirmatio
                         isExpanded: true,
                         underline: SizedBox(),
                         style: TextStyle(
-                          fontSize: 15,
+                          fontSize: getFontSize(15, context),
                           color: Colors.white,
                         ),
                         icon: Icon(Icons.keyboard_arrow_down, color: Colors.white),
@@ -134,7 +135,7 @@ class MedicationUsageConfirmationState extends  State<MedicationUsageConfirmatio
 
 
                     Container(
-                      margin: EdgeInsets.only(left: 8, right: 5),
+                      margin: EdgeInsets.only(left: getFontSize(8, context), right: getFontSize(5, context)),
                       padding: EdgeInsets.all(16),
                       decoration: BoxDecoration(
                         color: Color(0xff2E2E421A),
@@ -142,8 +143,8 @@ class MedicationUsageConfirmationState extends  State<MedicationUsageConfirmatio
                       ),
                       child: Row(
                         children: [
-                          Text('Total amount of drugs left: ',  style: TextStyle(fontSize: 13,)),
-                          Text('80%', style: TextStyle(fontSize: 13, fontWeight: FontWeight.bold)),
+                          Text('Total amount of drugs left: ',  style: TextStyle(fontSize: getFontSize(13, context),)),
+                          Text('80%', style: TextStyle(fontSize: getFontSize(13, context), fontWeight: FontWeight.bold)),
                         ]
                       )
                     )
@@ -151,14 +152,14 @@ class MedicationUsageConfirmationState extends  State<MedicationUsageConfirmatio
                 ),
     ),
           Container(
-            width: 263,
-            margin: EdgeInsets.only(bottom: 20),
+            width: getFontSize(263, context),
+            margin: EdgeInsets.only(bottom: getFontSize(20, context)),
             child: Text('Tap here after using your medications to ensure you’ve used them.', style: TextStyle(color: Color(0xff2E2E42)), textAlign: TextAlign.center,)
           ),
                 Container(
-                  width: 99,
-                    height: 99,
-                    margin: EdgeInsets.only(bottom: 20),
+                  width: getFontSize(99, context),
+                    height: getFontSize(99, context),
+                    margin: EdgeInsets.only(bottom: getFontSize(20, context)),
                   padding: EdgeInsets.all(10),
                   decoration: BoxDecoration(
                     color: isSelectedList[0] ? Colors.green : Color(0xffF2F2F2),
@@ -203,7 +204,7 @@ class MedicationUsageConfirmationState extends  State<MedicationUsageConfirmatio
                     color: Color(0xffE2EDFF),
                     borderRadius: BorderRadius.circular(50),
                   ),
-                  padding: EdgeInsets.only(left: 14, right: 14, bottom: 8, top: 8),
+                  padding: EdgeInsets.only(left: getFontSize(14, context), right: getFontSize(14, context), bottom: getFontSize(8, context), top: getFontSize(8, context)),
                   child: Text('See more details', style: TextStyle(color: Colors.blue),),
                 )
                 )
@@ -225,19 +226,19 @@ class MedicationUsageConfirmationState extends  State<MedicationUsageConfirmatio
 
         child: Container(
       width: double.infinity,
-      margin: EdgeInsets.only(bottom: 15),
+      margin: EdgeInsets.only(bottom: getFontSize(15, context)),
       padding: EdgeInsets.all(15),
       decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(14),
-          border: Border.all(width: 0.05, color: Colors.black)
+          border: Border.all(width: getFontSize(0.05, context), color: Colors.black)
       ),
       child: Row(
         children: [
           Container(
-            margin: EdgeInsets.only(right: 15),
+            margin: EdgeInsets.only(right: getFontSize(15, context)),
             padding: EdgeInsets.all(10),
-            width: 39,
-            height: 56,
+            width: getFontSize(39, context),
+            height: getFontSize(56, context),
             decoration: BoxDecoration(
                 color: Color(0xff40FB5E).withOpacity(0.15),
               borderRadius: BorderRadius.circular(14),
@@ -248,14 +249,14 @@ class MedicationUsageConfirmationState extends  State<MedicationUsageConfirmatio
             mainAxisAlignment: MainAxisAlignment.start,
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Text(name, style: TextStyle(color: Color(0xff2E2E42), fontSize: 20),),
+              Text(name, style: TextStyle(color: Color(0xff2E2E42), fontSize: getFontSize(20, context)),),
               Text(dosage, style: TextStyle(color: Color(0xff2E2E42))),
             ],
           ),
           Spacer(),
           Container(
-            width: 33,
-            height: 33,
+            width: getFontSize(33, context),
+            height: getFontSize(33, context),
             decoration: BoxDecoration(
               shape: BoxShape.circle,
               color: isSelectedList[index] ? Colors.green : Color(0xffF2F2F2),

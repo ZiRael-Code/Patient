@@ -1,3 +1,5 @@
+import '../Main/Dashboard.dart';
+import 'Main/Dashboard.dart';
 import 'package:dotted_border/dotted_border.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
@@ -25,20 +27,20 @@ class Appointments1State extends StatelessWidget {
             Text(
               'Appointments',
               style: TextStyle(
-                fontSize: 26,
+                fontSize: getFontSize(26, context),
                 fontWeight: FontWeight.bold,
               ),
             ),
             Spacer(),
             Stack(
               children: [
-                Icon(Icons.message, size: 28),
+                Icon(Icons.message, size: getFontSize(28, context)),
                 Positioned(
-                  right: 0,
-                  top: 0,
+                  right: getFontSize(0, context),
+                  top: getFontSize(0, context),
                   child: Container(
-                    width: 8,
-                    height: 8,
+                    width: getFontSize(8, context),
+                    height: getFontSize(8, context),
                     decoration: BoxDecoration(
                       color: Colors.red,
                       shape: BoxShape.circle,
@@ -52,7 +54,7 @@ class Appointments1State extends StatelessWidget {
         backgroundColor: Colors.transparent,
       ),
       body: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 12.0),
+        padding: EdgeInsets.symmetric(horizontal: 12.0),
         child: SingleChildScrollView(
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
@@ -65,7 +67,7 @@ class Appointments1State extends StatelessWidget {
 
                 ],
               ),
-              SizedBox(height: 60),
+              SizedBox(height: getFontSize(60, context)),
 
               // Image
               Center( child:
@@ -73,17 +75,17 @@ class Appointments1State extends StatelessWidget {
                   'assets/images/calender.svg',
               ),
               ),
-              SizedBox(height: 30),
+              SizedBox(height: getFontSize(30, context)),
 
               // Descriptive Text
               Center(
                 child: Text(
                   'If you want to book a physical or an online meeting with your specialist, you can do it here.',
                   textAlign: TextAlign.center,
-                  style: TextStyle(fontSize: 16),
+                  style: TextStyle(fontSize: getFontSize(16, context)),
                 ),
               ),
-              SizedBox(height: 25),
+              SizedBox(height: getFontSize(25, context)),
 
               // Book Appointment Button
               Center(
@@ -97,22 +99,22 @@ class Appointments1State extends StatelessWidget {
                     ),
                   ),
                   child: Padding(
-                    padding: const EdgeInsets.symmetric(vertical: 12.0, horizontal: 24.0),
+                    padding: EdgeInsets.symmetric(vertical: 12.0, horizontal: 24.0),
                     child: Text(
                       'Book an appointment',
-                      style: TextStyle(color: Colors.white, fontSize: 18),
+                      style: TextStyle(color: Colors.white, fontSize: getFontSize(18, context)),
                     ),
                   ),
                 ),
               ),
-              SizedBox(height: 70),
+              SizedBox(height: getFontSize(70, context)),
 
               // Pending Appointments Text
                 Text(
                   'Pending Appointments',
-                  style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+                  style: TextStyle(fontSize: getFontSize(20, context), fontWeight: FontWeight.bold),
                 ),
-              SizedBox(height: 20),
+              SizedBox(height: getFontSize(20, context)),
 
               // Container with dashed border and semi-transparent background
              Column(
@@ -120,7 +122,7 @@ class Appointments1State extends StatelessWidget {
                children: [
                       Container(
                         width: MediaQuery.of(context).size.width,
-                        height: 128,
+                        height: getFontSize(128, context),
                         child:Column(
                           children: [
                             Text("Dr. Nelson Yang", style: TextStyle(fontWeight: FontWeight.bold),),
@@ -142,7 +144,7 @@ class Appointments1State extends StatelessWidget {
                       ),
                     ],
                   ),
-              SizedBox(height: 60),
+              SizedBox(height: getFontSize(60, context)),
             ],
           ),
         ),

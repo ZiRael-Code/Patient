@@ -1,11 +1,15 @@
+import '../Main/Dashboard.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 
 import 'LoanCheckout.dart';
+import 'Main/Dashboard.dart';
+import 'Main/Dashboard.dart';
+
 
 class ConfirmLocation extends StatefulWidget {
-  const ConfirmLocation({super.key});
+  ConfirmLocation({super.key});
 
   @override
   State<ConfirmLocation> createState() => _ConfirmLocationState();
@@ -19,31 +23,31 @@ class _ConfirmLocationState extends State<ConfirmLocation> {
           title: Row(
             children: [
               Container(
-                width: 35,
-                height: 35,
-                padding: const EdgeInsets.all(10),
+                width: getFontSize(35, context),
+                height: getFontSize(35, context),
+                padding: EdgeInsets.all(10),
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(50),
-                  color: const Color(0xFFE5E5E5),
+                  color: Color(0xFFE5E5E5),
                 ),
                 child: SvgPicture.asset(
                   'assets/images/back.svg',
-                  width: 8.0,
-                  height: 15,
+                  width: getFontSize(8.0, context),
+                  height: getFontSize(15, context),
                 ),
               ),
-              const Spacer(),
-              const Text(
+              Spacer(),
+              Text(
                 'Confirm your location',
-                style: TextStyle(fontSize: 20, fontStyle: FontStyle.normal),
+                style: TextStyle(fontSize: getFontSize(20, context), fontStyle: FontStyle.normal),
               ),
-              const Spacer(),
+              Spacer(),
             ],
           ),
           centerTitle: true,
         ),
         body: Padding(
-        padding: const EdgeInsets.all(12),
+        padding: EdgeInsets.all(12),
     child: Column(
       children: [
         Container(
@@ -56,7 +60,7 @@ class _ConfirmLocationState extends State<ConfirmLocation> {
             title: Text("Green Street, 13"),
             subtitle: Text(
               "Lagos, Nigeria",
-              style: const TextStyle(fontSize: 14),
+              style: TextStyle(fontSize: getFontSize(14, context)),
             ),
           ),
         ),
@@ -74,10 +78,10 @@ class _ConfirmLocationState extends State<ConfirmLocation> {
             ),
           ),
           child: Padding(
-            padding: const EdgeInsets.symmetric(vertical: 12.0, horizontal: 24.0),
+            padding: EdgeInsets.symmetric(vertical: 12.0, horizontal: 24.0),
             child: Text(
               'Continue',
-              style: TextStyle(color: Colors.white, fontSize: 18),
+              style: TextStyle(color: Colors.white, fontSize: getFontSize(18, context)),
             ),
           ),
         ),

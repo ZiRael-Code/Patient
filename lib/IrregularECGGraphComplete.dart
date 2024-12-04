@@ -1,3 +1,5 @@
+import '../Main/Dashboard.dart';
+import 'Main/Dashboard.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
@@ -8,7 +10,7 @@ void main(){
 }
 
 class IrregularECGGraphComplete extends StatefulWidget {
-  const IrregularECGGraphComplete({super.key});
+  IrregularECGGraphComplete({super.key});
   @override
   _IrregularECGGraphCompleteScreen createState() => _IrregularECGGraphCompleteScreen();
 }
@@ -24,21 +26,21 @@ class _IrregularECGGraphCompleteScreen extends  State<IrregularECGGraphComplete>
           title: Row(
             children: [
               Container(
-                width: 35,
-                height: 35,
+                width: getFontSize(35, context),
+                height: getFontSize(35, context),
                 padding: EdgeInsets.all(10),
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(50),
                   color: Color(0xFFE5E5E5),
                 ),
                 child: SvgPicture.asset('assets/images/back.svg',
-                  width: 8.0,
-                  height: 15,),
+                  width: getFontSize(8.0, context),
+                  height: getFontSize(15, context),),
               ),
               Spacer(),
           Container(
-            width: 35,
-            height: 35,
+            width: getFontSize(35, context),
+            height: getFontSize(35, context),
             padding: EdgeInsets.all(10),
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(50),
@@ -54,21 +56,21 @@ class _IrregularECGGraphCompleteScreen extends  State<IrregularECGGraphComplete>
         body: SingleChildScrollView(
           child:
         Container(
-            padding: EdgeInsets.only(bottom: 30, left: 15, right: 15),
+            padding: EdgeInsets.only(bottom: getFontSize(30, context), left: getFontSize(15, context), right: getFontSize(15, context)),
             child:
             Align(
               child:
               Column(
                 children: [
-                  SizedBox(height: 30),
+                  SizedBox(height: getFontSize(30, context)),
                        Column(
                           children: [
                             Container(
                                 decoration: BoxDecoration(
-                                  border: Border.all(width: 1, color: Colors.black.withOpacity(0.15)),
+                                  border: Border.all(width: getFontSize(1, context), color: Colors.black.withOpacity(0.15)),
                                   borderRadius: BorderRadius.circular(12),
                                 ),
-                                margin: EdgeInsets.only(left: 15),
+                                margin: EdgeInsets.only(left: getFontSize(15, context)),
                                 padding: EdgeInsets.all(15),
                                 child: Column(
                                     children: [
@@ -79,13 +81,13 @@ class _IrregularECGGraphCompleteScreen extends  State<IrregularECGGraphComplete>
                                               // Spacer(),
                                               Column(
                                                 children: [
-                                                  Text('107/60', style: TextStyle(fontWeight: FontWeight.bold,fontSize: 26),),
+                                                  Text('107/60', style: TextStyle(fontWeight: FontWeight.bold,fontSize: getFontSize(26, context)),),
                                                   Row(
                                                     mainAxisAlignment: MainAxisAlignment.start,
                                                     crossAxisAlignment: CrossAxisAlignment.start,
                                                     children: [
-                                                      Text('SYS/DIA  ', style: TextStyle(fontSize: 10),),
-                                                      Text('mmHg', style: TextStyle(color: Colors.grey.withOpacity(0.85),fontSize: 10),)
+                                                      Text('SYS/DIA  ', style: TextStyle(fontSize: getFontSize(10, context)),),
+                                                      Text('mmHg', style: TextStyle(color: Colors.grey.withOpacity(0.85),fontSize: getFontSize(10, context)),)
                                                     ],
                                                   )
                                                 ],
@@ -98,33 +100,33 @@ class _IrregularECGGraphCompleteScreen extends  State<IrregularECGGraphComplete>
                                               shape: BoxShape.circle,
                                               color: Color(0xffFF618F),
                                             ),
-                                            width: 46,
-                                            height: 46,
+                                            width: getFontSize(46, context),
+                                            height: getFontSize(46, context),
                                             padding: EdgeInsets.all(8),
                                             child: SvgPicture.asset('assets/images/hearth.svg'),
                                           ),
 
                                         ],
                                       ),
-                                      SizedBox(height: 15,),
+                                      SizedBox(height: getFontSize(15, context),),
                                       SvgPicture.asset('assets/images/line.svg'),
-                                      SizedBox(height: 15,),
+                                      SizedBox(height: getFontSize(15, context),),
                                       Row(
                                         children: [
                                           Icon(Icons.info),
-                                          SizedBox(width: 10,),
+                                          SizedBox(width: getFontSize(10, context),),
                                           Text('Irregular ECG'),
                                         ],
                                       )
                                     ]
                                 )
                             ),
-                            SizedBox(height: 15,),
+                            SizedBox(height: getFontSize(15, context),),
 
 
                           ]
                       ),
-                  SizedBox(height: 25,),
+                  SizedBox(height: getFontSize(25, context),),
                   TextField(
                     maxLines: 3,
                     decoration: InputDecoration(
@@ -144,18 +146,18 @@ class _IrregularECGGraphCompleteScreen extends  State<IrregularECGGraphComplete>
                       ),
                     ),
                     style: TextStyle(
-                      fontSize: 16.0,
+                      fontSize: getFontSize(16.0, context),
                     ),
                   ),
-                  SizedBox(height: 15,),
+                  SizedBox(height: getFontSize(15, context),),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.start,
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                   Container(
-                    width: 20,
-                    height: 20,
-                    margin: EdgeInsets.only(right: 7),
+                    width: getFontSize(20, context),
+                    height: getFontSize(20, context),
+                    margin: EdgeInsets.only(right: getFontSize(7, context)),
                     child: Center(child: Text('1', style: TextStyle(color: Color(
                         0xFF2E2E42)),),),
                     decoration: BoxDecoration(
@@ -171,16 +173,16 @@ class _IrregularECGGraphCompleteScreen extends  State<IrregularECGGraphComplete>
                   ),
                   ]
               ),
-                  SizedBox(height: 20,),
+                  SizedBox(height: getFontSize(20, context),),
 
                   Row(
                     mainAxisAlignment: MainAxisAlignment.start,
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                   Container(
-                    width: 20,
-                    height: 20,
-                    margin: EdgeInsets.only(right: 7),
+                    width: getFontSize(20, context),
+                    height: getFontSize(20, context),
+                    margin: EdgeInsets.only(right: getFontSize(7, context)),
                     child: Center(child: Text('2', style: TextStyle(color: Color(
                         0xFF2E2E42)),),),
                     decoration: BoxDecoration(

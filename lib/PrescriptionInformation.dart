@@ -1,3 +1,5 @@
+import '../Main/Dashboard.dart';
+import 'Main/Dashboard.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
@@ -8,7 +10,7 @@ void main(){
 }
 
 class PrescriptionInformation extends StatefulWidget {
-  const PrescriptionInformation({super.key});
+  PrescriptionInformation({super.key});
   @override
   _PrescriptionInformationScreen createState() => _PrescriptionInformationScreen();
 }
@@ -30,7 +32,7 @@ class _PrescriptionInformationScreen extends  State<PrescriptionInformation> {
                 Center(child: Text(
                   'Prescription information',
                   style: TextStyle(
-                      fontSize: 20,
+                      fontSize: getFontSize(20, context),
                       fontStyle: FontStyle.normal
                   ),
                 ),
@@ -44,13 +46,13 @@ class _PrescriptionInformationScreen extends  State<PrescriptionInformation> {
         ),
         body:
         Container(
-            padding: EdgeInsets.only(bottom: 30, left: 15, right: 15),
+            padding: EdgeInsets.only(bottom: getFontSize(30, context), left: getFontSize(15, context), right: getFontSize(15, context)),
             child:
         Align(
           child:
       Column(
       children: [
-        SizedBox(height: 30),
+        SizedBox(height: getFontSize(30, context)),
 
         drug(
           name: 'Ibuprofen',
@@ -81,14 +83,14 @@ class _PrescriptionInformationScreen extends  State<PrescriptionInformation> {
             ),
           ),
           child: Padding(
-            padding: const EdgeInsets.symmetric(vertical: 12.0, horizontal: 24.0),
+            padding: EdgeInsets.symmetric(vertical: 12.0, horizontal: 24.0),
             child: Text(
               'Continue',
-              style: TextStyle(color: Colors.white, fontSize: 18),
+              style: TextStyle(color: Colors.white, fontSize: getFontSize(18, context)),
             ),
           ),
         ),
-        SizedBox(height: 10,),
+        SizedBox(height: getFontSize(10, context),),
         ElevatedButton(
           onPressed: () {},
           style: ElevatedButton.styleFrom(
@@ -101,10 +103,10 @@ class _PrescriptionInformationScreen extends  State<PrescriptionInformation> {
             ),
           ),
           child: Padding(
-            padding: const EdgeInsets.symmetric(vertical: 12.0, horizontal: 24.0),
+            padding: EdgeInsets.symmetric(vertical: 12.0, horizontal: 24.0),
             child: Text(
               'Close',
-              style: TextStyle(color: Colors.blue, fontSize: 18),
+              style: TextStyle(color: Colors.blue, fontSize: getFontSize(18, context)),
             ),
           ),
         ),
@@ -117,11 +119,11 @@ class _PrescriptionInformationScreen extends  State<PrescriptionInformation> {
     required String price,
     required String pills}) {
     return Container(
-      margin: EdgeInsets.only(bottom: 20),
+      margin: EdgeInsets.only(bottom: getFontSize(20, context)),
       padding: EdgeInsets.all(16),
       decoration: BoxDecoration(
     borderRadius: BorderRadius.circular(14),
-  border: Border.all(width: 1,
+  border: Border.all(width: getFontSize(1, context),
       color: Colors.black.withOpacity(0.070))
     ),
       child: Row(
@@ -133,12 +135,12 @@ class _PrescriptionInformationScreen extends  State<PrescriptionInformation> {
             mainAxisAlignment: MainAxisAlignment.start,
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-            Text(name, style: TextStyle(fontSize: 14),),
-            SizedBox(height: 10,),
-            Text(pills, style: TextStyle(fontSize: 12, color: Color(0xff000000).withOpacity(0.60)),),
+            Text(name, style: TextStyle(fontSize: getFontSize(14, context)),),
+            SizedBox(height: getFontSize(10, context),),
+            Text(pills, style: TextStyle(fontSize: getFontSize(12, context), color: Color(0xff000000).withOpacity(0.60)),),
           ],),
           Spacer(),
-          Text("N"+price,  style: TextStyle(fontSize: 16,fontWeight: FontWeight.bold, color: Colors.blue))
+          Text("N"+price,  style: TextStyle(fontSize: getFontSize(16, context),fontWeight: FontWeight.bold, color: Colors.blue))
         ],
       ),
     );

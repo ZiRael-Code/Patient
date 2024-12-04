@@ -1,3 +1,4 @@
+import '../Main/Dashboard.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_app/MeasureVitalsManually.dart';
@@ -9,7 +10,7 @@ void main(){
 }
 
 class MeasureVitalsManuallyMenu extends StatefulWidget {
-  const MeasureVitalsManuallyMenu({super.key});
+  MeasureVitalsManuallyMenu({super.key});
   @override
   _MeasureVitalsManuallyMenuScreen createState() => _MeasureVitalsManuallyMenuScreen();
 }
@@ -24,16 +25,16 @@ class _MeasureVitalsManuallyMenuScreen extends  State<MeasureVitalsManuallyMenu>
           title: Row(
             children: [
               Container(
-                width: 35,
-                height: 35,
+                width: getFontSize(35, context),
+                height: getFontSize(35, context),
                 padding: EdgeInsets.all(10),
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(50),
                   color: Color(0xFFE5E5E5),
                 ),
                 child: SvgPicture.asset('assets/images/back.svg',
-                  width: 8.0,
-                  height: 15,),
+                  width: getFontSize(8.0, context),
+                  height: getFontSize(15, context),),
               ),
               Spacer(),
               Container(
@@ -42,7 +43,7 @@ class _MeasureVitalsManuallyMenuScreen extends  State<MeasureVitalsManuallyMenu>
                 Center(child: Text(
                   'Measure vitals manually',
                   style: TextStyle(
-                      fontSize: 20,
+                      fontSize: getFontSize(20, context),
                       fontStyle: FontStyle.normal
                   ),
                 ),
@@ -56,23 +57,23 @@ class _MeasureVitalsManuallyMenuScreen extends  State<MeasureVitalsManuallyMenu>
         ),
         body:
         Container(
-            padding: EdgeInsets.only(bottom: 30, left: 15, right: 15),
+            padding: EdgeInsets.only(bottom: getFontSize(30, context), left: getFontSize(15, context), right: getFontSize(15, context)),
             child:
         Align(
           child:
       Column(
         mainAxisAlignment: MainAxisAlignment.center,
       children: [
-        SizedBox(height: 65,),
+        SizedBox(height: getFontSize(65, context),),
         SvgPicture.asset('assets/images/machine.svg'),
-        SizedBox(height: 145,),
+        SizedBox(height: getFontSize(145, context),),
         Container(
           alignment: Alignment.center,
           width: MediaQuery.of(context).size.width * 0.69,
           child:
           Align(child: Text("You can still take records of your vitals’ readings even if you don’t have a device yet. Let a verified personnel take your readings and input the values here.", textAlign: TextAlign.center,
             style: TextStyle(
-              fontSize: 16,
+              fontSize: getFontSize(16, context),
             ),
           ),
           ),
@@ -91,10 +92,10 @@ class _MeasureVitalsManuallyMenuScreen extends  State<MeasureVitalsManuallyMenu>
             ),
           ),
           child: Padding(
-            padding: const EdgeInsets.symmetric(vertical: 12.0, horizontal: 24.0),
+            padding: EdgeInsets.symmetric(vertical: 12.0, horizontal: 24.0),
             child: Text(
               'Continue',
-              style: TextStyle(color: Colors.white, fontSize: 18),
+              style: TextStyle(color: Colors.white, fontSize: getFontSize(18, context)),
             ),
           ),
         ),

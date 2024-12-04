@@ -1,13 +1,13 @@
+import '../Main/Dashboard.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_app/PhoneNumberOtp.dart';
-import 'package:flutter_app/PinSettings.dart';
 import 'package:flutter_svg/svg.dart';
 
-import '../EmailOtp.dart';
+import 'EmailOtp.dart';
+import 'PhoneNumberOtp.dart';
 
 class ResetPin extends StatefulWidget {
-  const ResetPin({super.key});
+  ResetPin({super.key});
 
   @override
   State<ResetPin> createState() => _ResetPinState();
@@ -21,16 +21,16 @@ class _ResetPinState extends State<ResetPin> {
           title: Row(
             children: [
               Container(
-                width: 35,
-                height: 35,
+                width: getFontSize(35, context),
+                height: getFontSize(35, context),
                 padding: EdgeInsets.all(10),
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(50),
                   color: Color(0xFFE5E5E5),
                 ),
                 child: SvgPicture.asset('assets/images/back.svg',
-                  width: 8.0,
-                  height: 15,),
+                  width: getFontSize(8.0, context),
+                  height: getFontSize(15, context),),
               ),
               Spacer(),
               Container(
@@ -39,7 +39,7 @@ class _ResetPinState extends State<ResetPin> {
                 Center(child: Text(
                   'Reset PIN',
                   style: TextStyle(
-                      fontSize: 20,
+                      fontSize: getFontSize(20, context),
                       fontStyle: FontStyle.normal
                   ),
                 ),
@@ -53,25 +53,25 @@ class _ResetPinState extends State<ResetPin> {
         ),
         body:
         Container(
-            padding: EdgeInsets.only(bottom: 30, left: 15, right: 15),
+            padding: EdgeInsets.only(bottom: getFontSize(30, context), left: getFontSize(15, context), right: getFontSize(15, context)),
             child:
             Align(
                 child:
                 Column(
                     children: [
-                      SizedBox(height: 30),
+                      SizedBox(height: getFontSize(30, context)),
                       Container(
                         alignment: Alignment.center,
                         width: MediaQuery.of(context).size.width * 0.68,
                         child:
                         Align(child: Text("To reset your PIN, an OTP will be sent to your phone or email", textAlign: TextAlign.center,
                           style: TextStyle(
-                            fontSize: 14,
+                            fontSize: getFontSize(14, context),
                           ),
                         ),
                         ),
                       ),
-                      SizedBox(height: 55,),
+                      SizedBox(height: getFontSize(55, context),),
                 GestureDetector(
                     onTap: () => Navigator.push(
                         context,
@@ -108,18 +108,18 @@ return Column(
     Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        Text(label, style: TextStyle(fontSize: 14, color: Colors.black38),),
-        SizedBox(height: 10,),
-        Text(name, style: TextStyle(fontSize: 16, color: Colors.black),)
+        Text(label, style: TextStyle(fontSize: getFontSize(14, context), color: Colors.black38),),
+        SizedBox(height: getFontSize(10, context),),
+        Text(name, style: TextStyle(fontSize: getFontSize(16, context), color: Colors.black),)
       ],
     ),
     Spacer(),
     Icon(Icons.arrow_forward_ios, color: Colors.blue,),
   ],
       ),
-      SizedBox(height: 20,),
+      SizedBox(height: getFontSize(20, context),),
       SvgPicture.asset("assets/images/line.svg"),
-      SizedBox(height: 25,),
+      SizedBox(height: getFontSize(25, context),),
     ],
 );
 }

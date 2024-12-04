@@ -1,3 +1,4 @@
+import '../Main/Dashboard.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_app/Account/Monty.dart';
 import 'package:flutter_app/TransactionDetails.dart';
@@ -24,8 +25,8 @@ class _PaymentHistoryState extends State<PaymentHistory> {
           title: Row(
             children: [
               Container(
-                width: 35,
-                height: 35,
+                width: getFontSize(35, context),
+                height: getFontSize(35, context),
                 padding: EdgeInsets.all(10),
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(50),
@@ -33,8 +34,8 @@ class _PaymentHistoryState extends State<PaymentHistory> {
                 ),
                 child: SvgPicture.asset(
                   'assets/images/back.svg',
-                  width: 8.0,
-                  height: 15,
+                  width: getFontSize(8.0, context),
+                  height: getFontSize(15, context),
                 ),
               ),
               Spacer(),
@@ -43,7 +44,7 @@ class _PaymentHistoryState extends State<PaymentHistory> {
                 child: Text(
                   'Payment history',
                   style: TextStyle(
-                    fontSize: 20,
+                    fontSize: getFontSize(20, context),
                     fontWeight: FontWeight.bold,
                   ),
                 ),
@@ -62,15 +63,15 @@ class _PaymentHistoryState extends State<PaymentHistory> {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
               Container(
-                height: 23,
-                width: 23,
-                child: Center(child: Icon(Icons.arrow_back_ios, color: Colors.blue, size: 15,),),
+                height: getFontSize(23, context),
+                width: getFontSize(23, context),
+                child: Center(child: Icon(Icons.arrow_back_ios, color: Colors.blue, size: getFontSize(15, context),),),
                 decoration: BoxDecoration(
                   shape: BoxShape.circle,
                   color: Colors.blue.withOpacity(0.20),
                 ),
               ),
-              SizedBox(width: 8,),
+              SizedBox(width: getFontSize(8, context),),
               InkWell(
                 onTap: (){
                   showMonthySheet();
@@ -79,16 +80,16 @@ class _PaymentHistoryState extends State<PaymentHistory> {
                 Text(
                 'August',
                 style: TextStyle(
-                  fontSize: 20,
+                  fontSize: getFontSize(20, context),
                   fontWeight: FontWeight.bold,
                 ),
                 ),
               ),
-              SizedBox(width: 8,),
+              SizedBox(width: getFontSize(8, context),),
               Container(
-                height: 23,
-                width: 23,
-                child: Center(child:  Icon(Icons.arrow_forward_ios_rounded, color: Colors.blue, size: 15,),),
+                height: getFontSize(23, context),
+                width: getFontSize(23, context),
+                child: Center(child:  Icon(Icons.arrow_forward_ios_rounded, color: Colors.blue, size: getFontSize(15, context),),),
                 decoration: BoxDecoration(
                   shape: BoxShape.circle,
                   color: Colors.blue.withOpacity(0.20),
@@ -98,7 +99,7 @@ class _PaymentHistoryState extends State<PaymentHistory> {
 
             ],),
 
-              SizedBox(height: 35,),
+              SizedBox(height: getFontSize(35, context),),
               Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
@@ -182,16 +183,16 @@ class _PaymentHistoryState extends State<PaymentHistory> {
                   Text(
                     name,
                     style: TextStyle(
-                      fontSize: 14,
+                      fontSize: getFontSize(14, context),
                       fontWeight: FontWeight.w500,
                       color: Colors.black,
                     ),
                   ),
-                  SizedBox(height: 10,),
+                  SizedBox(height: getFontSize(10, context),),
                   Text(
                     type,
                     style: TextStyle(
-                      fontSize: 12,
+                      fontSize: getFontSize(12, context),
                     ),
                   ),
                 ],
@@ -202,30 +203,30 @@ class _PaymentHistoryState extends State<PaymentHistory> {
               Text(
                 price,
                 style: TextStyle(
-                  fontSize: 16,
+                  fontSize: getFontSize(16, context),
                   color: Colors.blue,
                   fontWeight: FontWeight.bold,
                 ),
               ),
-              SizedBox(height: 10,),
+              SizedBox(height: getFontSize(10, context),),
               Text(
                 date,
                 style: TextStyle(
-                  fontSize: 12,
+                  fontSize: getFontSize(12, context),
                 ),
               ),
 
             ],),
           ],),
-          SizedBox(height: 10,),
+          SizedBox(height: getFontSize(10, context),),
           Container(
-            width: 313,
-            height: 2,
+            width: getFontSize(313, context),
+            height: getFontSize(2, context),
             decoration: BoxDecoration(
               color: Color(0x1A2E2E42),
             ),
           ),
-          SizedBox(height: 15,)
+          SizedBox(height: getFontSize(15, context),)
         ],
       ),
       ),

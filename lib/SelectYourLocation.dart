@@ -1,10 +1,12 @@
+import '../Main/Dashboard.dart';
+import 'Main/Dashboard.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 
 import 'ConfirmLocation.dart';
 
 class SelectYourLocation extends StatefulWidget {
-  const SelectYourLocation({super.key});
+  SelectYourLocation({super.key});
 
   @override
   State<SelectYourLocation> createState() => _SelectYourLocationState();
@@ -50,36 +52,36 @@ class _SelectYourLocationState extends State<SelectYourLocation> {
         title: Row(
           children: [
             Container(
-              width: 35,
-              height: 35,
-              padding: const EdgeInsets.all(10),
+              width: getFontSize(35, context),
+              height: getFontSize(35, context),
+              padding: EdgeInsets.all(10),
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(50),
-                color: const Color(0xFFE5E5E5),
+                color: Color(0xFFE5E5E5),
               ),
               child: SvgPicture.asset(
                 'assets/images/back.svg',
-                width: 8.0,
-                height: 15,
+                width: getFontSize(8.0, context),
+                height: getFontSize(15, context),
               ),
             ),
-            const Spacer(),
-            const Text(
+            Spacer(),
+            Text(
               'Select your location',
-              style: TextStyle(fontSize: 20, fontStyle: FontStyle.normal),
+              style: TextStyle(fontSize: getFontSize(20, context), fontStyle: FontStyle.normal),
             ),
-            const Spacer(),
+            Spacer(),
           ],
         ),
         centerTitle: true,
       ),
       body: Padding(
-        padding: const EdgeInsets.all(12),
+        padding: EdgeInsets.all(12),
         child: Column(
           mainAxisSize: MainAxisSize.min,
           children: [
             Container(
-              padding: const EdgeInsets.only(right: 10),
+              padding: EdgeInsets.only(right: getFontSize(10, context)),
               width: MediaQuery.of(context).size.width,
               decoration: BoxDecoration(
                 color: Colors.grey[300],
@@ -93,7 +95,7 @@ class _SelectYourLocationState extends State<SelectYourLocation> {
                     showAddPatient = !filteredAddresses.isEmpty;
                   });
                 },
-                decoration: const InputDecoration(
+                decoration: InputDecoration(
                   hintText: 'Search by street name, city...',
                   hintStyle: TextStyle(color: Colors.grey),
                   prefixIcon: Icon(Icons.search, color: Colors.grey),
@@ -102,7 +104,7 @@ class _SelectYourLocationState extends State<SelectYourLocation> {
                 ),
               ),
             ),
-            const SizedBox(height: 10),
+            SizedBox(height: getFontSize(10, context)),
             Visibility(
               visible: filteredAddresses.isNotEmpty,
               child: Expanded(
@@ -111,28 +113,28 @@ class _SelectYourLocationState extends State<SelectYourLocation> {
                   itemBuilder: (context, index) {
                     if (index == filteredAddresses.length) {
                       return Padding(
-                        padding: const EdgeInsets.symmetric(vertical: 20),
+                        padding: EdgeInsets.symmetric(vertical: 20),
                         child: Row(
                           children: [
                             Column(
                               crossAxisAlignment: CrossAxisAlignment.start,
-                              children: const [
+                              children: [
                                 Text(
                                   "Can’t find your address?",
-                                  style: TextStyle(fontSize: 16),
+                                  style: TextStyle(fontSize: getFontSize(16, context)),
                                 ),
-                                SizedBox(height: 10),
+                                SizedBox(height: getFontSize(10, context)),
                                 Text("Use the map instead"),
                               ],
                             ),
-                            const Spacer(),
+                            Spacer(),
                             Container(
-                              padding: const EdgeInsets.all(12),
-                              decoration: const BoxDecoration(
+                              padding: EdgeInsets.all(12),
+                              decoration: BoxDecoration(
                                 color: Color(0xffE2EDFF),
                                 shape: BoxShape.circle,
                               ),
-                              child: const Icon(
+                              child: Icon(
                                 Icons.location_on,
                                 color: Colors.blue,
                               ),
@@ -163,20 +165,20 @@ class _SelectYourLocationState extends State<SelectYourLocation> {
               child: Row(
                 children: [
                   Container(
-                    padding: const EdgeInsets.all(12),
-                    decoration: const BoxDecoration(color: Color(0xffE2EDFF),
+                    padding: EdgeInsets.all(12),
+                    decoration: BoxDecoration(color: Color(0xffE2EDFF),
                     shape: BoxShape.circle
                     ),
-                    child: const Icon(
+                    child: Icon(
                       Icons.location_on,
                       color: Colors.blue,
                     ),
                   ),
-                  const SizedBox(width: 15),
-                  const Text(
+                  SizedBox(width: getFontSize(15, context)),
+                  Text(
                     "Use my location",
                     style: TextStyle(
-                      fontSize: 16,
+                      fontSize: getFontSize(16, context),
                       fontWeight: FontWeight.w500,
                       color: Colors.blue,
                     ),
@@ -195,12 +197,12 @@ class _SelectYourLocationState extends State<SelectYourLocation> {
       title: Text(name),
       subtitle: Text(
         "$city, $country",
-        style: const TextStyle(fontSize: 14),
+        style: TextStyle(fontSize: getFontSize(14, context)),
       ),
     );
   }
 }
 
 void main() {
-  runApp(const MaterialApp(home: SelectYourLocation()));
+  runApp(MaterialApp(home: SelectYourLocation()));
 }

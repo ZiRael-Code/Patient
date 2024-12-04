@@ -1,8 +1,8 @@
 import 'dart:io';
 
 void main() {
-  final directory = Directory('./TheOperationRoom');
-  final sizeParameters = ['width', 'height', 'size', 'fontSize', 'top', 'bottom', 'left', 'right'];
+  final directory = Directory('./lib');
+  final sizeParameters = ['width', 'height', 'size', 'fontSize', 'top', 'bottom', 'left', 'right',];
 
   processDirectory(directory, sizeParameters);
 }
@@ -33,8 +33,8 @@ String replaceStaticSizes(String content, List<String> sizeParams) {
   );
 
   return content.replaceAllMapped(regex, (match) {
-    final param = match.group(1); // Parameter name
-    final sizeValue = match.group(2); // Static size value
+    final param = match.group(1);
+    final sizeValue = match.group(2);
     return '$param: getFontSize($sizeValue, context)';
   });
 }

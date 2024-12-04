@@ -1,3 +1,5 @@
+import '../Main/Dashboard.dart';
+import 'Main/Dashboard.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
@@ -8,7 +10,7 @@ void main(){
 }
 
 class PrescriptionInfoMessage extends StatefulWidget {
-  const PrescriptionInfoMessage({super.key});
+  PrescriptionInfoMessage({super.key});
   @override
   _PrescriptionInfoMessageScreen createState() => _PrescriptionInfoMessageScreen();
 }
@@ -30,7 +32,7 @@ class _PrescriptionInfoMessageScreen extends  State<PrescriptionInfoMessage> {
                 Center(child: Text(
                   'Prescription Information',
                   style: TextStyle(
-                      fontSize: 20,
+                      fontSize: getFontSize(20, context),
                       fontStyle: FontStyle.normal
                   ),
                 ),
@@ -44,25 +46,25 @@ class _PrescriptionInfoMessageScreen extends  State<PrescriptionInfoMessage> {
         ),
         body:
         Container(
-            padding: EdgeInsets.only(bottom: 30, left: 15, right: 15),
+            padding: EdgeInsets.only(bottom: getFontSize(30, context), left: getFontSize(15, context), right: getFontSize(15, context)),
             child:
         Align(
           child:
       Column(
       children: [
-        SizedBox(height: 30),
+        SizedBox(height: getFontSize(30, context)),
         Container(
           alignment: Alignment.center,
           width: MediaQuery.of(context).size.width * 0.78,
           child:
         Align(child: Text("When you start using these prescriptions, make sure you mark them as used in the medications page.", textAlign: TextAlign.center,
         style: TextStyle(
-          fontSize: 14,
+          fontSize: getFontSize(14, context),
         ),
         ),
         ),
         ),
-        SizedBox(height: 45,),
+        SizedBox(height: getFontSize(45, context),),
         SvgPicture.asset('assets/images/presphone.png'),
 
         Spacer(),
@@ -77,10 +79,10 @@ class _PrescriptionInfoMessageScreen extends  State<PrescriptionInfoMessage> {
             ),
           ),
           child: Padding(
-            padding: const EdgeInsets.symmetric(vertical: 12.0, horizontal: 24.0),
+            padding: EdgeInsets.symmetric(vertical: 12.0, horizontal: 24.0),
             child: Text(
               'Go to medications page',
-              style: TextStyle(color: Colors.white, fontSize: 18),
+              style: TextStyle(color: Colors.white, fontSize: getFontSize(18, context)),
             ),
           ),
         ),

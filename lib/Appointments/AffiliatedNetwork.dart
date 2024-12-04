@@ -1,3 +1,4 @@
+import '../Main/Dashboard.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_app/Appointments/HospitalProfile.dart';
@@ -11,7 +12,7 @@ void main(){
 }
 
 class AffiliatedNetwork extends StatefulWidget {
-  const AffiliatedNetwork({super.key});
+  AffiliatedNetwork({super.key});
   @override
   _AffiliatedNetworkScreen createState() => _AffiliatedNetworkScreen();
 }
@@ -26,16 +27,16 @@ class _AffiliatedNetworkScreen extends  State<AffiliatedNetwork> with SingleTick
           title: Row(
             children: [
               Container(
-                width: 35,
-                height: 35,
+                width: getFontSize(35, context),
+                height: getFontSize(35, context),
                 padding: EdgeInsets.all(10),
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(50),
                   color: Color(0xFFE5E5E5),
                 ),
                 child: SvgPicture.asset('assets/images/back.svg',
-                  width: 8.0,
-                  height: 15,),
+                  width: getFontSize(8.0, context),
+                  height: getFontSize(15, context),),
               ),
               Spacer(),
               Container(
@@ -44,7 +45,7 @@ class _AffiliatedNetworkScreen extends  State<AffiliatedNetwork> with SingleTick
                 Center(child: Text(
                   'Affiliated Network',
                   style: TextStyle(
-                      fontSize: 20,
+                      fontSize: getFontSize(20, context),
                       fontStyle: FontStyle.normal
                   ),
                 ),
@@ -58,13 +59,13 @@ class _AffiliatedNetworkScreen extends  State<AffiliatedNetwork> with SingleTick
         ),
         body:
         Container(
-          padding: EdgeInsets.only(bottom: 30, left: 15, right: 15),
+          padding: EdgeInsets.only(bottom: getFontSize(30, context), left: getFontSize(15, context), right: getFontSize(15, context)),
           child: Align(
             child: Column(
               children: [
-                SizedBox(height: 40),
+                SizedBox(height: getFontSize(40, context)),
                 Container(
-                  height: 50,
+                  height: getFontSize(50, context),
                   padding: EdgeInsets.all(4),
                   width: double.infinity,
                   decoration: BoxDecoration(
@@ -91,7 +92,7 @@ class _AffiliatedNetworkScreen extends  State<AffiliatedNetwork> with SingleTick
                     ),
                   ),
                 ),
-                SizedBox(height: 10),
+                SizedBox(height: getFontSize(10, context)),
                 Expanded(
                   child: TabBarView(
                     controller: _tabController,
@@ -110,7 +111,7 @@ class _AffiliatedNetworkScreen extends  State<AffiliatedNetwork> with SingleTick
   specialists() {
     return Column(
       children: [
-        SizedBox(height: 20),
+        SizedBox(height: getFontSize(20, context)),
 
     specialist(
       image: "assets/images/doc1.png",
@@ -194,9 +195,9 @@ class _AffiliatedNetworkScreen extends  State<AffiliatedNetwork> with SingleTick
               Align(
                 alignment: Alignment.topCenter,
                 child: Container(
-                  // margin: EdgeInsets.only(bottom: 50),
-                  height: 44,
-                  width: 44,
+                  // margin: EdgeInsets.only(bottom: getFontSize(50, context)),
+                  height: getFontSize(44, context),
+                  width: getFontSize(44, context),
                   child: CircleAvatar(
                     radius: 22,
                     backgroundImage: AssetImage(image),
@@ -204,18 +205,18 @@ class _AffiliatedNetworkScreen extends  State<AffiliatedNetwork> with SingleTick
                   ),
                 ),
               ),
-              SizedBox(width: 12),
+              SizedBox(width: getFontSize(12, context)),
               Column(
                 mainAxisAlignment: MainAxisAlignment.start,
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(name, style: TextStyle(
-                      fontSize: 18,
+                      fontSize: getFontSize(18, context),
                       color: Colors.black
                   ),),
-                  SizedBox(height: 5,),
+                  SizedBox(height: getFontSize(5, context),),
                   Text("${specialization} . ${workingType}", style: TextStyle(
-                      fontSize: 12,
+                      fontSize: getFontSize(12, context),
                       color: Colors.grey.withOpacity(0.90)
                   ),),
                 ],
@@ -223,9 +224,9 @@ class _AffiliatedNetworkScreen extends  State<AffiliatedNetwork> with SingleTick
 
             ],
           ),
-          SizedBox(height: 15,),
+          SizedBox(height: getFontSize(15, context),),
           SvgPicture.asset('assets/images/line.svg'),
-          SizedBox(height: 15,),
+          SizedBox(height: getFontSize(15, context),),
         ],
       ),
       ),
@@ -249,9 +250,9 @@ class _AffiliatedNetworkScreen extends  State<AffiliatedNetwork> with SingleTick
               Align(
                 alignment: Alignment.topCenter,
                 child: Container(
-                  // margin: EdgeInsets.only(bottom: 50),
-                  height: 44,
-                  width: 44,
+                  // margin: EdgeInsets.only(bottom: getFontSize(50, context)),
+                  height: getFontSize(44, context),
+                  width: getFontSize(44, context),
                   child: CircleAvatar(
                     radius: 22,
                     backgroundImage: AssetImage(image),
@@ -259,19 +260,19 @@ class _AffiliatedNetworkScreen extends  State<AffiliatedNetwork> with SingleTick
                   ),
                 ),
               ),
-              SizedBox(width: 12),
+              SizedBox(width: getFontSize(12, context)),
               Column(
                 mainAxisAlignment: MainAxisAlignment.start,
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(name, style: TextStyle(
-                      fontSize: 18,
+                      fontSize: getFontSize(18, context),
                       fontWeight: FontWeight.bold,
                       color: Colors.black
                   ),),
-                  SizedBox(height: 5,),
+                  SizedBox(height: getFontSize(5, context),),
                   Text(type, style: TextStyle(
-                      fontSize: 12,
+                      fontSize: getFontSize(12, context),
                       color: Colors.grey.withOpacity(0.90)
                   ),),
                 ],
@@ -279,9 +280,9 @@ class _AffiliatedNetworkScreen extends  State<AffiliatedNetwork> with SingleTick
 
             ],
           ),
-          SizedBox(height: 15,),
+          SizedBox(height: getFontSize(15, context),),
           SvgPicture.asset('assets/images/line.svg'),
-          SizedBox(height: 15,),
+          SizedBox(height: getFontSize(15, context),),
         ],
       ),
       ),
@@ -304,9 +305,9 @@ class _AffiliatedNetworkScreen extends  State<AffiliatedNetwork> with SingleTick
               Align(
                 alignment: Alignment.topCenter,
                 child: Container(
-                  // margin: EdgeInsets.only(bottom: 50),
-                  height: 44,
-                  width: 44,
+                  // margin: EdgeInsets.only(bottom: getFontSize(50, context)),
+                  height: getFontSize(44, context),
+                  width: getFontSize(44, context),
                   child: CircleAvatar(
                     radius: 22,
                     backgroundImage: AssetImage(image),
@@ -314,19 +315,19 @@ class _AffiliatedNetworkScreen extends  State<AffiliatedNetwork> with SingleTick
                   ),
                 ),
               ),
-              SizedBox(width: 12),
+              SizedBox(width: getFontSize(12, context)),
               Column(
                 mainAxisAlignment: MainAxisAlignment.start,
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(name, style: TextStyle(
-                      fontSize: 18,
+                      fontSize: getFontSize(18, context),
                       fontWeight: FontWeight.bold,
                       color: Colors.black
                   ),),
-                  SizedBox(height: 5,),
+                  SizedBox(height: getFontSize(5, context),),
                   Text(type, style: TextStyle(
-                      fontSize: 12,
+                      fontSize: getFontSize(12, context),
                       color: Colors.grey.withOpacity(0.90)
                   ),),
                 ],
@@ -334,9 +335,9 @@ class _AffiliatedNetworkScreen extends  State<AffiliatedNetwork> with SingleTick
 
             ],
           ),
-          SizedBox(height: 15,),
+          SizedBox(height: getFontSize(15, context),),
           SvgPicture.asset('assets/images/line.svg'),
-          SizedBox(height: 15,),
+          SizedBox(height: getFontSize(15, context),),
         ],
       ),
       ),

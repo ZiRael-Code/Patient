@@ -1,3 +1,5 @@
+import '../Main/Dashboard.dart';
+import 'Main/Dashboard.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_app/DoYouHaveDevice.dart';
@@ -25,28 +27,28 @@ class  _SelectCondition extends State<SelectCondition>{
   Widget build(BuildContext context) {
    return Scaffold(
        body: Padding(padding:
-       EdgeInsets.only(top: 45, bottom: 30),
+       EdgeInsets.only(top: getFontSize(45, context), bottom: getFontSize(30, context)),
        child: Column(
          children: [
          Align(
          alignment: Alignment.centerRight,
          child: Container(
-           padding: EdgeInsets.only(left: 18, right: 18),
-           child: Text('skip', style: TextStyle(color: Colors.blue, fontSize: 16)),
+           padding: EdgeInsets.only(left: getFontSize(18, context), right: getFontSize(18, context)),
+           child: Text('skip', style: TextStyle(color: Colors.blue, fontSize: getFontSize(16, context))),
          ),
          ),
-           SizedBox(height: 45,),
+           SizedBox(height: getFontSize(45, context),),
 
            Container(
-             width: 264,
-             child: Text(textAlign: TextAlign.center,'Which of the following condition(s) do you want to manage?',style: TextStyle(fontSize: 28, fontWeight: FontWeight.bold),),
+             width: getFontSize(264, context),
+             child: Text(textAlign: TextAlign.center,'Which of the following condition(s) do you want to manage?',style: TextStyle(fontSize: getFontSize(28, context), fontWeight: FontWeight.bold),),
            ),
-           SizedBox(height: 15,),
+           SizedBox(height: getFontSize(15, context),),
            Container(
-             width: 284,
-             child: Text(textAlign: TextAlign.center,'We need this information so we can tailor the experience to you and help you recommend services that will be useful to you.',style: TextStyle(fontSize: 14,),),
+             width: getFontSize(284, context),
+             child: Text(textAlign: TextAlign.center,'We need this information so we can tailor the experience to you and help you recommend services that will be useful to you.',style: TextStyle(fontSize: getFontSize(14, context),),),
            ),
-           SizedBox(height: 35,),
+           SizedBox(height: getFontSize(35, context),),
           Wrap(
             children: [
               condition(
@@ -99,10 +101,10 @@ class  _SelectCondition extends State<SelectCondition>{
               ),
 
          Container(
-           padding: EdgeInsets.only(left: 12, right: 12, top: 8, bottom: 8),
-           margin: EdgeInsets.only(right: 8, bottom: 12),
+           padding: EdgeInsets.only(left: getFontSize(12, context), right: getFontSize(12, context), top: getFontSize(8, context), bottom: getFontSize(8, context)),
+           margin: EdgeInsets.only(right: getFontSize(8, context), bottom: getFontSize(12, context)),
            decoration: BoxDecoration(
-             border: Border.all(width: 1,
+             border: Border.all(width: getFontSize(1, context),
                color: Colors.blue,
            ),
                borderRadius: BorderRadius.circular(50)
@@ -122,7 +124,7 @@ class  _SelectCondition extends State<SelectCondition>{
           ),
            Spacer(),
            Container(
-             padding: EdgeInsets.only(left: 10, right: 10),
+             padding: EdgeInsets.only(left: getFontSize(10, context), right: getFontSize(10, context)),
              child:
 
              ElevatedButton(
@@ -137,10 +139,10 @@ class  _SelectCondition extends State<SelectCondition>{
                ),
              ),
              child: Padding(
-               padding: const EdgeInsets.symmetric(vertical: 12.0, horizontal: 24.0),
+               padding: EdgeInsets.symmetric(vertical: 12.0, horizontal: 24.0),
                child: Text(
                  'Continue',
-                 style: TextStyle(color: Colors.white, fontSize: 18),
+                 style: TextStyle(color: Colors.white, fontSize: getFontSize(18, context)),
                ),
              ),
            ),
@@ -162,8 +164,8 @@ class  _SelectCondition extends State<SelectCondition>{
         });
       },
       child: Container(
-        padding: EdgeInsets.only(left: 12, right: 12, top: 8, bottom: 8),
-        margin: EdgeInsets.only(right: 8, bottom: 16),
+        padding: EdgeInsets.only(left: getFontSize(12, context), right: getFontSize(12, context), top: getFontSize(8, context), bottom: getFontSize(8, context)),
+        margin: EdgeInsets.only(right: getFontSize(8, context), bottom: getFontSize(16, context)),
         decoration: BoxDecoration(
           color: selectedList[index] ? Colors.blue : Color(0xffE2EDFF),
           borderRadius: BorderRadius.circular(50),

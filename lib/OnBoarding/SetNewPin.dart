@@ -1,3 +1,4 @@
+import '../Main/Dashboard.dart';
 import 'dart:math';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -9,7 +10,7 @@ void main() {
 }
 
 class SetNewPin extends StatefulWidget {
-  const SetNewPin({super.key});
+  SetNewPin({super.key});
 
   @override
   _SetNewPinScreen createState() => _SetNewPinScreen();
@@ -27,7 +28,7 @@ class _SetNewPinScreen extends State<SetNewPin> {
     return Scaffold(
       appBar: AppBar(),
       body: Container(
-        padding: EdgeInsets.only(bottom: 30, left: 15, right: 15),
+        padding: EdgeInsets.only(bottom: getFontSize(30, context), left: getFontSize(15, context), right: getFontSize(15, context)),
         child: Align(
           child: Column(
             children: [
@@ -35,13 +36,13 @@ class _SetNewPinScreen extends State<SetNewPin> {
                 alignment: Alignment.topCenter,
                 child: SvgPicture.asset('assets/images/slider2.svg'),
               ),
-              SizedBox(height: 30),
+              SizedBox(height: getFontSize(30, context)),
               Text(
                 'Set new PIN',
                 textAlign: TextAlign.center,
-                style: TextStyle(fontSize: 28, fontWeight: FontWeight.bold),
+                style: TextStyle(fontSize: getFontSize(28, context), fontWeight: FontWeight.bold),
               ),
-              SizedBox(height: 20),
+              SizedBox(height: getFontSize(20, context)),
               Container(
                 alignment: Alignment.center,
                 width: MediaQuery.of(context).size.width * 0.70,
@@ -50,15 +51,15 @@ class _SetNewPinScreen extends State<SetNewPin> {
                     message,
                     textAlign: TextAlign.center,
                     style: TextStyle(
-                      fontSize: 14,
+                      fontSize: getFontSize(14, context),
                     ),
                   ),
                 ),
               ),
-              SizedBox(height: 35),
+              SizedBox(height: getFontSize(35, context)),
               Container(
-                width: 163,
-                height: 50,
+                width: getFontSize(163, context),
+                height: getFontSize(50, context),
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(11),
                   color: Colors.black.withOpacity(0.05),
@@ -71,8 +72,8 @@ class _SetNewPinScreen extends State<SetNewPin> {
                   }),
                 ),
               ),
-              SizedBox(height: 30),
-              SizedBox(height: 60),
+              SizedBox(height: getFontSize(30, context)),
+              SizedBox(height: getFontSize(60, context)),
               Container(
                 child: Column(
                   children: [
@@ -93,11 +94,11 @@ class _SetNewPinScreen extends State<SetNewPin> {
                         );
                       }),
                     ),
-                    SizedBox(height: 20),
+                    SizedBox(height: getFontSize(20, context)),
                     Row(
                       children: [
                         Spacer(),
-                        SizedBox(width: 75),
+                        SizedBox(width: getFontSize(75, context)),
                         number(num: "0"),
                         Spacer(),
                         GestureDetector(
@@ -111,13 +112,13 @@ class _SetNewPinScreen extends State<SetNewPin> {
                             });
                           },
                         ),
-                        SizedBox(width: 35),
+                        SizedBox(width: getFontSize(35, context)),
                       ],
                     ),
                   ],
                 ),
               ),
-              SizedBox(height: 40),
+              SizedBox(height: getFontSize(40, context)),
               ElevatedButton(
                 onPressed: () {
                   setState(() {
@@ -138,10 +139,10 @@ class _SetNewPinScreen extends State<SetNewPin> {
                   ),
                 ),
                 child: Padding(
-                  padding: const EdgeInsets.symmetric(vertical: 12.0, horizontal: 24.0),
+                  padding: EdgeInsets.symmetric(vertical: 12.0, horizontal: 24.0),
                   child: Text(
                     'Continue',
-                    style: TextStyle(color: Colors.white, fontSize: 18),
+                    style: TextStyle(color: Colors.white, fontSize: getFontSize(18, context)),
                   ),
                 ),
               ),
@@ -154,8 +155,8 @@ class _SetNewPinScreen extends State<SetNewPin> {
 
   dot({required Color color}) {
     return Container(
-      width: 12,
-      height: 12,
+      width: getFontSize(12, context),
+      height: getFontSize(12, context),
       margin: EdgeInsets.all(4),
       decoration: BoxDecoration(
         shape: BoxShape.circle,
@@ -169,7 +170,7 @@ class _SetNewPinScreen extends State<SetNewPin> {
       child: Text(
       num,
       style: TextStyle(
-        fontSize: 32,
+        fontSize: getFontSize(32, context),
         fontWeight: FontWeight.bold,
         color: Colors.black,
       ),

@@ -1,3 +1,5 @@
+import '../Main/Dashboard.dart';
+import 'Main/Dashboard.dart';
 import 'dart:math';
 
 import 'package:flutter/cupertino.dart';
@@ -14,7 +16,7 @@ void main(){
 }
 
 class WhatTypeDevice extends StatefulWidget {
-  const WhatTypeDevice({super.key});
+  WhatTypeDevice({super.key});
   @override
   _WhatTypeDeviceScreen createState() => _WhatTypeDeviceScreen();
 }
@@ -30,16 +32,16 @@ class _WhatTypeDeviceScreen extends  State<WhatTypeDevice> {
           title: Row(
             children: [
               Container(
-                width: 35,
-                height: 35,
+                width: getFontSize(35, context),
+                height: getFontSize(35, context),
                 padding: EdgeInsets.all(10),
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(50),
                   color: Color(0xFFE5E5E5),
                 ),
                 child: SvgPicture.asset('assets/images/back.svg',
-                  width: 8.0,
-                  height: 15,),
+                  width: getFontSize(8.0, context),
+                  height: getFontSize(15, context),),
               ),
               Spacer(),
 
@@ -49,23 +51,23 @@ class _WhatTypeDeviceScreen extends  State<WhatTypeDevice> {
         ),
         body:
         Container(
-            padding: EdgeInsets.only(bottom: 30, left: 15, right: 15),
+            padding: EdgeInsets.only(bottom: getFontSize(30, context), left: getFontSize(15, context), right: getFontSize(15, context)),
             child:
         Align(
           child:
       Column(
       children: [
-        SizedBox(height: 30),
+        SizedBox(height: getFontSize(30, context)),
         Container(
-          width: 234,
-          child: Text(textAlign: TextAlign.center,'What type is your device?',style: TextStyle(fontSize: 28, fontWeight: FontWeight.bold),),
+          width: getFontSize(234, context),
+          child: Text(textAlign: TextAlign.center,'What type is your device?',style: TextStyle(fontSize: getFontSize(28, context), fontWeight: FontWeight.bold),),
         ),
-        SizedBox(height: 15,),
+        SizedBox(height: getFontSize(15, context),),
         Container(
-          width: 284,
-          child: Text(textAlign: TextAlign.center,'Upload your device details here to see if it is supported by myvitalz or not.',style: TextStyle(fontSize: 14,),),
+          width: getFontSize(284, context),
+          child: Text(textAlign: TextAlign.center,'Upload your device details here to see if it is supported by myvitalz or not.',style: TextStyle(fontSize: getFontSize(14, context),),),
         ),
-        SizedBox(height: 45,),
+        SizedBox(height: getFontSize(45, context),),
         input_field(
           label: 'Model / Name of device',
           hint: "e.g Wellue"
@@ -84,15 +86,15 @@ class _WhatTypeDeviceScreen extends  State<WhatTypeDevice> {
           },
           child:
         Container(
-          padding: EdgeInsets.only(left: 16, right: 16, top: 10, bottom: 10),
+          padding: EdgeInsets.only(left: getFontSize(16, context), right: getFontSize(16, context), top: getFontSize(10, context), bottom: getFontSize(10, context)),
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(50),
             color: Color(0xffE2EDFF)
           ),
-          child: Text(style: TextStyle(fontSize: 16, color: Colors.blue),'Scan with QR code instead'),
+          child: Text(style: TextStyle(fontSize: getFontSize(16, context), color: Colors.blue),'Scan with QR code instead'),
         ),
         ),
-        SizedBox(height: 25,),
+        SizedBox(height: getFontSize(25, context),),
         ElevatedButton(
           onPressed: () {
              var page = [IsSupported(), IsNotSupported()];
@@ -106,10 +108,10 @@ class _WhatTypeDeviceScreen extends  State<WhatTypeDevice> {
             ),
           ),
           child: Padding(
-            padding: const EdgeInsets.symmetric(vertical: 12.0, horizontal: 24.0),
+            padding: EdgeInsets.symmetric(vertical: 12.0, horizontal: 24.0),
             child: Text(
               'Check device',
-              style: TextStyle(color: Colors.white, fontSize: 18),
+              style: TextStyle(color: Colors.white, fontSize: getFontSize(18, context)),
             ),
           ),
         ),
@@ -128,11 +130,11 @@ class _WhatTypeDeviceScreen extends  State<WhatTypeDevice> {
           child: Text(
             label,
             style: TextStyle(
-              fontSize: 16,
+              fontSize: getFontSize(16, context),
             ),
           ),
         ),
-        SizedBox(height: 8.0),
+        SizedBox(height: getFontSize(8.0, context)),
         TextField(
           decoration: InputDecoration(
             hintText: hint,
@@ -145,7 +147,7 @@ class _WhatTypeDeviceScreen extends  State<WhatTypeDevice> {
             ),
           ),
         ),
-        SizedBox(height: 15,)
+        SizedBox(height: getFontSize(15, context),)
       ],
     );
   }

@@ -1,3 +1,4 @@
+import '../../Main/Dashboard.dart';
 import 'package:flutter/material.dart';
 
 class ContactsCheckedTile extends StatefulWidget {
@@ -5,7 +6,7 @@ class ContactsCheckedTile extends StatefulWidget {
   final bool isInitiallySelected;
   final ValueChanged<bool> onSelectionChanged;
 
-  const ContactsCheckedTile({
+  ContactsCheckedTile({
     super.key,
     required this.name,
     this.isInitiallySelected = false,
@@ -30,23 +31,23 @@ class _ContactsCheckedTileState extends State<ContactsCheckedTile> {
     return Container(
       child: Column(
         children: [
-          const SizedBox(
-            height: 5,
+          SizedBox(
+            height: getFontSize(5, context),
           ),
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               Container(
-                width: 50,
-                height: 50,
-                decoration: const BoxDecoration(
+                width: getFontSize(50, context),
+                height: getFontSize(50, context),
+                decoration: BoxDecoration(
                   shape: BoxShape.circle,
                   color: Colors.black,
                 ),
                 child: Center(
                   child: Text(
                     widget.name[0],
-                    style: const TextStyle(
+                    style: TextStyle(
                       color: Colors.white,
                       fontWeight: FontWeight.bold,
                     ),
@@ -56,23 +57,23 @@ class _ContactsCheckedTileState extends State<ContactsCheckedTile> {
               Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  const SizedBox(
-                    height: 20,
+                  SizedBox(
+                    height: getFontSize(20, context),
                   ),
                   Text(
                     widget.name,
-                    style: const TextStyle(
-                      fontSize: 16,
+                    style: TextStyle(
+                      fontSize: getFontSize(16, context),
                       fontWeight: FontWeight.bold,
                     ),
                   ),
-                  const SizedBox(
-                    height: 14,
+                  SizedBox(
+                    height: getFontSize(14, context),
                   ),
                 ],
               ),
-              const SizedBox(
-                width: 40,
+              SizedBox(
+                width: getFontSize(40, context),
               ),
               GestureDetector(
                 onTap: () {
@@ -82,28 +83,28 @@ class _ContactsCheckedTileState extends State<ContactsCheckedTile> {
                   widget.onSelectionChanged(isChecked); // Notify parent
                 },
                 child: Container(
-                  height: 24,
-                  width: 24,
+                  height: getFontSize(24, context),
+                  width: getFontSize(24, context),
                   decoration: BoxDecoration(
                     color: isChecked ? Colors.green : Colors.grey,
                     shape: BoxShape.circle,
                   ),
                   child: isChecked
-                      ? const Icon(
+                      ? Icon(
                           Icons.check,
                           color: Colors.white,
-                          size: 16,
+                          size: getFontSize(16, context),
                         )
                       : null,
                 ),
               ),
             ],
           ),
-          const SizedBox(
-            height: 5,
+          SizedBox(
+            height: getFontSize(5, context),
           ),
           SizedBox(
-            width: 350,
+            width: getFontSize(350, context),
             child: Divider(
               color: Colors.grey[300],
             ),

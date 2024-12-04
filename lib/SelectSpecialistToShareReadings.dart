@@ -1,3 +1,5 @@
+import '../Main/Dashboard.dart';
+import 'Main/Dashboard.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
@@ -8,7 +10,7 @@ void main(){
 }
 
 class SelectSpecialistToShareReadings extends StatefulWidget {
-  const SelectSpecialistToShareReadings({super.key});
+  SelectSpecialistToShareReadings({super.key});
   @override
   _SelectSpecialistToShareReadingsScreen createState() => _SelectSpecialistToShareReadingsScreen();
 }
@@ -33,16 +35,16 @@ class _SelectSpecialistToShareReadingsScreen extends  State<SelectSpecialistToSh
           title: Row(
             children: [
               Container(
-                width: 35,
-                height: 35,
+                width: getFontSize(35, context),
+                height: getFontSize(35, context),
                 padding: EdgeInsets.all(10),
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(50),
                   color: Color(0xFFE5E5E5),
                 ),
                 child: SvgPicture.asset('assets/images/back.svg',
-                  width: 8.0,
-                  height: 15,),
+                  width: getFontSize(8.0, context),
+                  height: getFontSize(15, context),),
               ),
               Spacer(),
               Container(
@@ -51,7 +53,7 @@ class _SelectSpecialistToShareReadingsScreen extends  State<SelectSpecialistToSh
                 Center(child: Text(
                   'Share readings',
                   style: TextStyle(
-                      fontSize: 20,
+                      fontSize: getFontSize(20, context),
                       fontStyle: FontStyle.normal
                   ),
                 ),
@@ -65,25 +67,25 @@ class _SelectSpecialistToShareReadingsScreen extends  State<SelectSpecialistToSh
         ),
         body:
         Container(
-            padding: EdgeInsets.only(bottom: 30, left: 15, right: 15),
+            padding: EdgeInsets.only(bottom: getFontSize(30, context), left: getFontSize(15, context), right: getFontSize(15, context)),
             child:
         Align(
           child:
       Column(
       children: [
-        SizedBox(height: 30),
+        SizedBox(height: getFontSize(30, context)),
         Container(
           alignment: Alignment.center,
           width: MediaQuery.of(context).size.width * 0.78,
           child:
         Align(child: Text("Select the medical personnel(s) you want to share your vital readings with", textAlign: TextAlign.center,
         style: TextStyle(
-          fontSize: 14,
+          fontSize: getFontSize(14, context),
         ),
         ),
         ),
         ),
-        SizedBox(height: 35,),
+        SizedBox(height: getFontSize(35, context),),
         specialist(
             image: "assets/images/doc1.png",
             name: "Dr. John Doe",
@@ -113,10 +115,10 @@ class _SelectSpecialistToShareReadingsScreen extends  State<SelectSpecialistToSh
           index: 3
         ),
 
-        SizedBox(height: 25,),
+        SizedBox(height: getFontSize(25, context),),
 
         Container(
-          height: 50,
+          height: getFontSize(50, context),
           width: MediaQuery.of(context).size.width * 0.60,
           decoration: BoxDecoration(
             color: Color(0xFFE2EDFF),
@@ -134,7 +136,7 @@ class _SelectSpecialistToShareReadingsScreen extends  State<SelectSpecialistToSh
             isExpanded: true,
             underline: SizedBox(),
             style: TextStyle(
-              fontSize: 16,
+              fontSize: getFontSize(16, context),
               color: Color(0xFF3C8AFF),
             ),
             icon: Icon(Icons.keyboard_arrow_down, color: Colors.blue,),
@@ -164,10 +166,10 @@ class _SelectSpecialistToShareReadingsScreen extends  State<SelectSpecialistToSh
             ),
           ),
           child: Padding(
-            padding: const EdgeInsets.symmetric(vertical: 12.0, horizontal: 24.0),
+            padding: EdgeInsets.symmetric(vertical: 12.0, horizontal: 24.0),
             child: Text(
               'Share readings',
-              style: TextStyle(color: Colors.white, fontSize: 18),
+              style: TextStyle(color: Colors.white, fontSize: getFontSize(18, context)),
             ),
           ),
         ),
@@ -193,9 +195,9 @@ class _SelectSpecialistToShareReadingsScreen extends  State<SelectSpecialistToSh
               Align(
                 alignment: Alignment.topCenter,
                 child: Container(
-                  // margin: EdgeInsets.only(bottom: 50),
-                  height: 44,
-                  width: 44,
+                  // margin: EdgeInsets.only(bottom: getFontSize(50, context)),
+                  height: getFontSize(44, context),
+                  width: getFontSize(44, context),
                   child: CircleAvatar(
                     radius: 22,
                     backgroundImage: AssetImage(image),
@@ -203,26 +205,26 @@ class _SelectSpecialistToShareReadingsScreen extends  State<SelectSpecialistToSh
                   ),
                 ),
               ),
-              SizedBox(width: 12),
+              SizedBox(width: getFontSize(12, context)),
               Column(
                 mainAxisAlignment: MainAxisAlignment.start,
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(name, style: TextStyle(
-                      fontSize: 18,
+                      fontSize: getFontSize(18, context),
                       color: Colors.black
                   ),),
-                  SizedBox(height: 5,),
+                  SizedBox(height: getFontSize(5, context),),
                   Text("${specialization} . ${workingType}", style: TextStyle(
-                      fontSize: 12,
+                      fontSize: getFontSize(12, context),
                       color: Colors.grey.withOpacity(0.90)
                   ),),
                 ],
               ),
               Spacer(),
               Container(
-                width: 33,
-                height: 33,
+                width: getFontSize(33, context),
+                height: getFontSize(33, context),
                 decoration: BoxDecoration(
                   shape: BoxShape.circle,
                   color: isSelectedList[index] ? Colors.green : Color(0xffF2F2F2),
@@ -233,9 +235,9 @@ class _SelectSpecialistToShareReadingsScreen extends  State<SelectSpecialistToSh
               ),
             ],
           ),
-          SizedBox(height: 15,),
+          SizedBox(height: getFontSize(15, context),),
           SvgPicture.asset('assets/images/line.svg'),
-          SizedBox(height: 15,),
+          SizedBox(height: getFontSize(15, context),),
         ],
       ),
     ),

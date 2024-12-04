@@ -1,3 +1,4 @@
+import '../Main/Dashboard.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_app/Account/DeviceOrderedSuccess.dart';
@@ -9,7 +10,7 @@ void main(){
 }
 
 class DeviceSummary extends StatefulWidget {
-  const DeviceSummary({super.key});
+  DeviceSummary({super.key});
   @override
   _DeviceSummaryScreen createState() => _DeviceSummaryScreen();
 }
@@ -24,16 +25,16 @@ class _DeviceSummaryScreen extends  State<DeviceSummary> {
           title: Row(
             children: [
               Container(
-                width: 35,
-                height: 35,
+                width: getFontSize(35, context),
+                height: getFontSize(35, context),
                 padding: EdgeInsets.all(10),
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(50),
                   color: Color(0xFFE5E5E5),
                 ),
                 child: SvgPicture.asset('assets/images/back.svg',
-                  width: 8.0,
-                  height: 15,),
+                  width: getFontSize(8.0, context),
+                  height: getFontSize(15, context),),
               ),
               Spacer(),
               Container(
@@ -42,7 +43,7 @@ class _DeviceSummaryScreen extends  State<DeviceSummary> {
                 Center(child: Text(
                   'Summary',
                   style: TextStyle(
-                      fontSize: 20,
+                      fontSize: getFontSize(20, context),
                       fontStyle: FontStyle.normal
                   ),
                 ),
@@ -61,33 +62,33 @@ class _DeviceSummaryScreen extends  State<DeviceSummary> {
         Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            SizedBox(height: 45,),
+            SizedBox(height: getFontSize(45, context),),
             Container(alignment: Alignment.center,child:
-            SvgPicture.asset('assets/images/dev.svg', height: 117, width: 195,),
+            SvgPicture.asset('assets/images/dev.svg', height: getFontSize(117, context), width: getFontSize(195, context),),
             ),
-            SizedBox(height: 70,),
+            SizedBox(height: getFontSize(70, context),),
 
               Center(child:
               Text(
               'Wellue Bp2 Connect device',
-              style: TextStyle(color: Colors.black, fontSize: 16),
+              style: TextStyle(color: Colors.black, fontSize: getFontSize(16, context)),
             ),
             ),
 
-            SizedBox(height: 10),
+            SizedBox(height: getFontSize(10, context)),
             // Summary
 
               Align(
                 alignment: Alignment.center,
                 child:
               SizedBox(
-                width: 150,
+                width: getFontSize(150, context),
               child:
             Container(
               alignment: Alignment.center,
               padding: EdgeInsets.all(12),
               decoration: BoxDecoration(
-                border: Border.all(width: 0.05),
+                border: Border.all(width: getFontSize(0.05, context)),
                 borderRadius: BorderRadius.circular(12),
               ),
               child: Row(
@@ -97,15 +98,15 @@ class _DeviceSummaryScreen extends  State<DeviceSummary> {
                 children: [
                   Text(
                     'PRICE: ',
-                    style: TextStyle(color: Colors.grey, fontSize: 14),
+                    style: TextStyle(color: Colors.grey, fontSize: getFontSize(14, context)),
                   ),
-                  SizedBox(width: 5),
+                  SizedBox(width: getFontSize(5, context)),
                   Text( 
                     'N25,000.00',
                     style: TextStyle(
                       fontWeight: FontWeight.bold,
                       color: Colors.blue,
-                      fontSize: 16,
+                      fontSize: getFontSize(16, context),
                     ),
                   ),
                 ],
@@ -115,7 +116,7 @@ class _DeviceSummaryScreen extends  State<DeviceSummary> {
             ),
 
 
-            SizedBox(height: 25,),
+            SizedBox(height: getFontSize(25, context),),
 
             Wrap(
               direction: Axis.horizontal,
@@ -127,7 +128,7 @@ class _DeviceSummaryScreen extends  State<DeviceSummary> {
                     Text("9th August 2022"),
                   ],
                 ) ,
-                SizedBox(height: 40),
+                SizedBox(height: getFontSize(40, context)),
                 Row(
                   children: [
                     Text("Price:"),
@@ -135,7 +136,7 @@ class _DeviceSummaryScreen extends  State<DeviceSummary> {
                     Text("N25,000.00"),
                   ],
                 ),
-                SizedBox(height: 40),
+                SizedBox(height: getFontSize(40, context)),
                 Row(
                   children: [
                     Text("Quantity:"),
@@ -143,7 +144,7 @@ class _DeviceSummaryScreen extends  State<DeviceSummary> {
                     Text("1"),
                   ],
                 ),
-                SizedBox(height: 40),
+                SizedBox(height: getFontSize(40, context)),
                 Row(
                   children: [
                     Text("Delivery fee:"),
@@ -151,7 +152,7 @@ class _DeviceSummaryScreen extends  State<DeviceSummary> {
                     Text("N1,500.00"),
                   ],
                 ),
-                SizedBox(height: 40),
+                SizedBox(height: getFontSize(40, context)),
                 Row(
                   children: [
                     Text("TOTAL:", style: TextStyle(fontWeight: FontWeight.bold),),
@@ -166,7 +167,7 @@ class _DeviceSummaryScreen extends  State<DeviceSummary> {
 
             // Place an Order button
             SizedBox(
-              height: 55,
+              height: getFontSize(55, context),
               width: double.infinity, // Match screen width
               child: ElevatedButton(
                 onPressed: () {
@@ -190,7 +191,7 @@ class _DeviceSummaryScreen extends  State<DeviceSummary> {
                 ),
               ),
             ),
-            SizedBox(height: 45,),
+            SizedBox(height: getFontSize(45, context),),
           ],
         )
         )

@@ -3,73 +3,74 @@ import 'package:flutter/services.dart';
 import 'package:flutter_app/MainManvigator.dart';
 import 'package:flutter_svg/svg.dart';
 
+import '../../Main/Dashboard.dart';
 import 'SendInvites.dart';
 import 'contacts_checked_tile.dart';
 import 'my_blue_button.dart';
 
 class SendInvitesSuccessPage extends StatelessWidget {
-  const SendInvitesSuccessPage({super.key});
+  SendInvitesSuccessPage({super.key});
 
   @override
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
         body: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 25),
+          padding: EdgeInsets.symmetric(horizontal: 25),
           child: Column(
             children: [
-              const SizedBox(height: 40),
+              SizedBox(height: getFontSize(40, context)),
               Row(
                 children: [
                   GestureDetector(
                     onTap: () => Navigator.pop(context),
                     child: Container(
-                      width: 35,
-                      height: 35,
-                      padding: const EdgeInsets.all(10),
+                      width: getFontSize(35, context),
+                      height: getFontSize(35, context),
+                      padding: EdgeInsets.all(10),
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(50),
-                        color: const Color(0xFFE5E5E5),
+                        color: Color(0xFFE5E5E5),
                       ),
                       child: SvgPicture.asset(
                         'assets/images/back.svg',
-                        width: 8.0,
-                        height: 15,
+                        width: getFontSize(8.0, context),
+                        height: getFontSize(15, context),
                       ),
                     ),
                   ),
-                  const SizedBox(width: 100),
-                  const Center(
+                  SizedBox(width: getFontSize(100, context)),
+                  Center(
                     child: Text(
                       "Success",
                       style: TextStyle(
                         fontWeight: FontWeight.bold,
-                        fontSize: 20,
+                        fontSize: getFontSize(20, context),
                       ),
                     ),
                   ),
                 ],
               ),
-              const SizedBox(
-                height: 120,
+              SizedBox(
+                height: getFontSize(120, context),
               ),
-              const SizedBox(
-                width: 260,
-                height: 71,
+              SizedBox(
+                width: getFontSize(260, context),
+                height: getFontSize(71, context),
                 child: Text(
                   textAlign: TextAlign.center,
                   "You have successfully sent invitation links, when they sign up, you get a commission.",
                   style: TextStyle(
-                    fontSize: 16,
+                    fontSize: getFontSize(16, context),
                   ),
                 ),
               ),
-              const Spacer(),
+              Spacer(),
               GestureDetector(onTap: (){
                 Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => MainNavigator()));
               }, child:  MyBlueButton(text: "Done")),
-              const SizedBox(
-                height: 30,
+              SizedBox(
+                height: getFontSize(30, context),
               )
             ],
           ),

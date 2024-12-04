@@ -1,3 +1,4 @@
+import '../Main/Dashboard.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_app/BuyDrugCheckout.dart';
@@ -9,7 +10,7 @@ void main(){
 }
 
 class RenewOrderTotalPrice extends StatefulWidget {
-  const RenewOrderTotalPrice({super.key});
+  RenewOrderTotalPrice({super.key});
   @override
   _RenewOrderCheckoutScreen createState() => _RenewOrderCheckoutScreen();
 }
@@ -23,17 +24,20 @@ class _RenewOrderCheckoutScreen extends  State<RenewOrderTotalPrice> {
         appBar: AppBar(
           title: Row(
             children: [
+              InkWell(
+          child:
               Container(
-                width: 35,
-                height: 35,
+                width: getFontSize(35, context),
+                height: getFontSize(35, context),
                 padding: EdgeInsets.all(10),
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(50),
                   color: Color(0xFFE5E5E5),
                 ),
                 child: SvgPicture.asset('assets/images/back.svg',
-                  width: 8.0,
-                  height: 15,),
+                  width: getFontSize(8.0, context),
+                  height: getFontSize(15, context),),
+              ),
               ),
               Spacer(),
               Container(
@@ -42,7 +46,7 @@ class _RenewOrderCheckoutScreen extends  State<RenewOrderTotalPrice> {
                 Center(child: Text(
                   'Renew order',
                   style: TextStyle(
-                      fontSize: 20,
+                      fontSize: getFontSize(20, context),
                       fontStyle: FontStyle.normal
                   ),
                 ),
@@ -56,20 +60,20 @@ class _RenewOrderCheckoutScreen extends  State<RenewOrderTotalPrice> {
         ),
         body:
         Container(
-            padding: EdgeInsets.only(bottom: 30, left: 15, right: 15),
+            padding: EdgeInsets.only(bottom: getFontSize(30, context), left: getFontSize(15, context), right: getFontSize(15, context)),
             child:
         Align(
           child:
       Column(
       children: [
-        SizedBox(height: 30),
+        SizedBox(height: getFontSize(30, context)),
         Container(
-          margin: EdgeInsets.only(bottom: 20),
+          margin: EdgeInsets.only(bottom: getFontSize(20, context)),
           padding: EdgeInsets.all(16),
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(14),
             border: Border.all(
-              width: 1,
+              width: getFontSize(1, context),
               color: Colors.black.withOpacity(0.070),
             ),
           ),
@@ -77,7 +81,7 @@ class _RenewOrderCheckoutScreen extends  State<RenewOrderTotalPrice> {
             mainAxisSize: MainAxisSize.min,
             children: [
               SvgPicture.asset('assets/images/pill1.svg'),
-              SizedBox(width: 8),
+              SizedBox(width: getFontSize(8, context)),
               Text(
                 '12/06/2022 - ',
                 style: TextStyle(
@@ -95,13 +99,13 @@ class _RenewOrderCheckoutScreen extends  State<RenewOrderTotalPrice> {
           ),
         ),
 
-        SizedBox(height: 25),
+        SizedBox(height: getFontSize(25, context)),
         GestureDetector(
           child: 
         Container(
-          height: 50,
+          height: getFontSize(50, context),
           width: MediaQuery.of(context).size.width * 0.40,
-          padding: EdgeInsets.only(left: 12, right: 12),
+          padding: EdgeInsets.only(left: getFontSize(12, context), right: getFontSize(12, context)),
           child: Container(
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(50),
@@ -113,7 +117,7 @@ class _RenewOrderCheckoutScreen extends  State<RenewOrderTotalPrice> {
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
                 Text('See details', style: TextStyle(color: Colors.blue),),
-                SizedBox(width: 10,),
+                SizedBox(width: getFontSize(10, context),),
                 Icon(Icons.keyboard_arrow_down, color: Colors.blue,),
               ],
           ),
@@ -124,7 +128,7 @@ class _RenewOrderCheckoutScreen extends  State<RenewOrderTotalPrice> {
         ),
         ),
         ),
-        SizedBox(height: 20,),
+        SizedBox(height: getFontSize(20, context),),
         
         Row(
           children: [
@@ -133,7 +137,7 @@ class _RenewOrderCheckoutScreen extends  State<RenewOrderTotalPrice> {
             Text('3 drugs'),
           ],
         ),
-        SizedBox(height: 20,),
+        SizedBox(height: getFontSize(20, context),),
         Row(
           children: [
             Text('price', style: TextStyle(color: Color(0xff666666))),
@@ -141,12 +145,12 @@ class _RenewOrderCheckoutScreen extends  State<RenewOrderTotalPrice> {
             Text('N5,350.00', style: TextStyle(color: Colors.blue),
             )],
         ),
-        SizedBox(height: 20,),
+        SizedBox(height: getFontSize(20, context),),
         Row(
           children: [
             Text('TOTAL', style: TextStyle(fontWeight: FontWeight.bold)),
             Spacer(),
-            Text('3 drugs', style: TextStyle(fontSize: 16,color: Colors.blue),
+            Text('3 drugs', style: TextStyle(fontSize: getFontSize(16, context),color: Colors.blue),
             )],
         ),
 
@@ -165,10 +169,10 @@ class _RenewOrderCheckoutScreen extends  State<RenewOrderTotalPrice> {
             ),
           ),
           child: Padding(
-            padding: const EdgeInsets.symmetric(vertical: 12.0, horizontal: 24.0),
+            padding: EdgeInsets.symmetric(vertical: 12.0, horizontal: 24.0),
             child: Text(
               'Proceed to checkout',
-              style: TextStyle(color: Colors.white, fontSize: 18),
+              style: TextStyle(color: Colors.white, fontSize: getFontSize(18, context)),
             ),
           ),
         ),
@@ -185,12 +189,12 @@ class _RenewOrderCheckoutScreen extends  State<RenewOrderTotalPrice> {
       backgroundColor: Colors.white,
       builder: (BuildContext context) {
         return Padding(
-          padding: const EdgeInsets.all(16.0),
+          padding: EdgeInsets.all(16.0),
           child: Column(
             mainAxisSize: MainAxisSize.min,
             children: [
-              Text('Prescription information', style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),)
-              ,SizedBox(height: 25,),
+              Text('Prescription information', style: TextStyle(fontSize: getFontSize(20, context), fontWeight: FontWeight.bold),)
+              ,SizedBox(height: getFontSize(25, context),),
               drug(
                   name: 'Ibuprofen',
                   price: 'N700',
@@ -206,7 +210,7 @@ class _RenewOrderCheckoutScreen extends  State<RenewOrderTotalPrice> {
                   price: 'N700',
                   qty: '1 pack'
               ),
-              SizedBox(height: 25,),
+              SizedBox(height: getFontSize(25, context),),
               ElevatedButton(
                 onPressed: () {
                   Navigator.pop(context);
@@ -215,14 +219,14 @@ class _RenewOrderCheckoutScreen extends  State<RenewOrderTotalPrice> {
                   fixedSize: Size.fromWidth(MediaQuery.of(context).size.width),
                   shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(9),
-                      side: BorderSide(width: 1, color: Colors.blue)
+                      side: BorderSide(width: getFontSize(1, context), color: Colors.blue)
                   ),
                 ),
                 child: Padding(
-                  padding: const EdgeInsets.symmetric(vertical: 12.0, horizontal: 24.0),
+                  padding: EdgeInsets.symmetric(vertical: 12.0, horizontal: 24.0),
                   child: Text(
                     'Close',
-                    style: TextStyle(color: Colors.blue, fontSize: 18),
+                    style: TextStyle(color: Colors.blue, fontSize: getFontSize(18, context)),
                   ),
                 ),
               ),
@@ -240,12 +244,12 @@ class _RenewOrderCheckoutScreen extends  State<RenewOrderTotalPrice> {
     return Container(
       padding: EdgeInsets.all(14),
       width: double.infinity,
-      margin: EdgeInsets.only(bottom: 10),
+      margin: EdgeInsets.only(bottom: getFontSize(10, context)),
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(14),
         border: Border.all(
           color: Colors.grey,
-          width: 1.0,
+          width: getFontSize(1.0, context),
         ),
       ),
       child:
@@ -253,12 +257,12 @@ class _RenewOrderCheckoutScreen extends  State<RenewOrderTotalPrice> {
           children: [
             Column(children: [
               Text(name),
-              SizedBox(height: 10),
+              SizedBox(height: getFontSize(10, context)),
               Text(qty,style: TextStyle(color:  Color(0xff666666)))
-              ,SizedBox(height:15),
+              ,SizedBox(height: getFontSize(15, context)),
             ],),
             Spacer(),
-            Text(price, style: TextStyle(color: Colors.blue, fontSize: 16),),
+            Text(price, style: TextStyle(color: Colors.blue, fontSize: getFontSize(16, context)),),
           ],
         ),
 
