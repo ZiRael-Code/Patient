@@ -57,7 +57,10 @@ class SetupComplete extends StatelessWidget{
               SizedBox(height: getFontSize(15, context),),
               ElevatedButton(
                 onPressed: () {
-                  Navigator.of(context).push(MaterialPageRoute(builder: (builder)=> Login()));
+                  Navigator.of(context).pushAndRemoveUntil(
+                    MaterialPageRoute(builder: (builder) => Login()), // Navigate to Login screen
+                        (Route<dynamic> route) => false, // Remove all previous routes
+                  );
                 },
                 style: ElevatedButton.styleFrom(
                     fixedSize: Size.fromWidth(MediaQuery.of(context).size.width),

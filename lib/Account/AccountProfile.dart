@@ -32,14 +32,13 @@ class _AccountProfileState extends State<AccountProfile> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      home: Scaffold(
+      home: SafeArea(child: Scaffold(
             backgroundColor: Color(0xffF2F2F2),
         body: SingleChildScrollView(
           child: Column(
             children: [
               Container(
                   padding: EdgeInsets.only(left: getFontSize(20, context), right: getFontSize(20, context)),
-                  height: getFontSize(250, context),
                   width: double.infinity,
                       decoration: BoxDecoration(
                       color: Colors.white,
@@ -60,7 +59,6 @@ class _AccountProfileState extends State<AccountProfile> {
                       ),
                           SizedBox(height: getFontSize(10, context),),
                       Container(
-                            height: getFontSize(117, context),
                         width: double.infinity,
                             padding: EdgeInsets.all(16),
                         decoration: BoxDecoration(
@@ -168,7 +166,6 @@ class _AccountProfileState extends State<AccountProfile> {
               ),
               Container(
                       padding:  EdgeInsets.only(top: getFontSize(20, context), left: getFontSize(20, context), right: getFontSize(20, context)),
-                  height: getFontSize(345, context),
                   width: double.infinity,
                   decoration: BoxDecoration(
                     color: Colors.white,
@@ -489,7 +486,7 @@ class _AccountProfileState extends State<AccountProfile> {
               )
             ],
           ),
-        )));
+        ))));
     }
 
   details(

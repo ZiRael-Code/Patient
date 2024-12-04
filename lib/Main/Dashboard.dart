@@ -241,7 +241,9 @@ class DashboardState extends State<Dashboard> {
             ],),
           ),
           SizedBox(height: getFontSize(15),),
-          SvgPicture.asset('assets/images/scroller.svg')
+          SvgPicture.asset('assets/images/scroller.svg',
+          width: MediaQuery.of(context).size.width,
+          )
           ,SizedBox(height: getFontSize(15),),
         ],
       ),
@@ -384,8 +386,7 @@ class DashboardState extends State<Dashboard> {
                     mainAxisAlignment: MainAxisAlignment.start,
                     children: [
                       Container(
-                        width: getFontSize(35, context),
-                        height: getFontSize(35, context),
+                        padding: EdgeInsets.all(6),
                         decoration:
                         BoxDecoration(shape: BoxShape.circle, color: Color(0xffE2EDFF)),
                         child: icon,
@@ -424,8 +425,7 @@ class DashboardState extends State<Dashboard> {
     required String actionText,
   }){
     return Container(
-      width: getFontSize(150, context),
-      height: getFontSize(51, context),
+      width: (MediaQuery.of(context).size.width / 2) - getFontSize(24, context) ,
       padding: EdgeInsets.only(top: getFontSize(12, context), left: getFontSize(10.0, context), bottom: getFontSize(12, context), right: getFontSize(10, context)),
       decoration: BoxDecoration(
         color: iconBackground.withOpacity(0.15),
@@ -436,8 +436,7 @@ class DashboardState extends State<Dashboard> {
           children: [
             Center(
               child: Container(
-                width: getFontSize(27, context),
-                height: getFontSize(27, context),
+                padding: EdgeInsets.all(getFontSize(8, context)),
                 decoration: BoxDecoration(
                   color: iconBackground,
                   borderRadius: BorderRadius.circular(50),
@@ -445,8 +444,8 @@ class DashboardState extends State<Dashboard> {
                 child: Center(
                   child: Image.asset(
                     iconPath,
-                    width: getFontSize(11, context),
-                    height: getFontSize(14, context),
+                    width: getFontSize(16, context),
+                    height: getFontSize(16, context),
                     fit: BoxFit.contain,
                   ),
                 ),
@@ -455,7 +454,7 @@ class DashboardState extends State<Dashboard> {
             SizedBox(width: getFontSize(10.0, context)),
             Text(actionText,
               style: TextStyle(
-                  fontSize: getFontSize(10.0, context),
+                  fontSize: getFontSize(11.0, context),
                   color: iconBackground
               ),),
           ],
@@ -481,9 +480,28 @@ class DashboardState extends State<Dashboard> {
     },
     child: Stack(
       children: [
+        Positioned(
+          top: 10,
+          right: 10,
+      child: Align(
+          alignment: Alignment.centerRight,
+          child: Container(
+            padding: EdgeInsets.all(getFontSize(12, context)),
+            decoration: BoxDecoration(
+                shape: BoxShape.circle,
+                color: themeColor
+            ),
+            child: Center(child: SvgPicture.asset(vitalIcon,
+            width: getFontSize(34, context),
+            height: getFontSize(34, context)
+            ),
+            ),
+          ),
+        ),
+        ),
       Container(
       decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(12),
+        borderRadius: BorderRadius.circular(getFontSize(12, context)),
         border: Border.all(
           color: themeColor.withOpacity(0.1),
           width: getFontSize(1.5, context),
@@ -495,32 +513,18 @@ class DashboardState extends State<Dashboard> {
       child:
       Stack(
         children: [
-      Column(
-        mainAxisAlignment: MainAxisAlignment.end,
-          children: [
-          Container(
-        child: SvgPicture.asset('assets/images/vital.svg', color: themeColor,),
-        alignment: Alignment.bottomCenter,
+          Positioned(
+        child: SvgPicture.asset('assets/images/vital.svg', color: themeColor,
+        width: getFontSize(208, context),
+          height: getFontSize(118, context),
         ),
-          ],
+            bottom: 0,
       ),
       Container(
         padding: EdgeInsets.only(left: getFontSize(15, context),right: getFontSize(15, context), top: getFontSize(15, context)),
         child: Column(
             children: [
-          Align(
-            alignment: Alignment.centerRight,
-            child: Container(
-              width: getFontSize(60, context),
-              height: getFontSize(60, context),
-              decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(50),
-                  color: themeColor
-              ),
-              child: Center(child: SvgPicture.asset(vitalIcon)),
-            ),
-          ),
-
+              SizedBox(height: getFontSize(59, context),),
             Row(
               children: [
                 Text(vitalRead,
@@ -567,16 +571,19 @@ class DashboardState extends State<Dashboard> {
             ),
               SizedBox(height: getFontSize(5, context),),
             Align(child:
-            IntrinsicWidth(
-              child: Container(
+               Container(
                 decoration: BoxDecoration(
                     color: Colors.white.withOpacity(0.20),
                     borderRadius: BorderRadius.circular(18)
                 ),
-                padding: EdgeInsets.only(left: getFontSize(10, context), top: getFontSize(10, context), right: getFontSize(5, context), bottom: getFontSize(10, context)),
+                padding: EdgeInsets.only(left: getFontSize(10, context), top: getFontSize(10, context), right: getFontSize(20, context), bottom: getFontSize(10, context)),
                 child: Row(
+                  mainAxisSize: MainAxisSize.min,
                   children: [
-                    SvgPicture.asset(emoji, ),
+                    SvgPicture.asset(emoji,
+                    width: getFontSize(16, context),
+                      height: getFontSize(16, context),
+                    ),
                     SizedBox(width: getFontSize(5, context),),
                     Text(vitalsReadMessage,
                       style: TextStyle(
@@ -587,9 +594,8 @@ class DashboardState extends State<Dashboard> {
                   ],
                 ),
               ),
-            ),
               alignment: Alignment.centerLeft,
-            )
+            ),
 
 
 

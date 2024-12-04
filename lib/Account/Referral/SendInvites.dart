@@ -252,7 +252,6 @@ class _SendInvitesScreen extends  State<SendInvites> {
       Container(
           margin: EdgeInsets.only(right: getFontSize(15, context)),
           width: getFontSize(75, context),
-          height: getFontSize(124, context),
           child: Column(
             children: [
               Container(
@@ -268,7 +267,7 @@ class _SendInvitesScreen extends  State<SendInvites> {
                           color: Color(0xff2e2e42),
                           shape: BoxShape.circle
                       ),
-                      child: Text(alphaOrder, style: TextStyle(color: Colors.white, fontSize: getFontSize(35, context), fontWeight: FontWeight.bold),),
+                      child: Text(alphaOrder, textAlign: TextAlign.center, style: TextStyle(color: Colors.white, fontSize: getFontSize(35, context), fontWeight: FontWeight.bold),),
                     ),
 
                     Align(
@@ -283,6 +282,7 @@ class _SendInvitesScreen extends  State<SendInvites> {
               SizedBox(height: getFontSize(10, context),),
               Text(
                 name,
+    textAlign: TextAlign.center,
                 style: TextStyle(fontSize: getFontSize(16, context),),
               ),
               SizedBox(height: getFontSize(5, context),),
