@@ -48,7 +48,11 @@ class _VitalsReadingState extends State<VitalsReading>
             color: Colors.blue[200],
             shape: BoxShape.circle,
           ),
-          child: Icon(Icons.home_outlined, color: Colors.white),
+          child: InkWell(child: Icon(Icons.home_outlined, color: Colors.white),
+          onTap: (){
+            Navigator.pop(context);
+          },
+          ),
         ),
         Spacer(),
         Text('Vital Readings', style: TextStyle(color: Colors.white)),
