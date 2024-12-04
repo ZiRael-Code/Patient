@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_app/CreditDebitCardAddCard.dart';
 import 'package:flutter_svg/svg.dart';
 
 void main() {
@@ -21,8 +22,7 @@ class _CreditDebitNoCardScreen extends State<CreditDebitNoCard> {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-        home: Scaffold(
+    return  Scaffold(
             appBar: AppBar(
               title: Row(
                 children: [
@@ -64,14 +64,25 @@ class _CreditDebitNoCardScreen extends State<CreditDebitNoCard> {
 
                       SvgPicture.asset("assets/images/wallecuatet.svg"),
                       SizedBox(height: 140),
-                      Text(
+                      Center(child: Text(
                         'You have no cards yet.',
                         style: TextStyle(
                           fontSize: 18.0,
                           color: Colors.black,
                         ),
+                        ),
                       ),
                       SizedBox(height: 20),
+                      GestureDetector(
+                        onTap: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => CreditDebitCardAddCard(),
+                            ),
+                          );
+                        },
+                        child:
                       Container(
                         width: MediaQuery.of(context).size.width * 0.70,
                         height: 54,
@@ -79,21 +90,19 @@ class _CreditDebitNoCardScreen extends State<CreditDebitNoCard> {
                           color: Color(0xFF3C8AFF),
                           borderRadius: BorderRadius.circular(10),
                         ),
-                        child: TextButton(
-                          onPressed: () {
-                          },
-                          child: Text(
+                        child: Center(child:  Text(
                             'Add new card',
                             style: TextStyle(
                               color: Colors.white,
                               fontSize: 18,
                             ),
                           ),
+                          ),
                         ),
                       ),
                     ],
                   ),
-                ))));
+                )));
   }
 
 }

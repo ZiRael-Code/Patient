@@ -1,5 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_app/Account/WithdrawSuccess.dart';
+import 'package:flutter_app/AddAccount.dart';
 import 'package:flutter_svg/svg.dart';
 
 void main() {
@@ -22,8 +24,7 @@ class _WithdrawFundsScreen extends State<WithdrawFunds> {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-        home: Scaffold(
+    return   Scaffold(
             appBar: AppBar(
               title: Row(
                 children: [
@@ -85,6 +86,16 @@ class _WithdrawFundsScreen extends State<WithdrawFunds> {
                       SizedBox(
                         height: 15,
                       ),
+                      GestureDetector(
+                        onTap: (){
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => AddAccount(),
+                            ),
+                          );
+                        },
+                        child:
                       Container(
                         width: MediaQuery.of(context).size.width * 0.50,
                         height: 54,
@@ -92,20 +103,16 @@ class _WithdrawFundsScreen extends State<WithdrawFunds> {
                           color: Color(0xFFE2EDFF),
                           borderRadius: BorderRadius.circular(10),
                         ),
-                        child: TextButton(
-                          onPressed: () {
-                            _showPinScreen(context); // Show PIN screen when confirm is clicked
-
-                          },
-                          child: Text(
+                        child: Center(child: Text(
                             'Add another account',
                             style: TextStyle(
                               color: Colors.blue,
                               fontSize: 16,
                             ),
                           ),
+                          ),
                         ),
-                      ),
+                        ),
                       Spacer(),
                       Container(
                         width: double.infinity,
@@ -129,7 +136,7 @@ class _WithdrawFundsScreen extends State<WithdrawFunds> {
                       ),
                     ],
                   ),
-                ))));
+                )) );
   }
 
   account(
@@ -294,6 +301,13 @@ class _WithdrawFundsScreen extends State<WithdrawFunds> {
                 setState(() {
                   _enteredPin.add(number);
                 });
+              }else{
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => WithdrawSuccess(),
+                  ),
+                );
               }
             },
             child: Center(

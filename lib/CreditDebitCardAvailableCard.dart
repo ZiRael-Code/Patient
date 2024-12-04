@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_app/CreditDebitCardAddCard.dart';
+import 'package:flutter_app/CreditDebitCardViewCard.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
 void main() {
@@ -17,8 +19,7 @@ class  CreditDebitCardAvailableCardState extends State<CreditDebitCardAvailableC
 
   @override
   Widget build(BuildContext context) {
-      return MaterialApp(
-        home: Scaffold(
+      return Scaffold(
           appBar: AppBar(
             title: Row(
               children: [
@@ -57,6 +58,11 @@ class  CreditDebitCardAvailableCardState extends State<CreditDebitCardAvailableC
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
                 SizedBox(height: 15,),
+                GestureDetector(
+                  onTap: () {
+                    available_card_sheet();
+                  },
+                  child:
                 Stack(children: [
                 Container(
                   decoration: BoxDecoration(
@@ -170,8 +176,18 @@ class  CreditDebitCardAvailableCardState extends State<CreditDebitCardAvailableC
 
       ]),
               ),
-                ],),
+                ],)),
               Spacer(),
+                GestureDetector(
+                  onTap: (){
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => CreditDebitCardAddCard(),
+                      ),
+                    );
+                  },
+                  child:
                 Container(
                   width: MediaQuery.of(context).size.width * 0.55,
                   height: 54,
@@ -179,10 +195,7 @@ class  CreditDebitCardAvailableCardState extends State<CreditDebitCardAvailableC
                     color: Color(0xFF3C8AFF),
                     borderRadius: BorderRadius.circular(10),
                   ),
-                  child: TextButton(
-                    onPressed: () {
-                    },
-                    child: Text(
+                  child: Center(child:  Text(
                       'Add new card',
                       style: TextStyle(
                         color: Colors.white,
@@ -191,12 +204,13 @@ class  CreditDebitCardAvailableCardState extends State<CreditDebitCardAvailableC
                     ),
                   ),
                 ),
+                ),
                 SizedBox(height: 25,),
 
               ],
             ),
           ),
-        ),
+
       );
 
   }
@@ -256,5 +270,165 @@ class  CreditDebitCardAvailableCardState extends State<CreditDebitCardAvailableC
     );
   }
 
+  void available_card_sheet() {
+    showModalBottomSheet(
+        context: context,
+        isScrollControlled: true,
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.vertical(
+            top: Radius.circular(20),
+          ),
+        ),
+        builder: (context) {
+          return Container(
+              padding: EdgeInsets.all(16),
+              decoration: BoxDecoration(
+                color: Colors.white,
+                borderRadius: BorderRadius.vertical(
+                  top: Radius.circular(20),
+                ),
+              ),
+              child: Column(
+                mainAxisSize: MainAxisSize.min,
+                children: [
+                  SizedBox(height: 20,),
+                  Center(child: Text("Available cards", style: TextStyle(fontSize: 20),),),
+                  SizedBox(height: 20,),
+                  card(),
+                  SizedBox(height: 15,),
+                  card(),
+                ],
+              )
+          );
+        }
+    );
+  }
 
-}
+  card(){
+    return GestureDetector(
+        onTap: () {
+          Navigator.push(
+            context,
+            MaterialPageRoute(
+              builder: (context) => CreditDebitCardViewCard(),
+            ),
+          );
+        },
+        child:
+        Stack(children: [
+          Container(
+            decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(15)
+            ),
+            width: MediaQuery.of(context).size.width,
+            height: 184,
+            child: SvgPicture.asset('assets/images/atm.svg', fit: BoxFit.fill,),
+          ),
+          Container(
+            padding: EdgeInsets.all( 20),
+            width: double.infinity,
+            height: 184,
+            alignment: Alignment.centerLeft,
+            child:
+            Column(
+                children: [
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Container(
+                        padding: EdgeInsets.only(right: 15, left: 15, bottom: 7, top: 7),
+                        decoration: BoxDecoration(
+                          color: Color(0x29000000).withOpacity(0.16),
+                          borderRadius: BorderRadius.circular(10),
+                        ),
+                        child: Text("CARD 1", style: TextStyle(
+                            fontSize: 11,
+                            color: Colors.white
+                        ),),
+                      ),
+                      Spacer(),
+                      SvgPicture.asset("assets/images/cardicon.svg")
+                    ],),
+
+                  SizedBox(height: 20.0),
+                  Container(
+                    alignment: Alignment.centerLeft,
+                    child:
+                    Text(
+                      '1111 2222 3333 4444',
+                      style: TextStyle(
+                        fontSize: 23.0,
+                        fontWeight: FontWeight.bold,
+                        color: Colors.white,
+                      ),
+                    ),
+                  ),
+                  SizedBox(height: 15.0),
+
+                  Row(children: [
+                    Container(
+                      alignment: Alignment.centerLeft,
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.start,
+                        children: [
+                          Align(alignment: Alignment.centerLeft,
+                            child: Text(
+                              'Card holder',
+                              style: TextStyle(
+                                fontSize: 9.0,
+                                color: Colors.white,
+                              ),
+                            ),
+                          ),
+                          SizedBox(height: 7.0),
+                          Align(alignment: Alignment.centerLeft,
+                            child: Text(
+                              'JONATHAN ALEXANDER DOE',
+                              style: TextStyle(
+                                fontSize: 12.0,
+                                fontWeight: FontWeight.bold,
+                                color: Colors.white,
+                              ),
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                    SizedBox(width: 60,),
+                    Container(
+                      alignment: Alignment.centerLeft,
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.start,
+                        children: [
+                          Align(alignment: Alignment.centerLeft,
+                            child: Text(
+                              'Expiry',
+                              style: TextStyle(
+                                fontSize: 9.0,
+                                color: Colors.white,
+                              ),
+                            ),
+                          ),
+                          SizedBox(height: 7.0),
+                          Align(alignment: Alignment.centerLeft,
+                            child: Text(
+                              '01/23',
+                              style: TextStyle(
+                                fontSize: 12.0,
+                                fontWeight: FontWeight.bold,
+                                color: Colors.white,
+                              ),
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+
+                  ],)
+
+                ]),
+          ),
+        ],));
+  }
+
+  }

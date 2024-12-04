@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_app/Account/CreditCardAddedSucess.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
 void main() {
@@ -17,8 +18,7 @@ class  _CreditDebitCardAddCardState extends State<CreditDebitCardAddCard>{
 
   @override
   Widget build(BuildContext context) {
-      return MaterialApp(
-        home: Scaffold(
+      return  Scaffold(
           appBar: AppBar(
             title: Row(
               children: [
@@ -238,6 +238,16 @@ class  _CreditDebitCardAddCardState extends State<CreditDebitCardAddCard>{
 
 
               Spacer(),
+                GestureDetector(
+                  onTap: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => CreditCardAddedSucess(),
+                      ),
+                    );
+                  },
+                  child:
                 Container(
                   width: double.infinity,
                   height: 54,
@@ -245,10 +255,7 @@ class  _CreditDebitCardAddCardState extends State<CreditDebitCardAddCard>{
                     color: Color(0xFF3C8AFF),
                     borderRadius: BorderRadius.circular(10),
                   ),
-                  child: TextButton(
-                    onPressed: () {
-                    },
-                    child: Text(
+                  child: Center(child: Text(
                       'Continue',
                       style: TextStyle(
                         color: Colors.white,
@@ -257,11 +264,12 @@ class  _CreditDebitCardAddCardState extends State<CreditDebitCardAddCard>{
                     ),
                   ),
                 ),
+                ),
 
               ],
             ),
           ),
-        ),
+
       );
 
   }

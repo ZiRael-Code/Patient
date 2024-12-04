@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_app/ConfirmName.dart';
 import 'package:flutter_svg/svg.dart';
 
 import 'Appointments/AppointmentPaymentSummary.dart';
@@ -19,8 +20,7 @@ class _AddAccountScreen extends  State<AddAccount> {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-        home: Scaffold(
+    return Scaffold(
             appBar: AppBar(
               title: Row(
                 children: [
@@ -73,6 +73,16 @@ class _AddAccountScreen extends  State<AddAccount> {
                     textHint: "Bank"
                   ),
               SizedBox(height: 25,),
+              GestureDetector(
+                onTap: (){
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => ConfirmName(),
+                    ),
+                  );
+                },
+                child:
                   Align(
                     child:
                       Container(
@@ -82,10 +92,7 @@ class _AddAccountScreen extends  State<AddAccount> {
                       color: Color(0xFFE2EDFF),
                       borderRadius: BorderRadius.circular(10),
                     ),
-                    child: TextButton(
-                      onPressed: () {
-                      },
-                      child: Text(
+                    child: Center(child: Text(
                         'Confirm name',
                         style: TextStyle(
                           color: Color(0xFF3C8AFF),
@@ -95,11 +102,12 @@ class _AddAccountScreen extends  State<AddAccount> {
                     ),
                   ),
                   ),
+                  ),
 
                 ],
               ),
             ),
-           ));
+           ) ;
   }
 
   textField({

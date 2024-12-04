@@ -123,13 +123,14 @@ class _ReferDoctorState extends State<ReferDoctor>
                                 children: [
                                   // Container with person icon
                                   Container(
+                                    padding: EdgeInsets.all(12),
                                     width: 49,
                                     height: 49,
                                     decoration: const BoxDecoration(
                                       color: Colors.blue,
                                       shape: BoxShape.circle,
                                     ),
-                                    child: SvgPicture.asset("assets/iamges/docicon.svg",
+                                    child: SvgPicture.asset("assets/images/rad.svg",
                                         color: Colors.white),
                                   ),
                                   const SizedBox(width: 10),

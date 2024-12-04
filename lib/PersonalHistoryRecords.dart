@@ -1,6 +1,7 @@
 import 'package:dotted_border/dotted_border.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_app/Account/AddCondition.dart';
 import 'package:flutter_svg/svg.dart';
 
 
@@ -22,8 +23,7 @@ class _PersonalHistoryRecordsScreen extends  State<PersonalHistoryRecords> {
     int index = 0;
     List<String> conditions = [];
     // List<String> conditions = ["Hypertension", "Diabetes", "Ucler"];
-    return MaterialApp(
-      home: Scaffold(
+    return Scaffold(
         appBar: AppBar(
           title: Row(
             children: [
@@ -69,7 +69,7 @@ class _PersonalHistoryRecordsScreen extends  State<PersonalHistoryRecords> {
         SizedBox(height: 30),
 
 
-        SvgPicture.asset('assets/images/cuate.svg'),
+        SvgPicture.asset('assets/images/girl.svg'),
         SizedBox(height: 30),
 
         Container(
@@ -88,7 +88,14 @@ class _PersonalHistoryRecordsScreen extends  State<PersonalHistoryRecords> {
         SizedBox(
           width: 200,
         child: ElevatedButton(
-          onPressed: () {},
+          onPressed: () {
+            Navigator.push(
+              context,
+              MaterialPageRoute(
+                builder: (context) => AddCondition(),
+              ),
+            );
+          },
           style: ElevatedButton.styleFrom(
             backgroundColor: Colors.blue,
             fixedSize: Size.fromWidth(MediaQuery.of(context).size.width),
@@ -119,7 +126,7 @@ class _PersonalHistoryRecordsScreen extends  State<PersonalHistoryRecords> {
 
       ],
     ),
-    ))));
+    )) );
   }
 
   nothing() {

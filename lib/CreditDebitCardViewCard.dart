@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_app/Account/AccountProfile.dart';
+import 'package:flutter_app/MainManvigator.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
 void main() {
@@ -17,8 +19,7 @@ class  _CreditDebitCardViewCardState extends State<CreditDebitCardViewCard> {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      home: Scaffold(
+    return  Scaffold(
         appBar: AppBar(
           title: Row(
             children: [
@@ -269,7 +270,6 @@ class  _CreditDebitCardViewCardState extends State<CreditDebitCardViewCard> {
             ],
           ),
         ),
-      ),
     );
   }
 
@@ -336,8 +336,12 @@ class  _CreditDebitCardViewCardState extends State<CreditDebitCardViewCard> {
                         backgroundColor: Colors.blue,
                       ),
                       onPressed: () {
-                        // so i will put what action i want here
-                        Navigator.of(context).pop();
+                        Navigator.pushReplacement(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => MainNavigator(),
+                          ),
+                        );
                       },
                       child: Text(
                         'Yes',

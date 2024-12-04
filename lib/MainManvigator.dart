@@ -2,7 +2,7 @@ import 'dart:convert';
 import 'dart:io';
 
 import 'package:flutter/material.dart';
-import 'package:flutter_app/AccountProfile.dart';
+import 'package:flutter_app/Account/AccountProfile.dart';
 import 'package:flutter_app/Appointments.dart';
 import 'package:flutter_app/Appointments/MainAppointment.dart';
 import 'package:flutter_app/Notifications.dart';

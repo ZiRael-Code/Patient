@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_app/WithdrawFunds.dart';
 import 'package:flutter_svg/svg.dart';
 
 import 'Appointments/AppointmentPaymentSummary.dart';
@@ -19,8 +20,7 @@ class AddedAccountSucessState extends  State<AddedAccountSucess> {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-        home: Scaffold(
+    return  Scaffold(
             appBar: AppBar(
               title: Row(
                 children: [
@@ -77,7 +77,14 @@ class AddedAccountSucessState extends  State<AddedAccountSucess> {
                       Spacer(),
                       SizedBox(height: 15,),
                       ElevatedButton(
-                        onPressed: () {},
+                        onPressed: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => WithdrawFunds(),
+                            ),
+                          );
+                        },
                         style: ElevatedButton.styleFrom(
                           backgroundColor: Colors.blue,
                           fixedSize: Size.fromWidth(MediaQuery.of(context).size.width),
@@ -95,6 +102,6 @@ class AddedAccountSucessState extends  State<AddedAccountSucess> {
                       ),
                     ],
                   ),
-                ))));
+                )));
   }
 }

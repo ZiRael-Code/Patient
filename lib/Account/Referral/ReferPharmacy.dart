@@ -129,7 +129,7 @@ class _ReferPharmacyState extends State<ReferPharmacy>
                                       color: Colors.blue,
                                       shape: BoxShape.circle,
                                     ),
-                                    child: SvgPicture.asset("assets/iamges/pharmacyicon.svg",
+                                    child: SvgPicture.asset("assets/images/pharmacyicon.svg",
                                         color: Colors.white),
                                   ),
                                   const SizedBox(width: 10),

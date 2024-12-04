@@ -1,18 +1,19 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter_svg/svg.dart';
 
 import 'SendInvites.dart';
 import 'contacts_checked_tile.dart';
 
 
-class SelectFromContactList extends StatefulWidget {
-  const SelectFromContactList({super.key});
+class ReferHospital extends StatefulWidget {
+  const ReferHospital({super.key});
 
   @override
-  State<SelectFromContactList> createState() => _SelectFromContactListState();
+  State<ReferHospital> createState() => _ReferHospitalState();
 }
 
-class _SelectFromContactListState extends State<SelectFromContactList>
+class _ReferHospitalState extends State<ReferHospital>
     with TickerProviderStateMixin {
   late TabController _tabController;
   final String referralCode = '7f44aiwuehjands3gui';
@@ -122,13 +123,14 @@ class _SelectFromContactListState extends State<SelectFromContactList>
                                 children: [
                                   // Container with person icon
                                   Container(
+                                    padding: EdgeInsets.all(12),
                                     width: 49,
                                     height: 49,
                                     decoration: const BoxDecoration(
                                       color: Colors.blue,
                                       shape: BoxShape.circle,
                                     ),
-                                    child: const Icon(Icons.local_hospital_sharp,
+                                    child: SvgPicture.asset("assets/images/hospital.svg",
                                         color: Colors.white),
                                   ),
                                   const SizedBox(width: 10),

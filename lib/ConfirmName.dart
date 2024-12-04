@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_app/AddedAccountSucess.dart';
 import 'package:flutter_svg/svg.dart';
 
 import 'Appointments/AppointmentPaymentSummary.dart';
@@ -19,8 +20,7 @@ class _ConfirmNameScreen extends  State<ConfirmName> {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-        home: Scaffold(
+    return Scaffold(
             appBar: AppBar(
               title: Row(
                 children: [
@@ -89,6 +89,12 @@ class _ConfirmNameScreen extends  State<ConfirmName> {
                       ),
                       child: TextButton(
                         onPressed: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => AddedAccountSucess(),
+                            ),
+                          );
                         },
                         child: Text(
                           'Confirm',
@@ -104,7 +110,7 @@ class _ConfirmNameScreen extends  State<ConfirmName> {
                 ],
               ),
             ),
-           ));
+           );
   }
 
   textField({

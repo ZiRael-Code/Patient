@@ -8,8 +8,7 @@ void main() {
 class FundWallet extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      home: Scaffold(
+    return  Scaffold(
         appBar: AppBar(
           title: Row(
             children: [
@@ -55,7 +54,7 @@ class FundWallet extends StatelessWidget {
            ),
           ],
       ),
-      ),
+
     );
   }
 }

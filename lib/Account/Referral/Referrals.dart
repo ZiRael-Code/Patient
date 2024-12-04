@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_app/Account/Referral/ReferDoctor.dart';
+import 'package:flutter_app/Account/Referral/ReferHospital.dart';
+import 'package:flutter_app/Account/Referral/ReferPharmacy.dart';
 import 'package:flutter_svg/svg.dart';
 
 import 'ReferSomeone.dart';
@@ -94,6 +97,9 @@ class _ReferralsScreen extends  State<Referrals> {
                                 ),
                                 const SizedBox(width: 25),
                                 GestureDetector(
+                                  onTap: () {
+                                    Navigator.of(context).push(MaterialPageRoute(builder: (builder)=> ReferHospital()));
+                                  },
                                   child:
                                 referOption(
                                   icon: "assets/images/hospital.svg",
@@ -108,14 +114,26 @@ class _ReferralsScreen extends  State<Referrals> {
 
                             children:  [
 
+                              GestureDetector(
+                                onTap: () {
+                                  Navigator.of(context).push(MaterialPageRoute(builder: (builder)=> ReferDoctor()));
+                                },
+                                child:
                               referOption(
                                   icon: "assets/images/rad.svg",
                                   referText: "Refer a Doctor"
                               ),
+                              ),
                               const SizedBox(width: 25),
+                              GestureDetector(
+                                onTap: () {
+                                  Navigator.of(context).push(MaterialPageRoute(builder: (builder)=> ReferPharmacy()));
+                                },
+                                child:
                               referOption(
                                   icon: "assets/images/rap.svg",
                                   referText: "Refer a Pharmacy"
+                              ),
                               ),
                             ],)
                         ]
