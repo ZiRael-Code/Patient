@@ -20,8 +20,7 @@ class _ArticlePostScreen extends  State<ArticlePost> {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-        home: Scaffold(
+    return  Scaffold(
             appBar: AppBar(
               title: Row(
                 children: [
@@ -97,7 +96,6 @@ class _ArticlePostScreen extends  State<ArticlePost> {
           ],
             ),
             ),
-    ),
     );
   }
 

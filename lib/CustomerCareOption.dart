@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_app/VitChatBot.dart';
 import 'package:flutter_svg/svg.dart';
 
 void main(){
@@ -17,8 +18,7 @@ class _CustomerCareOptionScreen extends  State<CustomerCareOption> {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      home: Scaffold(
+    return   Scaffold(
         appBar: AppBar(
           title: Row(
             children: [
@@ -59,6 +59,11 @@ class _CustomerCareOptionScreen extends  State<CustomerCareOption> {
               child:
             Column(
                 children: [
+                  GestureDetector(
+                    onTap: (){
+                      Navigator.push(context, MaterialPageRoute(builder: (context) => VitChatBot()));
+                      },
+                    child:
           careOption(
             careName: Row(children: [
               Text(
@@ -77,6 +82,7 @@ class _CustomerCareOptionScreen extends  State<CustomerCareOption> {
             ],),
             careImgPath: "assets/images/careimgage.svg",
             description: "Talk with an automated responder to help you sort any little issues you may have with myvitalz."
+          ),
           ),
               SizedBox(height: 20,),
         careOption(
@@ -120,7 +126,6 @@ class _CustomerCareOptionScreen extends  State<CustomerCareOption> {
             description: "You can call us directly on phone if you have pressing issues you need to fix."
           ),
     ]
-            ),
             ),
       ));
   }

@@ -19,8 +19,7 @@ class HowItWorkExplainedState extends  State<HowItWorkExplained> {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      home: Scaffold(
+    return Scaffold(
         appBar: AppBar(
           title: Row(
             children: [
@@ -98,7 +97,7 @@ class HowItWorkExplainedState extends  State<HowItWorkExplained> {
             ),
 
 
-    )));
+    ));
   }
 
 }

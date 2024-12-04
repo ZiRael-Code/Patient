@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_app/HowItWorkExplained.dart';
 import 'package:flutter_svg/svg.dart';
 
 import 'Appointments/AppointmentPaymentSummary.dart';
@@ -19,8 +20,7 @@ class HowItWorksState extends  State<HowItWorks> {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      home: Scaffold(
+    return Scaffold(
         appBar: AppBar(
           title: Row(
             children: [
@@ -87,13 +87,18 @@ class HowItWorksState extends  State<HowItWorks> {
             ),
 
 
-    )));
+    ));
   }
 
   how({
     required String text
   }) {
-    return Column(children: [
+    return  GestureDetector(
+        onTap: () => Navigator.push(
+        context,
+        MaterialPageRoute(
+            builder: (context) =>  HowItWorkExplained())),
+    child:  Column(children: [
       Row(children: [
       Container(
         width: 240,
@@ -108,6 +113,7 @@ class HowItWorksState extends  State<HowItWorks> {
       SvgPicture.asset("assets/images/line.svg"),
       SizedBox(height: 20)
     ]
+    )
     );
   }
 }

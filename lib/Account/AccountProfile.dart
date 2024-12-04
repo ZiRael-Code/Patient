@@ -1,11 +1,13 @@
 import 'dart:math';
 
 import 'package:flutter/material.dart';
+import 'package:flutter_app/Account/ResetPin.dart';
 import 'package:flutter_app/CreditDebitCardAddCard.dart';
 import 'package:flutter_app/CreditDebitCardAvailableCard.dart';
 import 'package:flutter_app/CreditDebitCardViewCard.dart';
 import 'package:flutter_app/CreditDebitNoCard.dart';
 import 'package:flutter_app/EditProfile.dart';
+import 'package:flutter_app/FAQ.dart';
 import 'package:flutter_svg/svg.dart';
 
 import '../BlogAndAticles.dart';
@@ -286,7 +288,7 @@ class _AccountProfileState extends State<AccountProfile> {
                       onTap: () => Navigator.push(
                           context,
                           MaterialPageRoute(
-                              builder: (context) =>  PinSettings())),
+                              builder: (context) =>  ResetPin())),
                       child: detailsNoCol(
                           icon: Icons.lock,
                           detailInfo: "PIN settings",
@@ -431,10 +433,10 @@ class _AccountProfileState extends State<AccountProfile> {
                       onTap: () => Navigator.push(
                           context,
                           MaterialPageRoute(
-                              builder: (context) =>  DeviceOwned())),
+                              builder: (context) =>  FAQ())),
                       child: detailsNoCol(
                           icon: Icons.question_mark,
-                          detailInfo: "Device Orders",
+                          detailInfo: "FAQs",
                           shouldLine: true),
                     ),
                             const SizedBox(

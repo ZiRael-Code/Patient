@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_app/ArticlePost.dart';
 import 'package:flutter_svg/svg.dart';
 
 import 'Appointments/AppointmentPaymentSummary.dart';
@@ -20,8 +21,7 @@ class BlogAndAticlesState extends  State<BlogAndAticles> {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-        home: Scaffold(
+    return Scaffold(
             appBar: AppBar(
               title: Row(
                 children: [
@@ -97,7 +97,6 @@ class BlogAndAticlesState extends  State<BlogAndAticles> {
           ],
             ),
             ),
-    ),
     );
   }
 
@@ -118,7 +117,12 @@ class BlogAndAticlesState extends  State<BlogAndAticles> {
     required String description,
     required String views
 }){
-    return Container(
+    return  GestureDetector(
+        onTap: () => Navigator.push(
+        context,
+        MaterialPageRoute(
+            builder: (context) =>  ArticlePost())),
+    child:  Container(
       margin: EdgeInsets.only(top: 10),
       child: Column(
       children: [
@@ -234,6 +238,7 @@ class BlogAndAticlesState extends  State<BlogAndAticles> {
           ),
         ),
       ],
+    ),
     ),
     );
 }

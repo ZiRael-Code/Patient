@@ -1,28 +1,28 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_app/PinSettings.dart';
 import 'package:flutter_svg/svg.dart';
 
 import 'Appointments/AppointmentPaymentSummary.dart';
 
 void main(){
-  runApp(Otp());
+  runApp(EmailOtp());
 }
 
-class Otp extends StatefulWidget {
-  const Otp({super.key});
+class EmailOtp extends StatefulWidget {
+  const EmailOtp({super.key});
   @override
-  OtpState createState() => OtpState();
+  EmailOtpState createState() => EmailOtpState();
 }
 
-class OtpState extends  State<Otp> {
+class EmailOtpState extends  State<EmailOtp> {
   String? _selectedValue;
   List<String> otp = List.filled(6, ""); // List to hold OTP digits
   List<TextEditingController> controllers = List.generate(6, (_) => TextEditingController());
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      home: Scaffold(
+    return Scaffold(
         appBar: AppBar(
           title: Row(
             children: [
@@ -70,7 +70,7 @@ class OtpState extends  State<Otp> {
           alignment: Alignment.center,
           width: MediaQuery.of(context).size.width * 0.58,
           child:
-        Align(child: Text("A 6 - digit OTP code has been sent to your phone. Type it in the field below", textAlign: TextAlign.center,
+        Align(child: Text("A 6 - digit OTP code has been sent to your email address. Type it in the field below", textAlign: TextAlign.center,
         style: TextStyle(
           fontSize: 14,
         ),
@@ -100,8 +100,8 @@ class OtpState extends  State<Otp> {
                 child: TextFormField(
                   controller: controllers[index],
                   keyboardType: TextInputType.number,
-                  obscureText: true, // Mask input
-                  obscuringCharacter: '*', // Display input as '*'
+                  obscureText: true,
+                  obscuringCharacter: '*',
                   maxLength: 1,
                   textAlign: TextAlign.center,
                   textAlignVertical: TextAlignVertical.top, // Align text at the top
@@ -120,6 +120,8 @@ class OtpState extends  State<Otp> {
 
                     if (value.isNotEmpty && index < 5) {
                       FocusScope.of(context).nextFocus();
+                    }else {
+                      Navigator.push(context, MaterialPageRoute(builder: (context) => PinSettings()));
                     }
                   },
                 ),
@@ -133,6 +135,6 @@ class OtpState extends  State<Otp> {
                 color: Colors.blue),),
       ],
     ),
-    ))));
+    )));
   }
 }
