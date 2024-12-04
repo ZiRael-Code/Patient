@@ -1,7 +1,7 @@
 import 'dart:io';
 
 void main() {
-  final libDirectory = Directory('TheOperationRoom');
+  final libDirectory = Directory('lib');
 
   if (!libDirectory.existsSync()) {
     print('The lib directory does not exist.');

@@ -23,8 +23,12 @@ class _SuccessScreen extends  State<Success> {
     return MaterialApp(
       home: Scaffold(
         appBar: AppBar(
+          automaticallyImplyLeading: false,
           title: Row(
             children: [
+              InkWell(
+          onTap: () => Navigator.pop(context),
+          child: 
               InkWell(
           onTap: () => Navigator.pop(context),
           child: 
@@ -40,6 +44,8 @@ class _SuccessScreen extends  State<Success> {
                   width: getFontSize(8.0, context),
                   height: getFontSize(15, context),),
               ),
+              ),
+
               ),
 
               Spacer(),

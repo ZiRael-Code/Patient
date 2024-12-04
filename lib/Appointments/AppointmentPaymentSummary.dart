@@ -17,18 +17,23 @@ class AppointmentPaymentSummary extends StatelessWidget {
         centerTitle: true,
         title: Row(
           children: [
-            Container(
-              width: getFontSize(35, context),
-              height: getFontSize(35, context),
-              padding: EdgeInsets.all(10),
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(50),
-                color: Color(0xFFE5E5E5),
+            InkWell(
+          onTap: () => Navigator.pop(context),
+          child: 
+              Container(
+                width: getFontSize(35, context),
+                height: getFontSize(35, context),
+                padding: EdgeInsets.all(10),
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(50),
+                  color: Color(0xFFE5E5E5),
+                ),
+                child: SvgPicture.asset('assets/images/back.svg',
+                  width: getFontSize(8.0, context),
+                  height: getFontSize(15, context),),
               ),
-              child: SvgPicture.asset('assets/images/back.svg',
-                width: getFontSize(8.0, context),
-                height: getFontSize(15, context),),
-            ),
+              ),
+
             Container(
               margin: EdgeInsets.only(left: getFontSize(35, context)),
               alignment: Alignment.center,

@@ -32,8 +32,12 @@ class _SelectSpecialistToShareReadingsScreen extends  State<SelectSpecialistToSh
     return MaterialApp(
       home: Scaffold(
         appBar: AppBar(
+          automaticallyImplyLeading: false,
           title: Row(
             children: [
+              InkWell(
+          onTap: () => Navigator.pop(context),
+          child: 
               Container(
                 width: getFontSize(35, context),
                 height: getFontSize(35, context),
@@ -46,6 +50,8 @@ class _SelectSpecialistToShareReadingsScreen extends  State<SelectSpecialistToSh
                   width: getFontSize(8.0, context),
                   height: getFontSize(15, context),),
               ),
+              ),
+
               Spacer(),
               Container(
                 alignment: Alignment.center,

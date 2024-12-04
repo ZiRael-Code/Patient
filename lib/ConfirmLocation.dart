@@ -20,6 +20,7 @@ class _ConfirmLocationState extends State<ConfirmLocation> {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
+          automaticallyImplyLeading: false,
           title: Row(
             children: [
               Container(

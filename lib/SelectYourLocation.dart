@@ -49,6 +49,7 @@ class _SelectYourLocationState extends State<SelectYourLocation> {
 
     return Scaffold(
       appBar: AppBar(
+          automaticallyImplyLeading: false,
         title: Row(
           children: [
             Container(

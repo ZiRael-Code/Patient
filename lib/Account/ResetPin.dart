@@ -18,8 +18,12 @@ class _ResetPinState extends State<ResetPin> {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
+          automaticallyImplyLeading: false,
           title: Row(
             children: [
+              InkWell(
+          onTap: () => Navigator.pop(context),
+          child: 
               Container(
                 width: getFontSize(35, context),
                 height: getFontSize(35, context),
@@ -32,6 +36,8 @@ class _ResetPinState extends State<ResetPin> {
                   width: getFontSize(8.0, context),
                   height: getFontSize(15, context),),
               ),
+              ),
+
               Spacer(),
               Container(
                 alignment: Alignment.center,

@@ -37,6 +37,7 @@ class _AddDeviceToPhoneScreen extends  State<AddDeviceToPhone> {
       home: Scaffold(
         backgroundColor: Colors.blue,
         appBar: AppBar(
+          automaticallyImplyLeading: false,
           backgroundColor: Colors.blue,
           title: Row(
             children: [

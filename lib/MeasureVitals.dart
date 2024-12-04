@@ -19,6 +19,7 @@ class _MeasureVitalsState  extends State<MeasureVitals>{
     return MaterialApp(
       home: Scaffold(
         appBar: AppBar(
+          automaticallyImplyLeading: false,
           title: Row(
             children: [
               Container(

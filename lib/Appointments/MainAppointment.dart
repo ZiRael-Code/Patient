@@ -27,6 +27,7 @@ class _MainAppointmentState extends State<MainAppointment> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+          automaticallyImplyLeading: false,
         backgroundColor: Colors.white,
         elevation: 0,
         title: Text(

@@ -23,6 +23,7 @@ class _SelectCountryScreen extends  State<SelectCountry> {
     return MaterialApp(
       home: Scaffold(
         appBar: AppBar(
+          automaticallyImplyLeading: false,
           title: Row(
             children: [
               Spacer(),

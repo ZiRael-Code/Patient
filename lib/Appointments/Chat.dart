@@ -27,6 +27,9 @@ class _ChatScreen extends  State<Chat> {
           automaticallyImplyLeading: false,
           title: Row(
             children: [
+              InkWell(
+          onTap: () => Navigator.pop(context),
+          child: 
               Container(
                 width: getFontSize(35, context),
                 height: getFontSize(35, context),
@@ -39,6 +42,8 @@ class _ChatScreen extends  State<Chat> {
                   width: getFontSize(8.0, context),
                   height: getFontSize(15, context),),
               ),
+              ),
+
                 SizedBox(width: getFontSize(25, context),),
                 Align(
                     alignment: Alignment.centerLeft,

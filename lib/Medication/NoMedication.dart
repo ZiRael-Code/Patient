@@ -32,6 +32,7 @@ class _NoMedicationScreen extends  State<NoMedication> {
     return MaterialApp(
         home: Scaffold(
             appBar: AppBar(
+          automaticallyImplyLeading: false,
               title: Row(
                 children: [
                 Text(

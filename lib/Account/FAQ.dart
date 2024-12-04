@@ -20,6 +20,7 @@ class _FAQScreen extends State<FAQ> {
   Widget build(BuildContext context) {
     return  Scaffold(
           appBar: AppBar(
+          automaticallyImplyLeading: false,
             title: Row(
               children: [
                 Container(

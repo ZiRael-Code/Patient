@@ -17,8 +17,12 @@ class _SelectADeliveryMethodState extends State<SelectADeliveryMethod> {
     return  Scaffold(
         backgroundColor: Colors.white,
         appBar: AppBar(
+          automaticallyImplyLeading: false,
           title: Row(
             children: [
+              InkWell(
+          onTap: () => Navigator.pop(context),
+          child: 
               Container(
                 width: getFontSize(35, context),
                 height: getFontSize(35, context),
@@ -31,6 +35,8 @@ class _SelectADeliveryMethodState extends State<SelectADeliveryMethod> {
                   width: getFontSize(8.0, context),
                   height: getFontSize(15, context),),
               ),
+              ),
+
               Spacer(),
               Container(
                 alignment: Alignment.center,

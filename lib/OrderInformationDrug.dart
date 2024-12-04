@@ -26,6 +26,7 @@ class _OrderInformationDrugScreen extends State<OrderInformationDrug> {
       home: Scaffold(
         backgroundColor: Colors.white,
         appBar: AppBar(
+          automaticallyImplyLeading: false,
           title: Row(
             children: [
               Spacer(),

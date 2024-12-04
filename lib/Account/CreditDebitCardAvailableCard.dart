@@ -23,6 +23,7 @@ class  CreditDebitCardAvailableCardState extends State<CreditDebitCardAvailableC
   Widget build(BuildContext context) {
       return Scaffold(
           appBar: AppBar(
+          automaticallyImplyLeading: false,
             title: Row(
               children: [
                 Container(

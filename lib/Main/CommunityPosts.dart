@@ -23,6 +23,7 @@ class _CommunityPostsScreen extends  State<CommunityFeed> {
     return MaterialApp(
       home: Scaffold(
         appBar: AppBar(
+          automaticallyImplyLeading: false,
           backgroundColor: Colors.blue,
           title: Row(
             children: [

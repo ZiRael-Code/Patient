@@ -23,6 +23,7 @@ class _PrescriptionInfoMessageScreen extends  State<PrescriptionInfoMessage> {
     return MaterialApp(
       home: Scaffold(
         appBar: AppBar(
+          automaticallyImplyLeading: false,
           title: Row(
             children: [
               Spacer(),

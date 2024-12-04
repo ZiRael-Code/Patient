@@ -20,6 +20,7 @@ class _MontyState extends State<Monty> {
     return Scaffold(
       backgroundColor: Colors.white,
       appBar: AppBar(
+          automaticallyImplyLeading: false,
         title: Text('Select Year and Month'),
       ),
       body: Column(

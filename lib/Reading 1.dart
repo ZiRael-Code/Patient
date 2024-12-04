@@ -23,8 +23,12 @@ class _ReadingScreen extends  State<Reading> {
     return MaterialApp(
       home: Scaffold(
         appBar: AppBar(
+          automaticallyImplyLeading: false,
           title: Row(
             children: [
+              InkWell(
+          onTap: () => Navigator.pop(context),
+          child: 
               Container(
                 width: getFontSize(35, context),
                 height: getFontSize(35, context),
@@ -37,6 +41,8 @@ class _ReadingScreen extends  State<Reading> {
                   width: getFontSize(8.0, context),
                   height: getFontSize(15, context),),
               ),
+              ),
+
               Spacer(),
               Text('Reading 1', style: TextStyle(fontSize: getFontSize(20, context))),
               Spacer(),

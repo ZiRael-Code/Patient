@@ -19,6 +19,7 @@ class _MeasureHearthRateState extends State<MeasureHearthRate> {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
+          automaticallyImplyLeading: false,
             centerTitle: true,
             title: Row(
               children: [

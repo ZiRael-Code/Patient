@@ -32,6 +32,7 @@ class MedicationUsageConfirmationState extends  State<MedicationUsageConfirmatio
     return MaterialApp(
         home: Scaffold(
             appBar: AppBar(
+          automaticallyImplyLeading: false,
               title: Row(
                 children: [
                 Text(

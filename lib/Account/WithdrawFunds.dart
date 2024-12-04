@@ -27,6 +27,7 @@ class _WithdrawFundsScreen extends State<WithdrawFunds> {
   Widget build(BuildContext context) {
     return   Scaffold(
             appBar: AppBar(
+          automaticallyImplyLeading: false,
               title: Row(
                 children: [
                   Container(

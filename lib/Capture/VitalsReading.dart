@@ -33,6 +33,7 @@ class _VitalsReadingState extends State<VitalsReading>
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+          automaticallyImplyLeading: false,
         backgroundColor: Colors.blue,
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.vertical(

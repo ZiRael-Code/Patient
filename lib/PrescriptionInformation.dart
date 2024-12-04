@@ -23,6 +23,7 @@ class _PrescriptionInformationScreen extends  State<PrescriptionInformation> {
     return MaterialApp(
       home: Scaffold(
         appBar: AppBar(
+          automaticallyImplyLeading: false,
           title: Row(
             children: [
               Spacer(),

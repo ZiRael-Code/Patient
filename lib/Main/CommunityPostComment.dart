@@ -21,9 +21,13 @@ class _CommunityPostCommentScreen extends  State<CommunityPostComment> {
 
     return  Scaffold(
         appBar: AppBar(
+          automaticallyImplyLeading: false,
           backgroundColor: Colors.white,
           title: Row(
             children: [
+              InkWell(
+          onTap: () => Navigator.pop(context),
+          child: 
               Container(
                 width: getFontSize(35, context),
                 height: getFontSize(35, context),
@@ -36,6 +40,8 @@ class _CommunityPostCommentScreen extends  State<CommunityPostComment> {
                   width: getFontSize(8.0, context),
                   height: getFontSize(15, context),),
               ),
+              ),
+
               Spacer(),
               Container(
                 alignment: Alignment.center,

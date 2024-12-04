@@ -23,8 +23,12 @@ class _MeasureingHearthGraphScreen extends  State<MeasureingHearthGraph> {
     return MaterialApp(
       home: Scaffold(
         appBar: AppBar(
+          automaticallyImplyLeading: false,
           title: Row(
             children: [
+              InkWell(
+          onTap: () => Navigator.pop(context),
+          child: 
               Container(
                 width: getFontSize(35, context),
                 height: getFontSize(35, context),
@@ -37,6 +41,8 @@ class _MeasureingHearthGraphScreen extends  State<MeasureingHearthGraph> {
                   width: getFontSize(8.0, context),
                   height: getFontSize(15, context),),
               ),
+              ),
+
               Spacer(),
           Container(
             width: getFontSize(35, context),

@@ -21,6 +21,7 @@ class  _CreditDebitCardAddCardState extends State<CreditDebitCardAddCard>{
   Widget build(BuildContext context) {
       return  Scaffold(
           appBar: AppBar(
+          automaticallyImplyLeading: false,
             title: Row(
               children: [
                 Container(

@@ -51,7 +51,7 @@ class DashboardState extends State<Dashboard> {
     return Scaffold(
       backgroundColor: Colors.white,
       appBar: AppBar(
-        automaticallyImplyLeading: false,
+          automaticallyImplyLeading: false,
         backgroundColor: Colors.white,
         title: Row(
           children: [

@@ -26,7 +26,8 @@ class _SetNewPinScreen extends State<SetNewPin> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(),
+      appBar: AppBar(
+          automaticallyImplyLeading: false,),
       body: Container(
         padding: EdgeInsets.only(bottom: getFontSize(30, context), left: getFontSize(15, context), right: getFontSize(15, context)),
         child: Align(

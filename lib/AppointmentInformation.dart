@@ -21,6 +21,7 @@ class AppointmentInformationState extends  State<AppointmentInformation> {
     return MaterialApp(
       home: Scaffold(
       appBar: AppBar(
+          automaticallyImplyLeading: false,
         backgroundColor: Colors.white,
         title: Center(child: Text('Appointment Information')),
       ),

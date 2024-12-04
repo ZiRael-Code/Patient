@@ -19,6 +19,7 @@ class _MeasureBloodPresureState extends State<MeasureBloodPresure> {
   Widget build(BuildContext context) {
     return  Scaffold(
         appBar: AppBar(
+          automaticallyImplyLeading: false,
             centerTitle: true,
             title: Row(
               children: [

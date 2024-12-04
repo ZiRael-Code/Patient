@@ -25,6 +25,7 @@ class ScheduleAppointmentDateChooserState extends State<ScheduleAppointmentDateC
 
     return Scaffold(
       appBar: AppBar(
+          automaticallyImplyLeading: false,
         title:
         Row(
           children: [
