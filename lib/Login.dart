@@ -161,7 +161,7 @@ class _LoginStateState extends State<LoginState> {
             child: ElevatedButton(
               onPressed: () {
                 _handleLogin(context);
-                Navigator.of(context).pushReplacement(MaterialPageRoute(builder: (builder)=> MainNavigator()));
+                Navigator.of(context).pushReplacement(MaterialPageRoute(builder: (builder)=> MainNavigator(index: 0,)));
 
                 // Handle login
               },

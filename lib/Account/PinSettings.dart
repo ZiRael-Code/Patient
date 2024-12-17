@@ -1,7 +1,10 @@
 import '../Main/Dashboard.dart';
+
+
 import 'package:flutter/material.dart';
-import 'package:flutter_app/Account/EnterNewPin.dart';
 import 'package:flutter_svg/svg.dart';
+
+import 'EnterNewPin.dart';
 
 
 void main(){
@@ -28,6 +31,12 @@ class _AppointmentPaymentScreen extends  State<PinSettings> {
                   InkWell(
           onTap: () => Navigator.pop(context),
           child: 
+              InkWell(
+          onTap: () => Navigator.pop(context),
+          child: 
+              InkWell(
+          onTap: () => Navigator.pop(context),
+          child: 
               Container(
                 width: getFontSize(35, context),
                 height: getFontSize(35, context),
@@ -40,6 +49,10 @@ class _AppointmentPaymentScreen extends  State<PinSettings> {
                   width: getFontSize(8.0, context),
                   height: getFontSize(15, context),),
               ),
+              ),
+
+              ),
+
               ),
 
                   Spacer(),

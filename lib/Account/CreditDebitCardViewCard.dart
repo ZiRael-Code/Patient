@@ -1,8 +1,11 @@
 import '../Main/Dashboard.dart';
+
+
 import 'package:flutter/material.dart';
-import 'package:flutter_app/Account/AccountProfile.dart';
-import 'package:flutter_app/MainManvigator.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+
+import '../MainManvigator.dart';
+
 
 void main() {
   runApp(CreditDebitCardViewCard());
@@ -302,8 +305,8 @@ class  _CreditDebitCardViewCardState extends State<CreditDebitCardViewCard> {
             borderRadius: BorderRadius.circular(8.0),
           ),
           padding: EdgeInsets.symmetric(
-            vertical: 15.0,
-            horizontal: 10.0,
+            vertical: getFontSize(15.0, context),
+            horizontal: getFontSize(10.0, context),
           ),
           child: Text(
             textHint,
@@ -338,11 +341,9 @@ class  _CreditDebitCardViewCardState extends State<CreditDebitCardViewCard> {
                         backgroundColor: Colors.blue,
                       ),
                       onPressed: () {
-                        Navigator.pushReplacement(
-                          context,
-                          MaterialPageRoute(
-                            builder: (context) => MainNavigator(),
-                          ),
+                        Navigator.of(context).pushAndRemoveUntil(
+                          MaterialPageRoute(builder: (builder) => MainNavigator(index: 3,)), // Navigate to Login screen
+                              (Route<dynamic> route) => false, // Remove all previous routes
                         );
                       },
                       child: Text(

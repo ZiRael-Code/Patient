@@ -1,9 +1,10 @@
 import '../Main/Dashboard.dart';
+
+
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 
-import '../Appointments/AppointmentPaymentSummary.dart';
 import 'WithdrawFunds.dart';
 
 void main(){
@@ -29,6 +30,12 @@ class AddedAccountSucessState extends  State<AddedAccountSucess> {
                   InkWell(
           onTap: () => Navigator.pop(context),
           child: 
+              InkWell(
+          onTap: () => Navigator.pop(context),
+          child: 
+              InkWell(
+          onTap: () => Navigator.pop(context),
+          child: 
               Container(
                 width: getFontSize(35, context),
                 height: getFontSize(35, context),
@@ -41,6 +48,10 @@ class AddedAccountSucessState extends  State<AddedAccountSucess> {
                   width: getFontSize(8.0, context),
                   height: getFontSize(15, context),),
               ),
+              ),
+
+              ),
+
               ),
 
                   Spacer(),
@@ -100,7 +111,7 @@ class AddedAccountSucessState extends  State<AddedAccountSucess> {
                           ),
                         ),
                         child: Padding(
-                          padding: EdgeInsets.symmetric(vertical: 12.0, horizontal: 24.0),
+                          padding: EdgeInsets.symmetric(vertical: getFontSize(12.0, context), horizontal: getFontSize(24.0, context)),
                           child: Text(
                             'Done',
                             style: TextStyle(color: Colors.white, fontSize: getFontSize(18, context)),

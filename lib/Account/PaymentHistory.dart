@@ -1,8 +1,11 @@
 import '../Main/Dashboard.dart';
+
+
 import 'package:flutter/material.dart';
-import 'package:flutter_app/Account/Monty.dart';
-import 'package:flutter_app/TransactionDetails.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+
+import 'Monty.dart';
+import 'TransactionDetails.dart';
 
 void main() {
   runApp(PaymentHistory());

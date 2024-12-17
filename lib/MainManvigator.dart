@@ -13,8 +13,8 @@ import 'package:flutter_app/Medication/NoMedication.dart';
 
 import 'Main/Dashboard.dart';
 class MainNavigator extends StatefulWidget {
-
-  MainNavigator();
+  final int index;
+  MainNavigator({required this.index});
   @override
   _MainNavigatorState createState() => _MainNavigatorState();
 }
@@ -26,7 +26,7 @@ class _MainNavigatorState extends State<MainNavigator> {
   }
 
 
-  int _selectedIndex = 0;
+  late int _selectedIndex = widget.index;
 
 
   void _onItemTapped(int index ) {

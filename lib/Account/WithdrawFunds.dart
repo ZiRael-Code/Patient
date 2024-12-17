@@ -1,9 +1,12 @@
 import '../Main/Dashboard.dart';
+
+
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_app/Account/WithdrawSuccess.dart';
-import 'package:flutter_app/Account/AddAccount.dart';
 import 'package:flutter_svg/svg.dart';
+
+import 'AddAccount.dart';
+import 'WithdrawSuccess.dart';
 
 void main() {
   runApp(WithdrawFunds());

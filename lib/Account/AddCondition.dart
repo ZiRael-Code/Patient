@@ -1,7 +1,12 @@
 import '../Main/Dashboard.dart';
+
+
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+
+import '../MainManvigator.dart';
+
 
 
 void main(){
@@ -27,6 +32,12 @@ class _AddConditionScreen extends  State<AddCondition> {
               InkWell(
           onTap: () => Navigator.pop(context),
           child: 
+              InkWell(
+          onTap: () => Navigator.pop(context),
+          child: 
+              InkWell(
+          onTap: () => Navigator.pop(context),
+          child: 
               Container(
                 width: getFontSize(35, context),
                 height: getFontSize(35, context),
@@ -39,6 +50,10 @@ class _AddConditionScreen extends  State<AddCondition> {
                   width: getFontSize(8.0, context),
                   height: getFontSize(15, context),),
               ),
+              ),
+
+              ),
+
               ),
 
               Spacer(),
@@ -83,7 +98,12 @@ class _AddConditionScreen extends  State<AddCondition> {
 
         Spacer(),
         ElevatedButton(
-          onPressed: () {},
+          onPressed: () {
+            Navigator.of(context).pushAndRemoveUntil(
+              MaterialPageRoute(builder: (builder) => MainNavigator(index: 3,)), // Navigate to Login screen
+                  (Route<dynamic> route) => false, // Remove all previous routes
+            );
+          },
           style: ElevatedButton.styleFrom(
             backgroundColor: Colors.blue,
             fixedSize: Size.fromWidth(MediaQuery.of(context).size.width),
@@ -92,7 +112,7 @@ class _AddConditionScreen extends  State<AddCondition> {
             ),
           ),
           child: Padding(
-            padding: EdgeInsets.symmetric(vertical: 12.0, horizontal: 24.0),
+            padding: EdgeInsets.symmetric(vertical: getFontSize(12.0, context), horizontal: getFontSize(24.0, context)),
             child: Text(
               'Save',
               style: TextStyle(color: Colors.white, fontSize: getFontSize(18, context)),
@@ -136,8 +156,8 @@ class _AddConditionScreen extends  State<AddCondition> {
             filled: true,
             fillColor: Colors.grey[300],
             contentPadding: EdgeInsets.symmetric(
-              vertical: 15.0, // Height of 50 (including padding)
-              horizontal: 10.0,
+              vertical: getFontSize(15.0, context), // Height of 50 (including padding)
+              horizontal: getFontSize(10.0, context),
             ),
             border: OutlineInputBorder(
               borderRadius: BorderRadius.circular(8.0),

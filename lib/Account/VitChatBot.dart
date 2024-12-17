@@ -1,4 +1,6 @@
 import '../Main/Dashboard.dart';
+
+
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
@@ -27,6 +29,12 @@ class _VitChatBotScreen extends  State<VitChatBot> {
               InkWell(
           onTap: () => Navigator.pop(context),
           child: 
+              InkWell(
+          onTap: () => Navigator.pop(context),
+          child: 
+              InkWell(
+          onTap: () => Navigator.pop(context),
+          child: 
               Container(
                 width: getFontSize(35, context),
                 height: getFontSize(35, context),
@@ -39,6 +47,10 @@ class _VitChatBotScreen extends  State<VitChatBot> {
                   width: getFontSize(8.0, context),
                   height: getFontSize(15, context),),
               ),
+              ),
+
+              ),
+
               ),
 
               Spacer(),
@@ -121,7 +133,7 @@ class _VitChatBotScreen extends  State<VitChatBot> {
                     child: TextField(
                       decoration: InputDecoration(
                         hintText: 'Type a message...',
-                        contentPadding: EdgeInsets.symmetric(vertical: 15, horizontal: 20),
+                        contentPadding: EdgeInsets.symmetric(vertical: getFontSize(15, context), horizontal: getFontSize(20, context)),
                         filled: true,
                         fillColor: Colors.white,
                         border: OutlineInputBorder(
@@ -139,8 +151,8 @@ class _VitChatBotScreen extends  State<VitChatBot> {
                           ),
                         ),
                         suffixIcon: Container(
-                          width: getFontSize(96, context),
                           child: Row(
+                            mainAxisSize: MainAxisSize.min,
                             mainAxisAlignment: MainAxisAlignment.end,
                             children: [
                               IconButton(

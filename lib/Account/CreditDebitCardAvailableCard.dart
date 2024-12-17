@@ -1,9 +1,11 @@
 import '../Main/Dashboard.dart';
+
+
 import 'package:flutter/material.dart';
-import 'package:flutter_app/Account/CreditDebitCardViewCard.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
 import 'CreditDebitCardAddCard.dart';
+import 'CreditDebitCardViewCard.dart';
 
 void main() {
   runApp(CreditDebitCardAvailableCard());
@@ -254,8 +256,8 @@ class  CreditDebitCardAvailableCardState extends State<CreditDebitCardAvailableC
         filled: true,
         fillColor: Colors.grey[300],
         contentPadding: EdgeInsets.symmetric(
-        vertical: 15.0, // Adjust padding to control height
-        horizontal: 10.0,
+        vertical: getFontSize(15.0, context), // Adjust padding to control height
+        horizontal: getFontSize(10.0, context),
         ),
         border: OutlineInputBorder(
         borderRadius: BorderRadius.circular(8.0),
